@@ -6,6 +6,8 @@ argsGeoJson -> argsGeoJSON
 
 BUGS
 ====
+Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clés IGN & SwissTopo
+Demo GeoJSON.Ajax READ.ME: basis de GeoJSON.Ajax
 Icone full screen décalée sur mobile
 WRI: Il n'y a plus les calques Pyrénées Refuges ni chemineur
 WRI editor: Il y a aussi quelques embrouilles quand on joue avec les limites et les points
