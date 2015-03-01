@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaflet extension for multi vendors maps & projections</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.png" />
+	<!--link href="http://leafletjs.com/atom.xml" type="application/atom+xml" rel="alternate" title="Leaflet Dev Blog Atom Feed" /-->
+
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+	<script src="../../kartena/Proj4Leaflet/lib/proj4-compressed.js"></script><!-- TODO DCMM voir référence externe -->
+	<script src="../../kartena/Proj4Leaflet/src/proj4leaflet.js"></script>
+
+	<script type="text/javascript">
+		var key = {
+// Clé IGN V3 développement sur: http://api.ign.fr
+// Clé IGN V3 production sur: http://pro.ign.fr/api-web => Service en ligne => S'ABONNER
+			ign:  'k05hnrprcj17gumsxsvx5pat', // Localhost Expire le 4 oct 2017
+//				ign:  'y07s87qyij0i6yhj8nzi66ww', // chemineur.fr / Contrat n° 0005820 / Expire le 17/09/2016
+//				ign:  'ev2w14tv2ez4wpypux2ael39', // www.refuges.info / Contract 0004365 / Expire le 31/08/2016
+//				ign:  'w7b9fddebwo1jrxq8gpf8rtc', // dom.refuges.info / Contrat n° 0078363 / Expire le 28/10/2017
+//				ign:  '7dy2so5o4sck2odtunq10ths', // sly.refuges.info / Contrat n° 0085217 / Expire le 05/01/2018
+			bing: 'AqTGBsziZHIJYYxgivLBf0hVdrAk9mWO5cQcb8Yux8sW5M8c8opEC2lZqKR1ZZXf', // https://www.bingmapsportal.com
+		};
+	</script>
+
+	<script src="MapMultiCRS.js"></script>
+	<script src="Bing.js"></script><!-- TODO DCMM voir référence externe -->
+	<script src="Google.js"></script><!-- TODO DCMM voir référence externe -->
+	<script src="Yandex.js"></script><!-- TODO DCMM voir référence externe -->
+	<script src="IGN.js"></script>
+	<script src="IGM.js"></script>
+	<script src="IDEE.js"></script>
+	<script src="SwissTopo.js"></script>
+
+	<script type="text/javascript">
+
+		// Style de base des polylines édités
+		L.Polyline = L.Polyline.extend({
+			options: {
+				color: 'red',
+				weight: 4,
+				opacity: 1,
+			}
+		});
+
+		// Toutes les couches de fond possibles (mais pas affichées en même temps)
+		var map, gps, ctrlLayers,
+			baseLayers = {
+			'Maps.Refuges.Info': L.tileLayer('http://maps.refuges.info/hiking/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a> & <a href="http://wiki.openstreetmap.org/wiki/Hiking/mri">MRI</a>'
+			}),
+			'Outdoors': L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a> & <a href="http://www.thunderforest.com">Thunderforest</a>'
+			}),
+			'OpenStreetMap': L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a>'
+			}),
+			'OpenStreetMap-FR': L.tileLayer('http://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a>'
+			}),
+			'OpenCycleMap': L.tileLayer('http://a.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a> & <a href="http://www.openstreetmap.org">OpenCycleMap</a>'
+			}),
+
+			'IGN': new L.TileLayer.IGN(),
+			'IGN Photo': new L.TileLayer.IGN('ORTHOIMAGERY.ORTHOPHOTOS'),
+			'IGN Topo': new L.TileLayer.IGN('GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD'),
+			'IGN Classique': new L.TileLayer.IGN('GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.CLASSIQUE'),
+			'IGN Cadastre': new L.TileLayer.IGN('CADASTRALPARCELS.PARCELS'),
+
+			'SwissTopo': new L.TileLayer.SwissTopo(),
+			'Swiss Image': new L.TileLayer.SwissTopo('ch.swisstopo.swissimage'),
+			'Swiss Siegfried': new L.TileLayer.SwissTopo('ch.swisstopo.hiks-siegfried'),
+			'Swiss Dufour': new L.TileLayer.SwissTopo('ch.swisstopo.hiks-dufour'),
+
+			'Espagne': new L.TileLayer.WMS.IDEE(),
+			'Espagne photo': new L.TileLayer.WMS.IDEE.Photo(),
+			'Italie': new L.TileLayer.WMS.IGM(),
+
+			'Bing Road': new L.BingLayer(key.bing, {
+				type: 'Road'
+			}),
+			'Bing Photo': new L.BingLayer(key.bing), // Idem type:'Aerial'
+			'Bing Hybrid': new L.BingLayer(key.bing, {
+				type: 'AerialWithLabels'
+			}),
+
+		/* DCMM TODO
+			'Mapbox':new L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+				maxZoom: 18,
+				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+					'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+					'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+				id: 'examples.map-i86knfo3'
+			}),
+		*/
+		/* Russie
+				'Yandex':new L.Yandex(),
+				'Yandex map':new L.Yandex('map'),
+				'Yandex satellite':new L.Yandex('satellite'),
+				'Yandex hybrid':new L.Yandex('hybrid'),
+				'Yandex publicMap':new L.Yandex('publicMap'),
+				'Yandex publicMapHybrid':new L.Yandex('publicMapHybrid'),
+		*/
+		};
+
+		if (typeof google != 'undefined') // Si le script de déclaration de l'API a été inclus)
+			L.Util.extend(
+				baseLayers, {
+					'Google Road': new L.Google('ROADMAP'),
+					'Google Terrain': new L.Google('TERRAIN'),
+					'Google Photo': new L.Google(), // Idem 'SATELLITE'
+					'Google Hybrid': new L.Google('HYBRID')
+				}
+			);
+
+		window.addEventListener('load', function() {
+			map = new L.Map('map', {
+				center: new L.LatLng(46, 2), // Centre France
+				zoom: 6,
+				layers: [baseLayers['OpenStreetMap']],
+			});
+
+			// Le controle de changement de couche de carte avec la liste des cartes dispo
+			new L.Control.Layers(baseLayers).addTo(map);
+		});
+	</script>
+</head>
+
+<body>
+	<div id="map" style="width: 800px; height: 600px"></div>
+</body>
+</html>

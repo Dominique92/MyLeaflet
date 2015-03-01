@@ -1,0 +1,83 @@
+RUPTURE D'INTERFACE LL2 -> LL3
+==============================
+L.Map.MultiCRS -> L.Map
+L.GeoJSON.ajax -> L.GeoJSON.Ajax
+argsGeoJson -> argsGeoJSON
+
+BUGS
+====
+Icone full screen décalée sur mobile
+WRI: Il n'y a plus les calques Pyrénées Refuges ni chemineur
+WRI editor: Il y a aussi quelques embrouilles quand on joue avec les limites et les points
+WRI NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
+
+TODO
+====
+https://github.com/perliedman/leaflet-control-geocoder si on peut le mettre à gauche: options: position: 'topright',
+https://github.com/Esri/esri-leaflet-geocoder --
+https://github.com/smeijer/L.GeoSearch ----
+http://olegsmith.github.io/leaflet.geomanager multimaps
+Supprimer passage de Draw qui ne servent pas
+Editeur: layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
+Editeur: réduire syntaxe input geoJSON
+L.MapMultiCRS: Ajouter couches google
+Voir comment la demo GITHUB évolue si le trunk évolue
+Ajouter doc à Leaflet.GeoJSON.Ajax
+Ajouter démo à Leaflet.GeoJSON.Ajax
+Archiver GITHUB module L.MapMultiCRS
+Ajouter doc à Leaflet.MapMultiCRS
+Ajouter démo à Leaflet.MapMultiCRS
+Ajouter démo à MyLeaflet
+Plusieurs cartes dans MyLeaflet/index.html
+Clé IGN localhost & demo sur Leaflet.MapMultiCRS
+
+BEST TO DO
+==========
+Trouver proj4js source et l'éllaguer (réduire taille lib).
+Recherche par nom
+Mémorisation position dans cookies / lien entre pages.
+Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
+Position avec un crossmarker.
+Export fichier GPX.
+Editeur: Purge des points tout seuls & purge des points identiques sur un segment
+Editeur: Snap pendant création ou extension de segment.
+Editeur: Edition massif avec trou
+Editeur: Grossir la ligne éditée au survol
+Editeur de marqueurs (cross, ...)
+
+BEST TO DO WRI
+==============
+API: erreur sur geom vide dans un polynome
+DOC API: Mettre l'entête et le pied
+WRI MASSIF EDIT: si on crée un polygone de 2 sommets, gros message d'erreur
+Affichage n° massif innexistant => voir msg erreur ??
+Déraciner le wiki
+API: Durée cache réglable
+Mettre toutes les clés IGN dans le modèle de conf privée + note sur la clé bing
+POINT: Quand fond de carte expansé en mode point (force classe:width): le cache ne marche plus sur les côtés droit et bas
+POINT: choisir type d'affichage position suivant pays du point.
+Dominique 24/11/12 Dédoublement des points proches
+Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
+Passage en templates gestion/index.php
+Fin exportations
+Voir les autres ref à exportations/exportations
+API: Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
+
+CHEM3
+=====
+http://www.refuges.info/api/polygones?format=gml&bbox=5.5,45,5.5,45&type_polygon=1
+
+Avant mise en prod
+==================
+Purger les librairies du code non utilisé,
+Remettre le code DC aux normes de présentation Leaflet.
+Résorber DCMM. DELETE fichiers contenant DELETE.
+Style commentaires:
+/*
+Switzerland Coordinate Reference System
+ */
+
+NOTES
+=====
+MultiPolygon multiple => WRI massif 3116
+MultiPolygon avec trou => WRI massif 3127
