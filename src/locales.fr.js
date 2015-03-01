@@ -32,14 +32,15 @@ if (navigator.language || navigator.userLanguage == 'fr') {
 		L.Control.PolylineEditor = L.Control.PolylineEditor.extend({
 			options: {
 				help: [
+					'EDITEUR DE LIGNE',
+					'Créer une nouvelle ligne: double cliquer sur la carte',
+					'Insérer un sommet: cliquer et glisser le carré intermédiaire',
 					'Déplacer un sommet: cliquer et glisser le carré',
+					'Supprimer un sommet: cliquer sur le carré',
 					'NOTE: un effet d\'adhérence prend les coordonnées des points proches',
 					'NOTE: l\'éditeur fusionne les lignes de même extrémité',
-					'Insérer un sommet: cliquer et glisser le carré intermédiaire',
-					'Allonger une ligne: cliquer sur le carré à l\'extrémité',
-					'Créer une nouvelle ligne: double cliquer sur la carte',
-					'Supprimer un sommet: cliquer sur le carré',
 					'Supprimer un segment: cliquer sur le carré intermédiaire',
+					'Allonger une ligne: cliquer sur le carré à l\'extrémité',
 					'Supprimer une ligne: cliquer sur la ligne',
 					'Enregitrer les modifications: ',
 				]

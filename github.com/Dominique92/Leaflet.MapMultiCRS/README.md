@@ -14,7 +14,7 @@ BASIS
 Basically, the leafLet layers use a EPSG3857 CRS (Coordinate Reference Systems)
 Layers using a different CRS cannot be switched by the L.Control.Layers
 This pluggin solve this issue:
-- Include github.com/Dominique92/Leaflet.MapMultiCRS pluggin https://github.com/Dominique92/Leaflet.MapMultiCRS/blob/master/MapMultiCRS.js
+- Include the file https://github.com/Dominique92/Leaflet.MapMultiCRS/blob/master/MapMultiCRS.js
 - Declare the layers using a CRS different from EPSG3857 using the option {crs: L.CRS.EPSG900913}:
 ```javascript
 var swissLayer = new L.TileLayer(

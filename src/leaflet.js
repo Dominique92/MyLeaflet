@@ -14,16 +14,17 @@ var js_list = [
 	'../github.com/shramov/leaflet-plugins/control/Permalink.js',
 	'../github.com/MrMufflon/Leaflet.Coordinates/src/util/NumberFormatter.js', // Pour Coordinates
 	'../github.com/MrMufflon/Leaflet.Coordinates/src/Control.Coordinates.js',
+	'../github.com/perliedman/leaflet-control-geocoder/Control.Geocoder.js',
 
 	// Carte multi fournisseurs
 	'../github.com/kartena/Proj4Leaflet/lib/proj4-compressed.js',
 	'../github.com/kartena/Proj4Leaflet/src/proj4leaflet.js',
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/MapMultiCRS.js',
-	'../github.com/Dominique92/Leaflet.MapMultiCRS/Bing.js',
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/IGN.js',
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/IGM.js',
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/IDEE.js',
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/SwissTopo.js',
+	'../github.com/shramov/leaflet-plugins/layer/tile/Bing.js',
 
 	// Couches vectotielles
 	'../github.com/makinacorpus/Leaflet.FileLayer/leaflet.filelayer.js',
