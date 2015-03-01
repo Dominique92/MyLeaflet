@@ -1,0 +1,3 @@
+https://github.com/makinacorpus/Leaflet.GeometryUtil
+https://github.com/makinacorpus/Leaflet.GeometryUtil/tree/0f04b781f1320147bb363954787c20e95faad117
+Commits on Aug 13, 2014

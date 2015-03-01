@@ -1,0 +1,3 @@
+https://github.com/makinacorpus/Leaflet.Snap
+https://github.com/makinacorpus/Leaflet.Snap/tree/9af765ec09e77286166f683c85688889894ed7f2
+Commits on Feb 2, 2015

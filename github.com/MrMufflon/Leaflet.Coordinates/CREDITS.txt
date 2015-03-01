@@ -1,0 +1,3 @@
+https://github.com/MrMufflon/Leaflet.Coordinates
+https://github.com/MrMufflon/Leaflet.Coordinates/tree/ff1abfd1832bffc733b06be8216b9992077e63e2
+Commits on Sep 17, 2013
