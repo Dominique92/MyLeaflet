@@ -3,13 +3,13 @@ RUPTURE D'INTERFACE LL2 -> LL3
 L.Map.MultiCRS -> L.Map
 L.GeoJSON.ajax -> L.GeoJSON.Ajax
 argsGeoJson -> argsGeoJSON
-new L.Control.geocoder({position:'topleft', showResultIcons:true}).addTo(map);
+map & modif_point new L.Control.geocoder().addTo(map);
+If debug leaflet/src
 
 BUGS
 ====
-Voir build: erreurs de CREDIT ? / différnets textes ?
 Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN
-Demo GeoJSON.Ajax READ.ME: basis de GeoJSON.Ajax
+Doc pluggin GeoJSON.Ajax READ.ME: basis de GeoJSON.Ajax
 Icone full screen décalée sur mobile
 WRI: Il n'y a plus les calques Pyrénées Refuges ni chemineur
 WRI editor: Il y a aussi quelques embrouilles quand on joue avec les limites et les points
@@ -17,8 +17,7 @@ WRI NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste s
 
 TODO
 ====
-Controle geolocalisation: "Searc" et autres textes en français
-MultiCRS: couches Mapbox & Yandex
+Pluggin MultiCRS: couches Mapbox & Yandex
 https://github.com/perliedman/leaflet-control-geocoder si on peut le mettre à gauche: options: position: 'topright',
 https://github.com/Esri/esri-leaflet-geocoder --
 https://github.com/smeijer/L.GeoSearch ----

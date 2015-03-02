@@ -28,6 +28,20 @@ if (navigator.language || navigator.userLanguage == 'fr') {
 			}
 		});
 
+	L.Icon.Default.imagePath = 'http://cdn.leafletjs.com/leaflet-0.7.3/images';
+
+	if (L.Control.Geocoder)
+		L.Control.Geocoder = L.Control.Geocoder.extend({
+			options: {
+				position: 'topleft',
+				placeholder: 'Rechercher un lieu',
+				errorMessage: 'Non trouvé.'
+			},
+			statics: {
+				TITLE: 'Charger un fichier GPX, KML, GeoJSON'
+			}
+		});
+
 	if (L.Control.PolylineEditor)
 		L.Control.PolylineEditor = L.Control.PolylineEditor.extend({
 			options: {
