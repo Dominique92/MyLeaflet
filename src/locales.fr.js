@@ -3,6 +3,9 @@
  * Traduction des textes apparaissant à l'exécution
  */
 
+// Fixe un bug de reconnaissance de path si leaflet.js n'est pas inclu directement
+L.Icon.Default.imagePath = L.Icon.Default.imagePath.replace (/(dist\/src|dist|src)/g, 'leafletjs.com/0.7.3');
+
 if (navigator.language || navigator.userLanguage == 'fr') {
 	if (L.Control.Fullscreen)
 		L.Control.Fullscreen = L.Control.Fullscreen.extend({
@@ -28,13 +31,12 @@ if (navigator.language || navigator.userLanguage == 'fr') {
 			}
 		});
 
-	L.Icon.Default.imagePath = 'http://cdn.leafletjs.com/leaflet-0.7.3/images';
-
 	if (L.Control.Geocoder)
 		L.Control.Geocoder = L.Control.Geocoder.extend({
 			options: {
 				position: 'topleft',
-				placeholder: 'Rechercher un lieu',
+				title: 'Rechercher un lieu sur la carte',
+				placeholder: 'Nom du lieu',
 				errorMessage: 'Non trouvé.'
 			},
 			statics: {

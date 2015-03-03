@@ -25,3 +25,7 @@ De très rares modifications sont signalées dans ces fichiers par le tag "GEO",
 * /build/... : Génération des fichiers compressés de distribution.
 * /dist/... : une fois exacuté build/index.php, dist contient les fichiers autosuffisants et compressés à recopier sur votre site. Ne pas modifier ces fichiers: ils sont régénérés par /build
 * /index.php : demo et test.
+
+DEMO
+====
+[See a DEMO](http://dominique92.github.io/MyLeaflet/github.com/Dominique92/MyLeaflet/)

@@ -44,6 +44,7 @@
 
 			this._map = map;
 			this._container = container;
+			container.title = this.options.title || this.options.placeholder; //GEO
 			input = this._input = L.DomUtil.create('input');
 			input.type = 'text';
 			input.placeholder = this.options.placeholder;

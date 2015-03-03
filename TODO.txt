@@ -6,6 +6,12 @@ argsGeoJson -> argsGeoJSON
 map & modif_point new L.Control.geocoder().addTo(map);
 If debug leaflet/src
 
+AVL
+===
+adresse img pointeurs dans ???? plugin ?
+Protection carte contre les robots
+Title geocoder
+
 BUGS
 ====
 Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN
