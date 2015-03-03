@@ -400,6 +400,7 @@
 		return new L.Control.Geocoder.Nominatim(options);
 	};
 
+/*GEOoptim optimisation taille de la lib compressée
 	L.Control.Geocoder.Bing = L.Class.extend({
 		initialize: function(key) {
 			this.key = key;
@@ -736,5 +737,6 @@
 	L.Control.Geocoder.google = function(key) {
 		return new L.Control.Geocoder.Google(key);
 	};
+GEOoptim*/
 	return L.Control.Geocoder;
 }));

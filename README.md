@@ -28,4 +28,4 @@ De très rares modifications sont signalées dans ces fichiers par le tag "GEO",
 
 DEMO
 ====
-[See a DEMO](http://dominique92.github.io/MyLeaflet/github.com/Dominique92/MyLeaflet/)
+[See a DEMO](http://dominique92.github.io/MyLeaflet/)
