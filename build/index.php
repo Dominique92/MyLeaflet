@@ -8,8 +8,6 @@ if (!is_dir('../dist/images'))
 if (!is_dir('../dist/src'))
 	mkdir('../dist/src');
 copy ('../LICENSE.txt', '../dist/LICENSE.txt');
-copy ('../leafletjs.com/0.7.3/images/marker-icon.png', '../dist/images/marker-icon.png');
-copy ('../leafletjs.com/0.7.3/images/marker-shadow.png', '../dist/images/marker-shadow.png');
 file_put_contents ('../dist/READ.ME',
 "For production, include:
 <link type=\"text/css\" rel=\"stylesheet\" href=\"leaflet.css\" />

@@ -14,7 +14,7 @@ var js_list = [
 	'../github.com/shramov/leaflet-plugins/control/Permalink.js',
 	'../github.com/MrMufflon/Leaflet.Coordinates/src/util/NumberFormatter.js', // Pour Coordinates
 	'../github.com/MrMufflon/Leaflet.Coordinates/src/Control.Coordinates.js',
-	'../github.com/perliedman/leaflet-control-geocoder/Control.Geocoder.js',
+	'../github.com/k4r573n/leaflet-control-osm-geocoder/Control.OSMGeocoder.js',
 
 	// Carte multi fournisseurs
 	'../github.com/kartena/Proj4Leaflet/lib/proj4-compressed.js',

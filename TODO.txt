@@ -1,3 +1,9 @@
+https://github.com/perliedman/leaflet-control-geocoder si on peut le mettre à gauche: options: position: 'topright',
+https://github.com/Esri/esri-leaflet-geocoder --
+https://github.com/smeijer/L.GeoSearch ----
+http://olegsmith.github.io/leaflet.geomanager multimaps
+https://github.com/olegsmetanin/leaflet.geomanager
+
 BUGS
 ====
 Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.3/images/marker-icon.png)
