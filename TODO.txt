@@ -1,22 +1,20 @@
-https://github.com/perliedman/leaflet-control-geocoder si on peut le mettre à gauche: options: position: 'topright',
-https://github.com/Esri/esri-leaflet-geocoder --
-https://github.com/smeijer/L.GeoSearch ----
-http://olegsmith.github.io/leaflet.geomanager multimaps
-https://github.com/olegsmetanin/leaflet.geomanager
+AVL
+===
+Dédoublonnage des points proches
 
 BUGS
 ====
+WRI POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphelin
 Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.3/images/marker-icon.png)
 WRI NAV: décalage popup
 Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN
 Clé IGN localhost & demo sur Leaflet.MapMultiCRS
 Icone full screen décalée sur mobile
-WRI: Il n'y a plus les calques Pyrénées Refuges ni chemineur
 WRI editor: Il y a aussi quelques embrouilles quand on joue avec les limites et les points
-WRI NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
 
 TODO
 ====
+Try map.locate
 Pluggin MultiCRS: couches Mapbox & Yandex
 Supprimer passage de Draw qui ne servent pas
 Editeur: layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
@@ -37,9 +35,17 @@ Editeur: Snap pendant création ou extension de segment.
 Editeur: Edition massif avec trou
 Editeur: Grossir la ligne éditée au survol
 Editeur de marqueurs (cross, ...)
+geolocalisation
+	https://github.com/perliedman/leaflet-control-geocoder si on peut le mettre à gauche: options: position: 'topright',
+	https://github.com/Esri/esri-leaflet-geocoder --
+	https://github.com/smeijer/L.GeoSearch ----
+	http://olegsmith.github.io/leaflet.geomanager multimaps
+	https://github.com/olegsmetanin/leaflet.geomanager
 
 BEST TO DO WRI
 ==============
+WRI: Il n'y a plus les calques Pyrénées Refuges ni chemineur
+WRI NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
 API: erreur sur geom vide dans un polynome
 DOC API: Mettre l'entête et le pied
 WRI MASSIF EDIT: si on crée un polygone de 2 sommets, gros message d'erreur
@@ -49,11 +55,8 @@ API: Durée cache réglable
 Mettre toutes les clés IGN dans le modèle de conf privée + note sur la clé bing
 POINT: Quand fond de carte expansé en mode point (force classe:width): le cache ne marche plus sur les côtés droit et bas
 POINT: choisir type d'affichage position suivant pays du point.
-Dominique 24/11/12 Dédoublement des points proches
 Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
 Passage en templates gestion/index.php
-Fin exportations
-Voir les autres ref à exportations/exportations
 API: Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
 
 CHEM3

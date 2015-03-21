@@ -115,6 +115,7 @@
 							argsGeoJSON: {
 								type_points: 'all'
 							},
+							degroup: 12,
 							bbox: true,
 							url: function(feature) {
 								return 'http://www.refuges.info/point/' + feature.properties.id;
@@ -218,9 +219,11 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 					center: new L.LatLng(1.5, 101.5), // Exemple Singapour
 					center: new L.LatLng(47.8517, 8.858), // poly 3116
 					center: new L.LatLng(46, 2), // Centre France
+					center: new L.LatLng(45.34, 5.872), // Bug cabane de Bellefond
 
 					zoom: 18, // poly 3116
 					zoom: 6,
+					zoom: 12,
 					layers: layers,
 				});
 
@@ -333,7 +336,7 @@ function switch_massif (combo) {
 }
 </script>
 
-		<div id="map" style="width: 800px; height: 600px"></div>
+		<div id="map" style="width: 700px; height: 600px"></div>
 
 		<form method="post" enctype="multipart/form-data" action="#">
 			<span id="curseur-titre-lng"></span>: <input type="hidden" id="curseur-lng" name="longitude" /><input id="curseur-proj-lng" type="text" size="10" />
