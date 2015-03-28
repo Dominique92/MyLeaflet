@@ -1,7 +1,3 @@
-AVL
-===
-Dédoublonnage des points proches
-
 BUGS
 ====
 WRI POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphelin

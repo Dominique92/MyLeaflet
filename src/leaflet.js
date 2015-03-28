@@ -46,7 +46,6 @@ var js_list = [
 var scripts = document.getElementsByTagName('script'),
 	script = scripts[scripts.length - 1].src,
 	racineSources = script.substring(0, script.lastIndexOf('/')) + '/';
-
-if (navigator.userAgent.search (/bot|crawl|mediapartners/i) == -1) // Ne lance pas si l'agent est un robot
-	for (j in js_list)
-		document.write('<script type="text/javascript" src="' + racineSources + js_list[j] + '"></script>');
+   
+for (j in js_list)
+	document.write('<script type="text/javascript" src="' + racineSources + js_list[j] + '"></script>');

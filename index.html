@@ -220,10 +220,12 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 					center: new L.LatLng(47.8517, 8.858), // poly 3116
 					center: new L.LatLng(46, 2), // Centre France
 					center: new L.LatLng(45.34, 5.872), // Bug cabane de Bellefond
+					center: new L.LatLng(46, 8), // Swiss
 
 					zoom: 18, // poly 3116
-					zoom: 6,
 					zoom: 12,
+					zoom: 6,
+					zoom: 8,
 					layers: layers,
 				});
 
@@ -361,6 +363,9 @@ function switch_massif (combo) {
 		</p>
 		<p>
 			<a onclick="poiWRI.reload({liste_id_massif:4})" style="cursor:pointer;color:#02F">Reduire scope au massif du Vercors</a>
+		</p>
+		<p>
+			<a href="github.com/Dominique92/Leaflet.MapMultiCRS/swiss.html">Test SwissTopo</a>
 		</p>
 		<p>
 			TEST: switch_massif WRI
