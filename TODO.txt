@@ -7,6 +7,7 @@ Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS
 Clé IGN localhost & demo sur Leaflet.MapMultiCRS
 Icone full screen décalée sur mobile
 WRI editor: Il y a aussi quelques embrouilles quand on joue avec les limites et les points
+Recherche geo carte ne marche pas sur smartphone
 
 TODO
 ====
