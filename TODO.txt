@@ -1,5 +1,7 @@
 BUGS
 ====
+Permalink ne marche pas avec des arguments ?xx&yy
+Permalink ne note pas la layer
 WRI POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphelin
 Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.3/images/marker-icon.png)
 WRI NAV: décalage popup
@@ -22,7 +24,7 @@ Purger MyLeaflet/index.html de beaucoup d'historique
 
 BEST TO DO
 ==========
-Trouver proj4js source et l'éllaguer (réduire taille lib).
+Trouver proj4js source et l'élaguer (réduire taille lib).
 Mémorisation position dans cookies / lien entre pages.
 Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
 Position avec un crossmarker.

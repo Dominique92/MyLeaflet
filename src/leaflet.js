@@ -25,6 +25,7 @@ var js_list = [
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/IDEE.js',
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/SwissTopo.js',
 	'../github.com/shramov/leaflet-plugins/layer/tile/Bing.js',
+	'../github.com/Dominique92/Leaflet.MapMultiCRS/MapMultiVendors.js',
 
 	// Couches vectotielles
 	'../github.com/makinacorpus/Leaflet.FileLayer/leaflet.filelayer.js',

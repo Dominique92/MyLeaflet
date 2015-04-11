@@ -25,90 +25,8 @@
 		<script type="text/javascript" src="src/CrossMarker.js"></script>
 
 		<script type="text/javascript">
-
-			// Style de base des polylines édités
-			L.Polyline = L.Polyline.extend({
-				options: {
-					color: 'red',
-					weight: 4,
-					opacity: 1,
-				}
-			});
-
-			// Toutes les couches de fond possibles (mais pas affichées en même temps)
-			var map, gps, ctrlLayers,
-				baseLayers = {
-				'Maps.Refuges.Info': L.tileLayer('http://maps.refuges.info/hiking/{z}/{x}/{y}.png', {
-					attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a> & <a href="http://wiki.openstreetmap.org/wiki/Hiking/mri">MRI</a>'
-				}),
-				'Outdoors': L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', {
-					attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a> & <a href="http://www.thunderforest.com">Thunderforest</a>'
-				}),
-				'OpenStreetMap': L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-					attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a>'
-				}),
-				'OpenStreetMap-FR': L.tileLayer('http://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-					attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a>'
-				}),
-				'OpenCycleMap': L.tileLayer('http://a.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png', {
-					attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a> & <a href="http://www.openstreetmap.org">OpenCycleMap</a>'
-				}),
-
-				'IGN': new L.TileLayer.IGN(),
-				'IGN Photo': new L.TileLayer.IGN('ORTHOIMAGERY.ORTHOPHOTOS'),
-				'IGN Topo': new L.TileLayer.IGN('GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD'),
-				'IGN Classique': new L.TileLayer.IGN('GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.CLASSIQUE'),
-				'IGN Cadastre': new L.TileLayer.IGN('CADASTRALPARCELS.PARCELS'),
-
-				'SwissTopo': new L.TileLayer.SwissTopo(),
-				'Swiss Image': new L.TileLayer.SwissTopo('ch.swisstopo.swissimage'),
-				'Swiss Siegfried': new L.TileLayer.SwissTopo('ch.swisstopo.hiks-siegfried'),
-				'Swiss Dufour': new L.TileLayer.SwissTopo('ch.swisstopo.hiks-dufour'),
-
-				'Espagne': new L.TileLayer.WMS.IDEE(),
-				'Espagne photo': new L.TileLayer.WMS.IDEE.Photo(),
-				'Italie': new L.TileLayer.WMS.IGM(),
-
-				'Bing Road': new L.BingLayer(key.bing, {
-					type: 'Road'
-				}),
-				'Bing Photo': new L.BingLayer(key.bing), // Idem type:'Aerial'
-				'Bing Hybrid': new L.BingLayer(key.bing, {
-					type: 'AerialWithLabels'
-				}),
-
-			/* DCMM TODO
-				'Mapbox':new L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-					maxZoom: 18,
-					attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-						'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-						'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-					id: 'examples.map-i86knfo3'
-				}),
-			*/
-			/* Russie
-					'Yandex':new L.Yandex(),
-					'Yandex map':new L.Yandex('map'),
-					'Yandex satellite':new L.Yandex('satellite'),
-					'Yandex hybrid':new L.Yandex('hybrid'),
-					'Yandex publicMap':new L.Yandex('publicMap'),
-					'Yandex publicMapHybrid':new L.Yandex('publicMapHybrid'),
-			*/
-			};
-
-			if (typeof google != 'undefined') // Si le script de déclaration de l'API a été inclus)
-				L.Util.extend(
-					baseLayers, {
-						'Google Road': new L.Google('ROADMAP'),
-						'Google Terrain': new L.Google('TERRAIN'),
-						'Google Photo': new L.Google(), // Idem 'SATELLITE'
-						'Google Hybrid': new L.Google('HYBRID')
-					}
-				);
-
-			// Les couches affichées
-			var blName = L.UrlUtil.queryParse(L.UrlUtil.hash()).layer; // Donné par le permalink #layer=NOM
-			var baseLayer = baseLayers[blName] || baseLayers['OpenStreetMap'], // La première couche de fond affichée
+			var map, gps,
+				blName = L.UrlUtil.queryParse(L.UrlUtil.hash()).layer, // Donné par le permalink #layer=NOM
 				poiWRI = new L.GeoJSON.Ajax(
 						'http://www.refuges.info/api/bbox', {
 //DCMM???							proxy: 'proxy.php?url=',
@@ -201,7 +119,7 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 						}
 					),
 				layers = [
-					baseLayer,
+					L.Map.maps('OpenStreetMap-FR'),
 					massifs,
 					poiWRI,
 					massif,
@@ -213,25 +131,27 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 			window.addEventListener('load', function() {
 				map = new L.Map('map', {
 					fullscreenControl: true,
-
+/*
 					center: new L.LatLng(45.73845, 7.3161), // Aoste
 					center: new L.LatLng(40.4, -3.7), // Madrid
 					center: new L.LatLng(1.5, 101.5), // Exemple Singapour
 					center: new L.LatLng(47.8517, 8.858), // poly 3116
 					center: new L.LatLng(46, 2), // Centre France
 					center: new L.LatLng(45.34, 5.872), // Bug cabane de Bellefond
+*/
 					center: new L.LatLng(46, 8), // Swiss
-
+/*
 					zoom: 18, // poly 3116
 					zoom: 12,
 					zoom: 6,
+*/
 					zoom: 8,
 					layers: layers,
 				});
 
 				// Le controle de changement de couche de carte avec la liste des cartes dispo
-				new L.Control.Layers(baseLayers).addTo(map);
-				var permalink = new L.Control.Permalink({text: 'Permalink', layers: ctrlLayers}).addTo(map);
+				new L.Control.Layers(L.Map.maps()).addTo(map);
+				var permalink = new L.Control.Permalink({text: 'Permalink', layers: L.Map.maps()}).addTo(map);
 //permalink._params.target = 'IGN';
 //*DCMM*/{var v=permalink._params,r='';for(i in v)if(typeof v[i]!='function')r+=i+'='+typeof v[i]+' '+v[i]+' '+(v[i]&&v[i].CLASS_NAME?'('+v[i].CLASS_NAME+')':'')+"\n";alert(r)}
 				permalink.on('update', function(e) {
@@ -240,8 +160,9 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 				});
 
 				gps = new L.Control.Gps().addTo(map);
-				gps.on ('gpslocated', function (args){ // Mise à la position de la carte quand le GPS l'a trouvée
-					curseur.setLatLng(args.latlng);
+				gps.on ('gpslocated', function (e){
+					map.setView(e.latlng,16,{reset:true});
+					curseur.setLatLng(e.latlng); // Déplacement du curseur à la position GPS
 				});
 				new L.Control.Scale().addTo(map);
 				new L.Control.Coordinates().addTo(map);
