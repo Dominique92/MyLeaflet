@@ -31,83 +31,17 @@
 	<script src="IDEE.js"></script>
 	<script src="SwissTopo.js"></script>
 	<script src="MapMultiCRS.js"></script>
+	<script src="MapMultiVendors.js"></script>
 
 	<script type="text/javascript">
-		var baseLayers = {
-			// Google
-			'Google Road': new L.Google('ROADMAP'),
-			'Google Terrain': new L.Google('TERRAIN'),
-			'Google Photo': new L.Google(), // Idem 'SATELLITE'
-			'Google Hybrid': new L.Google('HYBRID'),
-
-			// Microsoft
-			'Bing Road': new L.BingLayer(key.bing, {type: 'Road'}),
-			'Bing Photo': new L.BingLayer(key.bing), // Idem type:'Aerial'
-			'Bing Hybrid': new L.BingLayer(key.bing, {type: 'AerialWithLabels'}),
-
-			// Open projects
-			'OpenStreetMap': L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a>'
-			}),
-			'OpenStreetMap-FR': L.tileLayer('http://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a>'
-			}),
-			'Outdoors': L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', {
-				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a> & <a href="http://www.thunderforest.com">Thunderforest</a>'
-			}),
-			'OpenCycleMap': L.tileLayer('http://a.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png', {
-				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a> & <a href="http://www.openstreetmap.org">OpenCycleMap</a>'
-			}),
-			'Maps.Refuges.Info': L.tileLayer('http://maps.refuges.info/hiking/{z}/{x}/{y}.png', {
-				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a> & <a href="http://wiki.openstreetmap.org/wiki/Hiking/mri">MRI</a>'
-			}),
-
-			// France
-			'IGN': new L.TileLayer.IGN(),
-			'IGN Photo': new L.TileLayer.IGN('ORTHOIMAGERY.ORTHOPHOTOS'),
-			'IGN Topo': new L.TileLayer.IGN('GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD'),
-			'IGN Classique': new L.TileLayer.IGN('GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.CLASSIQUE'),
-			'IGN Cadastre': new L.TileLayer.IGN('CADASTRALPARCELS.PARCELS'),
-
-			// Switzerland
-			'SwissTopo': new L.TileLayer.SwissTopo(),
-			'Swiss Image': new L.TileLayer.SwissTopo('ch.swisstopo.swissimage'),
-			'Swiss Siegfried': new L.TileLayer.SwissTopo('ch.swisstopo.hiks-siegfried'),
-			'Swiss Dufour': new L.TileLayer.SwissTopo('ch.swisstopo.hiks-dufour'),
-
-			// Spain & Italy
-			'Spain': new L.TileLayer.WMS.IDEE(),
-			'Spain photo': new L.TileLayer.WMS.IDEE.Photo(),
-			'Italy': new L.TileLayer.WMS.IGM(),
-
-/* TODO
-			'Mapbox':new L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-				maxZoom: 18,
-				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-					'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-					'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-				id: 'examples.map-i86knfo3'
-			}),
-
-			// Russia
-			'Yandex':new L.Yandex(),
-			'Yandex map':new L.Yandex('map'),
-			'Yandex satellite':new L.Yandex('satellite'),
-			'Yandex hybrid':new L.Yandex('hybrid'),
-			'Yandex publicMap':new L.Yandex('publicMap'),
-			'Yandex publicMapHybrid':new L.Yandex('publicMapHybrid'),
-*/
-		};
-
-		// Executed when the full page is loaded
-		window.addEventListener('load', function() {
+		window.addEventListener('load', function() { // Executed when the full page is loaded
 			var map = new L.Map('map', {
-				center: new L.LatLng(46, 2), // Centre France
+				center: new L.LatLng(47, 2), // Centre France
 				zoom: 6,
-				layers: [baseLayers['OpenStreetMap']],
+				layers: [L.Map.maps('OpenStreetMap-FR')],
 			});
 
-			new L.Control.Layers(baseLayers).addTo(map);
+			new L.Control.Layers(L.Map.maps()).addTo(map);
 		});
 	</script>
 </head>
@@ -115,6 +49,6 @@
 <body>
 	<p>Leaflet extension for multi vendors maps & projections (Google, Bing, Open projects, IGN France, SwissTopo, IDEE Espa&ntilde;a, IGM Italy, ...)</p>
 	<p>Sources on <a href= "https://github.com/Dominique92/Leaflet.MapMultiCRS">Github Dominique92/Leaflet.MapMultiCRS</a></p>
-	<div id="map" style="width: 800px; height: 700px"></div>
+	<div id="map" style="width: 800px; height: 600px"></div>
 </body>
 </html>
