@@ -12,12 +12,13 @@
 			var key = {
 // Clé IGN V3 développement sur: http://api.ign.fr
 // Clé IGN V3 production sur: http://pro.ign.fr/api-web => Service en ligne => S'ABONNER
-				ign:  'k05hnrprcj17gumsxsvx5pat', // Localhost Expire le 4 oct 2017
+				ign:  's62bgfv96pecuhmhux3fhcb2', // 15/07/2015
 //				ign:  'y07s87qyij0i6yhj8nzi66ww', // chemineur.fr / Contrat n° 0005820 / Expire le 17/09/2016
 //				ign:  'ev2w14tv2ez4wpypux2ael39', // www.refuges.info / Contract 0004365 / Expire le 31/08/2016
 //				ign:  'w7b9fddebwo1jrxq8gpf8rtc', // dom.refuges.info / Contrat n° 0078363 / Expire le 28/10/2017
 //				ign:  '7dy2so5o4sck2odtunq10ths', // sly.refuges.info / Contrat n° 0085217 / Expire le 05/01/2018
 				bing: 'AqTGBsziZHIJYYxgivLBf0hVdrAk9mWO5cQcb8Yux8sW5M8c8opEC2lZqKR1ZZXf', // https://www.bingmapsportal.com
+				os: 'CBE047F823B5E83CE0405F0ACA6042AB', // http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
 			};
 		</script>
 		<link type="text/css" rel="stylesheet"  href="src/leaflet.css" />
@@ -88,7 +89,7 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 						}
 					),
 				cadre = new L.Marker.Position(
-						new L.LatLng(47.49178789456123, 0.89321), {
+						new L.LatLng(47.49178789456123, 7.5), {
 							prefixe: 'cadre-',
 							icon: L.icon({
 								iconUrl: 'src/cadre.png',
@@ -136,16 +137,15 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 					center: new L.LatLng(40.4, -3.7), // Madrid
 					center: new L.LatLng(1.5, 101.5), // Exemple Singapour
 					center: new L.LatLng(47.8517, 8.858), // poly 3116
-					center: new L.LatLng(46, 2), // Centre France
 					center: new L.LatLng(45.34, 5.872), // Bug cabane de Bellefond
-*/
-					center: new L.LatLng(46, 8), // Swiss
-/*
+					center: new L.LatLng(46, 2), // Centre France
+					center: new L.LatLng(46.5, 7.5), // Swiss
 					zoom: 18, // poly 3116
-					zoom: 12,
+					zoom: 8,
 					zoom: 6,
 */
-					zoom: 8,
+					center: new L.LatLng(48.8, 2.2), // Chaville
+					zoom: 12,
 					layers: layers,
 				});
 

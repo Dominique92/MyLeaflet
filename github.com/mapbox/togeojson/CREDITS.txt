@@ -1,3 +1,3 @@
 https://github.com/mapbox/togeojson
-https://github.com/mapbox/togeojson/tree/52e0f767866f6bbf66d4cfee1fe0dbb460b2af4a
 Commits on Mar 30, 2015
+https://github.com/mapbox/togeojson/tree/52e0f767866f6bbf66d4cfee1fe0dbb460b2af4a

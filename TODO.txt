@@ -1,5 +1,6 @@
 BUGS
 ====
+Projections Lambert ne marche pas
 Permalink ne marche pas avec des arguments ?xx&yy
 Permalink ne note pas la layer
 WRI POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphelin
@@ -13,6 +14,8 @@ Recherche geo carte ne marche pas sur smartphone
 
 TODO
 ====
+OS britain maps
+Position défaut = deg min sec
 Try map.locate
 Pluggin MultiCRS: couches Mapbox & Yandex
 Supprimer passage de Draw qui ne servent pas
@@ -21,6 +24,8 @@ Editeur: réduire syntaxe input geoJSON (enlever les autres syntaxes)
 Doc pluggin GeoJSON.Ajax READ.ME: basis de GeoJSON.Ajax
 Mettre plusieurs cartes dans MyLeaflet/index.html
 Purger MyLeaflet/index.html de beaucoup d'historique
+APPLI: faire un html auto executable avec seulement outdoors et non interruptible (en faire une appli ?)
+APPLI: fonction de téléchargement des dalles dans un périmètre donné
 
 BEST TO DO
 ==========
