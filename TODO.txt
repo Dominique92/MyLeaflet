@@ -14,6 +14,9 @@ Recherche geo carte ne marche pas sur smartphone
 
 TODO
 ====
+Delete MarkerPosition/MarkerPosition.js
+Relire les , en fin de structure JS
+feature.properties.nom => feature.properties.name
 exemple Index: mettre google
 OS britain maps
 Position défaut = deg min sec

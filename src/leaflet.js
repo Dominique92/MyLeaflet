@@ -33,7 +33,7 @@ var js_list = [
 	'../github.com/mapbox/togeojson/togeojson.js',
 	'../github.com/erictheise/rrose/rrose-src.js',
 	'../github.com/Dominique92/Leaflet.GeoJSON.Ajax/GeoJSON.Ajax.js',
-	'../src/MarkerPosition/MarkerPosition.js',
+	'../src/MarkerPosition.js',
 
 	// Editeur
 	'../github.com/Leaflet/Leaflet.draw/dist/leaflet.draw-src.js',
