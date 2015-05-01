@@ -32,7 +32,7 @@ L.CRS.EPSG21781 = L.extend({},
 L.TileLayer.SwissTopo = L.TileLayer.extend({
 	options: {
 		url: 'http://wmts{s}.geo.admin.ch/1.0.0/',
-		subdomains: ['5', '6', '7', '8', '9'],
+		subdomains: '56789',
 		layerName: 'ch.swisstopo.pixelkarte-farbe',
 		time: 20120809,
 		matrixSet: 21781,

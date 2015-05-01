@@ -1,6 +1,5 @@
 BUGS
 ====
-Projections Lambert ne marche pas
 Permalink ne marche pas avec des arguments ?xx&yy
 Permalink ne note pas la layer
 WRI POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphelin
@@ -14,14 +13,15 @@ Recherche geo carte ne marche pas sur smartphone
 
 TODO
 ====
-Delete MarkerPosition/MarkerPosition.js
-Relire les , en fin de structure JS
+Permalink cookies
+//API : http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
+Swisstopo KO sur localhost
+Remonter dans GITHUB multiCSR
 feature.properties.nom => feature.properties.name
 exemple Index: mettre google
-OS britain maps
 Position défaut = deg min sec
 Try map.locate
-Pluggin MultiCRS: couches Mapbox & Yandex
+Pluggin MultiCRS: couches Mapbox, Yandex, Autriche, Britain (OS)
 Supprimer passage de Draw qui ne servent pas
 Editeur: layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
 Editeur: réduire syntaxe input geoJSON (enlever les autres syntaxes)

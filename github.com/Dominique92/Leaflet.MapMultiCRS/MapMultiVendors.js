@@ -3,23 +3,6 @@
  * Add references to many maps vendors
  */
 
-//API : http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
-/* TODO: OS britain maps
-
-L.CRS.EPSG27700 = L.extend(
-	new L.Proj.CRS(
-		'EPSG:27700',
-		'+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +datum=OSGB36 +units=m +no_defs',
-		{
-			resolutions: [1600,800,400,200,100,50,25,10,5,2.5,1,0.5,0.25,0.125,0.0625]
-		}
-	), {
-		nom: 'OSGB 1936 (British National Grid)',
-		bounds: L.bounds([-7.56, 49.96], [1.78, 60.84])
-	}
-);
-*/
-
 L.Map.maps = function(name) {
 	if (typeof L.Map._maps == 'undefined') {
 		var maps = {
@@ -33,7 +16,7 @@ L.Map.maps = function(name) {
 				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a>'
 			}),
 			'MapQuest': L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
-				subdomains: ['1','2','3','4'],
+				subdomains: '1234',
 				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a>. Tiles courtesy of <a href="http://www.mapquest.com/">MapQuest</a>'
 			}),
 
@@ -52,15 +35,6 @@ L.Map.maps = function(name) {
 			'Espagne photo': new L.TileLayer.WMS.IDEE.Photo(),
 			'Italie': new L.TileLayer.WMS.IGM(),
 
-			/* TODO: OS britain maps
-			// TODO if (key.os)
-			// BUG : projection
-			'Great Britain': new L.TileLayer.OSOpenSpace(key.os, {
-				attribution: '&copy; <a href="http://www.ordnancesurvey.co.uk/opendata/viewer/index.html">Ordnance Survey</a>',
-				crs: L.CRS.EPSG27700,
-				debug: false
-			}),
-			*/
 			/* DCMM TODO
 			'Mapbox':new L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
 				maxZoom: 18,
@@ -70,7 +44,7 @@ L.Map.maps = function(name) {
 				id: 'examples.map-i86knfo3'
 			}),
 			*/
-			/* Russie
+			/* DCMM TODO Russie
 				'Yandex':new L.Yandex(),
 				'Yandex map':new L.Yandex('map'),
 				'Yandex satellite':new L.Yandex('satellite'),
