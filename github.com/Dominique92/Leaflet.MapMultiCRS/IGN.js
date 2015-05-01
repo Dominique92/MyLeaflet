@@ -14,9 +14,9 @@
  * Clé V3 production sur: http://pro.ign.fr/api-web => Service en ligne => S'ABONNER
  * Doc sur http://api.ign.fr/jsp/site/Portal.jsp?page_id=6&document_id=80&dossier_id=53
  */
+
 // Les projections Lambert
-L.CRS.EPSG27571 = L.extend({},
-	L.CRS, // On récupère les fonctions de base
+L.CRS.EPSG27571 = L.extend(
 	new L.Proj.CRS(
 		'EPSG:27571',
 		'+title=Lambert zone 1 , LCC +proj=lcc +lat_1=49.50000000000001 +lat_0=49.50000000000001 +lon_0=0 +k_0=0.999877341 +x_0=600000 +y_0=1200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs'
@@ -27,7 +27,7 @@ L.CRS.EPSG27571 = L.extend({},
 );
 
 L.CRS.EPSG27572 = L.extend({},
-	L.CRS.EPSG27571, // On récupère les fonctions de base
+	L.CRS.EPSG27571,
 	new L.Proj.CRS(
 		'EPSG:27572',
 		'+title=Lambert 2 étendue, LCC +proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=0 +k_0=0.99987742 +x_0=600000 +y_0=2200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs'
@@ -38,7 +38,7 @@ L.CRS.EPSG27572 = L.extend({},
 );
 
 L.CRS.EPSG27573 = L.extend({},
-	L.CRS.EPSG27571, // On récupère les fonctions de base
+	L.CRS.EPSG27571,
 	new L.Proj.CRS(
 		'EPSG:27573', '+title=Lambert zone 3, LCC +proj=lcc +lat_1=44.10000000000001 +lat_0=44.10000000000001 +lon_0=0 +k_0=0.999877499 +x_0=600000 +y_0=3200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs'
 	), {
@@ -48,7 +48,7 @@ L.CRS.EPSG27573 = L.extend({},
 );
 
 L.CRS.EPSG27574 = L.extend({},
-	L.CRS.EPSG27571, // On récupère les fonctions de base
+	L.CRS.EPSG27571,
 	new L.Proj.CRS(
 		'EPSG:27574', '+title=Lambert zone 4, +proj=lcc +lat_1=42.16500000000001 +lat_0=42.16500000000001 +lon_0=0 +k_0=0.99994471 +x_0=234.358 +y_0=4185861.369 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs'
 	), {

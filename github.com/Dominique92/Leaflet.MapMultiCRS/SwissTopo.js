@@ -5,11 +5,8 @@
  * Automatiquement autorisé sur //localhost
  */
 
-/*
- * Switzerland Coordinate Reference System
- */
-L.CRS.EPSG21781 = L.extend({},
-	L.CRS, // On récupère les fonctions de base
+// Switzerland Coordinate Reference System
+L.CRS.EPSG21781 = L.extend(
 	new L.Proj.CRS(
 		'EPSG:21781',
 		'+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs', {
@@ -26,9 +23,7 @@ L.CRS.EPSG21781 = L.extend({},
 	}
 );
 
-/*
- * SwissTopo layer
- */
+// SwissTopo layer
 L.TileLayer.SwissTopo = L.TileLayer.extend({
 	options: {
 		url: 'http://wmts{s}.geo.admin.ch/1.0.0/',

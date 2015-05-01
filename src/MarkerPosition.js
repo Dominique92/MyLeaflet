@@ -51,7 +51,10 @@ L.CRS.degminsec = L.extend({}, L.CRS.decimal, {
 		return (v < 0 ? '-' : '') + d + '°' + (m < 10 ? '0' : '') + m + "'" + (s < 10 ? '0' : '') + s + '"';
 	},
 	unformat: function(v) {
-		va = L.CRS.decimal.unformat(v.replace(/-/g, '')) + '°0°';
+		va = '0' + v
+			.replace(/\s/g, '') // On purge les blancs
+			.replace(/,/g, '.') // Au cas où il y aurait une , à la place du .
+			.replace(/-/g, '') + '°0°';
 		vs = va.replace(/'|"/g, '°').split('°');
 		return (v[0] == '-' ? -1 : 1) * (parseFloat(vs[0]) + parseFloat(0 + vs[1]) / 60 + parseFloat(0 + vs[2]) / 3600);
 	}
@@ -72,9 +75,11 @@ L.CRS.degmin = L.extend({}, L.CRS.degminsec, {
 
 // Les projections UTM
 for (var u = 28; u <= 35; u++)
-	L.CRS['EPSG326' + u] = L.extend({},
-		L.CRS, // On récupère les fonctions de base
-		new L.Proj.CRS('EPSG:326' + u, '+proj=utm +zone=' + u + ' +ellps=WGS84 +datum=WGS84 +units=m +no_defs'), {
+	L.CRS['EPSG326' + u] = L.extend(
+		new L.Proj.CRS(
+			'EPSG:326' + u,
+			'+proj=utm +zone=' + u + ' +ellps=WGS84 +datum=WGS84 +units=m +no_defs'
+		), {
 			bounds: L.bounds([6 * u - 186, 0], [6 * u - 180, 84]),
 			name: 'UTM ' + u + 'N'
 		}
@@ -142,8 +147,8 @@ L.Marker.Position = L.Marker.extend({
 
 	// Affiche la position du curseur dans les éléments DOM
 	affiche: function(coord, val) {
-		var proj = L.extend( // Valeurs pas défaut
-			{
+		var proj = L.extend(
+			{ // Valeurs par défaut
 				title: {
 					lng: 'Longitude',
 					lat: 'Latitude'
@@ -165,15 +170,15 @@ L.Marker.Position = L.Marker.extend({
 					return (mm == 0 ? '' : mm + ' ') + (mm + m == 0 ? '' : (m < 100 ? '0' : '') + (m < 10 ? '0' : '') + m + ' ') + (u < 100 ? '0' : '') + (u < 10 ? '0' : '') + u;
 				},
 				unformat: function(v) {
-					v = v.replace(/\s/g, ''); // Juste enlever les séparateurs de miliers
-					v = v.replace(/,/g, '.'); // Au cas où il y aurait une , à la place du .
-					return v.length ? v : 0;
+					return '0' + v
+						.replace(/\s/g, '') // Juste enlever les séparateurs de miliers
+						.replace(/,/g, '.'); // Au cas où il y aurait une , à la place du .
 				}
 			},
 			L.CRS[this.options.projectionType]
 		);
 
-		var pp = proj.project(this._latlng);
+		var pp = proj.projection.project(this._latlng);
 		var ll = {
 			lng: pp.x,
 			lat: pp.y

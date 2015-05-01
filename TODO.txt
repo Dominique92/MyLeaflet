@@ -15,7 +15,6 @@ TODO
 ====
 Permalink cookies
 //API : http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
-Swisstopo KO sur localhost
 Remonter dans GITHUB multiCSR
 feature.properties.nom => feature.properties.name
 exemple Index: mettre google
