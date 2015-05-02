@@ -35,7 +35,7 @@ L.Map.maps = function(name) {
 			'Espagne photo': new L.TileLayer.WMS.IDEE.Photo(),
 			'Italie': new L.TileLayer.WMS.IGM(),
 
-			/* DCMM TODO
+			/* DCMM TODO Mapbox
 			'Mapbox':new L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
 				maxZoom: 18,
 				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
@@ -53,35 +53,47 @@ L.Map.maps = function(name) {
 				'Yandex publicMapHybrid':new L.Yandex('publicMapHybrid'),
 			*/
 		};
-		var ft = ['Landscape', 'Outdoors', 'Cycle', 'Transport'];
-		for (m in ft)
-			maps[ft[m]] =
-				new L.tileLayer('http://{s}.tile.thunderforest.com/'+ft[m].toLowerCase()+'/{z}/{x}/{y}.png', {
-					attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a> & '+
-						'<a href="http://www.thunderforest.com">Thunderforest '+ft[m]+'</a>'
-				});
+
+		// Cartes google
+		if (typeof google != 'undefined') // Si le script de déclaration de l'API a été inclus
+			L.Util.extend(maps, {
+			'Google Road': new L.Google('ROADMAP'),
+			'Google Terrain': new L.Google('TERRAIN'),
+			'Google Photo': new L.Google(), // Idem 'SATELLITE'
+			'Google Hybrid': new L.Google('HYBRID')
+		});
+
+		// Cartes MicroSoft
 		if (typeof key != 'undefined' && typeof key.bing != 'undefined')
 			L.Util.extend(maps, {
-				'Bing Road': new L.BingLayer(key.bing, {type: 'Road'}),
+				'Bing Road': new L.BingLayer(key.bing, {
+					type: 'Road'
+				}),
 				'Bing Photo': new L.BingLayer(key.bing), // Idem type:'Aerial'
-				'Bing Hybrid': new L.BingLayer(key.bing, {type: 'AerialWithLabels'}),
+				'Bing Hybrid': new L.BingLayer(key.bing, {
+					type: 'AerialWithLabels'
+				}),
 			});
-		if (typeof google != 'undefined') // Si le script de déclaration de l'API a été inclus)
-			L.Util.extend(maps, {
-				'Google Road': new L.Google('ROADMAP'),
-				'Google Terrain': new L.Google('TERRAIN'),
-				'Google Photo': new L.Google(), // Idem 'SATELLITE'
-				'Google Hybrid': new L.Google('HYBRID')
+
+		// Cartes ThunderForest
+		var ft = ['Landscape', 'Outdoors', 'Cycle', 'Transport'];
+		for (m in ft)
+			maps['TF ' + ft[m]] =
+			new L.tileLayer('http://{s}.tile.thunderforest.com/' + ft[m].toLowerCase() + '/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a> & ' +
+					'<a href="http://www.thunderforest.com">Thunderforest ' + ft[m] + '</a>'
 			});
+
+		// Cartes Ordnance Survey: Britain's mapping agency
+		maps['OS-GB'] = new L.TileLayer.OSOpenSpace("EC9EDE7DAD732ABAE0430C6CA40AB812", {}); //DCMM BUG effet de bord sur les cartes thunderforest de tile = 200
+		maps['OS-GB'].options.crs = L.OSOpenSpace.getCRS();
 
 		// On remet les couches dans l'ordre de leur nom
 		L.Map._maps = {};
 		var keys = Object.keys(maps).sort();
-		for(k in keys)
-			L.Map._maps [keys[k]] = maps [keys[k]];
+		for (k in keys)
+			L.Map._maps[keys[k]] = maps[keys[k]];
 	}
-	
-	return typeof L.Map._maps[name] != 'undefined'
-		? L.Map._maps[name]
-		: L.Map._maps;
+
+	return typeof L.Map._maps[name] != 'undefined' ? L.Map._maps[name] : L.Map._maps;
 }

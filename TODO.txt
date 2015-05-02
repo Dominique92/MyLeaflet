@@ -1,5 +1,7 @@
 BUGS
 ====
+On ne peut commencer que sur une carte EPSG3857
+Effet de bord cartes OS sur les cartes thunderforest de tile = 200
 Permalink ne marche pas avec des arguments ?xx&yy
 Permalink ne note pas la layer
 WRI POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphelin
@@ -13,6 +15,9 @@ Recherche geo carte ne marche pas sur smartphone
 
 TODO
 ====
+MarkerPosition => avec des cercles et droites
+MarkerPosition => indépendant des CRS ????
+MarkerPosition => crsoption.name => coord
 Permalink cookies
 //API : http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
 Remonter dans GITHUB multiCSR

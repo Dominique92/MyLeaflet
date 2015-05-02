@@ -25,7 +25,7 @@ var js_list = [
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/IDEE.js',
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/SwissTopo.js',
 	'../github.com/shramov/leaflet-plugins/layer/tile/Bing.js',
-//DCMM	'../github.com/rob-murray/os-leaflet/src/osopenspace.js',
+	'../github.com/rob-murray/os-leaflet/src/osopenspace.js',
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/MapMultiVendors.js',
 
 	// Couches vectotielles

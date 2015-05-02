@@ -122,6 +122,7 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 					),
 				layers = [
 					L.Map.maps('OpenStreetMap-FR'),
+//					L.Map.maps('OS-GB'), // DCMM BUG: On ne peut commencer que sur une carte EPSG3857
 					massifs,
 					poiWRI,
 					massif,
@@ -133,6 +134,8 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 			window.addEventListener('load', function() {
 				map = new L.Map('map', {
 					fullscreenControl: true,
+//crs: layers[0].options.crs ? layers[0].options.crs : L.CRS.EPSG3857, DCMM TODO: On ne peut commencer que sur une carte EPSG3857
+//crs: L.OSOpenSpace.getCRS(),
 /*
 					center: new L.LatLng(45.73845, 7.3161), // Aoste
 					center: new L.LatLng(40.4, -3.7), // Madrid
@@ -143,10 +146,10 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 					center: new L.LatLng(48.8, 2.2), // Chaville
 					center: new L.LatLng(48.8533, 2.349), // Paris
 					center: new L.LatLng(45.2, 5.7), // Grenoble
+					center: new L.LatLng(46.5, 7.5), // Swiss
 					zoom: 18, // poly 3116
 */
 					center: new L.LatLng(51.5, 0), // London
-					center: new L.LatLng(46.5, 7.5), // Swiss
 					zoom: 12,
 					layers: layers,
 				});
