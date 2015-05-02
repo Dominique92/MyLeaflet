@@ -22,7 +22,6 @@ Permalink cookies
 //API : http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
 Remonter dans GITHUB multiCSR
 feature.properties.nom => feature.properties.name
-exemple Index: mettre google
 Position défaut = deg min sec
 Try map.locate
 Pluggin MultiCRS: couches Mapbox, Yandex, Autriche, Britain (OS)

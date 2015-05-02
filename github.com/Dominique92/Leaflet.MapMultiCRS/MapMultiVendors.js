@@ -55,7 +55,8 @@ L.Map.maps = function(name) {
 		};
 
 		// Cartes google
-		if (typeof google != 'undefined') // Si le script de déclaration de l'API a été inclus
+		if (typeof L.Google != 'undefined' &&
+			typeof google != 'undefined') // Si le script google de déclaration de l'API a été inclus
 			L.Util.extend(maps, {
 			'Google Road': new L.Google('ROADMAP'),
 			'Google Terrain': new L.Google('TERRAIN'),
@@ -64,7 +65,8 @@ L.Map.maps = function(name) {
 		});
 
 		// Cartes MicroSoft
-		if (typeof key != 'undefined' && typeof key.bing != 'undefined')
+		if (typeof L.BingLayer != 'undefined' &&
+			typeof key != 'undefined' && typeof key.bing != 'undefined')
 			L.Util.extend(maps, {
 				'Bing Road': new L.BingLayer(key.bing, {
 					type: 'Road'
@@ -78,15 +80,18 @@ L.Map.maps = function(name) {
 		// Cartes ThunderForest
 		var ft = ['Landscape', 'Outdoors', 'Cycle', 'Transport'];
 		for (m in ft)
-			maps['TF ' + ft[m]] =
+			maps['OSM-' + ft[m]] =
 			new L.tileLayer('http://{s}.tile.thunderforest.com/' + ft[m].toLowerCase() + '/{z}/{x}/{y}.png', {
 				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a> & ' +
 					'<a href="http://www.thunderforest.com">Thunderforest ' + ft[m] + '</a>'
 			});
 
 		// Cartes Ordnance Survey: Britain's mapping agency
-		maps['OS-GB'] = new L.TileLayer.OSOpenSpace("EC9EDE7DAD732ABAE0430C6CA40AB812", {}); //DCMM BUG effet de bord sur les cartes thunderforest de tile = 200
-		maps['OS-GB'].options.crs = L.OSOpenSpace.getCRS();
+		if (typeof L.OSOpenSpace != 'undefined' &&
+			typeof key != 'undefined' && typeof key.os != 'undefined') {
+			maps['OS-GB'] = new L.TileLayer.OSOpenSpace(key.os, {}); //DCMM BUG effet de bord sur les cartes thunderforest de tile = 200
+			maps['OS-GB'].options.crs = L.OSOpenSpace.getCRS();
+		}
 
 		// On remet les couches dans l'ordre de leur nom
 		L.Map._maps = {};
