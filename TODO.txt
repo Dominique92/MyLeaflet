@@ -1,3 +1,9 @@
+RUPTURE INTERFACE (WRI)
+=================
+new L.GeoJSON.Ajax( // Les lignes
+	url: function(target) {
+		feature => target.feature
+
 BUGS
 ====
 On ne peut commencer que sur une carte EPSG3857
