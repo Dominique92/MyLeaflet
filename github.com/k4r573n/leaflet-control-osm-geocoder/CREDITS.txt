@@ -1,0 +1,3 @@
+https://github.com/k4r573n/leaflet-control-osm-geocoder
+Commits on Sep 4, 2014
+https://github.com/k4r573n/leaflet-control-osm-geocoder/tree/f833500063e165506503ee8aae997928052c3c4a
