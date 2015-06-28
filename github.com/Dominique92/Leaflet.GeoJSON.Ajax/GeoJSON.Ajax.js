@@ -152,10 +152,10 @@ L.GeoJSON.Ajax = L.GeoJSON.extend({
 					.openOn(this._map);
 			});
 
-			if (typeof this.hover == 'function')
+			if (typeof this.hover == 'function')//TODO voir pourquoi pas if (typeof e.target._options == 'object'
 				// Action au survol
 				layer.on('mouseover', function(e) {
-				e.target._options.hover(e.target, 'in');
+					e.target._options.hover(e.target, 'in');
 			});
 
 			layer.on('mouseout', function(e) {
@@ -164,7 +164,8 @@ L.GeoJSON.Ajax = L.GeoJSON.extend({
 					this._map.closePopup();
 
 				// Action à la fin du survol
-				if (typeof e.target._options.hover == 'function')
+				if (typeof e.target._options == 'object' &&
+					typeof e.target._options.hover == 'function')
 					e.target._options.hover(e.target, 'out');
 			});
 
