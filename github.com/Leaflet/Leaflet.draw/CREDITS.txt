@@ -1,3 +1,5 @@
 https://github.com/Leaflet/Leaflet.draw
+master
 Commits on Jan 24, 2015
 https://github.com/Leaflet/Leaflet.draw/tree/07b1448f4eba33982f662398988f0337ee55cc02
+Modifications: GEO

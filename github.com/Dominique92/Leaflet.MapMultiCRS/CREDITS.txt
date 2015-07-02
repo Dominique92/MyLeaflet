@@ -1,1 +1,4 @@
 https://github.com/Dominique92/Leaflet.MapMultiCRS
+master
+Commits on May 2, 2015
+https://github.com/Dominique92/Leaflet.MapMultiCRS/tree/f6add283510ac949326e390b74edacd8dc7124e8

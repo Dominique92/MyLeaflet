@@ -21,6 +21,7 @@ Recherche geo carte ne marche pas sur smartphone
 
 TODO
 ====
+Défaut leaflet= deg min sec
 MarkerPosition => avec des cercles et droites
 MarkerPosition => indépendant des CRS ????
 MarkerPosition => crsoption.name => coord
@@ -29,7 +30,6 @@ Permalink cookies
 Remonter dans GITHUB multiCSR
 feature.properties.nom => feature.properties.name
 Position défaut = deg min sec
-Try map.locate
 Pluggin MultiCRS: couches Mapbox, Yandex, Autriche, Britain (OS)
 Supprimer passage de Draw qui ne servent pas
 Editeur: layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
@@ -37,6 +37,7 @@ Editeur: réduire syntaxe input geoJSON (enlever les autres syntaxes)
 Doc pluggin GeoJSON.Ajax READ.ME: basis de GeoJSON.Ajax
 Mettre plusieurs cartes dans MyLeaflet/index.html
 Purger MyLeaflet/index.html de beaucoup d'historique
+Outil automatique de delta de versions pluggins
 APPLI: faire un html auto executable avec seulement outdoors et non interruptible (en faire une appli ?)
 APPLI: fonction de téléchargement des dalles dans un périmètre donné
 
@@ -53,6 +54,7 @@ Editeur: Edition massif avec trou
 Editeur: Grossir la ligne éditée au survol
 Editeur de marqueurs (cross, ...)
 geolocalisation
+	Try map.locate / Location pas facile à utiliser sur mobile
 	https://github.com/perliedman/leaflet-control-geocoder si on peut le mettre à gauche: options: position: 'topright',
 	https://github.com/Esri/esri-leaflet-geocoder --
 	https://github.com/smeijer/L.GeoSearch ----
@@ -61,6 +63,11 @@ geolocalisation
 
 BEST TO DO WRI
 ==============
+Relivrer LL: coord SW ne marchent pas
+Debug => debug LL
+carte OSM-FR par défaut
+news forum dans page acceuil
+support IE8
 WRI: Il n'y a plus les calques Pyrénées Refuges ni chemineur
 WRI NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
 API: erreur sur geom vide dans un polynome

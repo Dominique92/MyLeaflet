@@ -38,8 +38,8 @@
 							},
 							degroup: 12,
 							bbox: true,
-							url: function(feature) {
-								return 'http://www.refuges.info/point/' + feature.properties.id;
+							url: function(target) {
+								return 'http://www.refuges.info/point/' + target.feature.properties.id;
 							},
 							icon: function(feature) {
 								return {
@@ -144,15 +144,15 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 					center: new L.LatLng(1.5, 101.5), // Exemple Singapour
 					center: new L.LatLng(47.8517, 8.858), // poly 3116
 					center: new L.LatLng(45.34, 5.872), // Bug cabane de Bellefond
-					center: new L.LatLng(46, 2), // Centre France
 					center: new L.LatLng(48.8, 2.2), // Chaville
 					center: new L.LatLng(48.8533, 2.349), // Paris
 					center: new L.LatLng(45.2, 5.7), // Grenoble
+					center: new L.LatLng(51.5, 0), // London
 					center: new L.LatLng(46.5, 7.5), // Swiss
 					zoom: 18, // poly 3116
 */
-					center: new L.LatLng(51.5, 0), // London
-					zoom: 12,
+					center: new L.LatLng(47, 2), // Centre France
+					zoom: 6,
 					layers: layers,
 				});
 
@@ -301,6 +301,9 @@ function switch_massif (combo) {
 		</p>
 		<p>
 			<a href="build">Générer les librairies compressées leaflet.css &amp; leaflet.js</a>
+		</p>
+		<p>
+			<a href="build/test-versions.php">Vérifier les versions des pluggins importés</a>
 		</p>
 	</body>
 </html>

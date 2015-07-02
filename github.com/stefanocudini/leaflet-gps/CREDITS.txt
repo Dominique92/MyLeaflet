@@ -1,3 +1,4 @@
 https://github.com/stefanocudini/leaflet-gps
+master
 Commits on May 19, 2015
 https://github.com/stefanocudini/leaflet-gps/tree/4f01b33ae7632832b4722b7dad9610fcec08eb51
