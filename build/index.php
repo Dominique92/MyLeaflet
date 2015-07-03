@@ -39,6 +39,15 @@ $minified->merge ('../dist/leaflet.css', '', $css_list[1]);
 
 preg_match_all ('/\'\.\.\/([a-zA-Z0-9\-\/\.]+)\',/', file_get_contents ('../src/leaflet.js'), $js_list);
 $minified->merge ('../dist/leaflet.js', '', $js_list[1]);
+
+// Mise à jour pluggins Dominique92
+foreach (glob('../github.com/Dominique92/*/*') AS$f) {
+	$fs = explode ('/', $f);
+	if (is_dir ('../../'.$fs[3])) {
+		copy ($f, '../../'.$fs[3].'/'.$fs[4]);
+		echo '<br/>copy '.$f.' to ../../'.$fs[3].'/'.$fs[4];
+	}
+}
 ?>
 <p>FIN</p>
 <p><a href=".">RELANCER BUILD</a></p>

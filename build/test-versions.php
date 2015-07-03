@@ -1,5 +1,5 @@
 <?php
-foreach (glob("../github.com/*/*/CREDIT*") AS $k => $f) {
+foreach (glob('../github.com/*/*/CREDIT*') AS $k => $f) {
 		$fs = explode ('/', $f);
 		$fcs = explode ("\r", str_replace ("\n", "", file_get_contents($f)));
 		$ghc = file_get_contents ($fcs[0].'/commits/'.$fcs[1]);
@@ -11,3 +11,5 @@ foreach (glob("../github.com/*/*/CREDIT*") AS $k => $f) {
 			.'</p>';
 }
 ?>
+<p>FIN</p>
+<p><a href="..">RETOUR DEMO</a></p>
