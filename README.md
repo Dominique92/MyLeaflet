@@ -32,5 +32,5 @@ De très rares modifications sont signalées dans ces fichiers par le tag "GEO",
 * /src/... contient les sources originales des fonctions non encore disponibles en plugin Leaflet (c) 2014, Dominique Cavailhez
 * /src/leaflet.css /src/leaflet.js : listent les fichiers sources: On peut inclure ces fichiers pour le debug et ils servent liste des fichiers à compresser pour la distribution.
 * /build/... : Génération des fichiers compressés de distribution.
-* /dist/... : une fois exacuté build/index.php, dist contient les fichiers autosuffisants et compressés à recopier sur votre site. Ne pas modifier ces fichiers: ils sont régénérés par /build
+* /dist/... : une fois exécuté build/index.php, dist contient les fichiers autosuffisants et compressés à recopier sur votre site. Ne pas modifier ces fichiers: ils sont régénérés par /build
 * /index.php : demo et test.

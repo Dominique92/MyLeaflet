@@ -9,37 +9,44 @@ BUGS
 On ne peut commencer que sur une carte EPSG3857
 Effet de bord cartes OS sur les cartes thunderforest de tile = 200
 Permalink ne marche pas avec des arguments ?xx&yy
-Permalink ne note pas la layer
-WRI POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphelin
+Permalink ne note pas le layer
 Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.3/images/marker-icon.png)
-WRI NAV: décalage popup
 Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN
 Clé IGN localhost & demo sur Leaflet.MapMultiCRS
 Icone full screen décalée sur mobile
-WRI editor: Il y a aussi quelques embrouilles quand on joue avec les limites et les points
-Recherche geo carte ne marche pas sur smartphone
 
 TODO
 ====
-Défaut leaflet= deg min sec
+Traductions locales non française (position / longitude / ...)
 MarkerPosition => avec des cercles et droites
 MarkerPosition => indépendant des CRS ????
 MarkerPosition => crsoption.name => coord
 Permalink cookies
 //API : http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
-Remonter dans GITHUB multiCSR
 feature.properties.nom => feature.properties.name
-Position défaut = deg min sec
 Pluggin MultiCRS: couches Mapbox, Yandex, Autriche, Britain (OS)
 Supprimer passage de Draw qui ne servent pas
-Editeur: layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
-Editeur: réduire syntaxe input geoJSON (enlever les autres syntaxes)
 Doc pluggin GeoJSON.Ajax READ.ME: basis de GeoJSON.Ajax
 Mettre plusieurs cartes dans MyLeaflet/index.html
 Purger MyLeaflet/index.html de beaucoup d'historique
-Outil automatique de delta de versions pluggins
-APPLI: faire un html auto executable avec seulement outdoors et non interruptible (en faire une appli ?)
-APPLI: fonction de téléchargement des dalles dans un périmètre donné
+
+APPLI
+=====
+Faire un html auto executable avec seulement outdoors et non interruptible (en faire une appli ?)
+Fonction de téléchargement des dalles dans un périmètre donné
+
+TODO EDITEUR
+============
+Il y a aussi quelques embrouilles quand on joue avec les limites et les points
+layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
+Réduire syntaxe input geoJSON (enlever les autres syntaxes)
+Rendre colables les exrémités pour reboucler un polygone
+Edition de polygones
+Purge des points tout seuls & purge des points identiques sur un segment
+Snap pendant création ou extension de segment.
+Edition massif avec trou
+Grossir la ligne éditée au survol
+Editeur de marqueurs (cross, ...)
 
 BEST TO DO
 ==========
@@ -48,12 +55,7 @@ Mémorisation position dans cookies / lien entre pages.
 Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
 Position avec un crossmarker.
 Export fichier GPX.
-Editeur: Purge des points tout seuls & purge des points identiques sur un segment
-Editeur: Snap pendant création ou extension de segment.
-Editeur: Edition massif avec trou
-Editeur: Grossir la ligne éditée au survol
-Editeur de marqueurs (cross, ...)
-geolocalisation
+geolocalisation: Recherche geo carte ne marche pas sur smartphone
 	Try map.locate / Location pas facile à utiliser sur mobile
 	https://github.com/perliedman/leaflet-control-geocoder si on peut le mettre à gauche: options: position: 'topright',
 	https://github.com/Esri/esri-leaflet-geocoder --
@@ -61,18 +63,20 @@ geolocalisation
 	http://olegsmith.github.io/leaflet.geomanager multimaps
 	https://github.com/olegsmetanin/leaflet.geomanager
 
-BEST TO DO WRI
-==============
-Relivrer LL: coord SW ne marchent pas
+WRI
+===
+NAV: décalage popup
+POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphelin
+Relivrer LL: coord SW ne marchent pas / Défaut leaflet= deg min sec
 Debug => debug LL
 carte OSM-FR par défaut
 news forum dans page acceuil
 support IE8
-WRI: Il n'y a plus les calques Pyrénées Refuges ni chemineur
-WRI NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
+Il n'y a plus les calques Pyrénées Refuges ni chemineur
+NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
 API: erreur sur geom vide dans un polynome
 DOC API: Mettre l'entête et le pied
-WRI MASSIF EDIT: si on crée un polygone de 2 sommets, gros message d'erreur
+MASSIF EDIT: si on crée un polygone de 2 sommets, gros message d'erreur
 Affichage n° massif innexistant => voir msg erreur ??
 Déraciner le wiki
 API: Durée cache réglable
@@ -82,10 +86,6 @@ POINT: choisir type d'affichage position suivant pays du point.
 Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
 Passage en templates gestion/index.php
 API: Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
-
-CHEM3
-=====
-http://www.refuges.info/api/polygones?format=gml&bbox=5.5,45,5.5,45&type_polygon=1
 
 Avant mise en prod
 ==================
