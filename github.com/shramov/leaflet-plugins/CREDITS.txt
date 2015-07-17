@@ -1,4 +1,4 @@
 https://github.com/shramov/leaflet-plugins
 master
-Commits on Jun 22, 2015
-https://github.com/shramov/leaflet-plugins/tree/837fcd7df1198c76687ea0818b8c008c72d483f7
+Commits on Jul 16, 2015
+https://github.com/shramov/leaflet-plugins/tree/c06ea65a5388ef391d742088ee7c8cf20adcee38
