@@ -1,60 +1,10 @@
-RUPTURE INTERFACE (WRI)
-=================
-new L.GeoJSON.Ajax( // Les lignes
-	url: function(target) {
-		feature => target.feature
-
 BUGS
 ====
 On ne peut commencer que sur une carte EPSG3857
 Effet de bord cartes OS sur les cartes thunderforest de tile = 200
-Permalink ne marche pas avec des arguments ?xx&yy
-Permalink ne note pas le layer
 Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.3/images/marker-icon.png)
-Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN
-Clé IGN localhost & demo sur Leaflet.MapMultiCRS
 Icone full screen décalée sur mobile
-
-TODO
-====
-Traductions locales non française (position / longitude / ...)
-MarkerPosition => avec des cercles et droites
-MarkerPosition => indépendant des CRS ????
-MarkerPosition => crsoption.name => coord
-Permalink cookies
-//API : http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
-feature.properties.nom => feature.properties.name
-Pluggin MultiCRS: couches Mapbox, Yandex, Autriche, Britain (OS)
-Supprimer passage de Draw qui ne servent pas
-Doc pluggin GeoJSON.Ajax READ.ME: basis de GeoJSON.Ajax
-Mettre plusieurs cartes dans MyLeaflet/index.html
-Purger MyLeaflet/index.html de beaucoup d'historique
-
-APPLI
-=====
-Faire un html auto executable avec seulement outdoors et non interruptible (en faire une appli ?)
-Fonction de téléchargement des dalles dans un périmètre donné
-
-TODO EDITEUR
-============
-Il y a aussi quelques embrouilles quand on joue avec les limites et les points
-layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
-Réduire syntaxe input geoJSON (enlever les autres syntaxes)
-Rendre colables les exrémités pour reboucler un polygone
-Edition de polygones
-Purge des points tout seuls & purge des points identiques sur un segment
-Snap pendant création ou extension de segment.
-Edition massif avec trou
-Grossir la ligne éditée au survol
-Editeur de marqueurs (cross, ...)
-
-BEST TO DO
-==========
-Trouver proj4js source et l'élaguer (réduire taille lib).
-Mémorisation position dans cookies / lien entre pages.
-Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
-Position avec un crossmarker.
-Export fichier GPX.
+Icone locator disproportionnée
 geolocalisation: Recherche geo carte ne marche pas sur smartphone
 	Try map.locate / Location pas facile à utiliser sur mobile
 	https://github.com/perliedman/leaflet-control-geocoder si on peut le mettre à gauche: options: position: 'topright',
@@ -63,11 +13,54 @@ geolocalisation: Recherche geo carte ne marche pas sur smartphone
 	http://olegsmith.github.io/leaflet.geomanager multimaps
 	https://github.com/olegsmetanin/leaflet.geomanager
 
+TODO
+====
+MarkerPosition => indépendant des CRS ????
+MarkerPosition => crsoption.name => coord
+
+BEST TO DO
+==========
+Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
+//API : http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
+Pluggin MultiCRS: couches Mapbox, Yandex, Autriche, Britain (OS)
+Traductions locales non française (position / longitude / ...)
+feature.properties.nom => feature.properties.name (rupture interface WRI ! voir aussi les autres properties: url, ...)
+Supprimer passage de Draw qui ne servent pas
+Position avec un crossmarker / MarkerPosition => avec des cercles et droites
+Mémorisation position dans cookies / lien entre pages.
+Permalink ne marche pas avec des arguments ?xx&yy
+Permalink ne note pas le layer
+Trouver proj4js source et l'élaguer (réduire taille lib).
+Doc pluggin GeoJSON.Ajax READ.ME: basis de GeoJSON.Ajax
+Mettre plusieurs cartes dans MyLeaflet/index.html
+Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN
+Clé IGN localhost & demo sur Leaflet.MapMultiCRS
+Purger MyLeaflet/index.html de beaucoup d'historique
+
+TODO EDITEUR
+============
+Il y a aussi quelques embrouilles quand on joue avec les limites et les points
+layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
+Réduire syntaxe input geoJSON (enlever les autres syntaxes)
+Rendre colables les exrémités pour reboucler un polygone
+Purge des points tout seuls & purge des points identiques sur un segment
+Snap pendant création ou extension de segment.
+Edition massif avec trou
+Grossir la ligne éditée au survol
+Editeur de marqueurs (cross, ...)
+Edition de polygones (pleins et rebouclés)
+Export fichier GPX.
+
+APPLI
+=====
+Faire un html auto executable avec seulement outdoors et non interruptible (en faire une appli ?)
+Fonction de téléchargement des dalles dans un périmètre donné
+
 WRI
 ===
+Relivrer LL: coord SW ne marchent pas / Défaut leaflet= deg min sec
 NAV: décalage popup
 POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphelin
-Relivrer LL: coord SW ne marchent pas / Défaut leaflet= deg min sec
 Debug => debug LL
 carte OSM-FR par défaut
 news forum dans page acceuil
