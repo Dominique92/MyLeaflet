@@ -4,7 +4,7 @@ On ne peut commencer que sur une carte EPSG3857
 Effet de bord cartes OS sur les cartes thunderforest de tile = 200
 Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.3/images/marker-icon.png)
 Icone full screen décalée sur mobile
-Icone locator disproportionnée en hauteur
+Icone locator disproportionnée en hauteur (dépend de chrome / FF / ...)
 geolocalisation: Recherche geo carte ne marche pas sur smartphone
 	Try map.locate / Location pas facile à utiliser sur mobile
 	https://github.com/perliedman/leaflet-control-geocoder si on peut le mettre à gauche: options: position: 'topright',
