@@ -4,7 +4,7 @@ On ne peut commencer que sur une carte EPSG3857
 Effet de bord cartes OS sur les cartes thunderforest de tile = 200
 Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.3/images/marker-icon.png)
 Icone full screen décalée sur mobile
-Icone locator disproportionnée
+Icone locator disproportionnée en hauteur
 geolocalisation: Recherche geo carte ne marche pas sur smartphone
 	Try map.locate / Location pas facile à utiliser sur mobile
 	https://github.com/perliedman/leaflet-control-geocoder si on peut le mettre à gauche: options: position: 'topright',
@@ -31,22 +31,20 @@ Mémorisation position dans cookies / lien entre pages.
 Permalink ne marche pas avec des arguments ?xx&yy
 Permalink ne note pas le layer
 Trouver proj4js source et l'élaguer (réduire taille lib).
-Doc pluggin GeoJSON.Ajax READ.ME: basis de GeoJSON.Ajax
-Mettre plusieurs cartes dans MyLeaflet/index.html
-Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN
+Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN (ou retirer la couche !)
 Clé IGN localhost & demo sur Leaflet.MapMultiCRS
 Purger MyLeaflet/index.html de beaucoup d'historique
 
 TODO EDITEUR
 ============
+Grossir la ligne éditée au survol
 Il y a aussi quelques embrouilles quand on joue avec les limites et les points
 layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
-Réduire syntaxe input geoJSON (enlever les autres syntaxes)
-Rendre colables les exrémités pour reboucler un polygone
+Réduire syntaxe input geoJSON (enlever les autres syntaxes qui ne peuvent servir qu'avec une version de PGSQL supérieure à celle utilisée par WRI)
+Rendre colables les extrémités pour reboucler un polygone
 Purge des points tout seuls & purge des points identiques sur un segment
 Snap pendant création ou extension de segment.
 Edition massif avec trou
-Grossir la ligne éditée au survol
 Editeur de marqueurs (cross, ...)
 Edition de polygones (pleins et rebouclés)
 Export fichier GPX.
@@ -58,11 +56,9 @@ Fonction de téléchargement des dalles dans un périmètre donné
 
 WRI
 ===
-Relivrer LL: coord SW ne marchent pas / Défaut leaflet= deg min sec
 NAV: décalage popup
 POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphelin
 Debug => debug LL
-carte OSM-FR par défaut
 news forum dans page acceuil
 support IE8
 Il n'y a plus les calques Pyrénées Refuges ni chemineur
