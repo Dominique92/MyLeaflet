@@ -49,6 +49,62 @@
 							editSnapable: true
 						}
 					),
+/*
+				poiPRC = new L.GeoJSON.Ajax(
+						'http://v2.chemineur.fr/prod/chem/json.php', {
+							proxy: 'proxy.php?url=',
+							argsGeoJSON: {
+								site: 'prc',
+							},
+							degroup: 12,
+							bbox: true,
+							url: function(target) {
+								return 'http://www.pyrenees-refuges.com/fr/affiche.php?numenr=' + target.feature.properties.id;
+							},
+							icon: function(feature) {
+								return {
+									url: 'http://v2.chemineur.fr/prod/chemtype/' + feature.properties.type.icone + '.png'
+								}
+							},
+							editSnapable: true
+						}
+					),
+				poiC2C = new L.GeoJSON.Ajax(
+						'http://v2.chemineur.fr/prod/chem/json.php', {
+							proxy: 'proxy.php?url=',
+							argsGeoJSON: {
+								site: 'c2c',
+							},
+							degroup: 12,
+							bbox: true,
+							url: function(target) {
+								return 'http://www.camptocamp.org/huts/' + target.feature.properties.id;
+							},
+							icon: function(feature) {
+								return {
+									url: 'http://v2.chemineur.fr/prod/chemtype/' + feature.properties.type.icone + '.png'
+								}
+							},
+							editSnapable: true
+						}
+					),
+				poiCHEM = new L.GeoJSON.Ajax(
+						'http://v2.chemineur.fr/prod/chem/json.php', {
+							proxy: 'proxy.php?url=',
+							degroup: 12,
+							bbox: true,
+							url: function(target) {
+								return 'http://v2.chemineur.fr/point/' + target.feature.properties.id;
+							},
+							icon: function(feature) {
+								return {
+									url: 'http://v2.chemineur.fr/prod/chemtype/' + feature.properties.type.icone + '.png'
+								}
+							},
+							editSnapable: true
+						}
+					),
+*/
 				massif = new L.GeoJSON.Ajax(
 						'http://www.refuges.info/api/polygones', {
 //DCMM???							proxy: 'proxy.php?url=',

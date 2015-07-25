@@ -8,6 +8,7 @@ if (!is_dir('../dist/images'))
 if (!is_dir('../dist/src'))
 	mkdir('../dist/src');
 copy ('../LICENSE.txt', '../dist/LICENSE.txt');
+copy ('../proxy.php', '../dist/proxy.php');
 copy ('../github.com/Dominique92/Leaflet.MapMultiCRS/swiss.html', '../dist/src/swiss.html'); // Script de test des couches SwissTopo
 file_put_contents ('../dist/src/leaflet.css', '@import url("../leaflet.css");');
 file_put_contents ('../dist/READ.ME',
