@@ -15,6 +15,7 @@ var js_list = [
 	'../github.com/MrMufflon/Leaflet.Coordinates/src/util/NumberFormatter.js', // Pour Coordinates
 	'../github.com/MrMufflon/Leaflet.Coordinates/src/Control.Coordinates.js',
 	'../github.com/k4r573n/leaflet-control-osm-geocoder/Control.OSMGeocoder.js',
+	'../src/MapAutoHeight.js',
 
 	// Carte multi fournisseurs
 	'../github.com/kartena/Proj4Leaflet/lib/proj4-compressed.js',

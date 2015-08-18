@@ -20,6 +20,7 @@ MarkerPosition => crsoption.name => coord
 
 BEST TO DO
 ==========
+Afficher heure sur survol point ou segment d'une courbe
 Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
 //API : http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
 Pluggin MultiCRS: couches Mapbox, Yandex, Autriche, Britain (OS)
@@ -61,7 +62,6 @@ POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphe
 Debug => debug LL
 news forum dans page acceuil
 support IE8
-Il n'y a plus les calques Pyrénées Refuges ni chemineur
 NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
 API: erreur sur geom vide dans un polynome
 DOC API: Mettre l'entête et le pied
@@ -71,6 +71,8 @@ Déraciner le wiki
 API: Durée cache réglable
 Mettre toutes les clés IGN dans le modèle de conf privée + note sur la clé bing
 POINT: Quand fond de carte expansé en mode point (force classe:width): le cache ne marche plus sur les côtés droit et bas
+	_update: function(force) {
+	_resize: function(force) {
 POINT: choisir type d'affichage position suivant pays du point.
 Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
 Passage en templates gestion/index.php
