@@ -1,21 +1,26 @@
 /*
  * Copyright (c) 2014 Dominique Cavailhez
- * Tune the map height accordighly with map width
+ * Tune the map height accordighly with map width (max window height)
  */
 
 L.Map.addInitHook(function() {
-	if (!this._container.offsetHeight) { // Set no height to the map <DIV>
-		L.DomEvent['on'](
-			window, 'resize', // Execute when the window resize
+	if (!this._container.offsetHeight) { // Set no height to the map <DIV> to activate MapAutoHeight
+		this.autoHeight();// Execute during the init phase
+		L.DomEvent['on']( // Execute when the window resize
+			window, 'resize',
 			this.autoHeight,
 			this
 		);
-		this.autoHeight();// Execute during the init phase
 	}
 });
 
 L.Map.include({
 	autoHeight: function() {
-		this._container.style.height = this._container.offsetWidth + 'px';
+		this._container.style.height =
+			Math.min(
+				this._container.offsetWidth, // Display a square map
+				window.innerHeight // But not more than the window size
+			) + 'px';
+		this._onResize (); // Refresh Leaflet components
 	}
 });
