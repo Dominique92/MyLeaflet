@@ -19,7 +19,7 @@ L.Map.include({
 		this._container.style.height =
 			Math.min(
 				this._container.offsetWidth, // Display a square map
-				window.innerHeight // But not more than the window size
+				window.innerHeight -20 // But not more than the window size
 			) + 'px';
 		this._onResize (); // Refresh Leaflet components
 	}
