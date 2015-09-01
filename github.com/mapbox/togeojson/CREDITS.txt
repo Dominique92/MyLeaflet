@@ -1,4 +1,4 @@
 https://github.com/mapbox/togeojson
 master
-Commits on Jul 9, 2015
-https://github.com/mapbox/togeojson/tree/46dbcd050756ec0fdb93be93f6e00ad0c49dceea
+Commits on Aug 25, 2015
+https://github.com/mapbox/togeojson/tree/c409fae234d0154a01670d96aced881cba483eab

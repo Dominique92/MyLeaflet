@@ -104,7 +104,8 @@
       continuousWorld: true,
       worldCopyJump: false,
       tms: true,
-      attribution: ' OS OpenSpace',
+      attribution: '© Crown copyright and database rights 2015 Ordnance Survey.',
+      detectRetina: false
     },
 
     /**
@@ -116,7 +117,7 @@
     /**
      * The URL of the OS OpenSpace (Free) tile server
      */
-    _url: 'http://openspace.ordnancesurvey.co.uk/osmapapi/ts',
+    _url: 'https://openspace.ordnancesurvey.co.uk/osmapapi/ts',
 
     /**
      * The spec for the OS products available here in the format
@@ -158,9 +159,9 @@
 
       var tileSize = 200,
         authParams = {
-        'KEY': apiKey,
-        'URL': 'file:///'
-      };
+          'KEY': apiKey,
+          'URL': 'file:///'
+        };
 
       // hard code the tileSize until we fix this. Or Ordnance Survey do.
       this.options.tileSize = tileSize;

@@ -1,4 +1,4 @@
 https://github.com/rob-murray/os-leaflet
 master
-Commits on May 24, 2015
-https://github.com/rob-murray/os-leaflet/tree/f8fdbfcaafd6038f41eb83373dcc2903713f4220
+Commits on Aug 2, 2015
+https://github.com/rob-murray/os-leaflet/tree/7b53a09827a8bf90dba554232c4d94f23bf2c297

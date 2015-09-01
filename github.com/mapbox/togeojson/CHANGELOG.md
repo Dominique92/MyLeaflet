@@ -1,3 +1,14 @@
+## 0.13.0
+
+* Added support for StyleMap elements in Google-flavored KML
+* Improved test coverage
+* Made `#` prefix for internal style references optional
+* Uses `eslint` for code style uniformity
+
+## 0.12.2
+
+* Fix `#` prefix on exported hex colors
+
 ## 0.12.1
 
 * Fix trackpoints with elevation=0 having their elevation skipped
