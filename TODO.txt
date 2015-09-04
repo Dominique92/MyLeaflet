@@ -2,7 +2,7 @@ BUGS
 ====
 On ne peut commencer que sur une carte EPSG3857
 Effet de bord cartes OS sur les cartes thunderforest de tile = 200
-Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.3/images/marker-icon.png)
+Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.5/images/marker-icon.png)
 Icone full screen décalée sur mobile
 Icone locator disproportionnée en hauteur (dépend de chrome / FF / ...)
 geolocalisation: Recherche geo carte ne marche pas sur smartphone
@@ -12,6 +12,11 @@ geolocalisation: Recherche geo carte ne marche pas sur smartphone
 	https://github.com/smeijer/L.GeoSearch ----
 	http://olegsmith.github.io/leaflet.geomanager multimaps
 	https://github.com/olegsmetanin/leaflet.geomanager
+
+1.0.beta
+========
+Proj4Leaflet: *For compatibility with Leaflet 1.0-beta1 use the leaflet-proj-refactor branch.*
+Leaflet.draw: Support for Leaflet 1.0 is in development at the [leaflet-master](https://github.com/Leaflet/Leaflet.draw/tree/leaflet-master) branch.
 
 TODO
 ====
@@ -62,6 +67,7 @@ Fonction de téléchargement des dalles dans un périmètre donné
 
 WRI
 ===
+Ajouter import fichier sur création/modification de point (vues/point_formulaire_modification.js ligne 73): 	L.Control.fileLayerLoad().addTo(map);
 NAV: décalage popup
 POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphelin
 Debug => debug LL

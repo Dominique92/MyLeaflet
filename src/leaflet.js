@@ -6,7 +6,7 @@
  */
 
 var js_list = [
-	'../leafletjs.com/0.7.3/leaflet-src.js',
+	'../leafletjs.com/leaflet-src.js',
 
 	// Controles
 	'../github.com/Leaflet/Leaflet.fullscreen/dist/Leaflet.fullscreen.js',

@@ -5,7 +5,7 @@
  * Liste des fichiers css inclus dans la librairie
  */
 
-@import url("../leafletjs.com/0.7.3/leaflet.css");
+@import url("../leafletjs.com/leaflet.css");
 
 @import url("../github.com/Leaflet/Leaflet.fullscreen/dist/leaflet.fullscreen.css");
 @import url("../github.com/stefanocudini/leaflet-gps/src/leaflet-gps.css");
