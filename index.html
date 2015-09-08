@@ -34,7 +34,27 @@
 						'http://www.refuges.info/api/bbox', {
 //DCMM???							proxy: 'proxy.php?url=',
 							argsGeoJSON: {
-								type_points: 'all'
+								type_points: 'all',
+							},
+							degroup: 12,
+							bbox: true,
+							url: function(target) {
+								return 'http://www.refuges.info/point/' + target.feature.properties.id;
+							},
+							icon: function(feature) {
+								return {
+									url: 'http://www.refuges.info/images/icones/' + feature.properties.type.icone + '.png'
+								}
+							},
+							editSnapable: true
+						}
+					),
+				poiWRIfull = new L.GeoJSON.Ajax(
+						'http://www.refuges.info/api/bbox', {
+//DCMM???							proxy: 'proxy.php?url=',
+							argsGeoJSON: {
+								type_points: 'all',
+								nb_points: 2000 // Test aux limites
 							},
 							degroup: 12,
 							bbox: true,
@@ -321,6 +341,12 @@ function switch_massif (combo) {
 //		map.addLayer(poiLayer = poiBbox);
     }
 }
+function couche_externe(e,l) {
+	if(e.checked)
+		map.addLayer(l);
+	else
+		map.removeLayer(l);
+}
 </script>
 
 		<div id="map" style="width: 50%"></div>
@@ -355,6 +381,14 @@ function switch_massif (combo) {
 		<p>
 			TEST: switch_massif WRI
 			<input name="id_massif" type="checkbox" checked="checked" value="4"onclick="switch_massif(this)"/>
+		</p>
+		<p>
+			TEST: Swap pictos WRI aux limites
+			<input
+				id="poiWRIfull"
+				onclick="couche_externe(this, poiWRIfull)"
+				type="checkbox"
+			/>
 		</p>
 		<p>
 			<a href="build">Générer les librairies compressées leaflet.css &amp; leaflet.js</a>

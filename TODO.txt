@@ -1,5 +1,7 @@
 BUGS
 ====
+Appelle les flux avec &target=[object%20Object]
+On ne peut pas copier le permalien dans un mail (cause caractère #)
 On ne peut commencer que sur une carte EPSG3857
 Effet de bord cartes OS sur les cartes thunderforest de tile = 200
 Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.5/images/marker-icon.png)
@@ -67,7 +69,9 @@ Fonction de téléchargement des dalles dans un périmètre donné
 
 WRI
 ===
+Carte par défaut WRI non opérationelle en Nouvelle Calédonie
 Ajouter import fichier sur création/modification de point (vues/point_formulaire_modification.js ligne 73): 	L.Control.fileLayerLoad().addTo(map);
+Taille carte responsive: hauteur = 0
 NAV: décalage popup
 POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphelin
 Debug => debug LL
