@@ -22,13 +22,14 @@ Leaflet.draw: Support for Leaflet 1.0 is in development at the [leaflet-master](
 
 TODO
 ====
-A la mi-janvier 2015, la liste des URL permettant d'accéder officiellement au service WMTS "swisstopo web access" a été modifiée. Les URL wmts0.geo.admin.ch, wmts1.geo.admin.ch, wmts2.geo.admin.ch, wmts3.geo.admin.ch et wmts4.geo.admin.ch ont été remplacées. L'URL générale wmts.geo.admin.ch n'a par contre pas été modifiée. La liste des nouvelles URL se trouvent sous https://api3.geo.admin.ch/services/sdiservices.html#wmts.
-Si vous avez utilisé les URL wmts0-4, nous vous prions de modifier vos applications au plus vite. En effet, les anciennes URL seront désactivées à la fin de l'année 2015. 
-
-TODO
-====
+Séparer le compressé editeur ???? (78k)
+Export fichier GPX. ==> togpx(l.toGeoJSON())
+	//	'../github.com/tyrasd/togpx/togpx.js', // TODO: l'activer avec un contrôle
+A voir: https://github.com/calvinmetcalf/leaflet-ajax
 MarkerPosition => indépendant des CRS ????
 MarkerPosition => crsoption.name => coord
+SwissTopo: A la mi-janvier 2015, la liste des URL permettant d'accéder officiellement au service WMTS "swisstopo web access" a été modifiée. Les URL wmts0.geo.admin.ch, wmts1.geo.admin.ch, wmts2.geo.admin.ch, wmts3.geo.admin.ch et wmts4.geo.admin.ch ont été remplacées. L'URL générale wmts.geo.admin.ch n'a par contre pas été modifiée. La liste des nouvelles URL se trouvent sous https://api3.geo.admin.ch/services/sdiservices.html#wmts.
+	Si vous avez utilisé les URL wmts0-4, nous vous prions de modifier vos applications au plus vite. En effet, les anciennes URL seront désactivées à la fin de l'année 2015. 
 
 BEST TO DO
 ==========
@@ -60,7 +61,6 @@ Snap pendant création ou extension de segment.
 Edition massif avec trou
 Editeur de marqueurs (cross, ...)
 Edition de polygones (pleins et rebouclés)
-Export fichier GPX.
 
 APPLI
 =====
@@ -70,7 +70,6 @@ Fonction de téléchargement des dalles dans un périmètre donné
 WRI
 ===
 Carte par défaut WRI non opérationelle en Nouvelle Calédonie
-Ajouter import fichier sur création/modification de point (vues/point_formulaire_modification.js ligne 73): 	L.Control.fileLayerLoad().addTo(map);
 Taille carte responsive: hauteur = 0
 NAV: décalage popup
 POINT: Changement de carte dans "Aller sur la page des cartes" laisse _map orphelin
@@ -78,12 +77,9 @@ Debug => debug LL
 news forum dans page acceuil
 support IE8
 NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
-API: erreur sur geom vide dans un polynome
-DOC API: Mettre l'entête et le pied
 MASSIF EDIT: si on crée un polygone de 2 sommets, gros message d'erreur
 Affichage n° massif innexistant => voir msg erreur ??
 Déraciner le wiki
-API: Durée cache réglable
 Mettre toutes les clés IGN dans le modèle de conf privée + note sur la clé bing
 POINT: Quand fond de carte expansé en mode point (force classe:width): le cache ne marche plus sur les côtés droit et bas
 	_update: function(force) {
@@ -91,6 +87,12 @@ POINT: Quand fond de carte expansé en mode point (force classe:width): le cache 
 POINT: choisir type d'affichage position suivant pays du point.
 Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
 Passage en templates gestion/index.php
+
+WRI API
+=======
+API: erreur sur geom vide dans un polynome
+DOC API: Mettre l'entête et le pied
+API: Durée cache réglable
 API: Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
 
 Avant mise en prod

@@ -234,7 +234,7 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 				});
 
 				// Le controle de changement de couche de carte avec la liste des cartes dispo
-				new L.Control.Layers(L.Map.maps()).addTo(map);
+				new L.Control.Layers(L.Map.maps(), {WRI: poiWRIfull}).addTo(map);
 				var permalink = new L.Control.Permalink({text: 'Permalink', layers: L.Map.maps()}).addTo(map);
 //permalink._params.target = 'IGN';
 //*DCMM*/{var v=permalink._params,r='';for(i in v)if(typeof v[i]!='function')r+=i+'='+typeof v[i]+' '+v[i]+' '+(v[i]&&v[i].CLASS_NAME?'('+v[i].CLASS_NAME+')':'')+"\n";alert(r)}
@@ -383,7 +383,7 @@ function couche_externe(e,l) {
 			<input name="id_massif" type="checkbox" checked="checked" value="4"onclick="switch_massif(this)"/>
 		</p>
 		<p>
-			TEST: Swap pictos WRI aux limites
+			TEST: Swap 2000 pictos WRI
 			<input
 				id="poiWRIfull"
 				onclick="couche_externe(this, poiWRIfull)"
