@@ -228,16 +228,21 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 					center: new L.LatLng(46.5, 7.5), // Swiss
 					zoom: 18, // poly 3116
 */
-					center: new L.LatLng(47, 2), // Centre France
-					zoom: 6,
 					layers: layers,
 				});
+				if(0)				
+					map.fitBounds([
+					  [44, 1], // South West
+					  [46, 6] // North East
+					]);
+				else
+					map.setView([47, 2], 6); // Centre France
 
 				// Le controle de changement de couche de carte avec la liste des cartes dispo
 				new L.Control.Layers(L.Map.maps(), {WRI: poiWRIfull}).addTo(map);
+
 				var permalink = new L.Control.Permalink({text: 'Permalink', layers: L.Map.maps()}).addTo(map);
 //permalink._params.target = 'IGN';
-//*DCMM*/{var v=permalink._params,r='';for(i in v)if(typeof v[i]!='function')r+=i+'='+typeof v[i]+' '+v[i]+' '+(v[i]&&v[i].CLASS_NAME?'('+v[i].CLASS_NAME+')':'')+"\n";alert(r)}
 				permalink.on('update', function(e) {
 //alert('IGN');
 //permalink._params.target = 'IGN';

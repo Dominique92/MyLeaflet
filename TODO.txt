@@ -22,6 +22,7 @@ Leaflet.draw: Support for Leaflet 1.0 is in development at the [leaflet-master](
 
 TODO
 ====
+Effectuer les optimisations avec des preg_replace
 Séparer le compressé editeur ???? (78k)
 Export fichier GPX. ==> togpx(l.toGeoJSON())
 	//	'../github.com/tyrasd/togpx/togpx.js', // TODO: l'activer avec un contrôle
@@ -43,7 +44,7 @@ Supprimer passage de Draw qui ne servent pas
 Position avec un crossmarker / MarkerPosition => avec des cercles et droites
 Mémorisation position dans cookies / lien entre pages.
 Permalink ne marche pas avec des arguments ?xx&yy
-Permalink ne note pas le layer
+Permalink ne note pas le layer // Ben si: L.UrlUtil.queryParse(L.UrlUtil.hash()).layer
 Trouver proj4js source et l'élaguer (réduire taille lib).
 Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN (ou retirer la couche !)
 Clé IGN localhost & demo sur Leaflet.MapMultiCRS
@@ -69,6 +70,8 @@ Fonction de téléchargement des dalles dans un périmètre donné
 
 WRI
 ===
+Carte NAV trop haute sur grand écran
+Pb repliement carte nav sur mobile format horizontal
 Carte par défaut WRI non opérationelle en Nouvelle Calédonie
 Taille carte responsive: hauteur = 0
 NAV: décalage popup

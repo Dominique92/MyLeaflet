@@ -1,5 +1,5 @@
 https://github.com/kartena/Proj4Leaflet
 master
-Commits on Sep 2, 2015
-https://github.com/kartena/Proj4Leaflet/tree/379650917bb78c0c5c43c8bdc50e350eeb0449aa
+Commits on Sep 21, 2015
+https://github.com/kartena/Proj4Leaflet/tree/0984370e5f96758064cce1b9963d39612e483e0e
 Modifications: GEO GEOoptim
