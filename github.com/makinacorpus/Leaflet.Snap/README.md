@@ -55,7 +55,7 @@ argument.
 
 ### Options:
 
-**snapDistance** : (default 30) distance in pixels where snapping occurs
+**snapDistance** : (default 15) distance in pixels where snapping occurs
 
 **snapVertices** : (default true) whether layers vertices add additional snap attraction
 
@@ -73,6 +73,10 @@ CHANGELOG
 
 * Add snapping while drawing in Leaflet.Draw
 
+### 0.0.2
+
+* Disable snapping when the feature is deleted
+
 ### 0.0.1
 
 * Fix Snaping if guide layer has Leaflet.LayerIndex
@@ -88,5 +92,6 @@ Authors
 
 * Mathieu Leplatre
 * Tobias Bieniek
+* Frédéric Bonifas
 
 [![Makina Corpus](http://depot.makina-corpus.org/public/logo.gif)](http://makinacorpus.com)

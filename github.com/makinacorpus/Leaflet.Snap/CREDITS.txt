@@ -1,4 +1,4 @@
 https://github.com/makinacorpus/Leaflet.Snap
 gh-pages
-Commits on Mar 19, 2015
-https://github.com/makinacorpus/Leaflet.Snap/tree/7d1af0ff067a532c80c7cae4f68f5520f1e2955f
+Commits on Oct 22, 2015
+https://github.com/makinacorpus/Leaflet.Snap/tree/a8b87a63d3fc93ca6410f4de688b5fc12e8b66f3
