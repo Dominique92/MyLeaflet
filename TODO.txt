@@ -67,6 +67,7 @@ Fonction de téléchargement des dalles dans un périmètre donné
 
 WRI
 ===
+***********>>>>>>>>> Hauteur cartes WRI en full screen
 Pb repliement carte nav sur mobile format horizontal
 NAV: décalage popup
 Carte par défaut WRI non opérationelle en Nouvelle Calédonie & réunion
