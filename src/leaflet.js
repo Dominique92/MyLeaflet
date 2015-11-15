@@ -21,6 +21,7 @@ var js_list = [
 	'../github.com/kartena/Proj4Leaflet/lib/proj4-compressed.js',
 	'../github.com/kartena/Proj4Leaflet/src/proj4leaflet.js',
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/MapMultiCRS.js',
+	'../github.com/Dominique92/Leaflet.MapMultiCRS/OSM.js',
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/IGN.js',
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/IGM.js',
 	'../github.com/Dominique92/Leaflet.MapMultiCRS/IDEE.js',

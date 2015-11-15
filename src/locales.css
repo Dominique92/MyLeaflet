@@ -1,10 +1,13 @@
 /*
  * Copyright (c) 2014 Dominique Cavailhez
- * Edition d'un polyline
+ * Adaptation de quelques pluggins
  */
 
-/* Correction bug leaflet-control-osm-geocoder */
+/* Alignement taille leaflet-control-osm-geocoder sur les autres (26 * 26)*/
 .leaflet-control-geocoder a {
 	width: 26px;
-	height: 31px;
+	height: 27px;
+}
+.leaflet-control-geocoder-expanded .leaflet-control-geocoder-form {
+	padding: 1px 5px;
 }

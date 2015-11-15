@@ -1,5 +1,10 @@
+WRI
+Voir carte par défaut (si pas dans zone MRI !) ==> Dépend de lon/lat, pas du nomde pays !
+
 BUGS
 ====
+Faire un OS.js pour ls cartes UK
+Rechercher les cartes teutonnes
 Appelle les flux avec &target=[object%20Object]
 On ne peut pas copier le permalien dans un mail (cause caractère #)
 On ne peut commencer que sur une carte EPSG3857
@@ -28,13 +33,19 @@ Export fichier GPX. ==> togpx(l.toGeoJSON())
 A voir: https://github.com/calvinmetcalf/leaflet-ajax
 MarkerPosition => indépendant des CRS ????
 MarkerPosition => crsoption.name => coord
+.leaflet-bar a,
+.leaflet-control-gps .gps-button26px
+.leaflet-control-geocoder a31px
+
+https://github.com/Esri/esri-leaflet-geocoder
 
 BEST TO DO
 ==========
+Revoir les link de l'index de démo Leaflet.MapMultiCRS dans son GIT/demo
 Afficher heure sur survol point ou segment d'une courbe
 Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
 //API : http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
-Pluggin MultiCRS: couches Mapbox, Yandex, Autriche, Britain (OS)
+Pluggin MultiCRS: couches Mapbox, Yandex
 Traductions locales non française (position / longitude / ...)
 feature.properties.nom => feature.properties.name (rupture interface WRI ! voir aussi les autres properties: url, ...)
 Supprimer passage de Draw qui ne servent pas
@@ -46,6 +57,7 @@ Trouver proj4js source et l'élaguer (réduire taille lib).
 Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN (ou retirer la couche !)
 Clé IGN localhost & demo sur Leaflet.MapMultiCRS
 Purger MyLeaflet/index.html de beaucoup d'historique
+getCurrentPosition() and watchPosition() are deprecated on insecure origins, and support will be removed in the future. You should consider switching your application to a secure origin, such as HTTPS. See https://goo.gl/rStTGz for more details.
 
 TODO EDITEUR
 ============
@@ -67,19 +79,13 @@ Fonction de téléchargement des dalles dans un périmètre donné
 
 WRI
 ===
-***********>>>>>>>>> Hauteur cartes WRI en full screen
-Pb repliement carte nav sur mobile format horizontal
 NAV: décalage popup
-Carte par défaut WRI non opérationelle en Nouvelle Calédonie & réunion
-MASSIF EDIT: si on crée un polygone de 2 sommets, gros message d'erreur
-support IE8
-NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
-
-Amélioration case à cocher -> prévenir modérateur qu'un mot-clé est atteint
-POINT: choisir type d'affichage position suivant pays du point.
+Gros picto gèocoder
 Nouvelle Calédonie, Corse, toutes zones à 1 seul massif: devrait afficher directement le massif
-News forum dans page acceuil ???
-
+POINT: choisir type d'affichage position suivant pays du point.
+MASSIF EDIT: si on crée un polygone de 2 sommets, gros message d'erreur
+Support IE8
+NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
 Debug => debug LL
 Mettre toutes les clés IGN dans le modèle de conf privée + note sur la clé bing
 Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
