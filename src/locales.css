@@ -3,11 +3,28 @@
  * Adaptation de quelques pluggins
  */
 
-/* Alignement taille leaflet-control-osm-geocoder sur les autres (26 * 26)*/
-.leaflet-control-geocoder a {
-	width: 26px;
-	height: 27px;
+/* Alignement taille leaflet-control-osm-geocoder sur les autres (26 * 26) */
+.leaflet-control-geocoder {
+	border-radius: 4px;
 }
-.leaflet-control-geocoder-expanded .leaflet-control-geocoder-form {
-	padding: 1px 5px;
+.leaflet-control-geocoder a {
+	background-image: url("images/geocoder.png");
+	width:  26px !important;
+	height: 26px !important;
+}
+.leaflet-control-geocoder-form {
+	padding: 2px !important;
+	height: 22px; /* Pour FF */
+}
+.leaflet-control-geocoder-form input {
+	line-height: 15px;
+}
+
+/* Correction affichage sur mobiles */
+.leaflet-control {
+	border: 0 !important;
+}
+.leaflet-bar a {
+	width: 26px !important;
+	height: 26px !important;
 }

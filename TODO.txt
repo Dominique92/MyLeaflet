@@ -1,24 +1,9 @@
-WRI
-Voir carte par défaut (si pas dans zone MRI !) ==> Dépend de lon/lat, pas du nomde pays !
-
 BUGS
 ====
-Faire un OS.js pour ls cartes UK
-Rechercher les cartes teutonnes
 Appelle les flux avec &target=[object%20Object]
 On ne peut pas copier le permalien dans un mail (cause caractère #)
 On ne peut commencer que sur une carte EPSG3857
-Effet de bord cartes OS sur les cartes thunderforest de tile = 200
 Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.5/images/marker-icon.png)
-Icone full screen décalée sur mobile
-Icone locator disproportionnée en hauteur (dépend de chrome / FF / ...)
-geolocalisation: Recherche geo carte ne marche pas sur smartphone
-	Try map.locate / Location pas facile à utiliser sur mobile
-	https://github.com/perliedman/leaflet-control-geocoder si on peut le mettre à gauche: options: position: 'topright',
-	https://github.com/Esri/esri-leaflet-geocoder --
-	https://github.com/smeijer/L.GeoSearch ----
-	http://olegsmith.github.io/leaflet.geomanager multimaps
-	https://github.com/olegsmetanin/leaflet.geomanager
 
 1.0.beta
 ========
@@ -27,24 +12,17 @@ Leaflet.draw: Support for Leaflet 1.0 is in development at the [leaflet-master](
 
 TODO
 ====
-Séparer le compressé editeur ???? (78k)
 Export fichier GPX. ==> togpx(l.toGeoJSON())
 	//	'../github.com/tyrasd/togpx/togpx.js', // TODO: l'activer avec un contrôle
 A voir: https://github.com/calvinmetcalf/leaflet-ajax
 MarkerPosition => indépendant des CRS ????
 MarkerPosition => crsoption.name => coord
-.leaflet-bar a,
-.leaflet-control-gps .gps-button26px
-.leaflet-control-geocoder a31px
-
-https://github.com/Esri/esri-leaflet-geocoder
 
 BEST TO DO
 ==========
 Revoir les link de l'index de démo Leaflet.MapMultiCRS dans son GIT/demo
 Afficher heure sur survol point ou segment d'une courbe
 Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
-//API : http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
 Pluggin MultiCRS: couches Mapbox, Yandex
 Traductions locales non française (position / longitude / ...)
 feature.properties.nom => feature.properties.name (rupture interface WRI ! voir aussi les autres properties: url, ...)
@@ -79,12 +57,12 @@ Fonction de téléchargement des dalles dans un périmètre donné
 
 WRI
 ===
+Charger fichier GPX: pas sur un mobile !!
 NAV: décalage popup
-Gros picto gèocoder
 Nouvelle Calédonie, Corse, toutes zones à 1 seul massif: devrait afficher directement le massif
-POINT: choisir type d'affichage position suivant pays du point.
+POINT: choisir type d'affichage coordonnées suivant pays du point.
 MASSIF EDIT: si on crée un polygone de 2 sommets, gros message d'erreur
-Support IE8
+Support IE8 ??
 NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
 Debug => debug LL
 Mettre toutes les clés IGN dans le modèle de conf privée + note sur la clé bing

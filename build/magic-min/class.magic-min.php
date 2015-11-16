@@ -571,11 +571,11 @@ class Minifier {
 						$credit = preg_replace( '/([0-z-\.]*\/[0-z-\.]*\/[0-z-\.]*)\/(.*)/', 'http://$1  --  $2', $src_file );
 						break;
 					case 'src':
-						$credit = 'http://github.com/Dominique92/MyLeaflet  --  '.$src_file;
+						$credit = 'http://github.com/Dominique92/MyLeaflet -- '.$src_file;
 						$debug_file = str_replace('src','github.com-Dominique92-MyLeaflet',$debug_file);
 					default:
 			}
-			$this->output .= "\n/**\n * $credit (".round (strlen ($this->content) / 1024, 1)." kb)\n */\n";
+			$this->output .= "\n/*\n * $credit (".round (strlen ($this->content) / 1024, 1)." kb)\n */\n";
 
 			$this->src .= $this->extension == 'js'
 				? "\ndocument.write('<script type=\"text/javascript\" src=\"'+racineSources+'../$src_file\"></script>');"
