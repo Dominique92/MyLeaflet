@@ -27,7 +27,6 @@ L.Map.maps = function(name) {
 
 			'OSM-OB': new L.TileLayer.OSM.OB(),
 			'Autriche': new L.TileLayer.OSM.OB.Touristik(),
-			'OS-GB': new L.TileLayer.OSOpenSpace(key.os, {}), // Il faut mettre le {} sinon BUG
 			'Espagne': new L.TileLayer.WMS.IDEE(),
 			'Espagne photo': new L.TileLayer.WMS.IDEE.Photo(),
 			'Italie': new L.TileLayer.WMS.IGM(),
@@ -56,15 +55,21 @@ L.Map.maps = function(name) {
 			*/
 		};
 
+		// Cartes OS-map (GB)
+		if (typeof key != 'undefined' && typeof key.os != 'undefined')
+			L.Util.extend(maps, {
+				'OS-GB': new L.TileLayer.OSOpenSpace(key.os, {}) // Il faut mettre le {} sinon BUG
+			});
+
 		// Cartes google
 		if (typeof L.Google != 'undefined' &&
 			typeof google != 'undefined') // Si le script google de déclaration de l'API a été inclus
 			L.Util.extend(maps, {
-			'Google Road': new L.Google('ROADMAP'),
-			'Google Terrain': new L.Google('TERRAIN'),
-			'Google Photo': new L.Google(), // Idem 'SATELLITE'
-			'Google Hybrid': new L.Google('HYBRID')
-		});
+				'Google Road': new L.Google('ROADMAP'),
+				'Google Terrain': new L.Google('TERRAIN'),
+				'Google Photo': new L.Google(), // Idem 'SATELLITE'
+				'Google Hybrid': new L.Google('HYBRID')
+			});
 
 		// Cartes MicroSoft
 		if (typeof L.BingLayer != 'undefined' &&

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 Dominique Cavailhez
- * Allow to use layers with different projections on the same map
+ * Allows the use of layers with different projections on the same map
  * Such layer needs to be declared with layer.options.crs = L.CRS.EPSG****; // default EPSG3857
  */
 
@@ -12,7 +12,7 @@
 L.Map.addInitHook(function() {
 	// We get CRS of initial layer if any
 	for (l in this.options.layers)
-		if (this.options.layers[l].options.crs)
+		if (this.options.layers[l].options && this.options.layers[l].options.crs)
 			this.options.crs = this.options.layers[l].options.crs;
 
 	// Setup change map CRS if layer changed
