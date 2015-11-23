@@ -70,6 +70,7 @@
 							editSnapable: true
 						}
 					),
+ 				hill = new L.TileLayer.OSM.hill(),
 /*
 				poiPRC = new L.GeoJSON.Ajax(
 						'http://v2.chemineur.fr/prod/chem/json.php', {
@@ -240,7 +241,7 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 					map.setView([47, 2], 6); // Centre France
 
 				// Le controle de changement de couche de carte avec la liste des cartes dispo
-				new L.Control.Layers(L.Map.maps(), {WRI: poiWRIfull}).addTo(map);
+				new L.Control.Layers(L.Map.maps(), {WRI: poiWRIfull, Hill: hill}).addTo(map);
 
 				var permalink = new L.Control.Permalink({text: 'Permalink', layers: L.Map.maps()}).addTo(map);
 //permalink._params.target = 'IGN';

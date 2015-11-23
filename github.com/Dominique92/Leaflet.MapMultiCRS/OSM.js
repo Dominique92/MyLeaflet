@@ -46,6 +46,24 @@ L.TileLayer.OSM.OB.Touristik = L.TileLayer.OSM.OB.extend({
 	},
 });
 
+L.TileLayer.OSM.hikebike = L.TileLayer.OSM.extend({
+	options: {
+		url: 'http://{s}.tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png',
+		subdomains: 'abc',
+		maxZoom: 20,
+		attribution: '<a href="http://www.hikebikemap.org/">hikebikemap.org</a>'
+	}
+});
+
+L.TileLayer.OSM.hill = L.TileLayer.OSM.extend({
+	options: {
+		url: 'http://{s}.tiles.wmflabs.org/hillshading/{z}/{x}/{y}.png',
+		subdomains: 'abc',
+		maxZoom: 15,
+		attribution: '<a href="https://wikitech.wikimedia.org">Wikimedia Tool Labs</a>'
+	}
+});
+
 // Cartes ThunderForest
 var ft = ['Landscape', 'Outdoors', 'Cycle', 'Transport'];
 for (m in ft)

@@ -13,6 +13,7 @@ L.Map.maps = function(name) {
 			'OSM': new L.TileLayer.OSM(),
 			'OSM-FR': new L.TileLayer.OSM.FR(),
 			'Maps.Refuges.Info': new L.TileLayer.OSM.MRI(),
+			'Hike & Bike': new L.TileLayer.OSM.hikebike(),
 
 			'IGN': new L.TileLayer.IGN(),
 			'IGN Photo': new L.TileLayer.IGN('ORTHOIMAGERY.ORTHOPHOTOS'),
