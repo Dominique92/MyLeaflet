@@ -62,7 +62,7 @@ if (navigator.language || navigator.userLanguage == 'fr') {
 					'Supprimer un segment: cliquer sur le carré intermédiaire',
 					'Allonger une ligne: cliquer sur le carré à l\'extrémité',
 					'Supprimer une ligne: cliquer sur la ligne',
-					'Enregitrer les modifications: ',
+					'Enregistrer les modifications: ',
 				]
 			}
 		});
