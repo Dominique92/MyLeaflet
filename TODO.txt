@@ -20,6 +20,7 @@ MarkerPosition => crsoption.name => coord
 
 BEST TO DO
 ==========
+Revoir l'optim de la lib en utilisant ...
 Revoir les link de l'index de démo Leaflet.MapMultiCRS dans son GIT/demo
 Afficher heure sur survol point ou segment d'une courbe
 Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
@@ -57,6 +58,10 @@ Fonction de téléchargement des dalles dans un périmètre donné
 
 WRI
 ===
+Il serait bien de faire en sorte que le menu "zones couvertes" soit généré dynamiquement et rempli avec toutes nos "zones couvertes"
+Style: 2 .menu UL {
+Mettre météo
+Edition / creation / suppression polygones autres que massif
 Charger fichier GPX: pas sur un mobile !!
 NAV: décalage popup
 Nouvelle Calédonie, Corse, toutes zones à 1 seul massif: devrait afficher directement le massif

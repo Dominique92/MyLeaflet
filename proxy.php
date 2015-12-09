@@ -29,15 +29,23 @@ if (count ($args))
 $purl = parse_url ($url); // On analyse l'url
 switch ($purl ['host']) // Liste des serveurs autorisés
 {
-//    case 'labs.metacarta.com':
+	// Debug local
     case 'localhost':
+    case 'chemineur.host':
+    case 'tortillards.host':
+
+	// Sites en prod
     case 'refuges.info':
     case 'www.refuges.info':
     case 'dom.refuges.info':
     case 'chemineur.fr':
     case 'v2.chemineur.fr':
     case 'v3.chemineur.fr':
+
+	// Tests
+//    case 'labs.metacarta.com':
     case 'wmts.geo.admin.ch':
+
         // C'est bon. On va chercher le contenu et on l'affiche
 
 /******************************************************************************/
@@ -66,7 +74,7 @@ if(0) {
 		header("Content-Transfer-Encoding: binary");
 		header("Pragma: cache");
 		header("Expires: " . gmdate("D, d M Y H:i:s", time() + $secondes_de_cache) . " GMT");
-		if($config['autoriser_CORS']===TRUE) header("Access-Control-Allow-Origin: *");
+//??		if($config['autoriser_CORS']===TRUE) header("Access-Control-Allow-Origin: *");
 		header("Cache-Control: max-age=$secondes_de_cache");
 
         // Envoie le résultat
