@@ -46,8 +46,7 @@
 								return {
 									url: 'http://www.refuges.info/images/icones/' + feature.properties.type.icone + '.png'
 								}
-							},
-							editSnapable: true
+							}
 						}
 					),
 				poiWRIfull = new L.GeoJSON.Ajax(
@@ -66,8 +65,7 @@
 								return {
 									url: 'http://www.refuges.info/images/icones/' + feature.properties.type.icone + '.png'
 								}
-							},
-							editSnapable: true
+							}
 						}
 					),
  				hill = new L.TileLayer.OSM.hill(),
@@ -87,8 +85,7 @@
 								return {
 									url: 'http://v2.chemineur.fr/prod/chemtype/' + feature.properties.type.icone + '.png'
 								}
-							},
-							editSnapable: true
+							}
 						}
 					),
 				poiC2C = new L.GeoJSON.Ajax(
@@ -106,8 +103,7 @@
 								return {
 									url: 'http://v2.chemineur.fr/prod/chemtype/' + feature.properties.type.icone + '.png'
 								}
-							},
-							editSnapable: true
+							}
 						}
 					),
 				poiCHEM = new L.GeoJSON.Ajax(
@@ -122,8 +118,7 @@
 								return {
 									url: 'http://v2.chemineur.fr/prod/chemtype/' + feature.properties.type.icone + '.png'
 								}
-							},
-							editSnapable: true
+							}
 						}
 					),
 */
@@ -143,8 +138,7 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 									color: 'blue',
 									weight: 2,
 									opacity: 1,
-									fillOpacity: 0,
-									editSnapable: true
+									fillOpacity: 0
 								}
 							}
 						}
@@ -162,8 +156,7 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 								return {
 									color: feature.properties.couleur,
 									weight: 2,
-									opacity: 0.5,
-									editSnapable: true
+									opacity: 0.5
 								}
 							}
 						}
@@ -262,7 +255,7 @@ type_geom: 'polylines', massif: 2789 // Avec bug
 				var poly =
 					new L.Polyline(
 						[[43.5, -1.5], [43.56, -1.2], [43.55, -0.96], [43.3, -0.36]],
-						{editSnapable: true}
+						{}
 					)
 					.addTo(map);
 				var poly2 =

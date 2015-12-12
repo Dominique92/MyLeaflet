@@ -1,26 +1,35 @@
 BUGS
 ====
+Remontée des GoeoJSON ne marche pas sur les couches éditée.
+Snap sur les coins haut du marqueur ????
+Copie / fusion des segments de polygones
+Inclusion de fichiers GPX
+Coloriage des polylines créés
+Traduction des textes en français
+Classe éditeur / intégration (actuellement dans le /edit.html)
+Tester GoeoJSON avec WRI
+Tester GoeoJSON avec GeoBB
+Icone du marqueur = picto WRI/CHEM
+Repise automatique des .zip sur les github
+A voir: https://github.com/calvinmetcalf/leaflet-ajax
 Appelle les flux avec &target=[object%20Object]
 On ne peut pas copier le permalien dans un mail (cause caractère #)
 On ne peut commencer que sur une carte EPSG3857
 Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.5/images/marker-icon.png)
 
-1.0.beta
-========
-Proj4Leaflet: *For compatibility with Leaflet 1.0-beta1 use the leaflet-proj-refactor branch.*
-Leaflet.draw: Support for Leaflet 1.0 is in development at the [leaflet-master](https://github.com/Leaflet/Leaflet.draw/tree/leaflet-master) branch.
-
 TODO
 ====
 Export fichier GPX. ==> togpx(l.toGeoJSON())
 	//	'../github.com/tyrasd/togpx/togpx.js', // TODO: l'activer avec un contrôle
-A voir: https://github.com/calvinmetcalf/leaflet-ajax
 MarkerPosition => indépendant des CRS ????
 MarkerPosition => crsoption.name => coord
 
 BEST TO DO
 ==========
-Revoir l'optim de la lib en utilisant ...
+Bouge un sommet d'un polyline snappe sur la ligne droite entre les 2 sommets adjacents
+Remplacement de MarkerPosition par draw
+Basculement entre Polyline et Polygone
+Revoir l'optim de la lib en utilisant ... Créetion lib avec optimiseur (extract ?? import ??)
 Revoir les link de l'index de démo Leaflet.MapMultiCRS dans son GIT/demo
 Afficher heure sur survol point ou segment d'une courbe
 Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
@@ -50,6 +59,11 @@ Snap pendant création ou extension de segment.
 Edition massif avec trou
 Editeur de marqueurs (cross, ...)
 Edition de polygones (pleins et rebouclés)
+
+1.0.beta
+========
+Proj4Leaflet: *For compatibility with Leaflet 1.0-beta1 use the leaflet-proj-refactor branch.*
+Leaflet.draw: Support for Leaflet 1.0 is in development at the [leaflet-master](https://github.com/Leaflet/Leaflet.draw/tree/leaflet-master) branch.
 
 APPLI
 =====

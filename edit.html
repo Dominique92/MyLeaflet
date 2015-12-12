@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaflet.draw vector editing handlers</title>
+		<link type="text/css" rel="stylesheet"  href="src/leaflet.css" />
+		<script type="text/javascript" src="src/leaflet.js"></script>
+</head>
+<body>
+	<div id="carte" style="width: 800px; height: 600px"></div>
+	<div id="change" style="display:none"><i>Changé</i></div>
+	<textarea id="entree" rows="20" cols="120">
+{"type":"FeatureCollection","features":[{"type":"Feature","properties":{},"geometry":{"type":"LineString","coordinates":[[2.581787109375,46.22545288226939],[2.713623046875,45.1510532655634],[4.185791015625,44.972570682240644],[4.866943359375,45.805828539928356]]}},{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[3.1640625,45.336701909968106]}}]}
+	</textarea>
+
+	<script>
+window.addEventListener('load', function() {
+	var carte = L.map('carte').setView([45, 5], 7);
+	new L.TileLayer.OSM.FR().addTo(carte);
+
+	var accrochables = L.featureGroup().addTo(carte); // Couches auxquelles le snap s'accroche
+	var editables = L.featureGroup().addTo(accrochables); // Couches éditables
+	var optionsEdit = {
+		featureGroup: editables,
+		edit: false, // Permet le contrôle delete
+		marker: {guideLayers: [accrochables]},
+		polyline: {guideLayers: [accrochables]},
+		polygon: {guideLayers: [accrochables]},
+		rectangle: false,
+		circle: false
+	};
+	var editeur = new L.Control.Draw({
+		edit: optionsEdit, // Snap à la création d'élements
+		draw: optionsEdit, // Snap à l'édition d'élements
+	}).addTo(carte);
+
+	// Ajout d'un nouveau feature éditable
+	carte.on('draw:created', function(e) {
+		e.layer.addTo(editables);
+		if (e.layer._latlng) // Point
+			e.layer.snapediting = new L.Handler.MarkerSnap(carte, e.layer);
+		else // Ligne
+			e.layer.snapediting = new L.Handler.PolylineSnap(carte, e.layer);
+		e.layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
+		e.layer.snapediting.addGuideLayer(accrochables);
+		e.layer.snapediting.enable();
+	});
+
+	// Initialisation des couches éditables avec le contenu du champ en entrée
+	var ljs = new L.geoJson(JSON.parse(document.getElementById('entree').innerHTML));
+	for (var l in ljs._layers)
+		carte.fire('draw:created', {
+			layer: ljs._layers[l]
+		});
+/*
+						carte.on('draw:editstart', function (e) {
+							for (var l in editables._layers)
+								editables._layers[l].snapediting.enable();
+						});
+						carte.on('draw:editstop', function (e) {
+						});
+*/
+	// Restitution des couches éditables dans le champ en sortie
+	carte.on('draw:drawstop', edited);
+	carte.on('draw:edited', edited);
+	carte.on('draw:deleted', edited);
+	function edited() {
+		document.getElementById('entree').innerHTML = JSON.stringify(editables.toGeoJSON());
+		document.getElementById('change').style.display = '';
+	}
+
+	new L.GeoJSON.Ajax(
+		'http://www.refuges.info/api/bbox', {
+			argsGeoJSON: {
+				type_points: 'all',
+				nb_points: 10,
+			},
+			degroup: 12,
+			bbox: true,
+			url: function(target) {
+				return 'http://www.refuges.info/point/' + target.feature.properties.id;
+			},
+			icon: function(feature) {
+				return {
+					url: 'http://www.refuges.info/images/icones/' + feature.properties.type.icone + '.png'
+				}
+			},
+		}
+	).addTo(accrochables);
+	new L.GeoJSON.Ajax(
+		'http://www.refuges.info/api/polygones', {
+			argsGeoJSON: {
+				massif: 4 // Vercors
+			},
+			style: function(feature) {
+				return {
+					color: 'blue',
+					weight: 2,
+					opacity: 1,
+					fillOpacity: 0,
+				}
+			}
+		}
+	).addTo(accrochables);
+});
+	</script>
+</body>
+</html>

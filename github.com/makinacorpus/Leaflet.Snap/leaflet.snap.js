@@ -75,6 +75,7 @@ L.Handler.MarkerSnap = L.Handler.extend({
             snaplist = [];
 
         function processGuide(guide) {
+if (marker._leaflet_id == guide._leaflet_id) return; //GEO ne snappe pas son propre marqueur
             if ((guide._layers !== undefined) &&
                 (typeof guide.searchBuffer !== 'function')) {
                 // Guide is a layer group and has no L.LayerIndexMixin (from Leaflet.LayerIndex)
@@ -87,6 +88,7 @@ L.Handler.MarkerSnap = L.Handler.extend({
                 snaplist = snaplist.concat(guide.searchBuffer(latlng, this._buffer));
             }
             else {
+if(!marker.mere || marker.mere._poly != guide) // GEO ne regarde pas son propre polygone
                 snaplist.push(guide);
             }
         }
@@ -101,6 +103,16 @@ L.Handler.MarkerSnap = L.Handler.extend({
                                                  latlng,
                                                  this.options.snapDistance,
                                                  this.options.snapVertices);
+//GEO
+		if(!closest && marker.mere) {
+			var copie = new L.Polyline (marker.mere._poly._latlngs, marker.mere._poly.options); // On clone le polygone
+			copie._latlngs.splice(marker._index, 1);
+			// Est ce que le marqueur trouvé est un sommet de son polygone sauf le marqueur qui cherche
+			var closest = this._findClosestLayerSnap(this._map, [copie], latlng, this.options.snapDistance, true);
+			if (closest)
+				closest.layer = marker.mere;
+		}
+//GEO
         closest = closest || {layer: null, latlng: null};
         this._updateSnap(marker, closest.layer, closest.latlng);
     },
@@ -154,6 +166,7 @@ L.Handler.PolylineSnap = L.Edit.Poly.extend({
 
     _createMarker: function (latlng, index) {
         var marker = L.Edit.Poly.prototype._createMarker.call(this, latlng, index);
+marker.mere = this; // GEO
 
         // Treat middle markers differently
         var isMiddle = index === undefined;
