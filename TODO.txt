@@ -1,64 +1,75 @@
 BUGS
 ====
-Remontée des GoeoJSON ne marche pas sur les couches éditée.
+Annule ne remet pas les marqueurs / Ne met pas à jour quand on ajoute un sommet puis le retire
 Snap sur les coins haut du marqueur ????
-Copie / fusion des segments de polygones
-Inclusion de fichiers GPX
-Coloriage des polylines créés
-Traduction des textes en français
-Classe éditeur / intégration (actuellement dans le /edit.html)
-Tester GoeoJSON avec WRI
-Tester GoeoJSON avec GeoBB
-Icone du marqueur = picto WRI/CHEM
-Repise automatique des .zip sur les github
-A voir: https://github.com/calvinmetcalf/leaflet-ajax
-Appelle les flux avec &target=[object%20Object]
-On ne peut pas copier le permalien dans un mail (cause caractère #)
-On ne peut commencer que sur une carte EPSG3857
-Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.5/images/marker-icon.png)
 
 TODO
 ====
-Export fichier GPX. ==> togpx(l.toGeoJSON())
-	//	'../github.com/tyrasd/togpx/togpx.js', // TODO: l'activer avec un contrôle
-MarkerPosition => indépendant des CRS ????
-MarkerPosition => crsoption.name => coord
+Icone du marqueur = picto WRI/CHEM
+Basculement entre Polyline et Polygone
+Outil de coupe de polyline
+Inclusion de fichiers GPX
+Classe éditeur / intégration (actuellement dans le /edit.html)
+Intégrer édit GoeoJSON avec WRI
+Intégrer édit GoeoJSON avec GeoBB
+
+BUILD
+=====
+Reprise automatique des .zip github
+Revoir l'optim de la lib en utilisant ... Créetion lib avec optimiseur (extract ?? import ??)
+	https://github.com/Esri/esri-leaflet-geocoder/blob/master/src/EsriLeafletGeocoding.js
+	https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/export
+	https://developers.google.com/speed/articles/compressing-javascript
+	http://closure-compiler.appspot.com/
+Supprimer passage de Draw qui ne servent pas
+Trouver proj4js source et l'élaguer (réduire taille lib).
+
+PERMALINK / COOKIES
+===================
+On ne peut pas copier le permalien dans un mail (cause caractère #)
+Permalink ne marche pas avec des arguments ?xx&yy
+Mémorisation position dans cookies / lien entre pages.
+Permalink ne note pas le layer // Ben si: L.UrlUtil.queryParse(L.UrlUtil.hash()).layer
+
+TEST
+====
+Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
+Il y a aussi quelques embrouilles quand on joue avec les limites et les points
+
+BUGS BEST TO FIX
+================
+On ne peut commencer que sur une carte EPSG3857
+Appelle les flux avec &target=[object%20Object]
+getCurrentPosition() and watchPosition() are deprecated on insecure origins, and support will be removed in the future. You should consider switching your application to a secure origin, such as HTTPS. See https://goo.gl/rStTGz for more details.
+layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
+Google Maps API warning: SensorNotRequired: 
 
 BEST TO DO
 ==========
-Bouge un sommet d'un polyline snappe sur la ligne droite entre les 2 sommets adjacents
-Remplacement de MarkerPosition par draw
-Basculement entre Polyline et Polygone
-Revoir l'optim de la lib en utilisant ... Créetion lib avec optimiseur (extract ?? import ??)
-Revoir les link de l'index de démo Leaflet.MapMultiCRS dans son GIT/demo
+A voir: https://github.com/calvinmetcalf/leaflet-ajax
+Export fichier GPX. ==> togpx(l.toGeoJSON())
+	//	'../github.com/tyrasd/togpx/togpx.js', // TODO: l'activer avec un contrôle
+Remplacement de MarkerPosition par draw / Position avec un crossmarker / MarkerPosition => avec des cercles et droites
+Traductions locales non française (position / longitude / ...) / Traduire zoom in & zoom out (sur haut carte)
+MarkerPosition => indépendant des CRS ????
+MarkerPosition => crsoption.name => coord
 Afficher heure sur survol point ou segment d'une courbe
-Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
 Pluggin MultiCRS: couches Mapbox, Yandex
-Traductions locales non française (position / longitude / ...)
-feature.properties.nom => feature.properties.name (rupture interface WRI ! voir aussi les autres properties: url, ...)
-Supprimer passage de Draw qui ne servent pas
-Position avec un crossmarker / MarkerPosition => avec des cercles et droites
-Mémorisation position dans cookies / lien entre pages.
-Permalink ne marche pas avec des arguments ?xx&yy
-Permalink ne note pas le layer // Ben si: L.UrlUtil.queryParse(L.UrlUtil.hash()).layer
-Trouver proj4js source et l'élaguer (réduire taille lib).
-Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN (ou retirer la couche !)
+
+DEBUG & DEMOS
+=============
+Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.5/images/marker-icon.png)
+Revoir les link de l'index de démo Leaflet.MapMultiCRS dans son GIT/demo
 Clé IGN localhost & demo sur Leaflet.MapMultiCRS
+Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN (ou retirer la couche !)
 Purger MyLeaflet/index.html de beaucoup d'historique
-getCurrentPosition() and watchPosition() are deprecated on insecure origins, and support will be removed in the future. You should consider switching your application to a secure origin, such as HTTPS. See https://goo.gl/rStTGz for more details.
 
 TODO EDITEUR
 ============
 Grossir la ligne éditée au survol
-Il y a aussi quelques embrouilles quand on joue avec les limites et les points
-layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
-Réduire syntaxe input geoJSON (enlever les autres syntaxes qui ne peuvent servir qu'avec une version de PGSQL supérieure à celle utilisée par WRI)
-Rendre colables les extrémités pour reboucler un polygone
 Purge des points tout seuls & purge des points identiques sur un segment
-Snap pendant création ou extension de segment.
 Edition massif avec trou
 Editeur de marqueurs (cross, ...)
-Edition de polygones (pleins et rebouclés)
 
 1.0.beta
 ========

@@ -59,13 +59,52 @@ window.addEventListener('load', function() {
 						carte.on('draw:editstop', function (e) {
 						});
 */
+
 	// Restitution des couches éditables dans le champ en sortie
+	L.DomEvent.on(document, 'mouseup', edited);
 	carte.on('draw:drawstop', edited);
 	carte.on('draw:edited', edited);
 	carte.on('draw:deleted', edited);
 	function edited() {
 		document.getElementById('entree').innerHTML = JSON.stringify(editables.toGeoJSON());
 		document.getElementById('change').style.display = '';
+
+		// Fusionne les segments ayant mêmes extrémités
+		var change = true;
+		while (change) {
+			change = false;
+			for (il1 in editables._layers) // Pour toutes les couches
+				for (il2 in editables._layers) {
+					var el1 = editables._layers[il1],
+						el2 = editables._layers[il2],
+						ll1 = el1._latlngs,
+						ll2 = el2._latlngs,
+						lladd = null; // Les points à ajouter
+					if (ll1 && !el1.options.fill &&  // Si les 2 sont des Polyline
+						ll2 && !el2.options.fill &&
+						el1._leaflet_id < el2._leaflet_id) { // 1 seule fois chaque couple
+						if (ll1[0].equals(ll2[0])) {
+							ll1.reverse();
+							lladd = ll2;
+						} else if (ll1[0].equals(ll2[ll2.length - 1])) {
+							ll1.reverse();
+							lladd = ll2.reverse();
+						} else if (ll1[ll1.length - 1].equals(ll2[0])) {
+							lladd = ll2;
+						} else if (ll1[ll1.length - 1].equals(ll2[ll2.length - 1])) {
+							lladd = ll2.reverse();
+						}
+						if (lladd) { // Points à fusionner
+							ll1.pop(); // On enlève le dernier point pour qu'il ne soit pas en double
+							el1._latlngs = ll1.concat(lladd);
+							el1.editing._poly.redraw(); // On redessine le trait
+							el1.snapediting.updateMarkers(); // On redessine les marqueurs
+							editables.removeLayer(el2.editing._poly); // On efface l'autre polyline
+							change = true;
+						}
+					}
+				}
+		}
 	}
 
 	new L.GeoJSON.Ajax(

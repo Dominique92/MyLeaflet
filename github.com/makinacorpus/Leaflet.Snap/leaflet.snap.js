@@ -103,7 +103,7 @@ if(!marker.mere || marker.mere._poly != guide) // GEO ne regarde pas son propre 
                                                  latlng,
                                                  this.options.snapDistance,
                                                  this.options.snapVertices);
-//GEO
+//GEO snap son propre polynome
 		if(!closest && marker.mere) {
 			var copie = new L.Polyline (marker.mere._poly._latlngs, marker.mere._poly.options); // On clone le polygone
 			copie._latlngs.splice(marker._index, 1);
@@ -112,7 +112,7 @@ if(!marker.mere || marker.mere._poly != guide) // GEO ne regarde pas son propre 
 			if (closest)
 				closest.layer = marker.mere;
 		}
-//GEO
+//GEO snap son propre polynome
         closest = closest || {layer: null, latlng: null};
         this._updateSnap(marker, closest.layer, closest.latlng);
     },
@@ -166,7 +166,7 @@ L.Handler.PolylineSnap = L.Edit.Poly.extend({
 
     _createMarker: function (latlng, index) {
         var marker = L.Edit.Poly.prototype._createMarker.call(this, latlng, index);
-marker.mere = this; // GEO
+marker.mere = this; // GEO snap son propre polynome
 
         // Treat middle markers differently
         var isMiddle = index === undefined;
@@ -255,7 +255,7 @@ L.Draw.Feature.SnapMixin = {
 
     _snap_on_disabled: function () {
         delete this._snapper;
-    },
+    }
 };
 
 L.Draw.Feature.include(L.Draw.Feature.SnapMixin);

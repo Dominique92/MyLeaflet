@@ -28,7 +28,7 @@ Ce répertoire est composé de:
 * leafletjs.com & github.com contiennent les sources du kernel Leaflet et de pluggins.
 Un fichier CREDIT.txt à la base de chacun des sous-répertoires donne l'origine du pluggin et la version.
 Bien que très peu servent, la totalité des fichiers d'origine de chaque plugin a été conservée sauf les fichiers docs, examples, spec & test, ceux dont le nom commence par un . et les répertoires vides.
-De très rares modifications sont signalées dans ces fichiers par le tag "GEO", "GEOoptim" ou "GEOmin".
+De très rares modifications sont signalées dans ces fichiers par le tag "GEO", "GEOmod", "GEOoptim" ou "GEOmin".
 * /src/... contient les sources originales des fonctions non encore disponibles en plugin Leaflet (c) 2014, Dominique Cavailhez
 * /src/leaflet.css /src/leaflet.js : listent les fichiers sources: On peut inclure ces fichiers pour le debug et ils servent liste des fichiers à compresser pour la distribution.
 * /build/... : Génération des fichiers compressés de distribution.

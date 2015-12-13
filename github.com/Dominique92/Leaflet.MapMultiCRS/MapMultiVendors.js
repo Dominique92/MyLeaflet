@@ -32,11 +32,6 @@ L.Map.maps = function(name) {
 			'Espagne photo': new L.TileLayer.WMS.IDEE.Photo(),
 			'Italie': new L.TileLayer.WMS.IGM(),
 
-			'MapQuest': L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
-				subdomains: '1234',
-				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a>. Tiles courtesy of <a href="http://www.mapquest.com/">MapQuest</a>'
-			}),
-
 			/* DCMM TODO Mapbox
 			'Mapbox':new L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
 				maxZoom: 18,
@@ -54,6 +49,11 @@ L.Map.maps = function(name) {
 				'Yandex publicMap':new L.Yandex('publicMap'),
 				'Yandex publicMapHybrid':new L.Yandex('publicMapHybrid'),
 			*/
+
+			'MapQuest': L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
+				subdomains: '1234',
+				attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a>. Tiles courtesy of <a href="http://www.mapquest.com/">MapQuest</a>'
+			})
 		};
 
 		// Cartes OS-map (GB)
@@ -82,7 +82,7 @@ L.Map.maps = function(name) {
 				'Bing Photo': new L.BingLayer(key.bing), // Idem type:'Aerial'
 				'Bing Hybrid': new L.BingLayer(key.bing, {
 					type: 'AerialWithLabels'
-				}),
+				})
 			});
 
 		// Cartes ThunderForest

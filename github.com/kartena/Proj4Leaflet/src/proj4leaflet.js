@@ -149,7 +149,7 @@
 		}
 	});
 
-/*GEOoptim optimisation taille de la lib compressée
+/*GEO optimisation taille de la lib compressée
 	L.Proj.CRS.TMS = L.Proj.CRS.extend({
 		options: {
 			tileSize: 256
@@ -386,7 +386,7 @@
 			};
 		}());
 	}
-GEOoptim*/
+GEO optim*/
 
 	return L.Proj;
 }));

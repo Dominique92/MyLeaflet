@@ -37,13 +37,13 @@ L.TileLayer.OSM.OB = L.TileLayer.OSM.extend({
 		url: 'http://ec{s}.cdn.ecmaps.de/WmsGateway.ashx.jpg?Experience=kompass&MapStyle=KOMPASS OSM&TileX={x}&TileY={y}&ZoomLevel={z}',
 		maxZoom: 15,
 		subdomains: '0123'
-	},
+	}
 });
 
 L.TileLayer.OSM.OB.Touristik = L.TileLayer.OSM.OB.extend({
 	options: {
 		url: 'http://ec{s}.cdn.ecmaps.de/WmsGateway.ashx.jpg?Experience=kompass&MapStyle=KOMPASS Touristik&TileX={x}&TileY={y}&ZoomLevel={z}'
-	},
+	}
 });
 
 L.TileLayer.OSM.hikebike = L.TileLayer.OSM.extend({

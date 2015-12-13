@@ -39,6 +39,15 @@ var js_list = [
 	'../src/MarkerPosition.js',
 
 	// Editeur
+	'../github.com/makinacorpus/Leaflet.GeometryUtil/dist/leaflet.geometryutil.js', // src/ext/geometryutil.js plante.
+	'../github.com/Leaflet/Leaflet.draw/dist/leaflet.draw-src.js',
+	'../github.com/makinacorpus/Leaflet.Snap/leaflet.snap.js',
+	'../src/PolylineEditor.js',
+
+	// Adaptations
+	'../src/locales.fr.js',
+];
+var js_list_DRAW = [
 	'../github.com/Leaflet/Leaflet.draw/src/Leaflet.draw.js',
 
 	'../github.com/Leaflet/Leaflet.draw/src/Toolbar.js',
@@ -70,13 +79,6 @@ var js_list = [
 //*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/edit/handler/Edit.Rectangle.js',
 /*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/edit/handler/Edit.Marker.js',
 
-//*DCMM*/	'../github.com/Leaflet/Leaflet.draw/dist/leaflet.draw-src.js',
-	'../github.com/makinacorpus/Leaflet.GeometryUtil/dist/leaflet.geometryutil.js', // src/ext/geometryutil.js plante.
-	'../github.com/makinacorpus/Leaflet.Snap/leaflet.snap.js',
-	'../src/PolylineEditor.js',
-
-	// Adaptations
-	'../src/locales.fr.js',
 ];
 
 var scripts = document.getElementsByTagName('script'),

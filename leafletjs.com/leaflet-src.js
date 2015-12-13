@@ -3148,7 +3148,7 @@ L.tileLayer.canvas = function (options) {
  * L.ImageOverlay is used to overlay images over the map (to specific geographical bounds).
  */
 
-/*GEOoptim optimisation taille de la lib compressée
+/*GEO optimisation taille de la lib compressée
 L.ImageOverlay = L.Class.extend({
 	includes: L.Mixin.Events,
 
@@ -3286,7 +3286,7 @@ L.ImageOverlay = L.Class.extend({
 L.imageOverlay = function (url, bounds, options) {
 	return new L.ImageOverlay(url, bounds, options);
 };
-GEOoptim*/
+GEO optimisation */
 
 /*
  * L.Icon is an image-based icon class that you can use with L.Marker for custom markers.
@@ -4150,7 +4150,7 @@ L.Map.include({
  * Popup extension to L.Marker, adding popup-related methods.
  */
 
-/*GEOoptim optimisation taille de la lib compressée
+/*GEO optimisation taille de la lib compressée
 L.Marker.include({
 	openPopup: function () {
 		if (this._popup && this._map && !this._map.hasLayer(this._popup)) {
@@ -4237,7 +4237,7 @@ L.Marker.include({
 		this._popup.setLatLng(e.latlng);
 	}
 });
-GEOoptim*/
+GEO optimisation */
 
 /*
  * L.LayerGroup is a class to combine several layers into one so that
@@ -4815,7 +4815,7 @@ L.Map.include({
  * Popup extension to L.Path (polylines, polygons, circles), adding popup-related methods.
  */
 
-/*GEOoptim optimisation taille de la lib compressée
+/*GEO optimisation taille de la lib compressée
 L.Path.include({
 
 	bindPopup: function (content, options) {
@@ -4877,7 +4877,7 @@ L.Path.include({
 		this._map.openPopup(this._popup);
 	}
 });
-GEOoptim*/
+GEO optimisation */
 
 /*
  * Vector rendering for IE6-8 through VML.
@@ -7844,7 +7844,7 @@ L.Handler.MarkerDrag = L.Handler.extend({
 
 	_onDragStart: function () {
 		this._marker
-//GEOoptim optimisation taille de la lib compressée		    .closePopup()
+//GEO optimisation taille de la lib compressée		    .closePopup()
 		    .fire('movestart')
 		    .fire('dragstart');
 	},

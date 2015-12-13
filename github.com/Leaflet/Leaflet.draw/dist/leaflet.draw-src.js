@@ -1359,7 +1359,7 @@ L.Edit.Poly = L.Handler.extend({
 		};
 
 		marker
-//GEO		    .on('click', onClick, this)
+//GEO coupe segment en 2 sur editeur 1		    .on('click', onClick, this)
 		    .on('dragstart', onDragStart, this)
 		    .on('dragend', onDragEnd, this);
 
