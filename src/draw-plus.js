@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 Dominique Cavailhez
- * Markers, Polylines, Polygons, Rectangles & Circle editor
+ * Markers, polylines, polygons, rectangles & circle editor
  * Slice polylines
  * Polygon to polyline switch
  * Stick on other vectors layers
@@ -53,7 +53,7 @@ L.Edit.Poly.include({
 				});
 			}
 		}
-		this._fireEdit();
+		this._poly._map.fire('draw:edited');
 	}
 });
 
@@ -91,13 +91,89 @@ L.EditToolbar.SwitchPoly = L.EditToolbar.Delete.extend({
 			});
 	},
 
-	revertLayers: function() {},
+	revertLayers: function() {}, // Cancel does'nt work well
 
 	_removeLayer: function(e) {
-		this._map.fire('draw:created', {
-			layer: e.target.options.fill ? new L.Polyline(e.target._latlngs) : new L.Polygon(e.target._latlngs)
+		this._map.fire('draw:created', { // Then, we recreate the layout with another type
+			layer:
+				e.target.options.fill
+					? new L.Polyline(e.target._latlngs)
+					: new L.Polygon(e.target._latlngs)
 		});
 
 		L.EditToolbar.Delete.prototype._removeLayer.call(this, e);
 	},
+});
+
+L.Control.Draw.Plus = L.Control.Draw.extend({
+/*
+	initialize: function (options) {
+		//options.edit.featureGroup = L.featureGroup(); // Container for layer to edit
+
+		L.Control.Draw.prototype.initialize.call(this, options);
+	},
+*/
+
+	onAdd: function (map) {
+		// Define a container for the editable layers
+		this._toolbars.edit.options.featureGroup = L.featureGroup().addTo(map);
+
+		// Add a new feature
+if(0)
+		map.on('draw:created', function(e) {
+			e.layer.addTo(this._toolbars.edit.options.featureGroup);
+			if (e.layer._latlng) // Point
+				e.layer.snapediting = new L.Handler.MarkerSnap(map, e.layer);
+			else // Ligne
+				e.layer.snapediting = new L.Handler.PolylineSnap(map, e.layer);
+			e.layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
+e.layer.snapediting.addGuideLayer(accrochables);
+			e.layer.snapediting.enable();
+			map.fire('draw:edited');
+		}, this);
+
+		// All events at the end of a modification
+		L.DomEvent.on(document, 'mouseup', function () {map.fire('draw:edited')});
+//		map.on('draw:drawstop', function () {map.fire('draw:edited')});
+//		map.on('draw:created', function () {map.fire('draw:edited')});
+//		map.on('draw:deleted', function () {map.fire('draw:edited')});
+		map.on('draw:edited', this.merge, this);
+
+		return L.Control.Draw.prototype.onAdd.call(this, map);
+	},
+
+	// Merge polyline having end at the same position
+	merge: function () {
+		var ls = this._toolbars.edit.options.featureGroup._layers;
+		for (var change = true; change; change = false)
+			for (il1 in ls) // Pour toutes les couches éditables
+				for (il2 in ls) {
+					var ll1 = ls[il1]._latlngs,
+						ll2 = ls[il2]._latlngs,
+						lladd = null; // List of points to move to another polyline
+					if (ll1 && !ls[il1].options.fill &&  // If both are polyline
+						ll2 && !ls[il2].options.fill &&
+						ls[il1]._leaflet_id < ls[il2]._leaflet_id) { // Only once each pair
+						if (ll1[0].equals(ll2[0])) {
+							ll1.reverse();
+							lladd = ll2;
+						} else if (ll1[0].equals(ll2[ll2.length - 1])) {
+							ll1.reverse();
+							lladd = ll2.reverse();
+						} else if (ll1[ll1.length - 1].equals(ll2[0])) {
+							lladd = ll2;
+						} else if (ll1[ll1.length - 1].equals(ll2[ll2.length - 1])) {
+							lladd = ll2.reverse();
+						}
+						if (lladd) {
+							ll1.pop(); // We remove the last point as it's already there
+							ls[il1]._latlngs = ll1.concat(lladd);
+							ls[il1].editing._poly.redraw(); // Redraw the lines
+							ls[il1].snapediting.updateMarkers(); // Redraw the markers
+							this._toolbars.edit.options.featureGroup.removeLayer(ls[il2].editing._poly); // Erase the initial Polyline
+							change = true;
+						}
+					}
+				}
+	}
 });

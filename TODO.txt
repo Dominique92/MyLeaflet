@@ -1,5 +1,7 @@
 BUGS
 ====
+Les polygones créés sont roses !
+Ne remonte pas la suppression d'un sommet quand le switcheur est en service. Une autre action devrait le fermer !
 Snap sur les coins haut du marqueur ????
 
 TODO

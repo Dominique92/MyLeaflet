@@ -18,25 +18,24 @@ window.addEventListener('load', function() {
 	new L.TileLayer.OSM.FR().addTo(carte);
 
 	var accrochables = L.featureGroup().addTo(carte); // Couches auxquelles le snap s'accroche
-	var editables = L.featureGroup().addTo(accrochables); // Couches éditables
-	var optionsEdit = {
-		featureGroup: editables,
-		edit: false, // Permet le contrôle delete
-		marker: {guideLayers: [accrochables]},
-		polyline: {guideLayers: [accrochables]},
-		polygon: {guideLayers: [accrochables]},
-		rectangle: false,
-		circle: false,
-		switchpoly: true
-	};
-	var editeur = new L.Control.Draw({
-		edit: optionsEdit, // Snap à la création d'élements
-		draw: optionsEdit // Snap à l'édition d'élements
+	var editeur = new L.Control.Draw.Plus({
+		draw: {
+			marker: {guideLayers: [accrochables]}, // Snap à la création d'élements
+			polyline: {guideLayers: [accrochables]},
+			polygon: {guideLayers: [accrochables]},
+			rectangle: false,
+			circle: false
+		},
+		edit: {
+			edit: false,
+			switchpoly: true
+		}
 	}).addTo(carte);
+editeur._toolbars.edit.options.featureGroup.addTo(accrochables); // Couches éditables
 
 	// Ajout d'un nouveau feature éditable
 	carte.on('draw:created', function(e) {
-		e.layer.addTo(editables);
+		e.layer.addTo(editeur._toolbars.edit.options.featureGroup);
 		if (e.layer._latlng) // Point
 			e.layer.snapediting = new L.Handler.MarkerSnap(carte, e.layer);
 		else // Ligne
@@ -44,6 +43,13 @@ window.addEventListener('load', function() {
 		e.layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
 		e.layer.snapediting.addGuideLayer(accrochables);
 		e.layer.snapediting.enable();
+		carte.fire('draw:edited');
+	});
+
+	// Restitution des couches éditables dans le champ en sortie
+	carte.on('draw:edited', function() {
+		document.getElementById('entree').innerHTML = JSON.stringify(editeur._toolbars.edit.options.featureGroup.toGeoJSON());
+		document.getElementById('change').style.display = '';
 	});
 
 	// Initialisation des couches éditables avec le contenu du champ en entrée
@@ -53,53 +59,7 @@ window.addEventListener('load', function() {
 			layer: ljs._layers[l]
 		});
 
-	// Fin d'action, ménage
-	L.DomEvent.on(document, 'mouseup', edited);
-	carte.on('draw:drawstop', edited);
-	carte.on('draw:edited', edited);
-	carte.on('draw:deleted', edited);
-	function edited() {
-		// Restitution des couches éditables dans le champ en sortie
-		document.getElementById('entree').innerHTML = JSON.stringify(editables.toGeoJSON());
-		document.getElementById('change').style.display = '';
-
-		// Fusionne les segments ayant mêmes extrémités
-		var change = true;
-		while (change) {
-			change = false;
-			for (il1 in editables._layers) // Pour toutes les couches
-				for (il2 in editables._layers) {
-					var el1 = editables._layers[il1],
-						el2 = editables._layers[il2],
-						ll1 = el1._latlngs,
-						ll2 = el2._latlngs,
-						lladd = null; // Les points à ajouter
-					if (ll1 && !el1.options.fill &&  // Si les 2 sont des Polyline
-						ll2 && !el2.options.fill &&
-						el1._leaflet_id < el2._leaflet_id) { // 1 seule fois chaque couple
-						if (ll1[0].equals(ll2[0])) {
-							ll1.reverse();
-							lladd = ll2;
-						} else if (ll1[0].equals(ll2[ll2.length - 1])) {
-							ll1.reverse();
-							lladd = ll2.reverse();
-						} else if (ll1[ll1.length - 1].equals(ll2[0])) {
-							lladd = ll2;
-						} else if (ll1[ll1.length - 1].equals(ll2[ll2.length - 1])) {
-							lladd = ll2.reverse();
-						}
-						if (lladd) { // Points à fusionner
-							ll1.pop(); // On enlève le dernier point pour qu'il ne soit pas en double
-							el1._latlngs = ll1.concat(lladd);
-							el1.editing._poly.redraw(); // On redessine le trait
-							el1.snapediting.updateMarkers(); // On redessine les marqueurs
-							editables.removeLayer(el2.editing._poly); // On efface l'autre polyline
-							change = true;
-						}
-					}
-				}
-		}
-	}
+//-----------------------------------------------------------
 
 	new L.GeoJSON.Ajax(
 		'http://www.refuges.info/api/bbox', {
@@ -119,6 +79,7 @@ window.addEventListener('load', function() {
 			},
 		}
 	).addTo(accrochables);
+
 	new L.GeoJSON.Ajax(
 		'http://www.refuges.info/api/polygones', {
 			argsGeoJSON: {
