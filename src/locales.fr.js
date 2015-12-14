@@ -76,6 +76,7 @@ L.Polyline = L.Polyline.extend({ // DCMM TODO DELETE
 	}
 });
 
+/* DCMM REMOVE comment
 L.drawLocal = {
 	draw: {
 		toolbar: {
@@ -88,17 +89,17 @@ L.drawLocal = {
 				text: 'Supprimer le dernier point'
 			},
 			buttons: {
-				polyline: 'Dessiner une ligne',
-				polygon: 'Dessiner un polygone',
-				rectangle: 'Dessiner un rectangle',
-				circle: 'Dessiner un cercle',
-				marker: 'Dessiner un marqueur'
+				polyline: 'Tracer une ligne',
+				polygon: 'Tracer un polygone',
+				rectangle: 'Tracer un rectangle',
+				circle: 'Tracer un cercle',
+				marker: 'Placer un marqueur'
 			}
 		},
 		handlers: {
 			circle: {
 				tooltip: {
-					start: 'Cliquer et glisser pour dessiner un cercle'
+					start: 'Cliquer et glisser pour tracer un cercle'
 				},
 				radius: 'Rayon'
 			},
@@ -124,7 +125,7 @@ L.drawLocal = {
 			},
 			rectangle: {
 				tooltip: {
-					start: 'Cliquer et glisser pour dessiner un rectangle'
+					start: 'Cliquer et glisser pour tracer un rectangle'
 				}
 			},
 			simpleshape: {
@@ -168,3 +169,4 @@ L.drawLocal = {
 		}
 	}
 };
+*/

@@ -33,12 +33,17 @@ window.addEventListener('load', function() {
 		draw: optionsEdit, // Snap à l'édition d'élements
 	}).addTo(carte);
 
-
-
-editeur._toolbars['CUT'] = new L.DrawToolbar({});
-
-			// Listen for when toolbar is enabled
-			editeur._toolbars['CUT']].on('enable', editeur._toolbarEnabled, this);
+	// Ajout d'un nouveau feature éditable
+	carte.on('draw:created', function(e) {
+		e.layer.addTo(editables);
+		if (e.layer._latlng) // Point
+			e.layer.snapediting = new L.Handler.MarkerSnap(carte, e.layer);
+		else // Ligne
+			e.layer.snapediting = new L.Handler.PolylineSnap(carte, e.layer);
+		e.layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
+		e.layer.snapediting.addGuideLayer(accrochables);
+		e.layer.snapediting.enable();
+	});
 
 	// Initialisation des couches éditables avec le contenu du champ en entrée
 	var ljs = new L.geoJson(JSON.parse(document.getElementById('entree').innerHTML));
@@ -47,12 +52,13 @@ editeur._toolbars['CUT'] = new L.DrawToolbar({});
 			layer: ljs._layers[l]
 		});
 
-	// Restitution des couches éditables dans le champ en sortie
+	// Fin d'action, ménage
 	L.DomEvent.on(document, 'mouseup', edited);
 	carte.on('draw:drawstop', edited);
 	carte.on('draw:edited', edited);
 	carte.on('draw:deleted', edited);
 	function edited() {
+		// Restitution des couches éditables dans le champ en sortie
 		document.getElementById('entree').innerHTML = JSON.stringify(editables.toGeoJSON());
 		document.getElementById('change').style.display = '';
 

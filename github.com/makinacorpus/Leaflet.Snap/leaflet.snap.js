@@ -88,7 +88,7 @@ if (marker._leaflet_id == guide._leaflet_id) return; //GEO ne snappe pas son pro
                 snaplist = snaplist.concat(guide.searchBuffer(latlng, this._buffer));
             }
             else {
-if(!marker.mere || marker.mere._poly != guide) // GEO ne regarde pas son propre polygone
+if(!marker.mere || marker.mere._poly != guide) //GEO ne regarde pas son propre polygone
                 snaplist.push(guide);
             }
         }
@@ -166,7 +166,7 @@ L.Handler.PolylineSnap = L.Edit.Poly.extend({
 
     _createMarker: function (latlng, index) {
         var marker = L.Edit.Poly.prototype._createMarker.call(this, latlng, index);
-marker.mere = this; // GEO snap son propre polynome
+marker.mere = this; //GEO snap son propre polynome
 
         // Treat middle markers differently
         var isMiddle = index === undefined;

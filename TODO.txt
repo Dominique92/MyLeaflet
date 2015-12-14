@@ -2,20 +2,18 @@ BUGS
 ====
 Snap sur les coins haut du marqueur ????
 
-TEST
-====
-Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
-Il y a aussi quelques embrouilles quand on joue avec les limites et les points
-
 TODO
 ====
 Icone du marqueur = picto WRI/CHEM
-Basculement entre Polyline et Polygone
-Outil de coupe de polyline
 Inclusion de fichiers GPX
 Classe éditeur / intégration (actuellement dans le /edit.html)
 Intégrer édit GoeoJSON avec WRI
 Intégrer édit GoeoJSON avec GeoBB
+
+TEST
+====
+Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
+Il y a aussi quelques embrouilles quand on joue avec les limites et les points
 
 BUILD
 =====
