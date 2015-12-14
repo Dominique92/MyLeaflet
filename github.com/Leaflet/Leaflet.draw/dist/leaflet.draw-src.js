@@ -87,7 +87,6 @@ L.drawLocal = {
 				editDisabled: 'No layers to edit.',
 				remove: 'Delete layers.',
 				removeDisabled: 'No layers to delete.'
-				,switchpoly: 'Switch Poly type.' //GEO switchpoly
 			}
 		},
 		handlers: {
@@ -102,13 +101,6 @@ L.drawLocal = {
 					text: 'Click on a feature to remove'
 				}
 			}
-//GEO switchpoly
-			,switchpoly: {
-				tooltip: {
-					text: 'Click on a Polygon to make a Poliline and vice versa'
-				}
-			}
-//GEO switchpoly
 		}
 	}
 };
@@ -1360,53 +1352,13 @@ L.Edit.Poly = L.Handler.extend({
 			this._createMiddleMarker(marker, marker2);
 		};
 
-//GEO Découpe d'une ligne
 		onClick = function (e) {
-//			onDragStart.call(this);
-//			onDragEnd.call(this);
-
-			var marker1, marker2;
-			for (m in this._markers)
-				if (this._markers[m]._middleRight && this._markers[m]._middleRight._leaflet_id == e.target._leaflet_id)
-					marker1 = this._markers[m];
-				else if (this._markers[m]._middleLeft && this._markers[m]._middleLeft._leaflet_id == e.target._leaflet_id)
-					marker2 = this._markers[m];
-
-			if (marker1 && marker2) { // Pour les ex-milieux transformés en sommet par drag. TODO: enlever le on quand le marqueur n'est plus un middle
-				if (!marker1._prev && !marker2._next) // Il n'y a qu'un seul segment
-					this._poly._map.removeLayer(this._poly); // Le détruit
-
-				if (!marker1._prev) // C'est le premier
-					this._onMarkerClick({
-						target: marker1,
-						remove: true // On l'enlève et c'est tout
-					});
-				else if (!marker2._next) // C'est le dernier
-					this._onMarkerClick({
-						target: marker2,
-						remove: true // On l'enlève et c'est tout
-					});
-				else {
-					var ll = [];
-					for (var m = marker2; m; m = m._next) { // Pour tous les points aprés
-						ll.push([m._latlng.lat, m._latlng.lng]); // On liste
-						this._onMarkerClick({
-							target: m,
-							remove: true // On enlève de ce point
-						});
-					}
-					// Et on cree un nouveau segment éditable
-					this._poly._map.fire('draw:created', {
-						layer: new L.Polyline(ll, this._poly.options)
-					});
-				}
-			}
-//GEO Découpe d'une ligne
-			this._fireEdit();
+			onDragStart.call(this);
+			onDragEnd.call(this);
 		};
 
 		marker
-		    .on('click', onClick, this)
+		    .on('click', this._onClick, this) // GEO Découpe d'une ligne
 		    .on('dragstart', onDragStart, this)
 		    .on('dragend', onDragEnd, this);
 
@@ -2544,7 +2496,6 @@ L.EditToolbar = L.Toolbar.extend({
 		},
 		remove: {},
 		featureGroup: null /* REQUIRED! TODO: perhaps if not set then all layers on the map are selectable? */
-		,switchpoly: {} //GEO switchpoly
 	},
 
 	initialize: function (options) {
@@ -2563,25 +2514,11 @@ L.EditToolbar = L.Toolbar.extend({
 		L.Toolbar.prototype.initialize.call(this, options);
 
 		this._selectedFeatureCount = 0;
-//GEO switchpoly
-		if (options.switchpoly) {
-			options.switchpoly = L.extend({}, this.options.switchpoly, options.switchpoly);
-		}
-//GEO switchpoly
 	},
 
 	getModeHandlers: function (map) {
 		var featureGroup = this.options.featureGroup;
 		return [
-//GEO switchpoly
-			{
-				enabled: this.options.switchpoly,
-				handler: new L.EditToolbar.SwitchPoly(map, {
-					featureGroup: featureGroup
-				}),
-				title: L.drawLocal.edit.toolbar.buttons.switchpoly
-			},
-//GEO switchpoly
 			{
 				enabled: this.options.edit,
 				handler: new L.EditToolbar.Edit(map, {
@@ -2683,24 +2620,6 @@ L.EditToolbar = L.Toolbar.extend({
 				: L.drawLocal.edit.toolbar.buttons.removeDisabled
 			);
 		}
-//GEO switchpoly
-		if (this.options.switchpoly) {
-			button = this._modes[L.EditToolbar.Edit.TYPE].button;
-
-			if (hasLayers) {
-				L.DomUtil.removeClass(button, 'leaflet-disabled');
-			} else {
-				L.DomUtil.addClass(button, 'leaflet-disabled');
-			}
-
-			button.setAttribute(
-				'title',
-				hasLayers ?
-				L.drawLocal.edit.toolbar.buttons.switchpoly
-				: L.drawLocal.edit.toolbar.buttons.removeDisabled
-			);
-		}
-//GEO switchpoly
 	}
 });
 
@@ -3015,37 +2934,5 @@ L.EditToolbar.Delete = L.Handler.extend({
 		return this._deletableLayers.getLayers().length !== 0;
 	}
 });
-
-//GEO switchpoly
-L.EditToolbar.SwitchPoly = L.EditToolbar.Delete.extend({
-	statics: {
-		TYPE: 'switchpoly' // not delete as delete is reserved in js
-	},
-
-	initialize: function (map, options) {
-		L.EditToolbar.Delete.prototype.initialize.call(this, map, options);
-		this.type = L.EditToolbar.Edit.TYPE;
-	},
-
-	addHooks: function () {
-		L.EditToolbar.Delete.prototype.addHooks.call(this);
-		if (this._map)
-			this._tooltip.updateContent({ text: L.drawLocal.edit.handlers.switchpoly.tooltip.text }); //G
-	},
-
-	revertLayers: function () {},
-
-	_removeLayer: function (e) {
-		this._map.fire('draw:created', {
-			layer:
-				e.target.options.fill 
-					? new L.Polyline(e.target._latlngs)
-					: new L.Polygon(e.target._latlngs)
-		});
-
-		L.EditToolbar.Delete.prototype._removeLayer.call(this, e);
-	},
-});
-//GEO switchpoly
 
 }(window, document));

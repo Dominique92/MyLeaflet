@@ -42,6 +42,7 @@ var js_list = [
 	'../github.com/makinacorpus/Leaflet.GeometryUtil/dist/leaflet.geometryutil.js', // src/ext/geometryutil.js plante.
 	'../github.com/Leaflet/Leaflet.draw/dist/leaflet.draw-src.js',
 	'../github.com/makinacorpus/Leaflet.Snap/leaflet.snap.js',
+	'../src/draw-plus.js',
 //	'../src/PolylineEditor.js',
 
 	// Adaptations

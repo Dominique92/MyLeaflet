@@ -26,11 +26,12 @@ window.addEventListener('load', function() {
 		polyline: {guideLayers: [accrochables]},
 		polygon: {guideLayers: [accrochables]},
 		rectangle: false,
-		circle: false
+		circle: false,
+		switchpoly: true
 	};
 	var editeur = new L.Control.Draw({
 		edit: optionsEdit, // Snap à la création d'élements
-		draw: optionsEdit, // Snap à l'édition d'élements
+		draw: optionsEdit // Snap à l'édition d'élements
 	}).addTo(carte);
 
 	// Ajout d'un nouveau feature éditable

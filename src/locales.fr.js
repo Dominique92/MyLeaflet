@@ -76,7 +76,6 @@ L.Polyline = L.Polyline.extend({ // DCMM TODO DELETE
 	}
 });
 
-/* DCMM REMOVE comment
 L.drawLocal = {
 	draw: {
 		toolbar: {
@@ -151,7 +150,8 @@ L.drawLocal = {
 				edit: 'Editer des items',
 				editDisabled: 'Pas d\'items',
 				remove: 'Supprimer des items',
-				removeDisabled: 'Pas d\'items'
+				removeDisabled: 'Pas d\'items',
+				switchpoly: 'Ligne <-> Polygone'
 			}
 		},
 		handlers: {
@@ -165,8 +165,12 @@ L.drawLocal = {
 				tooltip: {
 					text: 'Cliquer sur un item pour le supprimer'
 				}
+			},
+			switchpoly: {
+				tooltip: {
+					text: 'Cliquer sur une ligne pour en faire un polygone ou vice versa'
+				}
 			}
 		}
 	}
 };
-*/
