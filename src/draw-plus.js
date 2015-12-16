@@ -7,6 +7,7 @@
  * Needs http://github.com/Leaflet/Leaflet.draw and http://github.com/makinacorpus/Leaflet.Snap
  */
 
+// New texts associated to the new switch control
 L.drawLocal.edit.toolbar.buttons.switchpoly = 'Switch Poly type.';
 L.drawLocal.edit.handlers.switchpoly = {
 	tooltip: {
@@ -106,28 +107,51 @@ L.EditToolbar.SwitchPoly = L.EditToolbar.Delete.extend({
 });
 
 L.Control.Draw.Plus = L.Control.Draw.extend({
-/*
+
+	snapLayers: L.featureGroup(), // Container of layers used for snap
+	editLayers: L.featureGroup(), // Container of editable layers
+
+	options: {
+		draw: {
+			marker: false,
+			polyline: false,
+			polygon: false,
+			rectangle: false,
+			circle: false
+		},
+		edit: {
+			edit: false,
+			switchpoly: false
+		}
+	},
+
 	initialize: function (options) {
-		//options.edit.featureGroup = L.featureGroup(); // Container for layer to edit
+		options.edit = L.extend(this.options.edit, options.edit); // Mark false non choisen options
+		options.draw = L.extend(this.options.draw, options.draw);
+		for (o in options.draw)
+			if (options.draw[o])
+				options.draw[o] = {guideLayers: [this.snapLayers]}; // Allow snap on creating elements
 
 		L.Control.Draw.prototype.initialize.call(this, options);
 	},
-*/
 
 	onAdd: function (map) {
-		// Define a container for the editable layers
-		this._toolbars.edit.options.featureGroup = L.featureGroup().addTo(map);
+		this._toolbars.edit.options.featureGroup =
+			this.editLayers.addTo(
+				this.snapLayers.addTo(map)
+			);
 
 		// Add a new feature
-if(0)
 		map.on('draw:created', function(e) {
-			e.layer.addTo(this._toolbars.edit.options.featureGroup);
+			e.layer.addTo(this.editLayers);
+			if (e.layer._mRadius) // Circle
+				return;
 			if (e.layer._latlng) // Point
 				e.layer.snapediting = new L.Handler.MarkerSnap(map, e.layer);
-			else // Ligne
+			else // Line, polygone, rectangle
 				e.layer.snapediting = new L.Handler.PolylineSnap(map, e.layer);
 			e.layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
-e.layer.snapediting.addGuideLayer(accrochables);
+			e.layer.snapediting.addGuideLayer(this.snapLayers);
 			e.layer.snapediting.enable();
 			map.fire('draw:edited');
 		}, this);
@@ -144,7 +168,7 @@ e.layer.snapediting.addGuideLayer(accrochables);
 
 	// Merge polyline having end at the same position
 	merge: function () {
-		var ls = this._toolbars.edit.options.featureGroup._layers;
+		var ls = this.editLayers._layers;
 		for (var change = true; change; change = false)
 			for (il1 in ls) // Pour toutes les couches éditables
 				for (il2 in ls) {
@@ -170,7 +194,7 @@ e.layer.snapediting.addGuideLayer(accrochables);
 							ls[il1]._latlngs = ll1.concat(lladd);
 							ls[il1].editing._poly.redraw(); // Redraw the lines
 							ls[il1].snapediting.updateMarkers(); // Redraw the markers
-							this._toolbars.edit.options.featureGroup.removeLayer(ls[il2].editing._poly); // Erase the initial Polyline
+							this.editLayers.removeLayer(ls[il2].editing._poly); // Erase the initial Polyline
 							change = true;
 						}
 					}

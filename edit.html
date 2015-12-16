@@ -17,40 +17,21 @@ window.addEventListener('load', function() {
 	var carte = L.map('carte').setView([45, 5], 7);
 	new L.TileLayer.OSM.FR().addTo(carte);
 
-	var accrochables = L.featureGroup().addTo(carte); // Couches auxquelles le snap s'accroche
+//------------------------ EDIT -----------------------------------
+
 	var editeur = new L.Control.Draw.Plus({
 		draw: {
-			marker: {guideLayers: [accrochables]}, // Snap à la création d'élements
-			polyline: {guideLayers: [accrochables]},
-			polygon: {guideLayers: [accrochables]},
-			rectangle: false,
-			circle: false
+			marker: true,
+			polyline: true,
+			polygon: true,
+//			rectangle: true,
+//			circle: true
 		},
 		edit: {
-			edit: false,
+//			edit: true,
 			switchpoly: true
 		}
 	}).addTo(carte);
-editeur._toolbars.edit.options.featureGroup.addTo(accrochables); // Couches éditables
-
-	// Ajout d'un nouveau feature éditable
-	carte.on('draw:created', function(e) {
-		e.layer.addTo(editeur._toolbars.edit.options.featureGroup);
-		if (e.layer._latlng) // Point
-			e.layer.snapediting = new L.Handler.MarkerSnap(carte, e.layer);
-		else // Ligne
-			e.layer.snapediting = new L.Handler.PolylineSnap(carte, e.layer);
-		e.layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
-		e.layer.snapediting.addGuideLayer(accrochables);
-		e.layer.snapediting.enable();
-		carte.fire('draw:edited');
-	});
-
-	// Restitution des couches éditables dans le champ en sortie
-	carte.on('draw:edited', function() {
-		document.getElementById('entree').innerHTML = JSON.stringify(editeur._toolbars.edit.options.featureGroup.toGeoJSON());
-		document.getElementById('change').style.display = '';
-	});
 
 	// Initialisation des couches éditables avec le contenu du champ en entrée
 	var ljs = new L.geoJson(JSON.parse(document.getElementById('entree').innerHTML));
@@ -59,7 +40,18 @@ editeur._toolbars.edit.options.featureGroup.addTo(accrochables); // Couches édi
 			layer: ljs._layers[l]
 		});
 
-//-----------------------------------------------------------
+	// Restitution des couches éditables dans le champ en sortie
+	carte.on('draw:edited', function() {
+		document.getElementById('entree').innerHTML = JSON.stringify(editeur.editLayers.toGeoJSON());
+		document.getElementById('change').style.display = '';
+	});
+
+//-------------------------- OTHER LAYERS ---------------------------------
+	// Chargement fichier GPX
+	var fl = L.Control.fileLayerLoad().addTo(carte);
+	fl.loader.on ('data:loaded', function (e){
+		e.layer.addTo(editeur.editLayers);
+	}, fl);
 
 	new L.GeoJSON.Ajax(
 		'http://www.refuges.info/api/bbox', {
@@ -78,7 +70,7 @@ editeur._toolbars.edit.options.featureGroup.addTo(accrochables); // Couches édi
 				}
 			},
 		}
-	).addTo(accrochables);
+	).addTo(editeur.snapLayers);
 
 	new L.GeoJSON.Ajax(
 		'http://www.refuges.info/api/polygones', {
@@ -94,7 +86,7 @@ editeur._toolbars.edit.options.featureGroup.addTo(accrochables); // Couches édi
 				}
 			}
 		}
-	).addTo(accrochables);
+	).addTo(editeur.snapLayers);
 /*
 	new L.GeoJSON.Ajax(
 		'http://www.refuges.info/api/polygones', {
@@ -112,7 +104,7 @@ editeur._toolbars.edit.options.featureGroup.addTo(accrochables); // Couches édi
 				}
 			}
 		}
-	).addTo(accrochables);
+	).addTo(editeur.snapLayers);
 */
 });
 	</script>

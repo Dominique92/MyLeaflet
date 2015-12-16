@@ -6,9 +6,10 @@ Snap sur les coins haut du marqueur ????
 
 TODO
 ====
-Icone du marqueur = picto WRI/CHEM
 Inclusion de fichiers GPX
-Classe éditeur / intégration (actuellement dans le /edit.html)
+	Edit trkpt / wpt tracks.
+	Edit "geometry":{"type":"LineString","coordinates":[[-
+Icone du marqueur = picto WRI/CHEM
 Intégrer édit GoeoJSON avec WRI
 Intégrer édit GoeoJSON avec GeoBB
 
