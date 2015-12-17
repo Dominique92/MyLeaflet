@@ -2,4 +2,4 @@ https://github.com/Leaflet/Leaflet.draw
 master
 Commits on Sep 2, 2015
 https://github.com/Leaflet/Leaflet.draw/tree/1f49919df00467a234a9ed94c93bbfa9d804f6ec
-Modifications: GEOmod coupe segment en 2 sur editeur 1	
+Modifications: GEO

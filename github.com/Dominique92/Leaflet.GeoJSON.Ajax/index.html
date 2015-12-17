@@ -11,7 +11,7 @@
 
 	<!-- Embeded pluggin -->
 	<link rel="stylesheet" href="http://erictheise.github.io/rrose/stylesheets/leaflet.rrose.css" />
-	<script type="text/javascript" src="http://erictheise.github.io/rrose/javascripts/rrose-src.js"></script>
+	<script type="text/javascript" src="http://erictheise.github.io/rrose/javascripts/leaflet.rrose-src.js"></script>
 
 	<!-- Embeded pluggin -->
 	<link type="text/css" rel="stylesheet" href="GeoJSON.Ajax.css" />
@@ -38,7 +38,8 @@
 								return {
 									color: feature.properties.couleur,
 									weight: 2,
-									opacity: 0.5
+									opacity: 0.5,
+									editSnapable: true
 								}
 							}
 						}
@@ -57,7 +58,8 @@
 								return {
 									url: 'http://www.refuges.info/images/icones/' + feature.properties.type.icone + '.png'
 								}
-							}
+							},
+							editSnapable: true
 						}
 					)
 				]

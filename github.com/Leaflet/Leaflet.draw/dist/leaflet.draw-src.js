@@ -1352,13 +1352,14 @@ L.Edit.Poly = L.Handler.extend({
 			this._createMiddleMarker(marker, marker2);
 		};
 
-		onClick = function (e) {
+		onClick = function () {
 			onDragStart.call(this);
 			onDragEnd.call(this);
+			this._fireEdit();
 		};
 
 		marker
-		    .on('click', this._onClick, this) // GEO Découpe d'une ligne
+//GEO		    .on('click', onClick, this)
 		    .on('dragstart', onDragStart, this)
 		    .on('dragend', onDragEnd, this);
 
@@ -2506,6 +2507,7 @@ L.EditToolbar = L.Toolbar.extend({
 			}
 			options.edit.selectedPathOptions = L.extend({}, this.options.edit.selectedPathOptions, options.edit.selectedPathOptions);
 		}
+
 		if (options.remove) {
 			options.remove = L.extend({}, this.options.remove, options.remove);
 		}
@@ -2604,6 +2606,7 @@ L.EditToolbar = L.Toolbar.extend({
 				: L.drawLocal.edit.toolbar.buttons.editDisabled
 			);
 		}
+
 		if (this.options.remove) {
 			button = this._modes[L.EditToolbar.Delete.TYPE].button;
 
@@ -2934,5 +2937,6 @@ L.EditToolbar.Delete = L.Handler.extend({
 		return this._deletableLayers.getLayers().length !== 0;
 	}
 });
+
 
 }(window, document));

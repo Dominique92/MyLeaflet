@@ -16,7 +16,7 @@ L.Control.PolylineEditor = L.Control.extend({
 		help: ['Edit command list'], // Documentation de la liste des commandes
 		idInput: 'input-editor', // id de l'imput de saisie des coordonnées à remonter
 		idChange: null, // id d'un élement auquel appliquer display= le contenu édité change
-		submit: '<not implemented>' // Libellé du bouton de soumission du questionnaire
+		submit: '<not implemented>', // Libellé du bouton de soumission du questionnaire
 	},
 	changed: true,
 

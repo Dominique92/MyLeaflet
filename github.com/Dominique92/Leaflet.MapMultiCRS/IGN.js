@@ -10,7 +10,7 @@
 		};
 	</script>
  *
- * Clé V3 développement (localhost) sur: http://api.ign.fr
+ * Clé V3 développement (localhost) sur: http://api.ign.fr -> OBTENIR UNE CLEF DE DÉVELOPPEMENT (en haut à droite)
  * Clé V3 production sur: http://pro.ign.fr/api-web => Service en ligne => S'ABONNER
  * Doc sur http://api.ign.fr/jsp/site/Portal.jsp?page_id=6&document_id=80&dossier_id=53
  */

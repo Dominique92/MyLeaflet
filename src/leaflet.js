@@ -39,47 +39,13 @@ var js_list = [
 	'../src/MarkerPosition.js',
 
 	// Editeur
-	'../github.com/makinacorpus/Leaflet.GeometryUtil/dist/leaflet.geometryutil.js', // src/ext/geometryutil.js plante.
 	'../github.com/Leaflet/Leaflet.draw/dist/leaflet.draw-src.js',
+	'../github.com/makinacorpus/Leaflet.GeometryUtil/dist/leaflet.geometryutil.js', // src/ext/geometryutil.js plante.
 	'../github.com/makinacorpus/Leaflet.Snap/leaflet.snap.js',
-	'../src/draw-plus.js',
-//	'../src/PolylineEditor.js',
+	'../src/PolylineEditor.js',
 
-	// Adaptations
+	// Local
 	'../src/locales.fr.js',
-];
-var js_list_DRAW = [
-	'../github.com/Leaflet/Leaflet.draw/src/Leaflet.draw.js',
-
-	'../github.com/Leaflet/Leaflet.draw/src/Toolbar.js',
-	'../github.com/Leaflet/Leaflet.draw/src/Tooltip.js',
-//*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/ext/GeometryUtil.js',
-/*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/ext/LatLngUtil.js',
-	'../github.com/Leaflet/Leaflet.draw/src/ext/LineUtil.Intersect.js',
-//*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/ext/Polygon.Intersect.js',
-	'../github.com/Leaflet/Leaflet.draw/src/ext/Polyline.Intersect.js',
-
-/*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/draw/DrawToolbar.js',
-	'../github.com/Leaflet/Leaflet.draw/src/draw/handler/Draw.Feature.js',
-/*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/draw/handler/Draw.SimpleShape.js',
-	'../github.com/Leaflet/Leaflet.draw/src/draw/handler/Draw.Polyline.js',
-/*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/draw/handler/Draw.Circle.js',
-/*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/draw/handler/Draw.Marker.js',
-/*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/draw/handler/Draw.Polygon.js',
-/*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/draw/handler/Draw.Rectangle.js',
-
-	'../github.com/Leaflet/Leaflet.draw/src/edit/EditToolbar.js',
-/*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/edit/handler/EditToolbar.Edit.js',
-/*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/edit/handler/EditToolbar.Delete.js',
-
-/*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/Control.Draw.js',
-
-	'../github.com/Leaflet/Leaflet.draw/src/edit/handler/Edit.Poly.js',
-//*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/edit/handler/Edit.SimpleShape.js',
-//*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/edit/handler/Edit.Circle.js',
-//*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/edit/handler/Edit.Rectangle.js',
-/*DCMM*/	'../github.com/Leaflet/Leaflet.draw/src/edit/handler/Edit.Marker.js',
-
 ];
 
 var scripts = document.getElementsByTagName('script'),

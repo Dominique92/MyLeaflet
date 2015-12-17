@@ -2,4 +2,3 @@ https://github.com/makinacorpus/Leaflet.Snap
 gh-pages
 Commits on Nov 26, 2015
 https://github.com/makinacorpus/Leaflet.Snap/tree/e6b24835d8e8f08602bd5f5718507dd326ea2455
-Modifications: GEOmod snap son propre item

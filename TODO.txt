@@ -1,86 +1,55 @@
 BUGS
 ====
-Les polygones créés sont roses !
-Ne remonte pas la suppression d'un sommet quand le switcheur est en service. Une autre action devrait le fermer !
-Snap sur les coins haut du marqueur ????
-
-TODO
-====
-Inclusion de fichiers GPX
-	Edit trkpt / wpt tracks.
-	Edit "geometry":{"type":"LineString","coordinates":[[-
-Icone du marqueur = picto WRI/CHEM
-Intégrer édit GoeoJSON avec WRI
-Intégrer édit GoeoJSON avec GeoBB
-
-TEST
-====
-Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
-Il y a aussi quelques embrouilles quand on joue avec les limites et les points
-
-BUILD
-=====
-Reprise automatique des .zip github
-Implémenter automatiquement les diff: http://php.net/manual/fr/function.xdiff-file-patch.php
-Revoir l'optim de la lib en utilisant ... Création lib avec optimiseur (extract ?? import ??)
-	https://github.com/Esri/esri-leaflet-geocoder/blob/master/src/EsriLeafletGeocoding.js
-	https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/export
-	https://developers.google.com/speed/articles/compressing-javascript
-	http://closure-compiler.appspot.com/ => Build un leaflet.js non compressé
-	http://jsbeautifier.org/
-	http://siliconforks.com/jscoverage/ ??
-	http://www.javascriptlint.com/ ??
-Supprimer passage de Draw qui ne servent pas
-Trouver proj4js source et l'élaguer (réduire taille lib).
-
-PERMALINK / COOKIES
-===================
-On ne peut pas copier le permalien dans un mail (cause caractère #)
-Permalink ne marche pas avec des arguments ?xx&yy
-Mémorisation position dans cookies / lien entre pages.
-Permalink ne note pas le layer // Ben si: L.UrlUtil.queryParse(L.UrlUtil.hash()).layer
-
-BUGS BEST TO FIX
-================
-//	'../src/PolylineEditor.js', incompatible avec EDIT DRAW
-EDIT DRAW: Annuler suppression ne remet pas la couche éditable
-On ne peut commencer que sur une carte EPSG3857
 Appelle les flux avec &target=[object%20Object]
-getCurrentPosition() and watchPosition() are deprecated on insecure origins, and support will be removed in the future. You should consider switching your application to a secure origin, such as HTTPS. See https://goo.gl/rStTGz for more details.
-layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
-Google Maps API warning: SensorNotRequired: 
-
-BEST TO DO
-==========
-A voir: https://github.com/calvinmetcalf/leaflet-ajax
-Export fichier GPX. ==> togpx(l.toGeoJSON())
-	//	'../github.com/tyrasd/togpx/togpx.js', // TODO: l'activer avec un contrôle
-Remplacement de MarkerPosition par draw / Position avec un crossmarker / MarkerPosition => avec des cercles et droites
-Traductions locales non française (position / longitude / ...) / Traduire zoom in & zoom out (sur haut carte)
-MarkerPosition => indépendant des CRS ????
-MarkerPosition => crsoption.name => coord
-Afficher heure sur survol point ou segment d'une courbe
-Pluggin MultiCRS: couches Mapbox, Yandex
-
-DEBUG & DEMOS
-=============
+On ne peut pas copier le permalien dans un mail (cause caractère #)
+On ne peut commencer que sur une carte EPSG3857
 Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.5/images/marker-icon.png)
-Revoir les link de l'index de démo Leaflet.MapMultiCRS dans son GIT/demo
-Clé IGN localhost & demo sur Leaflet.MapMultiCRS
-Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN (ou retirer la couche !)
-Purger MyLeaflet/index.html de beaucoup d'historique
-
-TODO EDITEUR
-============
-Grossir la ligne éditée au survol
-Purge des points tout seuls & purge des points identiques sur un segment
-Edition massif avec trou
-Editeur de marqueurs (cross, ...)
 
 1.0.beta
 ========
 Proj4Leaflet: *For compatibility with Leaflet 1.0-beta1 use the leaflet-proj-refactor branch.*
 Leaflet.draw: Support for Leaflet 1.0 is in development at the [leaflet-master](https://github.com/Leaflet/Leaflet.draw/tree/leaflet-master) branch.
+
+TODO
+====
+Export fichier GPX. ==> togpx(l.toGeoJSON())
+	//	'../github.com/tyrasd/togpx/togpx.js', // TODO: l'activer avec un contrôle
+A voir: https://github.com/calvinmetcalf/leaflet-ajax
+MarkerPosition => indépendant des CRS ????
+MarkerPosition => crsoption.name => coord
+
+BEST TO DO
+==========
+Revoir l'optim de la lib en utilisant ...
+Revoir les link de l'index de démo Leaflet.MapMultiCRS dans son GIT/demo
+Afficher heure sur survol point ou segment d'une courbe
+Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
+Pluggin MultiCRS: couches Mapbox, Yandex
+Traductions locales non française (position / longitude / ...)
+feature.properties.nom => feature.properties.name (rupture interface WRI ! voir aussi les autres properties: url, ...)
+Supprimer passage de Draw qui ne servent pas
+Position avec un crossmarker / MarkerPosition => avec des cercles et droites
+Mémorisation position dans cookies / lien entre pages.
+Permalink ne marche pas avec des arguments ?xx&yy
+Permalink ne note pas le layer // Ben si: L.UrlUtil.queryParse(L.UrlUtil.hash()).layer
+Trouver proj4js source et l'élaguer (réduire taille lib).
+Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN (ou retirer la couche !)
+Clé IGN localhost & demo sur Leaflet.MapMultiCRS
+Purger MyLeaflet/index.html de beaucoup d'historique
+getCurrentPosition() and watchPosition() are deprecated on insecure origins, and support will be removed in the future. You should consider switching your application to a secure origin, such as HTTPS. See https://goo.gl/rStTGz for more details.
+
+TODO EDITEUR
+============
+Grossir la ligne éditée au survol
+Il y a aussi quelques embrouilles quand on joue avec les limites et les points
+layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
+Réduire syntaxe input geoJSON (enlever les autres syntaxes qui ne peuvent servir qu'avec une version de PGSQL supérieure à celle utilisée par WRI)
+Rendre colables les extrémités pour reboucler un polygone
+Purge des points tout seuls & purge des points identiques sur un segment
+Snap pendant création ou extension de segment.
+Edition massif avec trou
+Editeur de marqueurs (cross, ...)
+Edition de polygones (pleins et rebouclés)
 
 APPLI
 =====
