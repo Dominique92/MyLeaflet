@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Leaflet.draw vector editing handlers</title>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
+
+	<!-- Leaflet kernel -->
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+
+	<!-- Draw pluggin -->
+	<link rel="stylesheet" href="http://leaflet.github.io/Leaflet.draw/leaflet.draw.css" />
+	<script src="../../Leaflet/Leaflet.draw/dist/leaflet.draw-src.js"></script><!-- For Leaflet V0.7 -->
+
+	<script src="../../mapbox/togeojson/togeojson.js"></script>
+	<script src="../../erictheise/rrose/leaflet.rrose-src.js"></script>
+
+	<!-- Snap pluggin -->
+	<script src="http://makinacorpus.github.io/Leaflet.Snap/Leaflet.GeometryUtil/dist/leaflet.geometryutil.js"></script>
+	<script src="../../makinacorpus/Leaflet.Snap/leaflet.snap.js"></script><!-- Includes auto-snap changes -->
+
+	<!-- This pluggin -->
+	<script src="Control.Draw.Plus.js"></script>
+	<script src="../../../src/locales.fr.js"></script>
+
+	<script>
+		window.addEventListener('load', function() {
+			var map = L.map('map').setView([45, 5], 7);
+
+			L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>; contributors'
+			}).addTo(map);
+
+		//------------------------ EDIT -----------------------------------
+
+			var editor = new L.Control.Draw.Plus({
+				draw: {
+					marker: true,
+					polyline: true,
+					polygon: true,
+				},
+				edit: {
+					remove: true
+				}
+			}).addTo(map);
+
+			// Initialisation des couches éditables avec le contenu du champ en entrée
+			var ljs = new L.GeoJSON(JSON.parse(document.getElementById('entree').innerHTML));
+			for (var l in ljs._layers)
+				ljs._layers[l].addTo(editor);
+
+			// Restitution des couches éditables dans le champ en sortie
+			map.on('draw:edited', function() {
+				document.getElementById('entree').innerHTML = JSON.stringify(editor.editLayers.toGeoJSON());
+				document.getElementById('change').style.display = '';
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<p>Leaflet extension for markers, polylines, polygons, ... creation & edition.</p>
+	<p>Sources on <a href= "https://github.com/Dominique92/Leaflet.draw.plus">Github: Dominique92/Leaflet.draw.plus</a></p>
+	<p>This plugin doesn't support Leaflet V1.0 <a href="index-V1.0.html">yet</a></p>
+	<p>Leaflet <script>document.write(L.version)</script></p>
+
+	<div id="map" style="width: 800px; height: 600px"></div>
+	<textarea id="entree" rows="5" cols="120">
+{"type":"FeatureCollection","features":[
+	{"type":"Feature","properties":{},"geometry":{"type":"LineString","coordinates":[[2.5,46],[3,45],[4,45],[5,45.8]]}},
+	{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[3.5,45.5]}}
+]}
+	</textarea>
+	<div id="change" style="display:none"><i>Changé</i></div>
+
+	<div style="position: absolute;right:0;top:0"><a href="../../..">&gt;</a>&nbsp;</div>
+</body>
+</html>

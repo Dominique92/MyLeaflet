@@ -1,356 +1,80 @@
-<?=xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
-	<head>
-		<title>Leaflet</title>
-		<link type="image/x-icon" rel="shortcut icon" href="src/images/favicon.png" />
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<meta http-equiv="Content-Style-Type" content="text/css" />
-		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Leaflet</title>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
-		<link type="text/css" rel="stylesheet" href="src/leaflet.css" />
-		<script type="text/javascript" src="src/leaflet.js"></script>
-		<script type="text/javascript" src="src/CrossMarker.js"></script>
+	<link rel="stylesheet" href="src/leaflet.css" />
+	<script src="src/leaflet.js"></script>
+	<script src="github.com/Dominique92/Leaflet.GeoJSON.Ajax/src/GeoJSON.Ajax.WRI.js"></script>
 
-		<script type="text/javascript">
-			var key = {
-				ign: 'u71tqebfror0c2nn3nppcbk2', // localhost 31/03/2016 http://api.ign.fr
-				bing: 'ArLngay7TxiroomF7HLEXCS7kTWexf1_1s1qiF7nbTYs2IkD3XLcUnvSlKbGRZxt', // https://www.bingmapsportal.com
-				os: 'CBE047F823B5E83CE0405F0ACA6042AB' // http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
-			};
+	<script>
+		var key = {
+			ign: window.location.host == 'localhost'
+				? 'u71tqebfror0c2nn3nppcbk2' // localhost 31/03/2016 http://api.ign.fr
+				: 'o6owv8ubhn3vbz2uj8jq5j0z', // dominique92.github.io http://pro.ign.fr/api-web
+			bing: 'ArLngay7TxiroomF7HLEXCS7kTWexf1_1s1qiF7nbTYs2IkD3XLcUnvSlKbGRZxt', // https://www.bingmapsportal.com
+			os: 'CBE047F823B5E83CE0405F0ACA6042AB' // http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
+		};
 
-			var map, gps,
-				blName = L.UrlUtil.queryParse(L.UrlUtil.hash()).layer, // Donné par le permalink #layer=NOM
-				poiWRI = new L.GeoJSON.Ajax(
-						'http://www.refuges.info/api/bbox', {
-							argsGeoJSON: {
-								type_points: 'all',
-							},
-							degroup: 12,
-							bbox: true,
-							url: function(target) {
-								return 'http://www.refuges.info/point/' + target.feature.properties.id;
-							},
-							icon: function(feature) {
-								return {
-									url: 'http://www.refuges.info/images/icones/' + feature.properties.type.icone + '.png'
-								}
-							},
-							editSnapable: true
-						}
-					),
-				poiWRIfull = new L.GeoJSON.Ajax(
-						'http://www.refuges.info/api/bbox', {
-							argsGeoJSON: {
-								type_points: 'all',
-								nb_points: 2000 // Test aux limites
-							},
-							degroup: 12,
-							bbox: true,
-							url: function(target) {
-								return 'http://www.refuges.info/point/' + target.feature.properties.id;
-							},
-							icon: function(feature) {
-								return {
-									url: 'http://www.refuges.info/images/icones/' + feature.properties.type.icone + '.png'
-								}
-							},
-							editSnapable: true
-						}
-					),
- 				hill = new L.TileLayer.OSM.hill(),
-/*
-				poiPRC = new L.GeoJSON.Ajax(
-						'http://v2.chemineur.fr/prod/chem/json.php', {
-							proxy: 'proxy.php?url=',
-							argsGeoJSON: {
-								site: 'prc',
-							},
-							degroup: 12,
-							bbox: true,
-							url: function(target) {
-								return 'http://www.pyrenees-refuges.com/fr/affiche.php?numenr=' + target.feature.properties.id;
-							},
-							icon: function(feature) {
-								return {
-									url: 'http://v2.chemineur.fr/prod/chemtype/' + feature.properties.type.icone + '.png'
-								}
-							},
-							editSnapable: true
-						}
-					),
-				poiC2C = new L.GeoJSON.Ajax(
-						'http://v2.chemineur.fr/prod/chem/json.php', {
-							proxy: 'proxy.php?url=',
-							argsGeoJSON: {
-								site: 'c2c',
-							},
-							degroup: 12,
-							bbox: true,
-							url: function(target) {
-								return 'http://www.camptocamp.org/huts/' + target.feature.properties.id;
-							},
-							icon: function(feature) {
-								return {
-									url: 'http://v2.chemineur.fr/prod/chemtype/' + feature.properties.type.icone + '.png'
-								}
-							},
-							editSnapable: true
-						}
-					),
-				poiCHEM = new L.GeoJSON.Ajax(
-						'http://v2.chemineur.fr/prod/chem/json.php', {
-							proxy: 'proxy.php?url=',
-							degroup: 12,
-							bbox: true,
-							url: function(target) {
-								return 'http://v2.chemineur.fr/point/' + target.feature.properties.id;
-							},
-							icon: function(feature) {
-								return {
-									url: 'http://v2.chemineur.fr/prod/chemtype/' + feature.properties.type.icone + '.png'
-								}
-							},
-							editSnapable: true
-						}
-					),
-*/
-				massif = new L.GeoJSON.Ajax(
-						'http://www.refuges.info/api/polygones', {
-//DCMM???							proxy: 'proxy.php?url=',
-							argsGeoJSON: {
-								massif: 351 // Pyrénées
-/*
-type_geom: 'polylines', massif: 2789 // Avec bug
-								massif: 4 // Vercors
-								massif: 3116 // multiple
-*/
-							},
-							style: function(feature) {
-								return {
-									color: 'blue',
-									weight: 2,
-									opacity: 1,
-									fillOpacity: 0,
-									editSnapable: true
-								}
-							}
-						}
-					),
-				massifs = new L.GeoJSON.Ajax(
-						'http://www.refuges.info/api/polygones', {
-//DCMM???							proxy: 'proxy.php?url=',
-							argsGeoJSON: {
-								type_polygon: 1
-							},
-							url: function(feature) {
-								return feature.properties.lien;
-							},
-							style: function(feature) {
-								return {
-									color: feature.properties.couleur,
-									weight: 2,
-									opacity: 0.5,
-									editSnapable: true
-								}
-							}
-						}
-					),
-				cadre = new L.Marker.Position(
-						new L.LatLng(47.49178789456123, 7.5), {
-							projectionType: 'decimal',
-							prefixe: 'cadre-',
-							icon: L.icon({
-								iconUrl: 'src/images/cadre.png',
-								iconSize: [31, 43],
-								iconAnchor: [15, 21]
-							}),
-						}
-					),
-				curseur = new L.Marker.Position(
-//						new L.LatLng(46.45, 0.45), {
-						new L.LatLng(46.5, 7.5), {
-							prefixe: 'curseur-',
-							draggable: true,
-							riseOnHover: true, // The marker will get on top of others when you hover the mouse over it.
-							icon: L.icon({
-								iconUrl: 'src/images/curseur.png',
-								iconSize: [30, 30],
-								iconAnchor: [15, 15]
-							}),
-						}
-					),
-				crossmarker = new L.CrossMarker( // Un curseur dessiné
-						new L.LatLng(45,5), {
-							radius: 15,
-							color: 'red',
-							weight: 2,
-							opacity: 1,
-							fillOpacity: 0
-						}
-					),
-				layers = [
-//					L.Map.maps('OSM-FR'),
-					L.Map.maps('OSM'), // DCMM BUG: On ne peut commencer que sur une carte EPSG3857
-					massifs,
-					poiWRI,
-					massif,
-					cadre,
-					curseur,
-					crossmarker
-				];
+		var map;
+		window.addEventListener('load', function() {
+			map = new L.Map('map');
+			map.setView([47, 2], 6); // France
+			//			map.setView([45, 5], 7); // Sud ouest
+			//			map.setView([51.5, 0], 9); // UK
+			//			map.setView([49.959, -5.206], 8); // Cap Lizard
+			//			map.setView([46.5, 7], 7); // Suisse
+			L.TileLayer.collection('OSM-FR').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
+			//			L.TileLayer.collection('OS Great Britain').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
+			//			map.setCRS(L.CRS.EPSG27700);
+			//			L.TileLayer.collection('SwissTopo').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
 
-			window.addEventListener('load', function() {
-				map = new L.Map('map', {
-					fullscreenControl: true,
-//crs: layers[0].options.crs ? layers[0].options.crs : L.CRS.EPSG3857, DCMM TODO: On ne peut commencer que sur une carte EPSG3857
-//crs: L.OSOpenSpace.getCRS(),
-/*
-					center: new L.LatLng(45.73845, 7.3161), // Aoste
-					center: new L.LatLng(40.4, -3.7), // Madrid
-					center: new L.LatLng(1.5, 101.5), // Exemple Singapour
-					center: new L.LatLng(47.8517, 8.858), // poly 3116
-					center: new L.LatLng(45.34, 5.872), // Bug cabane de Bellefond
-					center: new L.LatLng(48.8, 2.2), // Chaville
-					center: new L.LatLng(48.8533, 2.349), // Paris
-					center: new L.LatLng(45.2, 5.7), // Grenoble
-					center: new L.LatLng(46.5, 7.5), // Swiss
-					zoom: 18, // poly 3116
-*/
-					layers: layers,
-				});
-				if(0)				
-					map.fitBounds([
-					  [44, 1], // South West
-					  [46, 6] // North East
-					]);
-				else
-//					map.setView([47, 2], 6); // Centre France
-					map.setView([51.5, 0], 9); // London
+			// Controls
+			new L.Control.Scale().addTo(map); // core
+			new L.Control.Fullscreen().addTo(map);
+			new L.Control.Coordinates().addTo(map);
+			new L.Control.OSMGeocoder({
+				position: 'topleft'
+			}).addTo(map);
 
-				// Le controle de changement de couche de carte avec la liste des cartes dispo
-				new L.Control.Layers(L.Map.maps(), {WRI: poiWRIfull, Hill: hill}).addTo(map);
+			new L.Control.Permalink.Cookies({ // shramov/leaflet-plugins
+				layers: new L.Control.Layers(L.TileLayer.collection()).addTo(map)
+			}).addTo(map);
 
-				var permalink = new L.Control.Permalink({text: 'Permalink', layers: L.Map.maps()}).addTo(map);
-//permalink._params.target = 'IGN';
-				permalink.on('update', function(e) {
-//alert('IGN');
-//permalink._params.target = 'IGN';
+			new L.Control.Gps()
+				.addTo(map)
+				.on('gpslocated', function(e) {
+					e.target._map.setView(e.latlng, 16, {
+						reset: true
+					});
 				});
 
-				gps = new L.Control.Gps().addTo(map);
-				gps.on ('gpslocated', function (e){
-					map.setView(e.latlng,16,{reset:true});
-					curseur.setLatLng(e.latlng); // Déplacement du curseur à la position GPS
-				});
-				new L.Control.Scale().addTo(map);
-				new L.Control.Coordinates().addTo(map);
-				new L.Control.OSMGeocoder().addTo(map);
+			var fl = new L.Control.FileLayerLoad().addTo(map);
+			fl.loader.on('data:loaded', function(e) {
+				e.layer.addTo(map);
+			}, fl);
 
-				var poly =
-					new L.Polyline(
-						[[43.5, -1.5], [43.56, -1.2], [43.55, -0.96], [43.3, -0.36]],
-						{editSnapable: true}
-					)
-					.addTo(map);
-				var poly2 =
-					new L.Polyline(
-						[[44.5, -1.5], [44.56, -1.2], [44.55, -0.96], [44.3, -0.36]]
-					)
-					.addTo(map);
+			// GeoJSON Ajax
+			new L.GeoJSON.Ajax.WRIpoi().addTo(map);
+			new L.GeoJSON.Ajax.WRImassifs().addTo(map);
+		});
+	</script>
+</head>
 
-				// Editeur
-				var edit = new L.Control.PolylineEditor({
-					idInput: 'input',
-					idChange: 'changed',
-					submit: '<non implémenté>',
-				})
-				.addTo(map);
+<body>
+	<p>Leaflet V<script>document.write(L.version)</script> &#10144; <a href="examples/index-v1.0.html">See test on Leaflet V1.0</a></p>
+	<div style="position:absolute;right:0;top:0"><a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax">&gt;</a>&nbsp;</div>
+	<div id="map" style="width:640px"></div>
 
-				// Chargement fichier GPX
-				var fl = L.Control.fileLayerLoad();
-				fl.addTo(map);
-				fl.loader.on ('data:loaded', function (args){
-					edit.addEdit(args.layer);
-				}, fl);
-			});
-		</script>
-	</head>
-
-	<body>
-
-<div style="float:right">
-<span id="changed" style="display:none"><i>Changed</i></span>
-<textarea id="input" rows="40" cols="50">
-[[[5.72,45.178],[5.6,45.32],[5.2,45.08],[5.03,44.8],[5.24,44.82],[5.29,44.83],[5.4,44.8],[5.44,44.74],[5.48,44.69],[5.61,44.76],[5.62437,44.7841],[5.59,44.87],[5.63,44.9],[5.64,45.02],[5.72,45.09],[5.72,45.18]]]
-</textarea></div>
-
-<script>
-function switch_massif (combo) {
-	if (combo.checked) {
-		map.addLayer(massif);
-//		map.removeLayer(poiBbox);
-//		map.addLayer(poiLayer = poiMassif);
-	} else {
-		map.removeLayer(massif);
-//		map.removeLayer(poiMassif);
-//		map.addLayer(poiLayer = poiBbox);
-	}
-}
-function couche_externe(e,l) {
-	if(e.checked)
-		map.addLayer(l);
-	else
-		map.removeLayer(l);
-}
-</script>
-
-		<div id="map" style="width: 50%"></div>
-
-		<form method="post" enctype="multipart/form-data" action="#">
-			<span id="curseur-titre-lng"></span>: <input type="hidden" id="curseur-lng" name="longitude" /><input id="curseur-proj-lng" type="text" size="10" />
-			<span id="curseur-titre-lat"></span>: <input type="hidden" id="curseur-lat" name="latitude"  /><input id="curseur-proj-lat" type="text" size="10" />
-			<select id="curseur-select-projection"><option></option></select>
-		</form>
-			<span id="cadre-titre-lng"></span>: <span id="cadre-aff-lng"></span>
-			<span id="cadre-titre-lat"></span>: <span id="cadre-aff-lat"></span>
-			<select id="cadre-select-projection">Degrés décimaux</select>
-		</p>
-		<p>
-			<a href="github.com/Dominique92/Leaflet.MapMultiCRS">Démo cartes multifournisseurs</a>
-		</p>
-		<p>
-			<a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax">Démo couches GeoJSON AJAX</a>
-		</p>
-		<p>
-			<a onclick="curseur.setLatLng(map.getCenter())" style="cursor:pointer;color:#02F">Centrer le viseur sur la carte</a>
-		</p>
-		<p>
-			<a onclick="gps.activate()" style="cursor:pointer;color:#02F">Centrer le viseur sur votre position GPS</a>
-		</p>
-		<p>
-			<a onclick="poiWRI.reload({liste_id_massif:4})" style="cursor:pointer;color:#02F">Reduire scope au massif du Vercors</a>
-		</p>
-		<p>
-			<a href="github.com/Dominique92/Leaflet.MapMultiCRS/swiss.html">Test SwissTopo</a>
-		</p>
-		<p>
-			TEST: switch_massif WRI
-			<input name="id_massif" type="checkbox" checked="checked" value="4"onclick="switch_massif(this)"/>
-		</p>
-		<p>
-			TEST: Swap 2000 pictos WRI
-			<input
-				id="poiWRIfull"
-				onclick="couche_externe(this, poiWRIfull)"
-				type="checkbox"
-			/>
-		</p>
-		<p>
-			<a href="build">Générer les librairies compressées leaflet.css &amp; leaflet.js</a>
-		</p>
-		<p>
-			<a href="build/test-versions.php">Vérifier les versions des pluggins importés</a>
-		</p>
-	</body>
+	<p><a href="build/download-plugins.php">Mettre &agrave; jour les pluggins import&eacute;s</a></p>
+	<p><a href="build/build-dist.php">G&eacute;n&eacute;rer les librairies compress&eacute;es leaflet.css &amp; leaflet.js</a></p>
+	<p>Plugins:
+		<a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax">GeoJSON.Ajax</a> &nbsp;
+		<a href="github.com/Dominique92/Leaflet.Map.MultiVendors">MultiVendors</a> &nbsp;
+		<a href="github.com/Dominique92/Leaflet.Marker.coordinates">Marker.coordinates</a> &nbsp;
+		<a href="github.com/Dominique92/Leaflet.draw.plus">Draw.plus</a>
+	</p>
+</body>
 </html>

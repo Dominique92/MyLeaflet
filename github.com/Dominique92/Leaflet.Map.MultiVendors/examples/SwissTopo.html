@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Leaflet extension for multi vendors maps & projections</title>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+
+	<script src="http://dominique92.github.io/MyLeaflet/github.com/kartena/Proj4Leaflet/lib/proj4-compressed.js"></script>
+	<script src="http://dominique92.github.io/MyLeaflet/github.com/kartena/Proj4Leaflet/src/proj4leaflet.js"></script>
+
+	<script src="../layers/SwissTopo.js"></script>
+
+	<script>
+		window.addEventListener('load', function() { // Run when the full page is loaded
+			var layers = {
+				'SwissTopo': new L.TileLayer.SwissTopo({l:'ch.swisstopo.pixelkarte-farbe'}),
+//				'Swiss Siegfried': new L.TileLayer.SwissTopo({l:'ch.swisstopo.hiks-siegfried'}),
+//				'Swiss Dufour': new L.TileLayer.SwissTopo({l:'ch.swisstopo.hiks-dufour'}),
+				'Swiss Image': new L.TileLayer.SwissTopo({l:'ch.swisstopo.swissimage'})
+			};
+
+			var map = new L.Map('map', {
+				center: new L.LatLng(46.8, 8.3), // Centre France
+				zoom: 15,
+				crs: L.CRS.EPSG21781,
+				layers: [layers.SwissTopo]
+			});
+
+			new L.Control.Layers(layers).addTo(map);
+		});
+	</script>
+</head>
+
+<body>
+	<p>Leaflet extension for SwissTopo maps</p>
+	<p>
+		No key is needed but you need to declare your domain to
+		<a href="http://www.swisstopo.admin.ch/internet/swisstopo/fr/home/products/services/web_services/webaccess.html">
+			http://www.swisstopo.admin.ch/internet/swisstopo/fr/home/products/services/web_services/webaccess.html
+		</a>
+	</p>
+	<p>Sources on <a href= "https://github.com/Dominique92/Leaflet.Map.MultiVendors">Github Dominique92/Leaflet.Map.MultiVendors</a></p>
+	<p>Leaflet <script>document.write(L.version)</script></p>
+
+	<div id="map" style="width: 800px; height: 600px"></div>
+
+	<br/><p>This plugin is also supported on Leaflet V1.0 : <a href="index-v1.0.html">Test on Leaflet V1.0</a></p>
+	<div style="position: absolute;right:0;top:0"><a href="index-v1.0.html">&gt;</a>&nbsp;</div>
+</body>
+</html>

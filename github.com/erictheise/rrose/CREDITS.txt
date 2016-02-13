@@ -1,4 +1,0 @@
-https://github.com/erictheise/rrose
-master
-Commits on Dec 8, 2015
-https://github.com/erictheise/rrose/tree/04fac08b0b367e137b64fb4e5e08e2dd020955c6

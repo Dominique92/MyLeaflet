@@ -1,4 +1,0 @@
-https://github.com/Dominique92/Leaflet.GeoJSON.Ajax
-master
-Commits on Nov 12, 2015
-https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/tree/c0209a8a5e990348c254f30539ef23f924a683d3

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Leaflet</title>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="src/leaflet.css" />
+	<script src="src/leaflet.js"></script>
+	<script src="github.com/Dominique92/Leaflet.GeoJSON.Ajax/src/GeoJSON.Ajax.WRI.js"></script>
+
+	<script>
+		var key = {
+			ign: window.location.host == 'localhost'
+				? 'u71tqebfror0c2nn3nppcbk2' // localhost 31/03/2016 http://api.ign.fr
+				: 'o6owv8ubhn3vbz2uj8jq5j0z', // dominique92.github.io http://pro.ign.fr/api-web
+			bing: 'ArLngay7TxiroomF7HLEXCS7kTWexf1_1s1qiF7nbTYs2IkD3XLcUnvSlKbGRZxt', // https://www.bingmapsportal.com
+			os: 'CBE047F823B5E83CE0405F0ACA6042AB' // http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
+		};
+
+L.CRS.EPSG27563 =new L.Proj.CRS(
+	'EPSG:27563',
+	'+proj=lcc +lat_1=44.10000000000001 +lat_0=44.10000000000001 +lon_0=0 +k_0=0.999877499 +x_0=600000 +y_0=200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs',
+//	'+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +datum=OSGB36 +units=m +no_defs',
+	{
+//		resolutions: [2500, 1000, 500, 200, 100, 50, 25, 10, 5, 2.5]
+		resolutions: [150000000,40000000,10000000,1500000,400000,200000,100000,50000,25000,10000,5000,2500,1000,500],
+		//			origin: [420000, 350000],
+
+	}
+);
+
+
+L.CRS.EPSG4326A = L.extend({}, L.CRS.EPSG4326, {
+	qscale: function(zoom) {
+var res = [2500, 1000, 500, 200, 100, 50, 25, 10, 5, 2.5];
+		return 1 / res[zoom];
+	}
+});
+
+		var map;
+		window.addEventListener('load', function() {
+			map = new L.Map('map', {crs: L.CRS.EPSG27563});
+//			map.setView([47, 2], 6); // France
+			map.setView([50, 0], 11); // Nord Espagne
+			//			map.setView([45, 5], 7); // Sud ouest
+			//			map.setView([51.5, 0], 9); // UK
+			//			map.setView([49.959, -5.206], 8); // Cap Lizard
+			//			map.setView([46.5, 7], 7); // Suisse
+
+
+//*DCMM*/{var v=L.CRS.EPSG4326A,r='';if(typeof v=='array'||typeof v=='object'){for(i in v)if(typeof v[i]!='function')r+=i+'='+typeof v[i]+' '+v[i]+' '+(v[i]&&v[i].CLASS_NAME?'('+v[i].CLASS_NAME+')':'')+"\n"}else r=+v;alert(r)}
+//*DCMM*/{var v=L.CRS.EPSG4326,r='';if(typeof v=='array'||typeof v=='object'){for(i in v)if(typeof v[i]!='function')r+=i+'='+typeof v[i]+' '+v[i]+' '+(v[i]&&v[i].CLASS_NAME?'('+v[i].CLASS_NAME+')':'')+"\n"}else r=+v;alert(r)}
+if(0)
+			L.TileLayer.collection('OSM-FR').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
+
+L.tileLayer.wms("http://www.ideandorra.ad/geoserver/gwc/service/wms", 
+ 		{
+  			layers: 'fons',
+  			format: 'image/png',
+    resolutions: [150000000,40000000,10000000,1500000,400000,200000,100000,50000,25000,10000,5000,2500,1000,500],
+  		}
+  	).addTo(map);
+			//			L.TileLayer.collection('OS Great Britain').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
+			//			map.setCRS(L.CRS.EPSG27700);
+			//			L.TileLayer.collection('SwissTopo').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
+
+			// Controls
+			new L.Control.Scale().addTo(map); // core
+			new L.Control.Fullscreen().addTo(map);
+			new L.Control.Coordinates().addTo(map);
+			new L.Control.OSMGeocoder({
+				position: 'topleft'
+			}).addTo(map);
+
+if(0)
+			new L.Control.Permalink.Cookies({ // shramov/leaflet-plugins
+				layers: new L.Control.Layers(L.TileLayer.collection()).addTo(map)
+			}).addTo(map);
+
+			new L.Control.Gps()
+				.addTo(map)
+				.on('gpslocated', function(e) {
+					e.target._map.setView(e.latlng, 16, {
+						reset: true
+					});
+				});
+
+			var fl = new L.Control.FileLayerLoad().addTo(map);
+			fl.loader.on('data:loaded', function(e) {
+				e.layer.addTo(map);
+			}, fl);
+
+			// GeoJSON Ajax
+			new L.GeoJSON.Ajax.WRIpoi().addTo(map);
+			new L.GeoJSON.Ajax.WRImassifs().addTo(map);
+		});
+	</script>
+</head>
+
+<body>
+	<p>Leaflet <script>document.write(L.version)</script></p>
+	<div id="map" style="width:640px"></div>
+
+	<p><a href="build/download-plugins.php">Mettre &agrave; jour les pluggins import&eacute;s</a></p>
+	<p><a href="build/build-dist.php">G&eacute;n&eacute;rer les librairies compress&eacute;es leaflet.css &amp; leaflet.js</a></p>
+	<p>
+		<a href="github.com/Dominique92">Dominique's plugins examples</a> &nbsp;
+		<a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax">Ajax</a> &nbsp;
+		<a href="github.com/Dominique92/Leaflet.Map.MultiVendors">MultiVendors</a> &nbsp;
+		<a href="github.com/Dominique92/Leaflet.draw.plus">Draw.plus</a>
+	</p>
+	<p>
+		<a href="examples">Examples</a> &nbsp;
+		<a href="examples/frame.php">Cadre</a> &nbsp;
+		<a href="examples/viewfinder.php">Viseur</a> &nbsp;
+		<a href="examples/edit.php">Edit</a>
+	</p>
+</body>
+</html>
+
+
+<!-- 
+	http://www.ideandorra.ad/geoportal/index.jsp?lang=ca
+	http://www.cartografia.ad/visor-de-mapes
+	http://www.ideandorra.ad/geoportal/js/getconfig.json?lang=ca
+	http://www.ideandorra.ad/geoportal/defs/EPSG27563.js
+	http://idee.es/web/guest/directorio-de-servicios?p_p_id=DIRSRVIDEE_WAR_DIRSRVIDEEportlet_INSTANCE_q4BW&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_DIRSRVIDEE_WAR_DIRSRVIDEEportlet_INSTANCE_q4BW_tipoServicio=WMS&_DIRSRVIDEE_WAR_DIRSRVIDEEportlet_INSTANCE_q4BW_supertipo=OGC&_DIRSRVIDEE_WAR_DIRSRVIDEEportlet_INSTANCE_q4BW_descSrv=VISUALIZACION&_DIRSRVIDEE_WAR_DIRSRVIDEEportlet_INSTANCE_q4BW_tipoAmbito=PAISES_VECINOS#PVECINO_2
+
+OH site
+	http://www.ideandorra.ad/geoserver/gwc/service/wms
+						EXCEPTIONS=application/vnd.ogc.se_inimage
+LAYERS=fons
+						TRANSPARENT=false
+		VERSION=1.1.1
+		FORMAT=image%2Fpng
+		SERVICE=WMS
+		REQUEST=GetMap
+		STYLES=
+		SRS=EPSG%3A4326
+		BBOX=1.5832955753349,42.542947769803,1.5993933852263,42.559045579694
+		WIDTH=256
+		HEIGHT=256
+
+TEST
+http://www.ideandorra.ad/geoserver/gwc/service/wms
+
+VERSION=1.1.1
+LAYERS=fons
+TRANSPARENT=false
+FORMAT=image%2Fpng
+SERVICE=WMS
+REQUEST=GetMap
+STYLES=
+SRS=EPSG%3A3857
+BBOX=-626172.1357121639,6261721.35712164,0,6887893.4928338
+WIDTH=256
+HEIGHT=256
+
+
+
+
+
+Ref
+	http://www.cartografia.ad/geoportal
+		service=WMS
+		request=GetMap
+		version=1.1.1
+layers=Cota_Alt
+		styles=
+		format=image/png
+						transparent=true
+		height=256
+		width=256
+		srs=EPSG:4326
+		bbox=1.40625,42.5390625,1.58203125,42.71484375
+	
+	 	var wmsLyr = L.tileLayer.wms("http://www.ideandorra.ad/wms_carto10000/request.aspx?", 
+ 		{
+  			layers: 'Cota_Alt',
+  			format: 'image/png',
+  			transparent: true
+  		}
+  	);
+-->

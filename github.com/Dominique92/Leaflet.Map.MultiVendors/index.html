@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Leaflet extension for multi vendors maps & projections</title>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
+
+	<!-- Leaflet kernel -->
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+
+	<!-- Variable projections -->
+	<script src="http://dominique92.github.io/MyLeaflet/github.com/kartena/Proj4Leaflet/lib/proj4-compressed.js"></script>
+	<script src="http://dominique92.github.io/MyLeaflet/github.com/kartena/Proj4Leaflet/src/proj4leaflet.js"></script>
+	<script src="MapMultiCRS.js"></script>
+
+	<!-- Misc layers -->
+	<script src="layers/OSM.js"></script>
+	<script src="layers/IGN.js"></script>
+	<script src="layers/IGM.js"></script>
+	<script src="layers/IDEE.js"></script>
+	<script src="layers/SwissTopo.js"></script>
+	<script src="layers/Google.js"></script>
+	<script src="http://dominique92.github.io/MyLeaflet/github.com/shramov/leaflet-plugins/layer/tile/Bing.js"></script>
+	<script src="https://rawgit.com/rob-murray/os-leaflet/master/OSOpenSpace.js"></script> <!-- For Leaflet V0.7 -->
+	<script src="layers/OS.js"></script><!-- V0.7 : addon to rob-murray/os-leaflet -->
+	<script src="TileLayer.collection.js"></script>
+
+	<script>
+		// Specific layers keys
+		var key = {
+			ign: window.location.host == 'localhost'
+				? 'u71tqebfror0c2nn3nppcbk2' // localhost 31/03/2016 http://api.ign.fr
+				: 'o6owv8ubhn3vbz2uj8jq5j0z', // dominique92.github.io http://pro.ign.fr/api-web
+			bing: 'ArLngay7TxiroomF7HLEXCS7kTWexf1_1s1qiF7nbTYs2IkD3XLcUnvSlKbGRZxt', // https://www.bingmapsportal.com
+			os: 'CBE047F823B5E83CE0405F0ACA6042AB' // http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
+		};
+		L.TileLayer.OSOpenSpace.prototype.options.crs = L.OSOpenSpace.getCRS(); // Assign CRS to OS-UK layer options
+
+		window.addEventListener('load', function() { // Run when the full page is loaded
+			var map = new L.Map('map', {
+				center: new L.LatLng(47, 2), // Centre France
+				zoom: 6,
+				layers: [L.TileLayer.collection('OSM-FR')]
+			});
+
+			new L.Control.Layers(L.TileLayer.collection()).addTo(map);
+		});
+	</script>
+</head>
+
+<body>
+	<p>Leaflet V<script>document.write(L.version)</script> &#10144; <a href="examples/collection-v1.0.html">See test on Leaflet V1.0</a></p>
+	<div style="position:absolute;right:0;top:0"><a href="../Leaflet.GeoJSON.Ajax">&gt;</a>&nbsp;</div>
+	<p>Leaflet extension for multi vendors maps & projections (
+OSM, Thunder Forest, Refuges.info
+IGN France,
+SwissTopo,
+IDEE Espa&ntilde;a,
+IGM Italie,
+OS Great Britain,
+Bing Microsoft,
+Google maps,
+...)</p>
+	<p>Sources on <a href= "https://github.com/Dominique92/Leaflet.Map.MultiVendors">Github Dominique92/Leaflet.Map.MultiVendors</a></p>
+	<div id="map" style="width: 800px; height: 600px"></div>
+</body>
+</html>

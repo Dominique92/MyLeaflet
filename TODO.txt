@@ -1,98 +1,138 @@
-BUGS
-====
-Appelle les flux avec &target=[object%20Object]
-On ne peut pas copier le permalien dans un mail (cause caractère #)
-On ne peut commencer que sur une carte EPSG3857
-Mode debug distrib: origine images pointeur => ne fonctionne pas (pas de leafletjs.com/0.7.5/images/marker-icon.png)
+BUG MyLeaflet
+=============
+Permalink: pb de nb de zoom sur SwissTopo
+	https://github.com/Zverik/Leaflet.LimitZoom
+Bug suppression poly dans editeur => Ã§a rame aprÃ©s !
 
-1.0.beta
-========
-Proj4Leaflet: *For compatibility with Leaflet 1.0-beta1 use the leaflet-proj-refactor branch.*
-Leaflet.draw: Support for Leaflet 1.0 is in development at the [leaflet-master](https://github.com/Leaflet/Leaflet.draw/tree/leaflet-master) branch.
-
-TODO
-====
-Export fichier GPX. ==> togpx(l.toGeoJSON())
-	//	'../github.com/tyrasd/togpx/togpx.js', // TODO: l'activer avec un contrôle
-A voir: https://github.com/calvinmetcalf/leaflet-ajax
-MarkerPosition => indépendant des CRS ????
-MarkerPosition => crsoption.name => coord
+WRI LIVRAISON
+=============
+Retirer proxy et autres fichiers LL renommÃ©s
+Sur IE: liste aussi le nom des fonctions dans le sÃ©lecteur de coordonnÃ©es
 
 BEST TO DO
 ==========
-Revoir l'optim de la lib en utilisant ...
-Revoir les link de l'index de démo Leaflet.MapMultiCRS dans son GIT/demo
-Afficher heure sur survol point ou segment d'une courbe
-Lettres accentuées sur les tooltips massifs => KO VIA PROXY.
-Pluggin MultiCRS: couches Mapbox, Yandex
-Traductions locales non française (position / longitude / ...)
-feature.properties.nom => feature.properties.name (rupture interface WRI ! voir aussi les autres properties: url, ...)
-Supprimer passage de Draw qui ne servent pas
-Position avec un crossmarker / MarkerPosition => avec des cercles et droites
-Mémorisation position dans cookies / lien entre pages.
-Permalink ne marche pas avec des arguments ?xx&yy
-Permalink ne note pas le layer // Ben si: L.UrlUtil.queryParse(L.UrlUtil.hash()).layer
-Trouver proj4js source et l'élaguer (réduire taille lib).
-Demo http://dominique92.github.io/LL4/github.com/Dominique92/Leaflet.MapMultiCRS/ clé IGN (ou retirer la couche !)
-Clé IGN localhost & demo sur Leaflet.MapMultiCRS
-Purger MyLeaflet/index.html de beaucoup d'historique
-getCurrentPosition() and watchPosition() are deprecated on insecure origins, and support will be removed in the future. You should consider switching your application to a secure origin, such as HTTPS. See https://goo.gl/rStTGz for more details.
+Download GPX en EDGE : => null (1).txt
+Extraction GPX bbox=Ã©cran
+NAV/lecture inclue fichier ne le rend pas Ã©ditable
+NAV: dÃ©coche tous choix de type de picto = pas de pictos (pour autre usage de la carte)
+WRI: Carte par defaut fiche Angleterre (manque le contour localisation administrative)
+IntÃ©grer GoeoJSON avec GeoBB
+Click sur cadre entoure en bleu
+Renommer GetGpxFile -> FileDownload ???
+Changer l'icones permut (unicode 1F501 Ã  4)
+	1F5C1 -> folder
+	1F5AB ou C -> Disquette
+Afficher altitude & heure sur survol point ou segment d'une courbe
+	https://github.com/mpetazzoni/leaflet-gpx
+	https://github.com/arthur-e/Wicket
+Editeur
+	Purge des points identiques sur un segment
+	Importer (en + de geojson, gpx, kml)
+		https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
+	Exporter
+		"save as"
+		Exporter formats gpx, kml, geojson
+		Formats import/export: GPX,KML,KMZ,GPI,WPT,TRK,RTE,CSV,GDB,MPS,TXT : https://www.gps-data-team.com/convert.php
+	TEST: Edition massif avec trou
+Carte andorre
+Control.Draw.Plus.js: layer.options.editing = {}; // Voir pourquoi (nouvelle version de draw)
+Swiss: getcapabilities / time de la carte
 
-TODO EDITEUR
-============
-Grossir la ligne éditée au survol
-Il y a aussi quelques embrouilles quand on joue avec les limites et les points
-layer.options.editing = {}; //DCMM TODO voir pourquoi (nouvelle version de draw)
-Réduire syntaxe input geoJSON (enlever les autres syntaxes qui ne peuvent servir qu'avec une version de PGSQL supérieure à celle utilisée par WRI)
-Rendre colables les extrémités pour reboucler un polygone
-Purge des points tout seuls & purge des points identiques sur un segment
-Snap pendant création ou extension de segment.
-Edition massif avec trou
-Editeur de marqueurs (cross, ...)
-Edition de polygones (pleins et rebouclés)
-
-APPLI
-=====
-Faire un html auto executable avec seulement outdoors et non interruptible (en faire une appli ?)
-Fonction de téléchargement des dalles dans un périmètre donné
-
-WRI
+GYM
 ===
-Il serait bien de faire en sorte que le menu "zones couvertes" soit généré dynamiquement et rempli avec toutes nos "zones couvertes"
-Style: 2 .menu UL {
-Mettre météo
-Edition / creation / suppression polygones autres que massif
-Charger fichier GPX: pas sur un mobile !!
-NAV: décalage popup
-Nouvelle Calédonie, Corse, toutes zones à 1 seul massif: devrait afficher directement le massif
-POINT: choisir type d'affichage coordonnées suivant pays du point.
-MASSIF EDIT: si on crée un polygone de 2 sommets, gros message d'erreur
-Support IE8 ??
-NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
-Debug => debug LL
-Mettre toutes les clés IGN dans le modèle de conf privée + note sur la clé bing
-Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
-Déraciner le wiki
-Passage en templates gestion/index.php
+compteur pages
 
-WRI API
-=======
-API: erreur sur geom vide dans un polynome
-DOC API: Mettre l'entête et le pied
-API: Durée cache réglable
-API: Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
+DOC TESTS & DEMOS
+=================
+StratÃ©gie 1.0 pour tests
+Mettre les fichiers test.html dans /spec
+Faire Readme, doc, test, demo & github permalink.cookies & Marker.coordinates
+Faire des fichiers de TEST (edit, ...) basÃ©s sur src/ll... # fichiers index.html DÃ‰MO
+Traduire en anglais
+Passer lint et beautifier
+Chainage des demos + V1
+DÃ©mo index.html/V1.0
+Quand uploadÃ© sur le io.github, remettre les libs des dÃ©mos des plugins Dom92 en chemin externe
+Dom plugins & demos: Dom92.L.IGN, Swiss, IDEE, IGM
+Doc read.me === doc en tÃªte de fichier === index.html
 
-Avant mise en prod
-==================
-Purger les librairies du code non utilisé,
-Remettre le code DC aux normes de présentation Leaflet.
-Résorber DCMM. DELETE fichiers contenant DELETE.
+BUILD BEST TO DO
+================
+Noter les versions github dans les compressÃ©s
+Optim noms internes longs ??
+Voir https://tortoisegit.org/
+
+V1.0
+====
+DÃ©mo viseur/V1.0 KO
+Draw+ V1 KO
+On ne peux plus sortir du zoom SwissTopo quand on a zoomÃ© Ã  fond
+
+IMPORT GARMIN
+=============
+Basecamp
+Ma Collection
+Fichier importer
+Glisser de Ma Collection-fichier vers Stockage interne
+
+VÃ©rification finale avant mise en prod
+======================================
+RÃ©sorber DCMM GEO DELETE
+Tous commentaires plugins en anglais
+Mettre _ devant les methodes de classes internes
+https://github.com/Leaflet/Leaflet/blob/master/CONTRIBUTING.md
+http://jsbeautifier.org/
+http://www.javascriptlint.com/online_lint.php
+	vÃ©rif , en fin de tablo ???
+https://github.com/airbnb/javascript
 Style commentaires:
 /*
 Switzerland Coordinate Reference System
  */
 
+Finalement, on ne va pas les faire
+==================================
+Edit: Arrondir les lonlat Json Ã  5 dÃ©cimales
+On ne peut pas cliquer sur un zap du mÃªme segment en crÃ©ation
+Faire des makers avec CircleMarker, ...
+Cartes transparentes -> les couches doivent passer en overlay
+cut -> laisser crÃ©er le sommet puis le dÃ©truire lÃ  et couper
+Draw : garder les controles ouverts comme par dÃ©faut. StratÃ©gie draw
+Layer cadre avec rectangle. => Pas trouvÃ© Ã  faire un rectangle fixe !
+BOF / nÃ©cÃ©ssite export...: A voir: https://github.com/calvinmetcalf/leaflet-ajax
+BEST ? ImplÃ©menter automatiquement les diff: http://php.net/manual/fr/function.xdiff-file-patch.php
+
+APPLI
+=====
+Faire un html auto executable avec seulement outdoors et non interruptible (en faire une appli ?)
+Fonction de tÃ©lÃ©chargement des dalles dans un pÃ©rimÃ¨tre donnÃ©
+
+WRI
+===
+Il serait bien de faire en sorte que le menu "zones couvertes" soit gÃ©nÃ©rÃ© dynamiquement et rempli avec toutes nos "zones couvertes"
+Style: 2 .menu UL {
+Mettre mÃ©tÃ©o
+Edition / creation / suppression polygones autres que massif
+Charger fichier GPX: pas sur un mobile !!
+NAV: dÃ©calage popup
+Nouvelle CalÃ©donie, Corse, toutes zones Ã  1 seul massif: devrait afficher directement le massif
+NAV: Ctrl + Click icÃ´ne: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, Ã§a passe sur le nouvel onglet
+Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
+DÃ©raciner le wiki
+Passage en templates gestion/index.php
+API: erreur sur geom vide dans un polynome
+DOC API: Mettre l'entÃªte et le pied
+API: DurÃ©e cache rÃ©glable
+API: Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
+
 NOTES
 =====
 MultiPolygon multiple => WRI massif 3116
 MultiPolygon avec trou => WRI massif 3127
+
+OPTIM JS
+========
+http://closure-compiler.appspot.com/ => Build un leaflet.js non compressÃ©
+http://jsbeautifier.org/
+http://siliconforks.com/jscoverage/ ?? => code coverage !
+http://www.javascriptlint.com/ ?? => http://www.javascriptlint.com/online_lint.php => VERIFICATEUR JS (y compris virgules !)

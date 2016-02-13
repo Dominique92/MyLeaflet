@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Leaflet</title>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="github.com/Leaflet/1.0.0-beta.2/leaflet.css" />
+	<script src="github.com/Leaflet/1.0.0-beta.2/leaflet.js"></script>
+
+	// Controles
+	<script src="github.com/Leaflet/Leaflet.fullscreen/dist/Leaflet.fullscreen.js"></script> 
+	<script src="github.com/MrMufflon/Leaflet.Coordinates/src/util/NumberFormatter.js"></script>
+	<script src="github.com/MrMufflon/Leaflet.Coordinates/src/Control.Coordinates.js"></script>
+	<script src="github.com/stefanocudini/leaflet-gps/src/leaflet-gps.js"></script>
+	<script src="github.com/k4r573n/leaflet-control-osm-geocoder/Control.OSMGeocoder.js"></script>
+	<script src="github.com/shramov/leaflet-plugins/control/Permalink.js"></script> //V1.0 https://github.com/shramov/leaflet-plugins/tree/leaflet_one
+	<script src="github.com/shramov/leaflet-plugins/control/Permalink.Layer.js"></script>
+	<script src="src/Permalink.Cookies.js"></script>
+	<script src="src/MapAutoHeight.js"></script>
+
+	// CRS exotiques
+	<script src="github.com/proj4js/proj4js/dist/proj4-src.js"></script> // FULL
+	'../src/lib/proj4-OPTIM.js"></script> // OPTIM
+//V1.0: https://github.com/kartena/Proj4Leaflet/tree/leaflet-proj-refactor
+//	<script src="github.com/kartena/Proj4Leaflet/lib/proj4.js"></script> // Ne marche pas (contient define...)
+	<script src="github.com/kartena/Proj4Leaflet/src/proj4leaflet.js"></script> // 6k
+	<script src="github.com/Dominique92/Leaflet.Map.MultiVendors/src/MapMultiCRS.js"></script>
+	<script src="github.com/tyrasd/togpx/togpx.js"></script> // Converts GeoJSON to GPX.
+	<script src="github.com/Dominique92/Leaflet.Marker.coordinates/Marker.coordinates.js"></script>
+
+	// Couches autres fournisseurs
+	<script src="github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/OSM.js"></script>
+	<script src="github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/IGN.js"></script>
+	<script src="github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/IGM.js"></script>
+	<script src="github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/IDEE.js"></script>
+	<script src="github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/SwissTopo.js"></script>
+	<script src="github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/Google.js"></script>
+	<script src="github.com/rob-murray/os-leaflet/OSOpenSpace.js"></script> // V0.7 
+// V1.0	<script src="github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/OS.js"></script> 
+// V1.0 (rob-murray/os-leaflet-1.0-beta/src/OSOpenSpace.js KO)
+	<script src="github.com/shramov/leaflet-plugins/layer/tile/Bing.js"></script>// V1.0: leaflet_one
+
+	// Couches vectotielles
+	<script src="github.com/makinacorpus/Leaflet.FileLayer/leaflet.filelayer.js"></script> //V1.0 ??
+	<script src="github.com/mapbox/togeojson/togeojson.js"></script> //V1.0 ??
+	<script src="github.com/erictheise/rrose/leaflet.rrose-src.js"></script> //V1.0 ??
+	<script src="github.com/Dominique92/Leaflet.GeoJSON.Ajax/src/GeoJSON.Style.js"></script>
+	<script src="github.com/Dominique92/Leaflet.GeoJSON.Ajax/src/GeoJSON.Ajax.js"></script>
+// INSERER SUR DEMANDE	<script src="github.com/Dominique92/Leaflet.GeoJSON.Ajax/src/GeoJSON.Ajax.WRI.js"></script>
+	<script src="github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/TileLayer.collection.js"></script>
+	<script src="github.com/Dominique92/Leaflet.GeoJSON.Ajax/src/GeoJSON.Ajax.WRI.js"></script>
+
+
+	<script>
+		var key = {
+			ign: window.location.host == 'localhost'
+				? 'u71tqebfror0c2nn3nppcbk2' // localhost 31/03/2016 http://api.ign.fr
+				: 'o6owv8ubhn3vbz2uj8jq5j0z', // dominique92.github.io http://pro.ign.fr/api-web
+			bing: 'ArLngay7TxiroomF7HLEXCS7kTWexf1_1s1qiF7nbTYs2IkD3XLcUnvSlKbGRZxt', // https://www.bingmapsportal.com
+			os: 'CBE047F823B5E83CE0405F0ACA6042AB' // http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
+		};
+
+		var map;
+		window.addEventListener('load', function() {
+			map = new L.Map('map');
+			map.setView([47, 2], 6); // France
+			//			map.setView([45, 5], 7); // Sud ouest
+			//			map.setView([51.5, 0], 9); // UK
+			//			map.setView([49.959, -5.206], 8); // Cap Lizard
+			//			map.setView([46.5, 7], 7); // Suisse
+			L.TileLayer.collection('OSM-FR').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
+			//			L.TileLayer.collection('OS Great Britain').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
+			//			map.setCRS(L.CRS.EPSG27700);
+			//			L.TileLayer.collection('SwissTopo').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
+
+			// Controls
+			new L.Control.Scale().addTo(map); // core
+			new L.Control.Fullscreen().addTo(map);
+			new L.Control.Coordinates().addTo(map);
+			new L.Control.OSMGeocoder({
+				position: 'topleft'
+			}).addTo(map);
+
+			new L.Control.Permalink.Cookies({ // shramov/leaflet-plugins
+				layers: new L.Control.Layers(L.TileLayer.collection()).addTo(map)
+			}).addTo(map);
+
+			new L.Control.Gps()
+				.addTo(map)
+				.on('gpslocated', function(e) {
+					e.target._map.setView(e.latlng, 16, {
+						reset: true
+					});
+				});
+
+			var fl = new L.Control.FileLayerLoad().addTo(map);
+			fl.loader.on('data:loaded', function(e) {
+				e.layer.addTo(map);
+			}, fl);
+
+			// GeoJSON Ajax
+			new L.GeoJSON.Ajax.WRIpoi().addTo(map);
+			new L.GeoJSON.Ajax.WRImassifs().addTo(map);
+		});
+	</script>
+</head>
+
+<body>
+	<p>Leaflet V<script>document.write(L.version)</script> &#10144; <a href="..">See test on Leaflet V0.7</a></p>
+	<div style="position:absolute;right:0;top:0"><a href="../github.com/Dominique92/Leaflet.GeoJSON.Ajax">&gt;</a>&nbsp;</div>
+	<div id="map" style="width:640px"></div>
+
+	<p><a href="build/download-plugins.php">Mettre &agrave; jour les pluggins import&eacute;s</a></p>
+	<p><a href="build/build-dist.php">G&eacute;n&eacute;rer les librairies compress&eacute;es leaflet.css &amp; leaflet.js</a></p>
+	<p>
+		<a href="github.com/Dominique92">Dominique's plugins examples</a> &nbsp;
+		<a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax">Ajax</a> &nbsp;
+		<a href="github.com/Dominique92/Leaflet.Map.MultiVendors">MultiVendors</a> &nbsp;
+		<a href="github.com/Dominique92/Leaflet.draw.plus">Draw.plus</a>
+	</p>
+	<p>
+		<a href="examples">Examples</a> &nbsp;
+	</p>
+</body>
+</html>

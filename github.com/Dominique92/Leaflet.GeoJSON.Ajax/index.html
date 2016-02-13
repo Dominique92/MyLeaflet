@@ -1,69 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<title>Leaflet extension for remote GeoJSON layers</title>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
 	<!-- Leaflet kernel -->
-	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.png" />
-	<!-- TODO ?? link href="http://leafletjs.com/atom.xml" type="application/atom+xml" rel="alternate" title="Leaflet Dev Blog Atom Feed" /-->
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 
-	<!-- Embeded pluggin -->
+	<!-- Erictheise.rrose pluggin -->
 	<link rel="stylesheet" href="http://erictheise.github.io/rrose/stylesheets/leaflet.rrose.css" />
-	<script type="text/javascript" src="http://erictheise.github.io/rrose/javascripts/leaflet.rrose-src.js"></script>
+	<script src="http://erictheise.github.io/rrose/javascripts/leaflet.rrose-src.js"></script>
 
-	<!-- Embeded pluggin -->
-	<link type="text/css" rel="stylesheet" href="GeoJSON.Ajax.css" />
-	<script type="text/javascript" src="GeoJSON.Ajax.js"></script>
+	<!-- This pluggin -->
+	<link rel="stylesheet" href="GeoJSON.Ajax.css" />
+	<script src="src/GeoJSON.Style.js"></script>
+	<script src="src/GeoJSON.Ajax.js"></script>
 
-	<script type="text/javascript">
+	<script>
 		window.addEventListener('load', function() {
 			map = new L.Map('map', {
 				center: new L.LatLng(46.8, 2),
-				zoom: 6,
-				layers: [
-					new L.TileLayer('http://maps.refuges.info/hiking/{z}/{x}/{y}.png', {
-						attribution: '&copy; <a href="http://osm.org/copyright">Contributeurs OpenStreetMap</a> & <a href="http://wiki.openstreetmap.org/wiki/Hiking/mri">MRI</a>'
-					}),
-					new L.GeoJSON.Ajax(
-						'http://www.refuges.info/api/polygones', {
-							argsGeoJSON: {
-								type_polygon: 1
-							},
-							url: function(target) {
-								return target.feature.properties.lien;
-							},
-							style: function(feature) {
-								return {
-									color: feature.properties.couleur,
-									weight: 2,
-									opacity: 0.5,
-									editSnapable: true
-								}
-							}
-						}
-					),
-					new L.GeoJSON.Ajax(
-						'http://www.refuges.info/api/bbox', {
-							argsGeoJSON: {
-								type_points: 'all'
-							},
-							bbox: true,
-							degroup: 12,
-							url: function(target) {
-								return 'http://www.refuges.info/point/' + target.feature.properties.id;
-							},
-							icon: function(feature) {
-								return {
-									url: 'http://www.refuges.info/images/icones/' + feature.properties.type.icone + '.png'
-								}
-							},
-							editSnapable: true
-						}
-					)
-				]
+				zoom: 6
 			});
+
+			// Baselayer
+			new L.TileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+			}).addTo(map);
+
+			// Europe mountain points of interest
+			new L.GeoJSON.Ajax(
+				'http://www.refuges.info/api/bbox', {
+					argsGeoJSON: {
+						type_points: 'all'
+					},
+					bbox: true,
+					style: function(feature) {
+						return {
+							url: feature.properties.lien,
+							iconUrl: 'http://www.refuges.info/images/icones/' + feature.properties.type.icone + '.png',
+							iconAnchor: [8, 8],
+							title: feature.properties.nom,
+							popupAnchor: [-1, -9],
+							degroup: 12 // Spread the icons when the cursor hover on a busy area.
+						};
+					}
+				}
+			).addTo(map);
+
+			// French mountain limits
+			new L.GeoJSON.Ajax(
+				'http://www.refuges.info/api/polygones', {
+					argsGeoJSON: {
+						type_polygon: 1
+					},
+					bbox: true,
+					style: function(feature) {
+						return {
+							title: feature.properties.nom,
+							popupAnchor: [-1, -4],
+							url: feature.properties.lien,
+							color: feature.properties.couleur,
+							weight: 2
+						};
+					}
+				}
+			).addTo(map);
 		});
 	</script>
 </head>
@@ -71,6 +75,11 @@
 <body>
 	<p>Leaflet extension for remote GeoJSON layers (Markers, Polylines, Polygons, ...)</p>
 	<p>Sources on <a href= "https://github.com/Dominique92/Leaflet.GeoJSON.Ajax">Github: Dominique92/Leaflet.GeoJSON.Ajax</a></p>
+	<p>Leaflet <script>document.write(L.version)</script></p>
+
 	<div id="map" style="width: 800px; height: 600px"></div>
+
+	<br/><p>This plugin is also supported on Leaflet V1.0 : <a href="examples/index-v1.0.html">Test on Leaflet V1.0</a></p>
+	<div style="position: absolute;right:0;top:0"><a href="examples/index-v1.0.html">&gt;</a>&nbsp;</div>
 </body>
 </html>
