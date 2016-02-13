@@ -31,7 +31,7 @@ Do not modify the files in this directory:
 The source of this software is available at : https://github.com/Dominique92/MyLeaflet");
 
 //----------------------------
-// Update pluggins Dominique92
+// Update plugins Dominique92
 foreach (glob ('../github.com/Dominique92/*/*') AS $f)
 	if (!strpos ($f, 'TMP')) {
 		$fs = explode ('/', $f);
@@ -69,7 +69,7 @@ foreach ($jsf[1] AS $fj) {
 	$leaflet_include [] = "document.write('<script src=\"'+racineSources+'$debug_file\"></script>');";
 
 	// Compression des .js
-if(1)$mini_js[]=$fj;else //Masque appel pour debug
+//if(1)$mini_js[]=$fj;else //Masque appel pour debug
 	$mini_js [] = file_get_contents (
 		'http://javascript-minifier.com/raw',
 		false,
@@ -125,7 +125,7 @@ foreach ($css_files[0] AS $css_file)
 			// Remplace les répertoires des url relatifs au fichier CSS d'origine
 			return 'url("'.$destination.'")';
 		},
-//1?$css_file:
+// 1 ? $css_file : //Masque appel pour debug
 		file_get_contents (
 			'http://cssminifier.com/raw',
 			false,
@@ -138,6 +138,7 @@ foreach ($css_files[0] AS $css_file)
 			])
 		)
 	);
+
 file_put_contents ('../dist/leaflet.css', "/**
  * Integrated by Dominique Cavailhez (c) 2016
  * https://github.com/Dominique92/MyLeaflet

@@ -12,9 +12,12 @@ Leaflet extension for multi vendors maps & projections
 - Google maps
 ```
 
+This plugin works both on Leaflet V0.7 & V1.0
+
 DEMO
-====
-[See a DEMO](http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/)
+----
+[See a DEMO using Leaflet V0.7](http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/)
+[See a DEMO using Leaflet V1.0](http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors.Ajax/test/index-v1.0.html)
 
 BASIS
 =====

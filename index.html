@@ -64,12 +64,24 @@
 </head>
 
 <body>
-	<p>Leaflet V<script>document.write(L.version)</script> &#10144; <a href="examples/index-v1.0.html">See test on Leaflet V1.0</a></p>
+	<p>Leaflet extension for POI & tracks management on multi vendors maps</p>
+	<p>Sources on <a href= "https://github.com/Dominique92/MyLeaflet">Github: Dominique92/MyLeaflet</a></p>
+	<p>This demo runs on Leaflet V<script>document.write(L.version)</script>
+		<!-- &#10144; <a href="test/index-v1.0.html" style="font-size:12px">See demo on Leaflet V1.0</a>-->
+	</p>
 	<div style="position:absolute;right:0;top:0"><a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax">&gt;</a>&nbsp;</div>
+
 	<div id="map" style="width:640px"></div>
 
-	<p><a href="build/download-plugins.php">Mettre &agrave; jour les pluggins import&eacute;s</a></p>
-	<p><a href="build/build-dist.php">G&eacute;n&eacute;rer les librairies compress&eacute;es leaflet.css &amp; leaflet.js</a></p>
+	<script>
+	if (window.location.host == 'localhost')
+		document.write (
+			'<p><a href="build/download-plugins.php">Mettre &agrave; jour les plugins import&eacute;s</a></p>'+
+			'<p><a href="build/build-dist.php">G&eacute;n&eacute;rer les librairies compress&eacute;es leaflet.css &amp; leaflet.js</a></p>');
+	else
+		document.write ('* Note: Pas de clé valide pour cartes SWISSTOPO. Copier ce fichier dans votre espace localhost');
+	</script>
+
 	<p>Plugins:
 		<a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax">GeoJSON.Ajax</a> &nbsp;
 		<a href="github.com/Dominique92/Leaflet.Map.MultiVendors">MultiVendors</a> &nbsp;

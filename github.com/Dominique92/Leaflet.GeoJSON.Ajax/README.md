@@ -1,8 +1,8 @@
 Leaflet.GeoJSON.Ajax
 ====================
 
-Leaflet extension for remote GeoJSON layers (Markers, Polylines, Polygons, ...) using AJAX.
-Get the list of features from a remote <URL> & display it into the map with related & parametrables markers, lines & polygons.
+Leaflet extension for remote geoJson layers (Markers, Polylines, Polygons, ...) using AJAX.
+Get collection of features from a remote <URL> & display it into the map with related & parametrables markers, lines & polygons.
 Add customized markers, popup labels & click to navigate to external urls.
 
 It depends on [Leaflet.Rrose](https://github.com/erictheise/rrose).
@@ -11,81 +11,86 @@ This plugin works both on Leaflet V0.7 & V1.0
 
 DEMO
 ----
-[See a DEMO](http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.GeoJSON.Ajax/)
+[See a DEMO using Leaflet V0.7](http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.GeoJSON.Ajax/)
+[See a DEMO using Leaflet V1.0](http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.GeoJSON.Ajax/test/index-v1.0.html)
 
 Usage
 -----
 
-### <geoJSON> or URL content syntax must respect the [geoJSON format](http://geojson.org/geojson-spec.html)
+### For a geoJson remote URL:
+Create a L.GeoJSON.Ajax instance & add it to the map.
+
 ```javascript
-<geoJSON> =
+...
+Include stylesheets/leaflet.rrose.css and javascripts/rrose-src.js
+
+new L.GeoJSON.Ajax(
+	<URL>, // GeoJson server URL.
+	{
+		proxy: '', // Optional: insert proxy @ before the url
+		bbox: false|true, // Optional: whether or not add bbox arg to the geoJson server URL
+		argsGeoJSON: {
+			name: value, // GeoJson args pairs that will be added to the url with the syntax: ?name=value&...
+			...
+		}
+		"<NAME>": <VALUE>, // Optional: Properties pairs that will overwrite the geoJson flow features properties
+		style: function(feature) { // Optional
+			return {
+				"<NAME>": <VALUE>, // Properties pairs that will overwrite the geoJson flow features properties
+				"<NAME>": feature.properties.<NAME>, // The value can be calculated from any geoJson property for each features.
+				...
+			};
+		}
+	}
+).addTo(map);
+...
+```
+
+### Properties pairs "<NAME>":<VALUE> can be:
+title: <string>, // hover label
+popupAnchor: [<int>, <int>] | default=[middle,top+5px], // point from which the popup should open relative to the iconAnchor
+url: <string>, // url where to navigate when the feature is clicked
+Or any of the following [L.GeoJSON options](http://leafletjs.com/reference.html#geojson-options)
+
+Markers
+iconUrl: <string>, // url of icon image
+iconSize: [<int>, <int>] | default=img size, // Size of the icon.
+iconAnchor: [<int>, <int>] | default=[middle,top], // point of the icon which will correspond to marker's location
+degroup: <int>, // Isolate too close markers by a number of pixels when the mouse hover over the group.
+Or any of the following [L.Marker options](http://leafletjs.com/reference.html#marker-options)
+
+Poly*
+Any of the following [L.Path options](http://leafletjs.com/reference.html#path-options)
+
+### <geoJson> URL return must respect the [geoJson format](http://geojson.org/geojson-spec.html) syntax:
+```javascript
 {
 	"type": "Feature",
 	"geometry":
 	{
-		...
+		<geoJson geometry>...
 	},
 	"properties":
 	{
-		"<NAME>": <VALUE>,
+		"<NAME>": <VALUE>, // Properties pairs that can be overloaded by the GeoJSON options or style
 		...
 	}
 }
 ```
 
-### <NAME>-<VALUE> pairs definitions for both layer style and geoJSON properties:
-```javascript
-style: {
-	title: <string>, // hover label
-	popupAnchor: [<int>, <int>] | default=[middle,top+5px], // point from which the popup should open relative to the iconAnchor
-	url: <string>, // url where to navigate when the feature is clicked
-
-	Markers
-	iconUrl: <string>, // url of icon image
-	iconSize: [<int>, <int>] | default=img size, // Size of the icon.
-	iconAnchor: [<int>, <int>] | default=[middle,top], // point of the icon which will correspond to marker's location
-	degroup: <int>, // Isolate too close markers by a number of pixels when the mouse hover over the group.
-	Or any of the following [marker options](http://leafletjs.com/reference.html#marker-options)
-
-	Poly*
-	stroke: <boolean> | default=true, // Whether to draw stroke along the path. Set it to false to disable borders on polygons or circles.
-	color: <color string> | default='#03f', // Stroke color.
-	weight: <number>, // Stroke width in pixels.
-	opacity: <0.0..1.0> | default=0.5, // Stroke opacity.
-	Or any of the following [path options](http://leafletjs.com/reference.html#path-options)
-
-	Polygons
-	fill: <boolean> | default=true // Whether to fill the path with color. Set it to false to disable filling on polygons or circles.
-	fillColor: <color string> | default=same as color, // Fill color.
-	fillOpacity: <0.0..1.0> | default=0.2, // Fill opacity.
-}
-```
-
-### Display local geoJSON data with local style:
+### Display local geoJson data with local style:
 ```javascript
 Include stylesheets/leaflet.rrose.css and javascripts/rrose-src.js
 
 new L.GeoJSON.Style(
-	<geoJSON>,
+	<geoJSON>, // <String> geoJson features
 	{
 		<OPTIONS>,
-		style: { // The <NAME>-<VALUE> layer style pairs will replace the properties of each features.
-			"<NAME>": <VALUE>,
-			...
-		}
-	}
-).addTo(map);
-```
-
-### Display local geoJSON data with style calculated from geoJSON features properties:
-```javascript
-new L.GeoJSON.Style(
-	<geoJSON>,
-	{
-		<OPTIONS>,
-		style: function(feature) {
+		"<NAME>": <VALUE>, // Optional: Properties pairs that will overwrite the geoJson flow features properties
+		style: function(feature) { // Optional
 			return {
-				"<NAME>": feature.properties.<NAME>, // The value can be calculated from any geoJSON property for each features.
+				"<NAME>": <VALUE>, // Properties pairs that will overwrite the geoJson flow features properties
+				"<NAME>": feature.properties.<NAME>, // The value can be calculated from any geoJson property for each features.
 				...
 			};
 		}
@@ -93,18 +98,5 @@ new L.GeoJSON.Style(
 ).addTo(map);
 ```
 
-### Display remote geoJSON URL:
-Create a L.GeoJSON.Style instance & add it to the map.
-
-```javascript
-new L.GeoJSON.Ajax(
-	<URL>,
-	{
-		<OPTIONS>,
-		style: ... // Same than above
-	}
-).addTo(map);
-```
-
-### Example:
+### Code example:
 [GeoJSON.Ajax.WRI.js](https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/blob/master/src/GeoJSON.Ajax.WRI.js)
