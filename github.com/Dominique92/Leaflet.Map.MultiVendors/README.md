@@ -1,7 +1,7 @@
 # Leaflet.Map.MultiVendors
 Leaflet extension for multi vendors maps & projections
 ```
-- OSM, Thunder Forest, Refuges.info
+- OSM, Maps.Refuges.Info, Thunder Forest, Refuges.info, Hihe & Bike, ClycleMap, Outdoors & Bike
 - IGN France
 - SwissTopo
 - IDEE España

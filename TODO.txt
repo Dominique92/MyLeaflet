@@ -1,13 +1,5 @@
-BUG MyLeaflet
-=============
-Permalink: pb de nb de zoom sur SwissTopo
-	https://github.com/Zverik/Leaflet.LimitZoom
 Bug suppression poly dans editeur => ça rame aprés !
-
-WRI LIVRAISON
-=============
-Retirer proxy et autres fichiers LL renommés
-Sur IE: liste aussi le nom des fonctions dans le sélecteur de coordonnées
+Sur IE + EDGE: liste aussi le nom des fonctions dans le sélecteur de coordonnées
 
 BEST TO DO
 ==========
@@ -38,27 +30,20 @@ Carte andorre
 Control.Draw.Plus.js: layer.options.editing = {}; // Voir pourquoi (nouvelle version de draw)
 Swiss: getcapabilities / time de la carte
 
-GYM
-===
-compteur pages
-
 DOC TESTS & DEMOS
 =================
-Stratégie 1.0 pour tests
-Mettre les fichiers test.html dans /spec
-Faire Readme, doc, test, demo & github permalink.cookies & Marker.coordinates
+Faire Readme, doc, test, demo, v1.0 & github permalink.cookies & Marker.coordinates
 Faire des fichiers de TEST (edit, ...) basés sur src/ll... # fichiers index.html DÉMO
 Traduire en anglais
-Passer lint et beautifier
+Passer http://www.javascriptlint.com/online_lint.php
+Passer http://jsbeautifier.org/
 Chainage des demos + V1
-Démo index.html/V1.0
 Quand uploadé sur le io.github, remettre les libs des démos des plugins Dom92 en chemin externe
 Dom plugins & demos: Dom92.L.IGN, Swiss, IDEE, IGM
 Doc read.me === doc en tête de fichier === index.html
 
 BUILD BEST TO DO
 ================
-Noter les versions github dans les compressés
 Optim noms internes longs ??
 Voir https://tortoisegit.org/
 
@@ -66,7 +51,6 @@ V1.0
 ====
 Démo viseur/V1.0 KO
 Draw+ V1 KO
-On ne peux plus sortir du zoom SwissTopo quand on a zoomé à fond
 
 IMPORT GARMIN
 =============
@@ -78,10 +62,8 @@ Glisser de Ma Collection-fichier vers Stockage interne
 Vérification finale avant mise en prod
 ======================================
 Résorber DCMM GEO DELETE
-Tous commentaires plugins en anglais
 Mettre _ devant les methodes de classes internes
 https://github.com/Leaflet/Leaflet/blob/master/CONTRIBUTING.md
-http://jsbeautifier.org/
 http://www.javascriptlint.com/online_lint.php
 	vérif , en fin de tablo ???
 https://github.com/airbnb/javascript
@@ -109,14 +91,10 @@ Fonction de téléchargement des dalles dans un périmètre donné
 
 WRI
 ===
-Il serait bien de faire en sorte que le menu "zones couvertes" soit généré dynamiquement et rempli avec toutes nos "zones couvertes"
 Style: 2 .menu UL {
-Mettre météo
 Edition / creation / suppression polygones autres que massif
 Charger fichier GPX: pas sur un mobile !!
-NAV: décalage popup
-Nouvelle Calédonie, Corse, toutes zones à 1 seul massif: devrait afficher directement le massif
-NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
+FIREFOX NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
 Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
 Déraciner le wiki
 Passage en templates gestion/index.php
@@ -129,10 +107,3 @@ NOTES
 =====
 MultiPolygon multiple => WRI massif 3116
 MultiPolygon avec trou => WRI massif 3127
-
-OPTIM JS
-========
-http://closure-compiler.appspot.com/ => Build un leaflet.js non compressé
-http://jsbeautifier.org/
-http://siliconforks.com/jscoverage/ ?? => code coverage !
-http://www.javascriptlint.com/ ?? => http://www.javascriptlint.com/online_lint.php => VERIFICATEUR JS (y compris virgules !)

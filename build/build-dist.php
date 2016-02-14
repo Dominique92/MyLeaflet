@@ -32,19 +32,22 @@ The source of this software is available at : https://github.com/Dominique92/MyL
 
 //----------------------------
 // Update plugins Dominique92
-foreach (glob ('../github.com/Dominique92/*/*') AS $f)
-	if (!strpos ($f, 'TMP')) {
-		$fs = explode ('/', $f);
-		if (is_dir ('../../'.$fs[3])) {
-			if (is_dir ($f))
-				foreach (glob ($f.'/*') AS $ff) {
-					$ffs = explode ('/', $ff);
-					cp ($ff, '../../'.$ffs[3].'/'.$ffs[4].'/'.$ffs[5]);
-				}
-			else
-				cp ($f, '../../'.$fs[3].'/'.$fs[4]);
-		}
-	}
+recurse_copy ('../github.com/Dominique92/', '../../');
+function recurse_copy($src,$dst) { 
+    $dir = opendir($src); 
+    @mkdir($dst); 
+    while(false !== ( $file = readdir($dir)) ) { 
+        if (( $file != '.' ) && ( $file != '..' )) { 
+            if ( is_dir($src . '/' . $file) ) { 
+                recurse_copy($src . '/' . $file,$dst . '/' . $file); 
+            } 
+            else { 
+                copy($src . '/' . $file,$dst . '/' . $file); 
+            } 
+        } 
+    } 
+    closedir($dir); 
+}
 //----------------------------
 echo 'Compression des .js';
 
