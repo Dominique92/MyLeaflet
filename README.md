@@ -10,7 +10,7 @@ Leaflet extensions for
 - IGM Italie
 - OS Great Britain
 - Kompass Austria
-- Libres: OSM, Maps.Refuges.Info, Thunder Forest, Hihe & Bike, ClycleMap, Outdoors & Bike, ClycleMap, 
+- Libres: OSM, Maps.Refuges.Info, Thunder Forest, Hike & Bike, ClycleMap, Outdoors & Bike, ClycleMap, 
 - Bing Microsoft
 - Google maps
 ```
