@@ -32,14 +32,14 @@
 			//			L.TileLayer.collection('SwissTopo').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
 
 			// Controls
-			new L.Control.Scale().addTo(map); // core
+			new L.Control.Scale().addTo(map);
 			new L.Control.Fullscreen().addTo(map);
 			new L.Control.Coordinates().addTo(map);
 			new L.Control.OSMGeocoder({
 				position: 'topleft'
 			}).addTo(map);
 
-			new L.Control.Permalink.Cookies({ // shramov/leaflet-plugins
+			new L.Control.Permalink.Cookies({
 				layers: new L.Control.Layers(L.TileLayer.collection()).addTo(map)
 			}).addTo(map);
 
@@ -67,7 +67,7 @@
 	<p>Leaflet extension for POI & tracks management on multi vendors maps</p>
 	<p>Sources on <a href= "https://github.com/Dominique92/MyLeaflet">Github: Dominique92/MyLeaflet</a></p>
 	<p>This demo runs on Leaflet V<script>document.write(L.version)</script>
-		<!-- &#10144; <a href="test/index-v1.0.html" style="font-size:12px">See demo on Leaflet V1.0</a>-->
+		<!-- &#10144; <a href="examples/index-v1.0.html" style="font-size:12px">See demo on Leaflet V1.0</a>-->
 	</p>
 	<div style="position:absolute;right:0;top:0"><a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax">&gt;</a>&nbsp;</div>
 

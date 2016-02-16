@@ -28,8 +28,8 @@ new L.GeoJSON.Ajax(
 	<URL>, // GeoJson server URL.
 	{
 		proxy: '', // Optional: insert proxy @ before the url
-		bbox: false|true, // Optional: whether or not add bbox arg to the geoJson server URL
 		argsGeoJSON: {
+			bbox: false|true, // Optional: whether or not add bbox arg to the geoJson server URL
 			name: value, // GeoJson args pairs that will be added to the url with the syntax: ?name=value&...
 			...
 		}

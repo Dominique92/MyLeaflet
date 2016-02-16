@@ -1,3 +1,5 @@
+Enlever les unicodes, notament chargeur fichier
+WRI: création de point devrait prendre par défaut le cookie.
 Bug suppression poly dans editeur => ça rame aprés !
 Sur IE + EDGE: liste aussi le nom des fonctions dans le sélecteur de coordonnées
 
@@ -29,6 +31,7 @@ Editeur
 Carte andorre
 Control.Draw.Plus.js: layer.options.editing = {}; // Voir pourquoi (nouvelle version de draw)
 Swiss: getcapabilities / time de la carte
+Fork me: https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png
 
 DOC TESTS & DEMOS
 =================
