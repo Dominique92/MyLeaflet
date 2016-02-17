@@ -1,3 +1,4 @@
+Démo draw+: cut ne marche pas
 Enlever les unicodes, notament chargeur fichier
 WRI: création de point devrait prendre par défaut le cookie.
 Bug suppression poly dans editeur => ça rame aprés !

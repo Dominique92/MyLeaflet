@@ -13,7 +13,7 @@
 	<!-- projections -->
 	<script src="http://dominique92.github.io/MyLeaflet/github.com/kartena/Proj4Leaflet/lib/proj4-compressed.js"></script>
 	<script src="http://dominique92.github.io/MyLeaflet/github.com/kartena/Proj4Leaflet/src/proj4leaflet.js"></script>
-	<script src="../Leaflet.Map.MultiVendors/src/layers/SwissTopo.js"></script>
+	<script src="../Leaflet.Map.MultiVendors/layers/SwissTopo.js"></script>
 
 	<script src="Marker.coordinates.js"></script>
 
@@ -73,8 +73,8 @@
 		<select id="viewfinder-select"><option value="decimal"></option></select>
 	</p>
 
-	<p><a onclick="map.panTo(viewfinder._latlng)" style="color:blue;cursor:pointer;text-decoration:underline">Recentrer la carte sur le viewfinder</a></p>
-	<p><a onclick="viewfinder.setLatLng(map.getCenter())" style="color:blue;cursor:pointer;text-decoration:underline">Remettre le viewfinder au centre actuel de la carte</a></p>
+	<p><a onclick="map.panTo(viewfinder._latlng)" style="color:blue;cursor:pointer;text-decoration:underline">Recentrer la carte sur le pointeur</a></p>
+	<p><a onclick="viewfinder.setLatLng(map.getCenter())" style="color:blue;cursor:pointer;text-decoration:underline">Remettre le pointeur au centre actuel de la carte</a></p>
 	<form method="post" action="#">
 		<input id="viewfinder-json" type="text" name="pos-cur" size="120" value='{"type":"Point","coordinates":[8.5,46.5]}' />
 		<br/>

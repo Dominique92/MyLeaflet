@@ -30,7 +30,7 @@ $json_edit = isset ($_POST ['geom'])
 
 	<link rel="stylesheet" href="../src/leaflet.css" />
 	<script src="../src/leaflet.js"></script>
-	<script src="../github.com/Dominique92/Leaflet.GeoJSON.Ajax/src/GeoJSON.Ajax.WRI.js"></script>
+	<script src="../github.com/Dominique92/Leaflet.GeoJSON.Ajax/layers/GeoJSON.Ajax.WRI.js"></script>
 
 	<script>
 		window.addEventListener('load', function() {

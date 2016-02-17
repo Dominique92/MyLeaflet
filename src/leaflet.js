@@ -131,30 +131,30 @@ var js_list = [
 //V1.0: https://github.com/kartena/Proj4Leaflet/tree/leaflet-proj-refactor
 //	'../github.com/kartena/Proj4Leaflet/lib/proj4.js', // Ne marche pas (contient define...)
 	'../github.com/kartena/Proj4Leaflet/src/proj4leaflet.js', // 6k
-	'../github.com/Dominique92/Leaflet.Map.MultiVendors/src/MapMultiCRS.js',
+	'../github.com/Dominique92/Leaflet.Map.MultiVendors/MapMultiCRS.js',
 	'../github.com/tyrasd/togpx/togpx.js', // Converts GeoJSON to GPX.
 	'../github.com/Dominique92/Leaflet.Marker.coordinates/Marker.coordinates.js',
 
 	// Couches autres fournisseurs
-	'../github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/OSM.js',
-	'../github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/IGN.js',
-	'../github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/IGM.js',
-	'../github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/IDEE.js',
-	'../github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/SwissTopo.js',
-	'../github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/Google.js',
+	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/OSM.js',
+	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/IGN.js',
+	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/IGM.js',
+	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/IDEE.js',
+	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/SwissTopo.js',
+	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/Google.js',
 	'../github.com/rob-murray/os-leaflet/OSOpenSpace.js', // V0.7 
-// V1.0	'../github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/OS.js', 
+// V1.0	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/OS.js', 
 // V1.0 (rob-murray/os-leaflet-1.0-beta/src/OSOpenSpace.js KO)
 	'../github.com/shramov/leaflet-plugins/layer/tile/Bing.js',// V1.0: leaflet_one
-	'../github.com/Dominique92/Leaflet.Map.MultiVendors/src/layers/TileLayer.collection.js',
+	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/TileLayer.collection.js',
 
 	// Couches vectotielles
 	'../github.com/makinacorpus/Leaflet.FileLayer/leaflet.filelayer.js', //V1.0 ??
 	'../github.com/mapbox/togeojson/togeojson.js', //V1.0 ??
 	'../github.com/erictheise/rrose/leaflet.rrose-src.js', //V1.0 ??
-	'../github.com/Dominique92/Leaflet.GeoJSON.Ajax/src/GeoJSON.Style.js',
-	'../github.com/Dominique92/Leaflet.GeoJSON.Ajax/src/GeoJSON.Ajax.js',
-// INSERER SUR DEMANDE	'../github.com/Dominique92/Leaflet.GeoJSON.Ajax/src/GeoJSON.Ajax.WRI.js',
+	'../github.com/Dominique92/Leaflet.GeoJSON.Ajax/GeoJSON.Style.js',
+	'../github.com/Dominique92/Leaflet.GeoJSON.Ajax/GeoJSON.Ajax.js',
+// INSERER SUR DEMANDE	'../github.com/Dominique92/Leaflet.GeoJSON.Ajax/layers/GeoJSON.Ajax.WRI.js',
 
 	// Editeur
 //	'../github.com/Leaflet/Leaflet.draw/dist/leaflet.draw-src.js', // FULL
