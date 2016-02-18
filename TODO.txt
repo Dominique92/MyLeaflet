@@ -1,3 +1,9 @@
+WRI: UTF8 étiquettes overpass
+WRI: pas la bbox point ?
+Retransmettre en binaire les WRI !
+	controlleurs/nav.php
+	vues/nav.js
+	vues/point.js
 Démo draw+: cut ne marche pas
 Enlever les unicodes, notament chargeur fichier
 WRI: création de point devrait prendre par défaut le cookie.
