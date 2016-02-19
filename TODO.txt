@@ -1,17 +1,20 @@
-WRI: UTF8 étiquettes overpass
-WRI: pas la bbox point ?
+Enlever les unicodes, notament chargeur fichier
+Bug suppression poly dans editeur => ça rame aprés !
+Sur IE + EDGE: sélecteur de coordonnées: liste aussi le nom des fonctions
+
+WRI
+===
+WRI: création de point devrait prendre par défaut le cookie.
+WRI TODO: disable couche WRI quand rien coché
+Fichier carte = git.ajax.WRI
 Retransmettre en binaire les WRI !
 	controlleurs/nav.php
 	vues/nav.js
 	vues/point.js
-Démo draw+: cut ne marche pas
-Enlever les unicodes, notament chargeur fichier
-WRI: création de point devrait prendre par défaut le cookie.
-Bug suppression poly dans editeur => ça rame aprés !
-Sur IE + EDGE: liste aussi le nom des fonctions dans le sélecteur de coordonnées
 
 BEST TO DO
 ==========
+e.target.status != 429 => Afficher msg erreur (implementer un callback)
 Download GPX en EDGE : => null (1).txt
 Extraction GPX bbox=écran
 NAV/lecture inclue fichier ne le rend pas éditable

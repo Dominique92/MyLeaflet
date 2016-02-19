@@ -31,7 +31,7 @@ Ne pas modifier ces fichiers: ils sont régénérés par /build
 * /dist/src/... : Copie des sources compressés dans /dist/leaflet.js.
 Pour info et debug, inutilisés en production.
 * /github.com/... : Copie des sources utilisés du kernel Leaflet et de plugins.
-Un fichier CREDIT.txt à la base de chacun des sous-répertoires donne l'origine du pluggin et la version.
+Un fichier CREDIT.txt à la base de chacun des sous-répertoires donne l'origine du plugin et la version.
 De très rares modifications sont signalées dans ces fichiers par le tag "GEO", "GEO optimisation" ou "GEOmin".
 * /libs/... : Autres librairies externes.
 * /github.com/Dominique92/... : Originaux des sources de mes plugins. Sont également disponibles sous forme de plugins séparés.
