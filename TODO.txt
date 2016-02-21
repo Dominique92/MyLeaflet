@@ -1,16 +1,18 @@
+Mieux afficher le besoin de zoom sur la couche !!
 Enlever les unicodes, notament chargeur fichier
 Bug suppression poly dans editeur => ça rame aprés !
 Sur IE + EDGE: sélecteur de coordonnées: liste aussi le nom des fonctions
+permalink cookies: ne devrait pas enregistrer le cookie à chaque layer affiché (y compris icones) 
 
 WRI
 ===
-WRI: création de point devrait prendre par défaut le cookie.
-WRI TODO: disable couche WRI quand rien coché
+Contrôle geographique: ne pas faire quand IPv6
+Mettre en place l'affichage permanent du popup sur les points WRI des cartes.
+Création de point devrait prendre par défaut le cookie.
+NAV: Memoriser coches autres sites & services
+NAV: Revoir bug comportement Permalink.Cookies
+NAV: disable couche WRI quand rien coché
 Fichier carte = git.ajax.WRI
-Retransmettre en binaire les WRI !
-	controlleurs/nav.php
-	vues/nav.js
-	vues/point.js
 
 BEST TO DO
 ==========

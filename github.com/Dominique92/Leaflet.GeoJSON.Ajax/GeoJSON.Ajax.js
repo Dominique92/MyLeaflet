@@ -47,17 +47,23 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 			this._map.on('moveend', this.reload, this);
 	},
 
-	reload: function() {
-		// Prepare the request arguments
+	// Build the final url request to send to the server
+	getUrl: function() {
 		var argsGeoJSON = typeof this.options.argsGeoJSON == 'function' ? this.options.argsGeoJSON(this) : this.options.argsGeoJSON;
 
+		// Add bbox param if necessary
 		if (this.options.bbox)
 			argsGeoJSON.bbox = this._map.getBounds().toBBoxString();
 
+		return this.options.urlGeoJSON + L.Util.getParamString(argsGeoJSON);
+	},
+
+	reload: function() {
+		// Prepare the request arguments
 		// Send the request
 		this.ajaxRequest.open(
 			'GET',
-			this.options.proxy + this.options.urlGeoJSON + L.Util.getParamString(argsGeoJSON),
+			this.getUrl(),
 			true
 		);
 
@@ -86,20 +92,21 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 				this._map.removeLayer(this._layers[l]);
 		this._layers = [];
 
-		if (json)
+		if (json) {
 			try {
 				// Get json data
 				var js = JSON.parse(json);
-
-				// Perform a special calculation if necessary (used for OSM overpass)
-				if (typeof this.options.tradJson == 'function')
-					js = this.options.tradJson(js);
-
-				// Add it to the layer
-				this.addData(js);
 			} catch (e) {
 				if (e instanceof SyntaxError)
 					alert('Json syntax error on ' + this.options.urlGeoJSON + this.args + ' :\n' + json);
+				return;
 			}
+			// Perform a special calculation if necessary (used for OSM overpass)
+			if (typeof this.options.tradJson == 'function')
+				js = this.options.tradJson(js);
+
+			// Add it to the layer
+			this.addData(js);
+		}
 	}
 });
