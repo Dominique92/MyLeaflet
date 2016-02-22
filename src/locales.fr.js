@@ -35,7 +35,7 @@ if (navigator.language || navigator.userLanguage == 'fr') {
 		L.Control.FileLayerLoad = L.Control.FileLayerLoad.extend({
 			statics: {
 				TITLE: 'Charger un fichier GPX, KML, GeoJSON',
-				LABEL: '&#128194;'
+				LABEL: '&#8657;'
 			}
 		});
 

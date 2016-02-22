@@ -14,13 +14,16 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 
 	options: {
 		proxy: '', // If needed by the GeoJSON server / This can be avoided if the GeoJSON server delivers: header("Access-Control-Allow-Origin: *");
+		urlRoot: '', // Prefix to all urls used in this layer.
 		urlGeoJSON: null, // GeoJSON server URL.
 		argsGeoJSON: {} // GeoJSON server args.
 	},
 
 	initialize: function(urlGeoJSON, options) {
-		if (urlGeoJSON)
+		if (typeof urlGeoJSON == 'string')
 			this.options.urlGeoJSON = urlGeoJSON;
+		else
+			options = options || urlGeoJSON; // Simplified call, with no urlGeoJSON
 
 		// Prepare the Request object
 		if (window.XMLHttpRequest)
@@ -55,7 +58,7 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 		if (this.options.bbox)
 			argsGeoJSON.bbox = this._map.getBounds().toBBoxString();
 
-		return this.options.urlGeoJSON + L.Util.getParamString(argsGeoJSON);
+		return this.options.proxy + this.options.urlRoot + this.options.urlGeoJSON + L.Util.getParamString(argsGeoJSON);
 	},
 
 	reload: function() {
@@ -82,7 +85,7 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 		if (e.target.status == 200)
 			e.target.context.redraw(e.target.responseText);
 		else if (e.target.status && e.target.status != 429 /* Too many requests */)
-			alert('ajaxRequest error status = ' + e.target.status + ' calling ' + this.context.options.urlGeoJSON);
+			alert('ajaxRequest error status = ' + e.target.status + ' calling ' + e.target.context.getUrl());
 	},
 
 	redraw: function(json) {
@@ -98,7 +101,7 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 				var js = JSON.parse(json);
 			} catch (e) {
 				if (e instanceof SyntaxError)
-					alert('Json syntax error on ' + this.options.urlGeoJSON + this.args + ' :\n' + json);
+					alert('Json syntax error on ' + this.getUrl() + ' :\n' + json);
 				return;
 			}
 			// Perform a special calculation if necessary (used for OSM overpass)

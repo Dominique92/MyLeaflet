@@ -1,21 +1,57 @@
-Mieux afficher le besoin de zoom sur la couche !!
-Enlever les unicodes, notament chargeur fichier
-Bug suppression poly dans editeur => ça rame aprés !
-Sur IE + EDGE: sélecteur de coordonnées: liste aussi le nom des fonctions
-permalink cookies: ne devrait pas enregistrer le cookie à chaque layer affiché (y compris icones) 
+
+Point intermédiaire ():
+[quote="sly"][/quote]
+[quote="sly"][/quote]
+
+
+[quote="sly"]J'allais tenter de proposer une présentation pour les "cartouches" de gauche, mais je vois que le code de dév n'est pas accessible mais juste chez dominique. Comme je vois qu'il est parti pour tenter un truc plus sophistiqué qu'il ne veut nous en dire le petit cachottier je vais m'abstenir pour l'instant de taper du code, au mieux je vais créer des images pour montrer les options que j'ai en tête.[/quote]Pour ne pas me faire accuser de jouer perso, un petit point intermédiaire avec un certain nombre d'implémentation de ce qui a été discuté, quelques variantes et propositions.
+
+[quote="sly"]- Idée, mais sans être sûr si c'est mieux ou pas : En terme d'homogénéité, lorsque l'on passe son pointeur sur une cabane du site, on obtient un bulle qui indique "nom + alti + place" mais si on passe sur une icone issue d'osm, on a son nom, mais c'est en cliquant qu'on obtient les détails. Ne serait il pas plus homogène de faire un truc qui s'active au survol souris avec l'encadré résultant du clic ?[/quote][quote="Dominique"]- Soit l'étiquette reste affichée après le survol du marqueur (dans ce cas, on peut cliquer le lien !) mais ça fait une étiquette qui reste bêtement au milieu de la carte jusqu'à ce qu'on clique sur la carte ou qu'on survolé un autre marqueur. [/quote][quote="sly"]le comportement d'avant c'était disparition si on s'en va de la bulle et là elle reste... 
+Je n'avais même par remarqué pour les points wri. 
+Ouep, moi je trouve ça mieux comme ça.[/quote]Fait de façon générale: une étiquette s'affiche au survol, reste jusqu'au survol du point suivant ou click sur la carte et qui contient des infos condensées et un lien à cliquer suivant le contexte.
+
+Proposition (en démo): j'ai distingué par des couleurs de fond d'étiquette:
+- les points WRI en banc
+- les services en bleu
+- les autres sites en vert
+Votre avis ?
+
+
+[quote="sly"]-Quand le zoom est trop faible, et qu'on clique la case, il ne se passe rien, difficile alors de bien comprendre pourquoi ça ne marche pas. La version luxe serait un message subtile et rouge indiquant "Zoom insuffisant pour activer Hôtel/camping/alimentation" qu'on pourrait recycler pour un "Zoom insuffisant, seul 200 points ont été affichés"[/quote][quote="sly"]... Si on est pas assez zoomé un petit message rouge l'indique puis disparaît et le chargement en cours est indiqué. oui là, c'est quasi ce qu'il y avait dans mon rêve...[/quote][quote="sly"]"services" quand on est pas assez zoomé, bon, ça fait un peu solution du pauvre, j'ai cru que c'était un lien que j'avais déjà visité ![/quote]J'ai mis une grosse loupe rouge qui s'affiche quand le zoom est trop faible (avec un petit message au survol si on n'a pas compris la première fois)
+A faire: l'effacer quand la couche n'est pas sélectionnée.
+A faire: activer un sablier quand les data chargent.
+A faire: distinguer les couches service:
+- Hôtel
+- Camping
+- Alimentation
+
+[quote="sly"]Autre option, la case se grise et ne peut être cochée si on ne zoom pas assez.
+Et une version light, un "message apparaît" quand on passe la souris sur la case indiquant un truc genre "ne s'active que sur zoom fort"[/quote]ça risque de rester en version light.
+
+[quote="sly"][quote="Dominique"]Quid des parkings (En montagne, c'est une information importante) et arrêts de bus (pas sur que ce soit sur OSM) ?
+[/quote]
+Tout existe dans OSM, le problème c'est l'exhaustivité mais c'est le principe du mode contributif.
+
+Sur le principe, je n'ai rien contre poursuivre l'idée en ajoutant les parking, les arrêts de bus, les boulangeries et plus encore si le coeur nous en dit. Mais, et je vais débattre de ça dans un autre sujet car c'est la même réflexion que pour chemineur/c2c/prc/osm sur wri.
+- Ne pas faire doublon avec wri
+- Tout afficher en bloc sans pouvoir choisir n'est pas pratique[/quote]J'ai ajouté une couche parking. (j'aime bien parquer ma voiture en toute sécurité)
+
+Proposition (en démo): transparence 50% des pictos services (Hôtel & parking) pour paraître moins importants que les autres et alléger l'affichage. (sauf camping & alimentation qui sont déjà frêles)
+
 
 WRI
 ===
-Contrôle geographique: ne pas faire quand IPv6
-Mettre en place l'affichage permanent du popup sur les points WRI des cartes.
+Mieux afficher le besoin de zoom sur la couche !!
 Création de point devrait prendre par défaut le cookie.
-NAV: Memoriser coches autres sites & services
+BOF: NAV: Memoriser coches autres sites & services
 NAV: Revoir bug comportement Permalink.Cookies
-NAV: disable couche WRI quand rien coché
 Fichier carte = git.ajax.WRI
 
 BEST TO DO
 ==========
+Bug suppression poly dans editeur => ça rame aprés !
+Sur IE + EDGE: sélecteur de coordonnées: liste aussi le nom des fonctions
+Permalink cookies: ne devrait pas enregistrer le cookie à chaque layer affiché (y compris icones) 
 e.target.status != 429 => Afficher msg erreur (implementer un callback)
 Download GPX en EDGE : => null (1).txt
 Extraction GPX bbox=écran
