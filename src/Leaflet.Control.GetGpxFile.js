@@ -1,7 +1,7 @@
 L.Control.GetGpxFile = L.Control.extend({
     statics: {
         TITLE: 'Download to GPX file',
-        LABEL: '&#128427;'
+        LABEL: '&#8659;'
     },
     options: {
         position: 'topleft'
