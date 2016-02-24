@@ -13,7 +13,7 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 	ajaxRequest: null,
 
 	options: {
-		proxy: '', // If needed by the GeoJSON server / This can be avoided if the GeoJSON server delivers: header("Access-Control-Allow-Origin: *");
+		proxy: '', // If needed by the GeoJSON server / This can be avoided if the GeoJSON server delivers: header('Access-Control-Allow-Origin: *');
 		urlRoot: '', // Prefix to all urls used in this layer.
 		urlGeoJSON: null, // GeoJSON server URL.
 		argsGeoJSON: {} // GeoJSON server args.
@@ -31,7 +31,7 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 		else if (window.ActiveXObject)
 			this.ajaxRequest = new ActiveXObject('Microsoft.XMLHTTP');
 		else {
-			alert("Your browser doesn't support AJAX requests.");
+			alert('Your browser doesn\'t support AJAX requests.');
 			exit;
 		}
 		this.ajaxRequest.context = this; // Reference the layer object for further usage.

@@ -3,9 +3,9 @@
  * https://github.com/Dominique92/MyLeaflet
  */
 
-var scripts = document.getElementsByTagName("script"),
+var scripts = document.getElementsByTagName('script'),
 	script = scripts[scripts.length - 1].src,
-	racineSources = script.substring(0, script.lastIndexOf("/")) + "/";
+	racineSources = script.substring(0, script.lastIndexOf('/')) + '/';
 
 document.write('<script src="'+racineSources+'github.com-Leaflet-Leaflet-src-Leaflet.js"></script>');
 document.write('<script src="'+racineSources+'github.com-Leaflet-Leaflet-src-core-Util.js"></script>');
@@ -74,9 +74,9 @@ document.write('<script src="'+racineSources+'github.com-k4r573n-leaflet-control
 document.write('<script src="'+racineSources+'github.com-shramov-leaflet-plugins-control-Permalink.js"></script>');
 document.write('<script src="'+racineSources+'github.com-shramov-leaflet-plugins-control-Permalink.Layer.js"></script>');
 document.write('<script src="'+racineSources+'github.com-Dominique92-Leaflet.Permalink.Cookies-Permalink.Cookies.js"></script>');
-document.write('<script src="'+racineSources+'src-MapAutoHeight.js"></script>');
-document.write('<script src="'+racineSources+'src-AntiBot.js"></script>');
-document.write('<script src="'+racineSources+'src-lib-proj4-OPTIM.js"></script>');
+document.write('<script src="'+racineSources+'github.com-Dominique92-MyLeaflet-src-MapAutoHeight.js"></script>');
+document.write('<script src="'+racineSources+'github.com-Dominique92-MyLeaflet-src-AntiBot.js"></script>');
+document.write('<script src="'+racineSources+'github.com-Dominique92-MyLeaflet-src-lib-proj4-OPTIM.js"></script>');
 document.write('<script src="'+racineSources+'github.com-kartena-Proj4Leaflet-src-proj4leaflet.js"></script>');
 document.write('<script src="'+racineSources+'github.com-Dominique92-Leaflet.Map.MultiVendors-MapMultiCRS.js"></script>');
 document.write('<script src="'+racineSources+'github.com-tyrasd-togpx-togpx.js"></script>');
@@ -112,10 +112,10 @@ document.write('<script src="'+racineSources+'github.com-Leaflet-Leaflet.draw-sr
 document.write('<script src="'+racineSources+'github.com-Leaflet-Leaflet.draw-src-Control.Draw.js"></script>');
 document.write('<script src="'+racineSources+'github.com-Leaflet-Leaflet.draw-src-edit-handler-Edit.Poly.js"></script>');
 document.write('<script src="'+racineSources+'github.com-Leaflet-Leaflet.draw-src-edit-handler-Edit.Marker.js"></script>');
-document.write('<script src="'+racineSources+'src-lib-Leaflet-optim-stub.js"></script>');
+document.write('<script src="'+racineSources+'github.com-Dominique92-MyLeaflet-src-lib-Leaflet-optim-stub.js"></script>');
 document.write('<script src="'+racineSources+'github.com-makinacorpus-Leaflet.GeometryUtil-dist-leaflet.geometryutil.js"></script>');
 document.write('<script src="'+racineSources+'github.com-makinacorpus-Leaflet.Snap-leaflet.snap.js"></script>');
 document.write('<script src="'+racineSources+'github.com-Dominique92-Leaflet.draw.plus-Control.Draw.Plus.js"></script>');
-document.write('<script src="'+racineSources+'src-Leaflet.Control.GetGpxFile.js"></script>');
-document.write('<script src="'+racineSources+'src-locales.fr.js"></script>');
-document.write('<script src="'+racineSources+'build-flat-css.js"></script>');
+document.write('<script src="'+racineSources+'github.com-Dominique92-MyLeaflet-src-Leaflet.Control.GetGpxFile.js"></script>');
+document.write('<script src="'+racineSources+'github.com-Dominique92-MyLeaflet-src-locales.fr.js"></script>');
+document.write('<script src="'+racineSources+'github.com-Dominique92-MyLeaflet-build-src-flat-css.js"></script>');

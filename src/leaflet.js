@@ -203,8 +203,10 @@ var js_list = [
 	// Adaptations
 	'../src/locales.fr.js',
 ];
-/* php libs
-	'../github.com/phayes/geoPHP/',
+/* php libs - pour import du github mais à ne pas insérer dans le .js
+	'../github.com/phayes/geoPHP/', // A inclure: editGPX
+	'../github.com/tubalmartin/YUI-CSS-compressor-PHP-port/', // Build: compresse css
+	'../github.com/nicolas-grekas/JSqueeze/', // Build: compresse js
 */
 
 var scripts = document.getElementsByTagName('script'),

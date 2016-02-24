@@ -49,6 +49,7 @@ Doc read.me === doc en tête de fichier === index.html
 
 BUILD BEST TO DO
 ================
+rename vars whose name begins with one or more $ or with a single _
 Optim noms internes longs ??
 Voir https://tortoisegit.org/
 
