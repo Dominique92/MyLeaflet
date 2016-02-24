@@ -2,6 +2,7 @@ WRI
 ===
 Afficher l'altitude des parkings
 Création de point devrait prendre par défaut le cookie.
+OSM: traiter retour = runtime error: Query timed out
 
 BEST TO DO
 ==========
