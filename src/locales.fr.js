@@ -89,7 +89,7 @@ if (navigator.language || navigator.userLanguage == 'fr') {
 					tooltip: {
 						start: 'Cliquer pour commencer le dessin d\'un polygone',
 						cont: 'Cliquer pour continuer le dessin d\'un polygone',
-						end: 'Cliquer sur le premier point close le polygone'
+						end: 'Cliquer sur le premier point clôt le polygone'
 					}
 				},
 				polyline: {

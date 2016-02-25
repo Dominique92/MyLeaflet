@@ -1,8 +1,13 @@
 WRI
 ===
+NAV ZONE: pas de click (pb etiquette ?)
+NAV massif: quand décliqué puis recliqué, ne réagit plus au zoom
+cartes.js: mettre des if pour ne pas tout inclure dans chaque page
+Point: Les icônes bleues sont uniquement informatives. => Uniquement quand icones affichées
 Afficher l'altitude des parkings
 Création de point devrait prendre par défaut le cookie.
 OSM: traiter retour = runtime error: Query timed out
+NAV EDIT: revoir responsive
 
 BEST TO DO
 ==========

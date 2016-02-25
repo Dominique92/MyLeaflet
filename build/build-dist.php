@@ -25,7 +25,7 @@ foreach (glob ('../src/images/*') AS $f)
 recurse_copy ('../github.com/Dominique92/', '../../');
 
 //----------------------------
-echo 'Compression des .js';
+echo '<br/><br/>Compression des .js';
 
 use Patchwork\JSqueeze;
 require ('../github.com/nicolas-grekas/JSqueeze/src/JSqueeze.php');
@@ -126,7 +126,7 @@ function recurse_copy($src,$dst) {
             if ( is_dir($src . '/' . $file) )
                 recurse_copy($src . '/' . $file,$dst . '/' . $file); 
             else
-                copy($src . '/' . $file,$dst . '/' . $file); 
+                cp($src . '/' . $file,$dst . '/' . $file); 
         } 
     closedir($dir); 
 }
