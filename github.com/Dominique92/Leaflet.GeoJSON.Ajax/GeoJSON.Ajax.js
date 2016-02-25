@@ -13,8 +13,6 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 	ajaxRequest: null,
 
 	options: {
-		proxy: '', // If needed by the GeoJSON server / This can be avoided if the GeoJSON server delivers: header('Access-Control-Allow-Origin: *');
-		urlRoot: '', // Prefix to all urls used in this layer.
 		urlGeoJSON: null, // GeoJSON server URL.
 		argsGeoJSON: {} // GeoJSON server args.
 	},
@@ -60,7 +58,7 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 		if (this.options.bbox)
 			argsGeoJSON.bbox = this._map.getBounds().toBBoxString();
 
-		return this.options.proxy + this.options.urlRoot + this.options.urlGeoJSON + L.Util.getParamString(argsGeoJSON);
+		return this.options.urlGeoJSON + L.Util.getParamString(argsGeoJSON);
 	},
 
 	reload: function() {

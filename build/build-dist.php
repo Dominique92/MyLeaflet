@@ -1,7 +1,6 @@
 <?php
 // Copy proprietary files
 cp ('../LICENSE.txt', '../dist/LICENSE.txt');
-//cp ('../proxy.php', '../dist/proxy.php');
 
 //----------------------------
 file_put_contents ('../dist/READ.ME',
