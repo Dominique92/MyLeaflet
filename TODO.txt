@@ -1,32 +1,22 @@
 WRI
 ===
-NAV ZONE: pas de click (pb etiquette ?)
-NAV massif: quand décliqué puis recliqué, ne réagit plus au zoom
-cartes.js: mettre des if pour ne pas tout inclure dans chaque page
-Point: Les icônes bleues sont uniquement informatives. => Uniquement quand icones affichées
-Afficher l'altitude des parkings
 Création de point devrait prendre par défaut le cookie.
-OSM: traiter retour = runtime error: Query timed out
-NAV EDIT: revoir responsive
+Sur IE + EDGE: sélecteur de coordonnées: liste aussi le nom des fonctions
 
 BEST TO DO
 ==========
-Bug suppression poly dans editeur => ça rame aprés !
-Sur IE + EDGE: sélecteur de coordonnées: liste aussi le nom des fonctions
 Download GPX en EDGE : => null (1).txt
-Extraction GPX bbox=écran
-NAV/lecture inclue fichier ne le rend pas éditable
-WRI: Carte par defaut fiche Angleterre (manque le contour localisation administrative)
+Extraction GPX bbox=écran (qoi dans l'éditeur ?)
 Intégrer GoeoJSON avec GeoBB
 Click sur cadre entoure en bleu
-Renommer GetGpxFile -> FileDownload ???
-Changer l'icones permut (unicode 1F501 à 4)
-	1F5C1 -> folder
-	1F5AB ou C -> Disquette
+Renommer GetGpxFile -> FileDownload ??? / Refaire la couche
+Carte Andorre
+Swiss: getcapabilities / time de la carte
 Afficher altitude & heure sur survol point ou segment d'une courbe
 	https://github.com/mpetazzoni/leaflet-gpx
 	https://github.com/arthur-e/Wicket
 Editeur
+	Bug suppression poly dans editeur => ça rame aprés !
 	Purge des points identiques sur un segment
 	Importer (en + de geojson, gpx, kml)
 		https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
@@ -34,34 +24,38 @@ Editeur
 		"save as"
 		Exporter formats gpx, kml, geojson
 		Formats import/export: GPX,KML,KMZ,GPI,WPT,TRK,RTE,CSV,GDB,MPS,TXT : https://www.gps-data-team.com/convert.php
+	Control.Draw.Plus.js: layer.options.editing = {}; // Voir pourquoi (nouvelle version de draw)
 	TEST: Edition massif avec trou
-Carte andorre
-Control.Draw.Plus.js: layer.options.editing = {}; // Voir pourquoi (nouvelle version de draw)
-Swiss: getcapabilities / time de la carte
-Fork me: https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png
+V1.0
+	Démo viseur/V1.0 KO
+	Draw+ V1 KO
 
 DOC TESTS & DEMOS
 =================
+Quand uploadé sur le io.github, remettre les libs des démos des plugins Dom92 en chemin externe
 Faire Readme, doc, test, demo, v1.0 & github permalink.cookies & Marker.coordinates
+Chainage des demos + V1
 Faire des fichiers de TEST (edit, ...) basés sur src/ll... # fichiers index.html DÉMO
 Traduire en anglais
-Passer http://www.javascriptlint.com/online_lint.php
-Passer http://jsbeautifier.org/
-Chainage des demos + V1
-Quand uploadé sur le io.github, remettre les libs des démos des plugins Dom92 en chemin externe
 Dom plugins & demos: Dom92.L.IGN, Swiss, IDEE, IGM
 Doc read.me === doc en tête de fichier === index.html
+Fork me: https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png
+
+Vérification finale avant mise en prod
+	Passer http://www.javascriptlint.com/online_lint.php
+	Passer http://jsbeautifier.org/
+	Résorber DCMM GEO DELETE
+	Mettre _ devant les methodes de classes internes
+	https://github.com/Leaflet/Leaflet/blob/master/CONTRIBUTING.md
+	https://github.com/airbnb/javascript ?????
+	Style commentaires:
+	/*
+	Switzerland Coordinate Reference System
+	 */
 
 BUILD BEST TO DO
 ================
-rename vars whose name begins with one or more $ or with a single _
-Optim noms internes longs ??
 Voir https://tortoisegit.org/
-
-V1.0
-====
-Démo viseur/V1.0 KO
-Draw+ V1 KO
 
 IMPORT GARMIN
 =============
@@ -70,21 +64,9 @@ Ma Collection
 Fichier importer
 Glisser de Ma Collection-fichier vers Stockage interne
 
-Vérification finale avant mise en prod
-======================================
-Résorber DCMM GEO DELETE
-Mettre _ devant les methodes de classes internes
-https://github.com/Leaflet/Leaflet/blob/master/CONTRIBUTING.md
-http://www.javascriptlint.com/online_lint.php
-	vérif , en fin de tablo ???
-https://github.com/airbnb/javascript
-Style commentaires:
-/*
-Switzerland Coordinate Reference System
- */
-
 Finalement, on ne va pas les faire
 ==================================
+Optim noms internes longs ??
 Edit: Arrondir les lonlat Json à 5 décimales
 On ne peut pas cliquer sur un zap du même segment en création
 Faire des makers avec CircleMarker, ...
@@ -102,6 +84,9 @@ Fonction de téléchargement des dalles dans un périmètre donné
 
 WRI
 ===
+cartes.js: mettre des if pour ne pas tout inclure dans chaque page
+Carte par defaut fiche Angleterre (manque le contour localisation administrative)
+NAV EDIT: revoir responsive
 Style: 2 .menu UL {
 Edition / creation / suppression polygones autres que massif
 Charger fichier GPX: pas sur un mobile !!

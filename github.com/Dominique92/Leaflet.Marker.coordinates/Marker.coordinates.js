@@ -153,12 +153,12 @@ L.Marker.include({
 			if (cs)
 				this.setLatLng([cs[1], cs[0]]);
 		}
-		this.displayCoord(id);
+		this._displayCoord(id);
 
 		return this; // Able to chain this method
 	},
 
-	displayCoord: function(id) {
+	_displayCoord: function(id) {
 		var marker = this, // Indispensable pour ne pas confondres avec le this dans certains on()
 			latlng = marker._latlng,
 			typeCoordonnee = 'decimal'; // Valeur par défaut
@@ -189,7 +189,7 @@ L.Marker.include({
 
 			// Et si on change la sélection du type de coordonnées, on réaffiche aussi
 			selectEL.onchange = function() {
-				marker.displayCoord(id);
+				marker._displayCoord(id);
 			};
 		}
 
@@ -235,7 +235,7 @@ L.Marker.include({
 		// On réaffiche aussi si on déplace le marqueur
 		marker.on('move', function() {
 			marker.off('move'); // On désactive le temps de traiter l'affichage
-			marker.displayCoord(id); // On raffraichit l'affichage
+			marker._displayCoord(id); // On raffraichit l'affichage
 			marker.fire('edit'); // On raffraichit le marqueur et les champs de l'éditeur
 		});
 	}
