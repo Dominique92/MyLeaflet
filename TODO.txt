@@ -32,6 +32,7 @@ V1.0
 
 DOC TESTS & DEMOS
 =================
+Doc é demo overpass
 Quand uploadé sur le io.github, remettre les libs des démos des plugins Dom92 en chemin externe
 Faire Readme, doc, test, demo, v1.0 & github permalink.cookies & Marker.coordinates
 Chainage des demos + V1
