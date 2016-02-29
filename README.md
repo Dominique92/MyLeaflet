@@ -22,21 +22,23 @@ DEMO
 ====
 [See a DEMO](http://dominique92.github.io/MyLeaflet/)
 
-UTILISATION
-===========
-Include MyLeaflet for production (compressed files):
+USAGE
+=====
+* Include MyLeaflet for production (compressed files):
 ```html
 	<link rel="stylesheet" href="leaflet.css" />
 	<script src="leaflet.js"></script>
 ```
 
-Include MyLeaflet for developpement (full sources):
+* Include MyLeaflet for developpement (full sources):
 ```html
 	<link rel="stylesheet" href="src/leaflet.css" />
 	<script src="src/leaflet.js"></script>
 ```
 
-For tinny distribution, only copy dist/... files
+* Tinny distribution: copy dist/... files
+
+* Compressed files generation: run build/index.php
 
 FILES
 =====

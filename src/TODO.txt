@@ -1,17 +1,16 @@
 WRI
 ===
-Livrer build sur WRI
 Blocage déplacement carte apres plusieurs appels overpass (sur mobile)
 Création de point devrait prendre par défaut le cookie.
-Sur IE + EDGE: sélecteur de coordonnées: liste aussi le nom des fonctions
 
 BEST TO DO
 ==========
-Download GPX en EDGE : => null (1).txt
+Sur IE + EDGE: sélecteur de coordonnées: liste aussi le nom des fonctions
 Extraction GPX bbox=écran (qoi dans l'éditeur ?)
+	Download GPX en EDGE : => null (1).txt
+	Renommer GetGpxFile -> FileDownload ??? / Refaire la couche
 Intégrer GoeoJSON avec GeoBB
 Click sur cadre entoure en bleu
-Renommer GetGpxFile -> FileDownload ??? / Refaire la couche
 Carte Andorre
 Swiss: getcapabilities / time de la carte
 Afficher altitude & heure sur survol point ou segment d'une courbe
@@ -34,12 +33,14 @@ V1.0
 
 DOC TESTS & DEMOS
 =================
-Doc é demo overpass
-Quand uploadé sur le io.github, remettre les libs des démos des plugins Dom92 en chemin externe
+Voir le nom des repertoires: test ou tests ou debug ?
+	Voir le lien absolu/relatif
+Doc overpass
+Quand uploadé sur le io.github, remettre les libs des examples des plugins en chemin externe
+	Séparer les /examples des /tests
 Faire Readme, doc, test, demo, v1.0 & github permalink.cookies & Marker.coordinates
 Chainage des demos + V1
 Faire des fichiers de TEST (edit, ...) basés sur src/ll... # fichiers index.html DÉMO
-Traduire en anglais
 Dom plugins & demos: Dom92.L.IGN, Swiss, IDEE, IGM
 Doc read.me === doc en tête de fichier === index.html
 Fork me: https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png
@@ -48,8 +49,9 @@ Vérification finale avant mise en prod
 	Passer http://www.javascriptlint.com/online_lint.php
 	Passer http://jsbeautifier.org/
 	Résorber DCMM GEO DELETE
-	Mettre _ devant les methodes de classes internes
+	Traduire en anglais
 	https://github.com/Leaflet/Leaflet/blob/master/CONTRIBUTING.md
+	CR/LF: https://help.github.com/articles/dealing-with-line-endings/
 	https://github.com/airbnb/javascript ?????
 	Style commentaires:
 	/*
@@ -97,10 +99,13 @@ FIREFOX NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais re
 Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
 Déraciner le wiki
 Passage en templates gestion/index.php
-API: erreur sur geom vide dans un polynome
-DOC API: Mettre l'entête et le pied
-API: Durée cache réglable
-API: Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
+
+WRI API
+=======
+erreur: sur geom vide dans un polynome
+DOC: Mettre l'entête et le pied
+Durée cache réglable
+Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
 
 NOTES
 =====

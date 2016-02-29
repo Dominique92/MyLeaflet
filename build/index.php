@@ -59,19 +59,20 @@ foreach ([
 	'../dist/' => 'images/',
 	'../' => 'dist/images/',
 ] as $k => $v) {
+	$mini_css = [];
 	foreach ($css_files[0] AS $css_file)
 		$mini_css [] = preg_replace_callback (
 			'/url\(\'?\"?([A-Za-z0-9@_\-\.\/]+)\"?\'?\)/', 
 			function ($matches) {
 				global $css_file, $k, $v;
 				$source = pathinfo ($css_file, PATHINFO_DIRNAME) .'/'.$matches[1];
-				$destination = $v.str_replace (['../','/'], ['','-'], $source);
+				$destination = str_replace (['../','/'], ['','-'], $source);
 
 				// Copie les fichiers images dans le répertoire de distribution
-				cp ($source, $k.$destination);
+				cp ($source, "../dist/images/$destination");
 
 				// Remplace les répertoires des url relatifs au fichier CSS d'origine
-				return 'url("'.$destination.'")';
+				return "url($v$destination)";
 			},
 			$css_compress->run (file_get_contents ($css_file))
 		);

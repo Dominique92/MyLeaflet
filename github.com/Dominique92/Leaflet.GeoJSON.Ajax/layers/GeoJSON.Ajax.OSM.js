@@ -97,7 +97,8 @@ L.GeoJSON.Ajax.OSM = L.GeoJSON.Ajax.extend({
 						t.name ? '<b>' + t.name + '</b>' : '',
 						title.charAt(0).toUpperCase() + title.substr(1), // Uppercase the first letter
 						t.ele ? t.ele + ' m' : '',
-						t['contact:phone'], t['phone'],
+						t['contact:phone'] ? '<a href="tel:'+t['contact:phone'].replace(/[^0-9\+]+/ig, '')+'">'+t['contact:phone']+'</a>' : '',
+						t['phone'] ? '<a href="tel:'+t['phone'].replace(/[^0-9\+]+/ig, '')+'">'+t['phone']+'</a>' : '',
 						t.email ? '<a href="mailto:' + t.email + '">' + t.email + '</a>' : '',
 						t['addr:street'] ? adresses.join(' ') : '',
 						t.website ? '<a href="' + (t.website.search('http') ? 'http://' : '') + t.website + '">' + t.website + '</a>' : ''

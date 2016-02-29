@@ -198,7 +198,7 @@ var js_list = [
 	'../github.com/makinacorpus/Leaflet.Snap/leaflet.snap.js', //V1.0 ??
 
 	'../github.com/Dominique92/Leaflet.draw.plus/Control.Draw.Plus.js',
-	'../src/Leaflet.Control.GetGpxFile.js',
+//	'../src/Leaflet.Control.GetGpxFile.js', // Inclure manuellement (en test)
 
 	// Adaptations
 	'../src/locales.fr.js',
