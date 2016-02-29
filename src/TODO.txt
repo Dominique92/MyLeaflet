@@ -1,12 +1,11 @@
 WRI
 ===
-Blocage déplacement carte apres plusieurs appels overpass (sur mobile)
 Création de point devrait prendre par défaut le cookie.
 
 BEST TO DO
 ==========
-Sur IE + EDGE: sélecteur de coordonnées: liste aussi le nom des fonctions
-Extraction GPX bbox=écran (qoi dans l'éditeur ?)
+Permalink 		if (this.options.useLocation)
+Extraction GPX bbox=écran (quoi dans l'éditeur ?)
 	Download GPX en EDGE : => null (1).txt
 	Renommer GetGpxFile -> FileDownload ??? / Refaire la couche
 Intégrer GoeoJSON avec GeoBB

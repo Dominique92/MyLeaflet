@@ -30,12 +30,12 @@
 		#ajax-status div {
 			float: none;
 		}
-		.over-none #over-none,
-		.over-wait #over-wait,
-		.over-zoom #over-zoom,
-		.over-some #over-some,
-		.over-zero #over-zero,
-		.over-error #over-error {
+		.ajax-none #ajax-none,
+		.ajax-wait #ajax-wait,
+		.ajax-zoom #ajax-zoom,
+		.ajax-some #ajax-some,
+		.ajax-zero #ajax-zero,
+		.ajax-error #ajax-error {
 			display: initial !important;
 		}
 	</style>
@@ -54,11 +54,11 @@
 	<div><input type="checkbox" name="osm-categories[]" value="amenity~parking" onclick="osm.reload()" />Parkings</div>
 
 	<div id="ajax-status">
-		<p id="over-zoom" style="color:red">Zoom to see more points</p>
-		<p id="over-wait" style="color:blue">Loading...</p>
-		<p id="over-some" style="color:green">Loaded.</p>
-		<p id="over-zero">Nothing to see.</p>
-		<p id="over-error" style="color:red">Error.</p>
+		<p id="ajax-zoom" style="color:red">Zoom to see more points</p>
+		<p id="ajax-wait" style="color:blue">Loading...</p>
+		<p id="ajax-some" style="color:green">Loaded.</p>
+		<p id="ajax-zero">Nothing to see.</p>
+		<p id="ajax-error" style="color:red">Error.</p>
 	</div>
 
 	<script>

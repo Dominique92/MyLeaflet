@@ -176,9 +176,12 @@ L.Marker.include({
 			// On initialise la liste de séléction avec les projections disponibles pour ce point
 			for (c in L.CRS)
 				if (L.CRS[c] &&
-					L.CRS[c].name && (!L.CRS[c].bounds || // On affiche les projections qui n'ont pas de limite
+					L.CRS[c].name &&
+					typeof L.CRS[c] == 'object' &&
+					(!L.CRS[c].bounds || // On affiche les projections qui n'ont pas de limite
 						L.CRS[c].bounds.contains([latlng.lng, latlng.lat]) // Ou celles qui sont dans les limite
-					)) {
+					)
+				) {
 					var option = document.createElement('option');
 					option.value = c;
 					if (c == typeCoordonnee)

@@ -54,7 +54,7 @@ L.GeoJSON.Ajax.OSM = L.GeoJSON.Ajax.extend({
 		// Convert received data in geoJson format
 		tradJson: function(data) {
 			if (data.remark)
-				this.elAjaxStatus.className = 'over-zoom';
+				this.elAjaxStatus.className = 'ajax-zoom';
 
 			var geoJson = []; // Prepare geoJson object for Leaflet.GeoJSON display
 			for (var e in data.elements) {
@@ -126,10 +126,10 @@ L.GeoJSON.Ajax.OSM = L.GeoJSON.Ajax.extend({
 	},
 
 	error429: function() { // Too many requests or request timed out
-		this.elAjaxStatus.className = 'over-zoom';
+		this.elAjaxStatus.className = 'ajax-zoom';
 	},
 
 	error504: function() { // Gateway request timed out
-		this.elAjaxStatus.className = 'over-zoom';
+		this.elAjaxStatus.className = 'ajax-zoom';
 	}
 });
