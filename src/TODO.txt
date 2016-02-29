@@ -1,5 +1,7 @@
 WRI
 ===
+Livrer build sur WRI
+Blocage déplacement carte apres plusieurs appels overpass (sur mobile)
 Création de point devrait prendre par défaut le cookie.
 Sur IE + EDGE: sélecteur de coordonnées: liste aussi le nom des fonctions
 
