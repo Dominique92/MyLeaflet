@@ -26,8 +26,8 @@ USAGE
 =====
 * Include MyLeaflet for production (compressed files):
 ```html
-	<link rel="stylesheet" href="leaflet.css" />
-	<script src="leaflet.js"></script>
+	<link rel="stylesheet" href="dist/leaflet.css" />
+	<script src="dist/leaflet.js"></script>
 ```
 
 * Include MyLeaflet for developpement (full sources):
@@ -36,9 +36,9 @@ USAGE
 	<script src="src/leaflet.js"></script>
 ```
 
-* Tinny distribution: copy dist/... files
-
 * Compressed files generation: run build/index.php
+
+* Tinny distribution: only copy dist/... files
 
 FILES
 =====

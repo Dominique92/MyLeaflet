@@ -1,10 +1,16 @@
+Permalink ne marche pas quand il y a un paramètre !!
+Permalink 		if (this.options.useLocation)
+
 WRI
 ===
 Création de point devrait prendre par défaut le cookie.
 
 BEST TO DO
 ==========
-Permalink 		if (this.options.useLocation)
+highway	bus_stop ..  WC
+Voir rep github leaflet.1.0.0-beta.2      ????????
+reprendre tous les onAdd et voir si on n'a pasposté de .on -> onRemove
+prototype.xxx.call => Peut/Doit être dans la classe directement héritée
 Extraction GPX bbox=écran (quoi dans l'éditeur ?)
 	Download GPX en EDGE : => null (1).txt
 	Renommer GetGpxFile -> FileDownload ??? / Refaire la couche

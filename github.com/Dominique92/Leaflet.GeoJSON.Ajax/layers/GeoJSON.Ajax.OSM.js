@@ -84,7 +84,7 @@ L.GeoJSON.Ajax.OSM = L.GeoJSON.Ajax.extend({
 						t.rooms ? t.rooms + ' rooms' : '',
 						t.place ? t.place + ' places' : '',
 						t.capacity ? t.capacity + ' places' : '',
-						'<a href="http://www.openstreetmap.org/' + (d.center ? 'way' : 'node') + '/' + d.id + '">&copy;</a>'
+						'<a href="http://www.openstreetmap.org/' + (d.center ? 'way' : 'node') + '/' + d.id + '" target="_blank">&copy;</a>'
 					]
 					.join(' ')
 					.replace( // Word translation if necessary

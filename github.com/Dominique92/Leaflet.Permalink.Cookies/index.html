@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Leaflet extension for multi vendors maps & projections</title>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
+
+	<!-- Leaflet kernel -->
+	<link rel="stylesheet" href="../../../src/leaflet.css" />
+	<script src="../../../src/leaflet.js"></script>
+
+</head>
+
+<body>
+	<p>Leaflet extension for multi vendors maps & projections (
+		OSM, Maps.Refuges.Info, Thunder Forest, Refuges.info, Hike & Bike, ClycleMap, Outdoors & Bike,
+		<a href="examples/France-IGN.html">IGN France</a>,
+		<a href="examples/Spain-IDEE.html">SwissTopo</a>,
+		IDEE Espa&ntilde;a,
+		<a href="examples/Italy-IGM.html">IGM Italie</a>,
+		OS Great Britain,
+		Kompass Austria,
+		Bing Microsoft,
+		Google maps,
+		...)
+	</p>
+	<p>Sources on <a href= "https://github.com/Dominique92/Leaflet.Permalink.Cookies">Github Dominique92/Leaflet.Permalink.Cookies</a></p>
+	<p>This demo runs on Leaflet V<script>document.write(L.version)</script> &#10144; <a href="examples/index-v1.0.html" style="font-size:12px">See demo on Leaflet V1.0</a></p>
+	<div style="position: absolute;right:0;top:0"><a href="test/index-v1.0.html">&gt;</a>&nbsp;</div>
+	<p>Move &amp; zoom the map and reload it.</p>
+
+	<div id="map" style="width: 800px; height: 600px"></div>
+
+	<script>
+		var map = new L.Map('map');
+		map.setView([45.18, 5.7], 12);
+
+		// Baselayer
+		var baselayer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+		});
+		baselayer.addTo(map);
+
+		new L.Control.Permalink.Cookies({ // shramov/leaflet-plugins
+//			layers: baselayer
+		}).addTo(map);
+	</script>
+</body>
+</html>

@@ -157,6 +157,13 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 			this._map.on('moveend', this.reload, this);
 	},
 
+	onRemove: function (map) {
+		this.elAjaxStatus.className = '';
+		this._map.off('moveend', this.reload, this);
+
+		L.GeoJSON.prototype.onRemove.call(this, map);
+	},
+
 	// Build the final url request to send to the server
 	_getUrl: function() {
 		var argsGeoJSON = typeof this.options.argsGeoJSON == 'function' ? this.options.argsGeoJSON.call(this, this) : this.options.argsGeoJSON;
