@@ -1,12 +1,8 @@
-Permalink ne marche pas quand il y a un paramètre !!
-Permalink 		if (this.options.useLocation)
-
-WRI
-===
-Création de point devrait prendre par défaut le cookie.
-
 BEST TO DO
 ==========
+Exemple ajax : popupanchor massif 0, -5
+Permalink ne marche pas quand il y a un paramètre !!
+	Permalink 		if (this.options.useLocation)
 highway	bus_stop ..  WC
 Voir rep github leaflet.1.0.0-beta.2      ????????
 reprendre tous les onAdd et voir si on n'a pasposté de .on -> onRemove
@@ -94,13 +90,11 @@ Fonction de téléchargement des dalles dans un périmètre donné
 
 WRI
 ===
-cartes.js: mettre des if pour ne pas tout inclure dans chaque page
 Carte par defaut fiche Angleterre (manque le contour localisation administrative)
 NAV EDIT: revoir responsive
 Style: 2 .menu UL {
 Edition / creation / suppression polygones autres que massif
 Charger fichier GPX: pas sur un mobile !!
-FIREFOX NAV: Ctrl + Click icône: affiche le point dans un nouvel onglet mais reste sur la carte." -> pas fonctionnel sur firefox, ça passe sur le nouvel onglet
 Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
 Déraciner le wiki
 Passage en templates gestion/index.php

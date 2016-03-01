@@ -101,7 +101,7 @@ L.GeoJSON.Ajax.OSM = L.GeoJSON.Ajax.extend({
 						t['phone'] ? '<a href="tel:'+t['phone'].replace(/[^0-9\+]+/ig, '')+'">'+t['phone']+'</a>' : '',
 						t.email ? '<a href="mailto:' + t.email + '">' + t.email + '</a>' : '',
 						t['addr:street'] ? adresses.join(' ') : '',
-						t.website ? '<a href="' + (t.website.search('http') ? 'http://' : '') + t.website + '">' + t.website + '</a>' : ''
+						t.website ? '<a href="' + (t.website.search('http') ? 'http://' : '') + t.website + '" target="_blank">' + t.website + '</a>' : ''
 					];
 
 				if (d.center) // When item has a geometry, we need to get the center
