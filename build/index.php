@@ -38,7 +38,12 @@ $mini_js [] = "/**
 
 foreach ($jsf[1] AS $fj) {
 	echo "<div>Compression de $fj</div>";
-	$mini_js [] = $js_compress->squeeze(file_get_contents ($fj));
+	$mini_js [] = $js_compress->squeeze(
+		file_get_contents ($fj),
+		true,  // $singleLine
+		false, // $keepImportantComments
+		true   // $specialVarRx
+	);
 }
 
 // Fixe un bug de reconnaissance de path si les images de leaflet.css sont regroupées (cas du répertoire dist/...)

@@ -14,13 +14,15 @@
  */
 
 L.GeoJSON.Style = L.GeoJSON.extend({
+
 	// Modify the way the layer representing one of the features is displayed
 	_setLayerStyle: function(layer, layerStyle) {
 		// Merge layer style & feature properties.
 		var style = L.extend({},
 			layer.feature.properties, // Low priority: geoJSON properties.
-			typeof layerStyle == 'function' ? layerStyle.call(this, layer.feature) // When layer.options.style is a function
-			: layerStyle // Priority one: layer.options.style
+			typeof layerStyle == 'function'
+				? layerStyle.call(this, layer.feature) // When layer.options.style is a function
+				: layerStyle // Priority one: layer.options.style
 		);
 
 		// Use an icon file to display a marker.
@@ -157,7 +159,7 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 			this._map.on('moveend', this.reload, this);
 	},
 
-	onRemove: function (map) {
+	onRemove: function(map) {
 		this.elAjaxStatus.className = '';
 		this._map.off('moveend', this.reload, this);
 
@@ -166,7 +168,10 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 
 	// Build the final url request to send to the server
 	_getUrl: function() {
-		var argsGeoJSON = typeof this.options.argsGeoJSON == 'function' ? this.options.argsGeoJSON.call(this, this) : this.options.argsGeoJSON;
+		var argsGeoJSON =
+			typeof this.options.argsGeoJSON == 'function'
+			? this.options.argsGeoJSON.call(this, this)
+			: this.options.argsGeoJSON;
 
 		// Add bbox param if necessary
 		if (this.options.bbox && this._map)
@@ -233,8 +238,8 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 				return;
 			}
 			// Perform a special calculation if necessary (used by OSM overpass)
-			if (typeof this.options.tradJson == 'function')
-				js = this.options.tradJson.call(this, js);
+			if (typeof this._tradJson == 'function')
+				js = this._tradJson.call(this, js);
 
 			// Add it to the layer
 			this.addData(js);

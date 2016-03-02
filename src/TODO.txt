@@ -1,5 +1,6 @@
 BEST TO DO
 ==========
+Test overpass website sans schema
 Exemple ajax : popupanchor massif 0, -5
 Permalink ne marche pas quand il y a un paramètre !!
 	Permalink 		if (this.options.useLocation)
