@@ -123,7 +123,8 @@ L.GeoJSON.Ajax.OSM = L.GeoJSON.Ajax.extend({
 					t.phone ? label.phone : '',
 					t.email ? label.email : '',
 					t['addr:street'] ? label.address.join(' ') : '',
-					t.website ? label.website : ''
+					t.website ? label.website : '',
+					t.ext1, t.ext2, t.ext3 // User defined fields
 				];
 
 			if (d.center) // When item has a geometry, we need to get the center
@@ -135,7 +136,7 @@ L.GeoJSON.Ajax.OSM = L.GeoJSON.Ajax.extend({
 					id: d.id,
 					properties: {
 						icon: icon,
-						title: '<p>' + popup.join('</p><p>') + '</p>'
+						title: '<p>' + popup.join('</p><p>').replace('<p></p>','') + '</p>'
 					},
 					geometry: {
 						type: 'Point',

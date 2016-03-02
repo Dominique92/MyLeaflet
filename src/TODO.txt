@@ -1,5 +1,6 @@
 BEST TO DO
 ==========
+Overpass t.ext1, t.ext2, t.ext3 // User defined fields -> Parcourir ceux manquant
 Test overpass website sans schema
 Exemple ajax : popupanchor massif 0, -5
 Permalink ne marche pas quand il y a un paramètre !!
