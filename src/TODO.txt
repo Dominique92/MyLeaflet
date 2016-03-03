@@ -65,6 +65,20 @@ BUILD BEST TO DO
 ================
 Voir https://tortoisegit.org/
 
+UPDATE MAJEUR
+=============
+Créer rep
+Checkout
+Aller dans le rep
+Tortoise delete all
+Copy nouveau fichiers
+Tortoise add -> All/select
+Toitoise revert -> Missings / Tortoise delete (les mêmes)
+Del all
+Copy all new 
+Tortoise add -> Vérifie pas de new oubliés
+Tortoise revert -> Vérifie pas de missings
+
 IMPORT GARMIN
 =============
 Basecamp

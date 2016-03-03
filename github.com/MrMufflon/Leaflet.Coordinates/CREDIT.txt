@@ -1,1 +1,1 @@
-https://github.com/MrMufflon/Leaflet.Coordinates/commit/062f7596a0304cc3676e38d172dbd4b682fd9e4b
+https://github.com/MrMufflon/Leaflet.Coordinates/commit/09ffcfdfa2bee2a7cee24a9653baef0ec0abc660
