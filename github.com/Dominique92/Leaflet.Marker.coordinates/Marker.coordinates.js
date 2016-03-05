@@ -147,9 +147,14 @@ L.CRS.EPSG27574 = L.extend({},
 // Le contrôle
 L.Marker.include({
 	coordinates: function(id) {
-		var el = document.getElementById(id+'-json');
+		var el = document.getElementById(id+'-json'),
+			cs;
 		if (el) {
-			var cs = JSON.parse(el.innerHTML || el.value).coordinates;
+			try {
+				cs = JSON.parse(el.innerHTML || el.value).coordinates;
+			} catch (e) {
+				// GEO TODO traiter erreur
+			}
 			if (cs)
 				this.setLatLng([cs[1], cs[0]]);
 		}

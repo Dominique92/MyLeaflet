@@ -1,5 +1,5 @@
 <?php
-include_once('../github.com/phayes/geoPHP/geoPHP.inc');
+include_once('../../../phayes/geoPHP/geoPHP.inc');
 $mysqli = new mysqli('localhost', 'root', '', 'll');
 
 /*DCMM*/echo"<pre style='background-color:white;color:black;font-size:14px;'>_POST = ".var_export($_POST,true).'</pre>';

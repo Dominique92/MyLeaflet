@@ -28,7 +28,7 @@
 
 			// frame fixe marquant une position. La carte est centrée autour
 			frame = new L.Marker([45.78, 3.08], { // Position par défaut
-					clickable: false, // Evite d'activer le viewfinder: pointeur
+					clickable: false, // Evite d'activer le viewfinder: curseur
 					icon: L.icon({
 						iconUrl: 'images/frame.png',
 						iconAnchor: [15, 21]
@@ -73,12 +73,11 @@
 		<select id="viewfinder-select"><option value="decimal"></option></select>
 	</p>
 
-	<p><a onclick="map.panTo(viewfinder._latlng)" style="color:blue;cursor:pointer;text-decoration:underline">Recentrer la carte sur le pointeur</a></p>
-	<p><a onclick="viewfinder.setLatLng(map.getCenter())" style="color:blue;cursor:pointer;text-decoration:underline">Remettre le pointeur au centre actuel de la carte</a></p>
+	<p><a onclick="map.panTo(viewfinder._latlng)" style="color:blue;cursor:pointer;text-decoration:underline">Recentrer la carte sur le curseur</a></p>
+	<p><a onclick="viewfinder.setLatLng(map.getCenter())" style="color:blue;cursor:pointer;text-decoration:underline">Remettre le curseur au centre actuel de la carte</a></p>
 	<form method="post" action="#">
 		<input id="viewfinder-json" type="text" name="geom" size="120" value='{"type":"Point","coordinates":[8.5,46.5]}' />
 		<br/>
-		<span id="change" style="display:none"><i>Changé</i></span>
 		<button type="submit" name="action" value="Modifier">Modifier</button>
 	</form>
 
