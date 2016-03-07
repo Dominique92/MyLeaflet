@@ -1,5 +1,7 @@
 BEST TO DO
 ==========
+Ne pas dégrouper les lignes (geoJson ajax avec lignes !!)
+Revoir tous les encodages e fichiers sources en UTF-8
 Fusionner /test & /tests -- voir avec exemples ?
 Overpass t.ext1, t.ext2, t.ext3 // User defined fields -> Parcourir ceux manquant
 Test overpass website sans schema
@@ -34,6 +36,8 @@ Editeur
 V1.0
 	Démo viseur/V1.0 KO
 	Draw+ V1 KO
+Table de Peutinger (carte de redressement)
+	http://peutinger.atlantides.org/map-a/
 
 DOC TESTS & DEMOS
 =================
@@ -107,6 +111,7 @@ Fonction de téléchargement des dalles dans un périmètre donné
 
 WRI
 ===
+WRI: On n'itialise pas la carte avec le permalink: -> INItialise
 Carte par defaut fiche Angleterre (manque le contour localisation administrative)
 NAV EDIT: revoir responsive
 Style: 2 .menu UL {

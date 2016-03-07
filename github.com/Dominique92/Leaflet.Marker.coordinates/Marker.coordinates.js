@@ -164,7 +164,7 @@ L.Marker.include({
 	},
 
 	_displayCoord: function(id) {
-		var marker = this, // Indispensable pour ne pas confondres avec le this dans certains on()
+		var marker = this, // Indispensable pour ne pas confondre avec le this dans certaines fonctions incluses
 			latlng = marker._latlng,
 			typeCoordonnee = 'decimal'; // Valeur par défaut
 

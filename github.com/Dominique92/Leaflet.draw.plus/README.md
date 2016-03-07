@@ -27,11 +27,11 @@ Default is none.
 			marker: true, // Capability to create a marker
 			polyline: true, // Capability to create a polyline
 			polygon: true, // Capability to create a polygon
-//			rectangle: true, // Capability to create a rectangle
-//			circle: true // Capability to create a circle
+			rectangle: true, // Capability to create a rectangle
+			circle: true // Capability to create a circle
 		},
 		edit: {
-//			edit: true, // Capability to edit a feature
+			edit: true, // Capability to edit a feature
 			remove: true // Capability to remove a feature
 		},
 		entry: 'edit-json', // <textarea id="edit-json">JSON</textarea> | <input type="hidden" id="edit-json" name="xxx" value="JSON"> : geoJson field to be edited

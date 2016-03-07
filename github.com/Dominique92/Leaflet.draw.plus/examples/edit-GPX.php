@@ -61,7 +61,7 @@ $json_edit = isset ($_POST ['geom'])
 				draw: {
 					marker: true,
 					polyline: true,
-					polygon: true,
+					polygon: true
 				},
 				edit: {
 					remove: true

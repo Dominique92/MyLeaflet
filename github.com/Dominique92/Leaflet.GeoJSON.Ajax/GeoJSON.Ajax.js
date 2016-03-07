@@ -5,7 +5,7 @@
  *
  * Display remote layers with geoJSON format
  *
- * geoJSON Spécifications: http://geojson.org/geojson-spec.html
+ * geoJSON SpÃ©cifications: http://geojson.org/geojson-spec.html
  * With the great initial push from https://github.com/LeOSW42
  */
 
