@@ -1,8 +1,5 @@
 BEST TO DO
 ==========
-Ne pas dégrouper les lignes (geoJson ajax avec lignes !!)
-Revoir tous les encodages e fichiers sources en UTF-8
-Fusionner /test & /tests -- voir avec exemples ?
 Overpass t.ext1, t.ext2, t.ext3 // User defined fields -> Parcourir ceux manquant
 Test overpass website sans schema
 Exemple ajax : popupanchor massif 0, -5
