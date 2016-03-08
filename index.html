@@ -40,7 +40,7 @@
 			}).addTo(map);
 
 			new L.Control.Permalink.Cookies({
-				layers: new L.Control.Layers(L.TileLayer.collection()).addTo(map)
+				layers: new L.Control.Layers.autoHeight(L.TileLayer.collection()).addTo(map)
 			}).addTo(map);
 
 			new L.Control.Gps()
@@ -72,7 +72,7 @@
 	</p>
 	<div style="position:absolute;right:0;top:0"><a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax">&gt;</a>&nbsp;</div>
 
-	<div id="map" style="width:640px"></div>
+	<div id="map" style="width:50%"></div>
 
 	<script>
 	if (window.location.host == 'localhost')

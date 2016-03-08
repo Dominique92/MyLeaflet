@@ -82,7 +82,7 @@
 			}).addTo(map);
 
 			new L.Control.Permalink.Cookies({ // shramov/leaflet-plugins
-				layers: new L.Control.Layers(L.TileLayer.collection()).addTo(map)
+				layers: new L.Control.Layers.autoHeight(L.TileLayer.collection()).addTo(map)
 			}).addTo(map);
 
 			new L.Control.Gps()
