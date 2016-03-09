@@ -68,13 +68,32 @@
 	<p>Leaflet <script>document.write(L.version)</script></p>
 
 	<div id="map" style="width: 800px; height: 600px"></div>
-	<textarea id="entree" rows="5" cols="120">
+	<p><b>Sortie format gepJson</b></p>
+	<textarea id="entree" rows="10" cols="120">
 {"type":"FeatureCollection","features":[
 	{"type":"Feature","properties":{},"geometry":{"type":"LineString","coordinates":[[2.5,46],[3,45],[4,45],[5,45.8]]}},
 	{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[3.5,45.5]}}
 ]}
 	</textarea>
 	<div id="change" style="display:none"><i>Changé</i></div>
+
+	<p><u>Créer une ligne:</u> Cliquer sur le contrôle "Tracer une ligne" puis à l'emplacement du premier sommet...</p>
+	<p><u>Ajouter un sommet:</u> Déplacer un marqueur au milieu d'un côté.</p>
+	<p><u>Déplacer un sommet:</u> Le déplacer.
+	Les sommets déplacés "collent" aux sommets des autres lignes et prennent exactement leur position.</p>
+	<p><u>Supprimer un sommet:</u> Cliquer une fois dessus.</p>
+	<p><u>Etendre une ligne:</u> Cliquer sur le contrôle "Tracer une ligne" puis sur l'extrémité à étendre...</p>
+	<p><u>Fusionner deux lignes:</u> Joindre une extrémité de chacune.</p>
+	<p><u>Supprimer une ligne:</u> Cliquer sur le contrôle "poubelle" puis sur un segment.</p>
+	<p><u>Créer un polygone:</u> Cliquer sur le contrôle "polygone" puis à l'emplacement du premier sommet...</p>
+	<p><u>Ajouter un sommet:</u> Déplacer un marqueur au milieu d'un côté.</p>
+	<p><u>Déplacer un sommet:</u> Le déplacer.
+	Les sommets déplacés "collent" aux sommets des autres massifs et prennent exactement leur position.</p>
+	<p><u>Supprimer un sommet:</u> Cliquer une fois dessus.</p>
+	<p><u>Supprimer un polygone:</u> Cliquer sur le contrôle "poubelle" puis sur un côté.</p>
+	<p>Pour une édition plus complexe, vous pouvez transformer vos polygones en lignes brisées:</p>
+	<p><u>Couper un polygone:</u> Cliquer une fois sur un marqueur au milieu d'un côté. On obtient une ligne.</p>
+	<p><u>Fermer une ligne:</u> Joindre ses deux extrémités. On obtient un polygone.</p>
 
 	<div style="position: absolute;right:0;top:0"><a href="../../..">&gt;</a>&nbsp;</div>
 </body>
