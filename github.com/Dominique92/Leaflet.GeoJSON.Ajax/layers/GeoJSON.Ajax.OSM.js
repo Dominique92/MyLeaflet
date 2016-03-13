@@ -14,7 +14,7 @@ L.GeoJSON.Ajax.OSM = L.GeoJSON.Ajax.extend({
 		bbox: true,
 		maxLatAperture: 0.25, // (Latitude degrees) The layer will only be displayed if it's zooms to less than this latitude aperture degrees.
 		timeout: 25, // Server timeout (seconds)
-		maxPoints: 100, // Nb max displayed points
+		maxPoints: 500, // Nb max displayed points
 		services: {}, // Request data formating
 		icons: {}, // Icons name translation
 		language: {}, // label word translation
