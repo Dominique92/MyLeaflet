@@ -61,6 +61,10 @@ if (navigator.language || navigator.userLanguage == 'fr') {
 					title: 'Annuler le dessin',
 					text: 'Annuler'
 				},
+				finish: {
+					title: 'Finir le dessin',
+					text: 'Finir'
+				},
 				undo: {
 					title: 'Supprimer le dernier point',
 					text: 'Supprimer le dernier point'

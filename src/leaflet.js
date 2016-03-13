@@ -6,6 +6,7 @@
  */
 
 var js_list = [
+	'../src/version.js',
 //	'../github.com/Leaflet/Leaflet/dist/leaflet-src.js', // FULL
 // V1.0: https://github.com/Leaflet/Leaflet/tree/master
 /* OPTIM */
@@ -167,6 +168,7 @@ var js_list = [
 	'../github.com/Leaflet/Leaflet.draw/src/Toolbar.js',
 	'../github.com/Leaflet/Leaflet.draw/src/Tooltip.js',
 //	'../github.com/Leaflet/Leaflet.draw/src/ext/GeometryUtil.js',
+	'../github.com/Leaflet/Leaflet.draw/src/ext/TouchEvents.js',
 	'../github.com/Leaflet/Leaflet.draw/src/ext/LatLngUtil.js',
 	'../github.com/Leaflet/Leaflet.draw/src/ext/LineUtil.Intersect.js',
 	'../github.com/Leaflet/Leaflet.draw/src/ext/Polygon.Intersect.js', // Nécéssaire pour éditer les polygones

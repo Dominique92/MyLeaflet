@@ -1,27 +1,24 @@
 BEST TO DO
 ==========
+L.drawVersion = '0.3.0-dev'
+Test overpass website sans schema://...
+Carte Andorre
 Gen lib.js: mettre à jour la liste des github.Dominique92
 Overpass t.ext1, t.ext2, t.ext3 // User defined fields -> Parcourir ceux manquant
-Test overpass website sans schema
 Exemple ajax : popupanchor massif 0, -5
 Permalink ne marche pas quand il y a un paramètre !!
 	Permalink 		if (this.options.useLocation)
-highway	bus_stop ..  WC
-Voir rep github leaflet.1.0.0-beta.2      ????????
 reprendre tous les onAdd et voir si on n'a pasposté de .on -> onRemove
 prototype.xxx.call => Peut/Doit être dans la classe directement héritée
 Extraction GPX bbox=écran (quoi dans l'éditeur ?)
 	Download GPX en EDGE : => null (1).txt
 	Renommer GetGpxFile -> FileDownload ??? / Refaire la couche
-Intégrer GoeoJSON avec GeoBB
 Click sur cadre entoure en bleu
-Carte Andorre
 Swiss: getcapabilities / time de la carte
 Afficher altitude & heure sur survol point ou segment d'une courbe
 	https://github.com/mpetazzoni/leaflet-gpx
 	https://github.com/arthur-e/Wicket
 Editeur
-	Bug suppression poly dans editeur => ça rame aprés !
 	Purge des points identiques sur un segment
 	Importer (en + de geojson, gpx, kml)
 		https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
@@ -36,7 +33,7 @@ V1.0
 	Draw+ V1 KO
 Table de Peutinger (carte de redressement)
 	http://peutinger.atlantides.org/map-a/
-
+	
 DOC TESTS & DEMOS
 =================
 Voir le nom des repertoires: test ou tests ou debug ?
