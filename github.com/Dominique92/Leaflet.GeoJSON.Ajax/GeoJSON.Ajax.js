@@ -96,7 +96,7 @@ L.GeoJSON.Style = L.GeoJSON.extend({
 				if (p2._latlng &&
 					p1._leaflet_id != p2._leaflet_id) {
 					var xy2 = this._map.latLngToLayerPoint(p2._lli), // XY other point.
-						dp = xy2.distanceTo(xy1); // Distance between the itarated point & the overflown point.
+						dp = xy2.distanceTo(xy1); // Distance between the iterated point & the overflown point.
 					if (!dp) // If the 2 points are too close, we shift right one.
 						p2.setLatLng(this._map.layerPointToLatLng(xy2.add([delta, 0])));
 					else

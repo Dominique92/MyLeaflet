@@ -1,3 +1,8 @@
+WRI
+===
+Permalien affichage=zone
+Add .ajax-too #ajax-too,
+
 BEST TO DO
 ==========
 Gen lib.js: mettre à jour la liste des github.Dominique92
