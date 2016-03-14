@@ -3,6 +3,8 @@
  * Traduction des textes en français
  */
 
+L.myLeafletVersion = '0.2';
+
 if (navigator.language || navigator.userLanguage == 'fr') {
 
 	// Textes des contrôles

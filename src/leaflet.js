@@ -6,7 +6,6 @@
  */
 
 var js_list = [
-	'../src/version.js',
 //	'../github.com/Leaflet/Leaflet/dist/leaflet-src.js', // FULL
 // V1.0: https://github.com/Leaflet/Leaflet/tree/master
 /* OPTIM */

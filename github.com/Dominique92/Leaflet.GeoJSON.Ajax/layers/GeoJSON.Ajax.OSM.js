@@ -17,7 +17,7 @@ L.GeoJSON.Ajax.OSM = L.GeoJSON.Ajax.extend({
 		maxPoints: 500, // Nb max displayed points
 		services: {}, // Request data formating
 		icons: {}, // Icons name translation
-		language: {}, // label word translation
+		language: {min:''}, // label word translation
 
 		// Url args calculation
 		argsGeoJSON: function() {
