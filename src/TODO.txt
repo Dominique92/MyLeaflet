@@ -1,10 +1,10 @@
 BEST TO DO
 ==========
+L.drawVersion = '0.3.0-dev' : SNAP non compatible
 Ajax: language: {min:''}, // trouver une meilleure solution à ce contournement de bug
 <div id="map" class="locatisation ... pour éviter un container et mettre des marges
 /stefanocudini/leaflet-gps/ : autoCenter: false, //move map when gps location change
 L.Control.Scale imperial: false
-L.drawVersion = '0.3.0-dev'
 Test overpass website sans schema://...
 Carte Andorre
 Gen lib.js: mettre à jour la liste des github.Dominique92

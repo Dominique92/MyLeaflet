@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<title>Leaflet</title>
+	<title>MyLeaflet</title>
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
@@ -9,59 +9,7 @@
 	<script src="src/leaflet.js"></script>
 	<script src="github.com/Dominique92/Leaflet.GeoJSON.Ajax/layers/GeoJSON.Ajax.WRI.js"></script>
 
-	<script>
-		var key = {
-			ign: window.location.host == 'localhost'
-				? 'u71tqebfror0c2nn3nppcbk2' // localhost 31/03/2016 http://api.ign.fr
-				: 'o6owv8ubhn3vbz2uj8jq5j0z', // dominique92.github.io http://pro.ign.fr/api-web
-			bing: 'ArLngay7TxiroomF7HLEXCS7kTWexf1_1s1qiF7nbTYs2IkD3XLcUnvSlKbGRZxt', // https://www.bingmapsportal.com
-			os: 'CBE047F823B5E83CE0405F0ACA6042AB' // http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
-		};
-
-		var map;
-		window.addEventListener('load', function() {
-			map = new L.Map('map');
-			map.setView([47, 2], 6); // France
-			//			map.setView([45, 5], 7); // Sud ouest
-			//			map.setView([51.5, 0], 9); // UK
-			//			map.setView([49.959, -5.206], 8); // Cap Lizard
-			//			map.setView([46.5, 7], 7); // Suisse
-			L.TileLayer.collection('OSM-FR').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
-			//			L.TileLayer.collection('OS Great Britain').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
-			//			map.setCRS(L.CRS.EPSG27700);
-			//			L.TileLayer.collection('SwissTopo').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
-
-			// Controls
-			new L.Control.Scale().addTo(map);
-			new L.Control.Fullscreen().addTo(map);
-			new L.Control.Coordinates().addTo(map);
-			new L.Control.OSMGeocoder({
-				position: 'topleft'
-			}).addTo(map);
-
-			new L.Control.Permalink.Cookies({
-				layers: new L.Control.Layers.autoHeight(L.TileLayer.collection()).addTo(map)
-			}).addTo(map);
-
-			new L.Control.Gps()
-				.addTo(map)
-				.on('gpslocated', function(e) {
-					e.target._map.setView(e.latlng, 16, {
-						reset: true
-					});
-				});
-
-			var fl = new L.Control.FileLayerLoad().addTo(map);
-			fl.loader.on('data:loaded', function(e) {
-				e.layer.addTo(map);
-			}, fl);
-
-			// GeoJSON Ajax
-			new L.GeoJSON.Ajax.WRIpoi().addTo(map);
-			new L.GeoJSON.Ajax.WRImassifs().addTo(map);
-			new L.GeoJSON.Ajax.OSM().addTo(map);
-		});
-	</script>
+	<script src="examples/index.js"></script>
 </head>
 
 <body>
@@ -71,6 +19,8 @@
 		<!-- &#10144; <a href="examples/index-v1.0.html" style="font-size:12px">See demo on Leaflet V1.0</a>-->
 	</p>
 	<div style="position:absolute;right:0;top:0"><a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax">&gt;</a>&nbsp;</div>
+
+	<p>See the code <a href="examples/index.js">here</a></p>
 
 	<div id="map" style="width:50%"></div>
 
@@ -90,5 +40,10 @@
 		<a href="github.com/Dominique92/Leaflet.Marker.coordinates">Marker.coordinates</a> &nbsp;
 		<a href="github.com/Dominique92/Leaflet.draw.plus">Draw.plus</a>
 	</p>
+	<p>Tests:
+		<a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax/tests/osm.html">OSM overpass</a> &nbsp;
+		<a href="tests/wc.html">Toilettes</a> &nbsp;
+	</p>
+	<p><a href="http://leafletjs.com/reference.html">Doc leaflet</a></p>
 </body>
 </html>

@@ -8,7 +8,7 @@
 	https://github.com/stefanocudini/leaflet-gps/tree/8e6ac4a551c7652c727d6cdd2f53626076fd2619
 	https://github.com/k4r573n/leaflet-control-osm-geocoder/tree/f833500063e165506503ee8aae997928052c3c4a
 	https://github.com/shramov/leaflet-plugins/tree/5a614ad23e47803f6ec4585a6fcc0e3096fc25cc
-	https://github.com/kartena/Proj4Leaflet/tree/89419bee63688d472e8951d0c3197d7f4d0d38ce
+	https://github.com/kartena/Proj4Leaflet/tree/0a2a65bccbd8bce85917a4add1481da7aa9a4f59
 	https://github.com/tyrasd/togpx/tree/21fb5d2c37be21335923e861cfceee386ac0e085
 	https://github.com/rob-murray/os-leaflet/tree/7b53a09827a8bf90dba554232c4d94f23bf2c297
 	https://github.com/makinacorpus/Leaflet.FileLayer/tree/685d1ed3cf239601ea00ea4822f0c198ffb7bb7a
