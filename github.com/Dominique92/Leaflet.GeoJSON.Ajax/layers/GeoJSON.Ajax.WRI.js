@@ -16,11 +16,12 @@ L.GeoJSON.Ajax.WRIpoi = L.GeoJSON.Ajax.extend({
 		bbox: true,
 		style: function(feature) {
 			return {
-				url: feature.properties.lien,
+				title: feature.properties.nom,
+				popupAnchor: [0, -5],
+				remanent: true,
 				iconUrl: 'http://www.refuges.info/images/icones/' + feature.properties.type.icone + '.png',
 				iconAnchor: [8, 8],
-				remanent: true,
-				title: feature.properties.nom,
+				url: feature.properties.lien,
 				degroup: 12 // Spread the icons when the cursor hover on a busy area.
 			};
 		}

@@ -1,20 +1,18 @@
+WRI
+===
+<div id="map" class="locatisation ... pour éviter un container et mettre des marges
+
 BEST TO DO
 ==========
 L.drawVersion = '0.3.0-dev' : SNAP non compatible
 Ajax: language: {min:''}, // trouver une meilleure solution à ce contournement de bug
-<div id="map" class="locatisation ... pour éviter un container et mettre des marges
-/stefanocudini/leaflet-gps/ : autoCenter: false, //move map when gps location change
-L.Control.Scale imperial: false
 Test overpass website sans schema://...
 Carte Andorre
 Gen lib.js: mettre à jour la liste des github.Dominique92
 Overpass t.ext1, t.ext2, t.ext3 // User defined fields -> Parcourir ceux manquant
-Exemple ajax : popupanchor massif 0, -5
 Permalink ne marche pas quand il y a un paramètre !!
 	Permalink 		if (this.options.useLocation)
-reprendre tous les onAdd et voir si on n'a pasposté de .on -> onRemove
-prototype.xxx.call => Peut/Doit être dans la classe directement héritée
-Extraction GPX bbox=écran (quoi dans l'éditeur ?)
+Extraction GPX bbox=écran (ou ce qu'il y a dans l'éditeur ?)
 	Download GPX en EDGE : => null (1).txt
 	Renommer GetGpxFile -> FileDownload ??? / Refaire la couche
 Click sur cadre entoure en bleu

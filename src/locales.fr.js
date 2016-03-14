@@ -5,6 +5,8 @@
 
 L.myLeafletVersion = '0.2';
 
+L.Control.Scale.prototype.options.imperial = false;
+
 if (navigator.language || navigator.userLanguage == 'fr') {
 
 	// Textes des contrôles

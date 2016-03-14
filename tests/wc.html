@@ -99,9 +99,7 @@
 				if (!map.hasLayer(baselayer)) {
 					baselayer.addTo(map);
 					osm.addTo(map);
-					new L.Control.Scale({
-						imperial: false
-					}).addTo(map);
+					new L.Control.Scale().addTo(map);
 				}
 				e.target._map.setView(e.latlng, Math.max (map.getZoom(), 16));
 			});
