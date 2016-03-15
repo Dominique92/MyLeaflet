@@ -5,45 +5,39 @@
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
-	<link rel="stylesheet" href="src/leaflet.css" />
-	<script src="src/leaflet.js"></script>
-	<script src="github.com/Dominique92/Leaflet.GeoJSON.Ajax/layers/GeoJSON.Ajax.WRI.js"></script>
+	<link rel="stylesheet" href="http://dominique92.github.io/MyLeaflet/dist/leaflet.css" />
+	<script src="http://dominique92.github.io/MyLeaflet/dist/leaflet.js"></script>
+	<script src="http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.GeoJSON.Ajax/layers/GeoJSON.Ajax.WRI.js"></script>
 
-	<script src="examples/index.js"></script>
+	<script src="http://dominique92.github.io/MyLeaflet/examples/index.js"></script>
 </head>
 
 <body>
 	<p>Leaflet extension for POI & tracks management on multi vendors maps</p>
 	<p>Sources on <a href= "https://github.com/Dominique92/MyLeaflet">Github: Dominique92/MyLeaflet</a></p>
-	<p>This demo runs on Leaflet V<script>document.write(L.version)</script>
-		<!-- &#10144; <a href="examples/index-v1.0.html" style="font-size:12px">See demo on Leaflet V1.0</a>-->
-	</p>
-	<div style="position:absolute;right:0;top:0"><a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax">&gt;</a>&nbsp;</div>
-
-	<p>See the code <a href="examples/index.js">here</a></p>
+	<p>This demo runs on Leaflet V<script>document.write(L.version)</script></p>
+	<p>See the javascript code <a href="http://dominique92.github.io/MyLeaflet/examples/index.js">here</a></p>
 
 	<div id="map" style="width:50%"></div>
+	<p>* Note: No valid key for SwissTopo on github.io domain. Copy this file on your localhost for Swiss maps.</p>
 
-	<script>
-	if (window.location.host == 'localhost')
-		document.write (
-			'<p><a href="build/download-plugins.php">Mettre &agrave; jour les plugins import&eacute;s</a></p>'+
-			'<p><a href="build">G&eacute;n&eacute;rer les librairies compress&eacute;es leaflet.css &amp; leaflet.js</a></p>');
-	else
-		document.write ('* Note: Pas de clé valide pour cartes SWISSTOPO. Copier ce fichier dans votre espace localhost');
-	</script>
-
-	<p>Plugins:
+	<p>Plugins demos:
 		<a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax">GeoJSON.Ajax</a> &nbsp;
 		<a href="github.com/Dominique92/Leaflet.Map.MultiVendors">MultiVendors</a> &nbsp;
 		<a href="github.com/Dominique92/Leaflet.Permalink.Cookies">Permalink.Cookies</a> &nbsp;
 		<a href="github.com/Dominique92/Leaflet.Marker.coordinates">Marker.coordinates</a> &nbsp;
-		<a href="github.com/Dominique92/Leaflet.draw.plus">Draw.plus</a>
+		<a href="github.com/Dominique92/Leaflet.draw.plus">Draw.plus</a> &nbsp;
 	</p>
-	<p>Tests:
+
+	<p>Specific demos:
 		<a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax/tests/osm.html">OSM overpass</a> &nbsp;
-		<a href="tests/wc.html">Toilettes</a> &nbsp;
 	</p>
-	<p><a href="http://leafletjs.com/reference.html">Doc leaflet</a></p>
+
+	<p>Doc:
+		<a href="http://leafletjs.com/reference.html">leaflet</a>
+		<a href="https://github.com/Dominique92/Leaflet.GeoJSON.Ajax#usage">GeoJSON.Ajax</a>
+	</p>
+
+	<div style="position:absolute;right:0;top:0" title="debug"><a href="tests">&gt;</a>&nbsp;</div>
 </body>
 </html>

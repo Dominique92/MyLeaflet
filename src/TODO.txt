@@ -4,7 +4,11 @@ WRI
 
 BEST TO DO
 ==========
+Démo contours
+Généraliser format demos
+Revoir chaine > debug
 L.drawVersion = '0.3.0-dev' : SNAP non compatible
+Integrer omnivore à ajax: https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
 Ajax: language: {min:''}, // trouver une meilleure solution à ce contournement de bug
 Test overpass website sans schema://...
 Carte Andorre
