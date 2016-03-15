@@ -17,7 +17,6 @@ L.GeoJSON.Ajax.WRIpoi = L.GeoJSON.Ajax.extend({
 		style: function(feature) {
 			return {
 				title: feature.properties.nom,
-				popupAnchor: [0, -5],
 				remanent: true,
 				iconUrl: 'http://www.refuges.info/images/icones/' + feature.properties.type.icone + '.png',
 				iconAnchor: [8, 8],
@@ -39,7 +38,6 @@ L.GeoJSON.Ajax.WRImassifs = L.GeoJSON.Ajax.extend({
 		style: function(feature) {
 			return {
 				title: feature.properties.nom,
-				popupAnchor: [0, -5],
 				url: feature.properties.lien,
 				color: feature.properties.couleur,
 				weight: 2

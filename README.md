@@ -57,3 +57,4 @@ Other Leaflet Plugins from this collection
 * [Leaflet.GeoJSON.Ajax](https://github.com/Dominique92/Leaflet.GeoJSON.Ajax) remote GeoJSON & OSM overpass layers (Markers, Polylines, Polygons, ...).
 * [Leaflet.Map.MultiVendors](https://github.com/Dominique92/Leaflet.Map.MultiVendors) multi vendors maps & projections.
 * [Leaflet.draw.plus](https://github.com/Dominique92/Leaflet.draw.plus) on line markers, polylines & polygons editing.
+* [Leaflet.Permalink.Cookies](https://github.com/Dominique92/Leaflet.Permalink.Cookies) keeping permalink in cookies.

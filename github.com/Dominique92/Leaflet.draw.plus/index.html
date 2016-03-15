@@ -28,7 +28,6 @@
 	<script src="Control.Draw.Plus.js"></script>
 	<script src="http://dominique92.github.io/MyLeaflet/src/locales.fr.js"></script>
 
-	<script src="http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.draw.plus/examples/index.js"></script>
 </head>
 
 <body>
@@ -39,14 +38,17 @@
 	<p>See the code <a href="examples/index.js">here</a></p>
 
 	<div id="map" style="width: 800px; height: 600px"></div>
-	<p><b>Sortie format geoJson</b></p>
+	<!-- Insert the javascript after the map <div> is defined -->
+	<script src="http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.draw.plus/examples/index.js"></script>
+
+	<p><b>geoJson input/output</b></p>
+	<div id="edit-changed" style="display:none"><i>Changé</i></div>
 	<textarea id="edit-json" rows="10" cols="120">
 {"type":"FeatureCollection","features":[
 	{"type":"Feature","properties":{},"geometry":{"type":"LineString","coordinates":[[2.5,46],[3,45],[4,45],[5,45.8]]}},
 	{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[3.5,45.5]}}
 ]}
 	</textarea>
-	<div id="change" style="display:none"><i>Changé</i></div>
 
 	<p><u>Créer une ligne:</u> Cliquer sur le contrôle "Tracer une ligne" puis à l'emplacement du premier sommet...</p>
 	<p><u>Ajouter un sommet:</u> Déplacer un marqueur au milieu d'un côté.</p>
@@ -67,7 +69,7 @@
 	<p><u>Fermer une ligne:</u> Joindre ses deux extrémités. On obtient un polygone.</p>
 	<p><u>Importer un fichier GPX, KML geoJson:</u> Cliquer sur le contrôle "Flèche montante".</p>
 
-	<div style="position: absolute;right:0;top:0"><a href="../../..">&gt;</a>&nbsp;</div>
+	<div style="position: absolute;right:0;top:0"><a href="tests">&gt;</a>&nbsp;</div>
 	<div><a href="tests">debug</a></div>
 </body>
 </html>

@@ -1,18 +1,16 @@
 WRI
 ===
-<div id="map" class="locatisation ... pour éviter un container et mettre des marges
+<div id="map" enlever container et mettre templates: class carte:  border-left: 5px solid white; border-bottom: 5px solid white;
+Enlever popupAnchor: [0, -5],
+Mettre le script après les map et enlever window.addEventListener('load', function() { // Run when the full page is loaded
 
 BEST TO DO
 ==========
-Démo contours
-Généraliser format demos
-Revoir chaine > debug
 L.drawVersion = '0.3.0-dev' : SNAP non compatible
 Integrer omnivore à ajax: https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
 Ajax: language: {min:''}, // trouver une meilleure solution à ce contournement de bug
 Test overpass website sans schema://...
 Carte Andorre
-Gen lib.js: mettre à jour la liste des github.Dominique92
 Overpass t.ext1, t.ext2, t.ext3 // User defined fields -> Parcourir ceux manquant
 Permalink ne marche pas quand il y a un paramètre !!
 	Permalink 		if (this.options.useLocation)
@@ -42,11 +40,11 @@ Table de Peutinger (carte de redressement)
 	
 DOC TESTS & DEMOS
 =================
-Voir le nom des repertoires: test ou tests ou debug ?
-	Voir le lien absolu/relatif
+Démo polyline
+Généraliser format demos index tests/index examples/.js
+	mettre les libs des examples des plugins en chemin absolu github.io / test en relatif
+Revoir chaine > debug
 Doc overpass
-Quand uploadé sur le io.github, remettre les libs des examples des plugins en chemin externe
-	Séparer les /examples des /tests
 Faire Readme, doc, test, demo, v1.0 & github permalink.cookies & Marker.coordinates
 Chainage des demos + V1
 Faire des fichiers de TEST (edit, ...) basés sur src/ll... # fichiers index.html DÉMO
@@ -69,6 +67,7 @@ Vérification finale avant mise en prod
 
 BUILD BEST TO DO
 ================
+Gen lib.js: mettre à jour la liste des github.Dominique92
 Voir https://tortoisegit.org/
 
 UPDATE MAJEUR
