@@ -147,6 +147,7 @@ L.CRS.EPSG27574 = L.extend({},
 // Le contrôle
 L.Marker.include({
 	coordinates: function(id) {
+		this._elCoordinate = id;
 		var el = document.getElementById(id+'-json'),
 			cs;
 		if (el) {
@@ -158,18 +159,19 @@ L.Marker.include({
 			if (cs)
 				this.setLatLng([cs[1], cs[0]]);
 		}
-		this._displayCoord(id);
+		this._displayCoord(); // On affiche une fois au début
+		this.on('move', this._displayCoord, this); // On réaffiche aussi si on déplace le marqueur
 
 		return this; // Able to chain this method
 	},
 
-	_displayCoord: function(id) {
+	_displayCoord: function() {
 		var marker = this, // Indispensable pour ne pas confondre avec le this dans certaines fonctions incluses
 			latlng = marker._latlng,
 			typeCoordonnee = 'decimal'; // Valeur par défaut
 
 		// Réécrit les options du sélecteur de type de projection
-		var selectEL = document.getElementById(id+'-select');
+		var selectEL = document.getElementById(this._elCoordinate+'-select');
 		if (selectEL) {
 			if (selectEL.value)
 				typeCoordonnee = selectEL.value;
@@ -197,7 +199,7 @@ L.Marker.include({
 
 			// Et si on change la sélection du type de coordonnées, on réaffiche aussi
 			selectEL.onchange = function() {
-				marker._displayCoord(id);
+				marker._displayCoord();
 			};
 		}
 
@@ -214,11 +216,11 @@ L.Marker.include({
 				title: crs.title[l],
 				deg: latlng[l],
 				proj: crs.format(lonlatProj[l]),
-				json: JSON.stringify(marker.toGeoJSON().geometry)
+				json: JSON.stringify(this.toGeoJSON().geometry)
 			};
 			for (v in vals) {
-				var el = document.getElementById([id, v, l].join('-'))
-					  || document.getElementById([id, v].join('-'));
+				var el = document.getElementById([this._elCoordinate, v, l].join('-'))
+					  || document.getElementById([this._elCoordinate, v].join('-'));
 				if (el) {
 					var eli = typeof el.value != 'undefined' ? 'value' : 'innerHTML';
 					el[eli] = vals[v];
@@ -233,18 +235,10 @@ L.Marker.include({
 						}
 						var newLL = crs.projection.unproject(L.Projection.LonLat.project(lonlatChanged));
 						marker.setLatLng(newLL);
-						marker.fire('edit'); // On redessine le marqueur et on raffraichit les champs de l'éditeur
 						marker._map.panTo (newLL);
 					};
 				}
 			}
 		}
-
-		// On réaffiche aussi si on déplace le marqueur
-		marker.on('move', function() {
-			marker.off('move'); // On désactive le temps de traiter l'affichage
-			marker._displayCoord(id); // On raffraichit l'affichage
-			marker.fire('edit'); // On raffraichit le marqueur et les champs de l'éditeur
-		});
 	}
 });
