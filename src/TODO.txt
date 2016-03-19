@@ -6,7 +6,6 @@ Mettre le script après les map et enlever window.addEventListener('load', funct
 
 BEST TO DO
 ==========
-Bug le layerswitcher laisse la première couche affichée en dessous (pb multivendors ?)
 L.drawVersion = '0.3.0-dev' : SNAP non compatible / 1 modif poly...
 Integrer omnivore à ajax: https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
 Ajax: language: {min:''}, // trouver une meilleure solution à ce contournement de bug
