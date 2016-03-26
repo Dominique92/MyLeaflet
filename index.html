@@ -5,24 +5,31 @@
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
+	<!-- Leaflet kernel -->
 	<link rel="stylesheet" href="http://dominique92.github.io/MyLeaflet/dist/leaflet.css" />
 	<script src="http://dominique92.github.io/MyLeaflet/dist/leaflet.js"></script>
+
+	<!-- Erictheise.rrose pluggin (optional) -->
+	<link rel="stylesheet" href="http://erictheise.github.io/rrose/stylesheets/leaflet.rrose.css" />
+	<script src="http://erictheise.github.io/rrose/javascripts/leaflet.rrose-src.js"></script>
+
+	<!-- Test layers -->
 	<script src="http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.GeoJSON.Ajax/layers/GeoJSON.Ajax.WRI.js"></script>
 </head>
 
 <body>
 	<p>Leaflet extension for POI & tracks management on multi vendors maps</p>
-	<p>Sources on <a href= "https://github.com/Dominique92/MyLeaflet">Github: Dominique92/MyLeaflet</a></p>
-	<p>This demo runs on Leaflet V<script>document.write(L.version)</script></p>
-	<p>See the javascript code <a href="http://dominique92.github.io/MyLeaflet/examples/index.js">here</a></p>
 
 	<div id="map" style="width:50%"></div>
 	<!-- Insert the javascript after the map <div> is defined -->
 	<script src="http://dominique92.github.io/MyLeaflet/examples/index.js"></script>
 
+	<p>Sources on <a href= "https://github.com/Dominique92/MyLeaflet">Github: Dominique92/MyLeaflet</a></p>
+	<p>This demo runs on Leaflet V<script>document.write(L.version)</script></p>
+	<p>See the javascript code <a href="http://dominique92.github.io/MyLeaflet/examples/index.js">here</a></p>
 	<p>* Note: No valid key for SwissTopo on github.io domain. Copy this file on your localhost for Swiss maps.</p>
 
-	<p>Plugins demos:
+	<p>Other plugins demos:
 		<a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax">GeoJSON.Ajax</a> &nbsp;
 		<a href="github.com/Dominique92/Leaflet.Map.MultiVendors">MultiVendors</a> &nbsp;
 		<a href="github.com/Dominique92/Leaflet.Permalink.Cookies">Permalink.Cookies</a> &nbsp;
@@ -31,10 +38,13 @@
 	</p>
 
 	<p>Specific demos:
-		<a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax/tests/osm.html">OSM overpass</a> &nbsp;
+		<a href="github.com/Dominique92/Leaflet.GeoJSON.Ajax/tests/osm.html">OSM overpass</a>, &nbsp;
+		<a href="github.com/Dominique92/Leaflet.Map.MultiVendors/examples/France-IGN.html">France IGN layers</a>, &nbsp;
+		<a href="github.com/Dominique92/Leaflet.Map.MultiVendors/examples/Spain-IDEE.html">Spain IDEE layer</a>, &nbsp;
+		<a href="github.com/Dominique92/Leaflet.Map.MultiVendors/examples/Italy-IGM.html">Italy IGM layers</a>
 	</p>
 
-	<p>Doc:
+	<p>Docs:
 		<a href="http://leafletjs.com/reference.html">Leaflet</a>
 		<a href="https://github.com/Dominique92/Leaflet.GeoJSON.Ajax#usage">GeoJSON.Ajax</a>
 	</p>
