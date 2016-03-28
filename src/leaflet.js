@@ -133,6 +133,7 @@ var js_list = [
 	'../github.com/kartena/Proj4Leaflet/src/proj4leaflet.js', // 6k
 	'../github.com/Dominique92/Leaflet.Map.MultiVendors/MapMultiCRS.js',
 	'../github.com/tyrasd/togpx/togpx.js', // Converts GeoJSON to GPX.
+	'../github.com/Dominique92/Leaflet.Marker.coordinates/CRS.js',
 	'../github.com/Dominique92/Leaflet.Marker.coordinates/Marker.coordinates.js',
 
 	// Couches autres fournisseurs

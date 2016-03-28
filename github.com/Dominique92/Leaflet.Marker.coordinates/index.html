@@ -15,6 +15,7 @@
 	<script src="http://dominique92.github.io/MyLeaflet/github.com/kartena/Proj4Leaflet/src/proj4leaflet.js"></script>
 	<script src="../Leaflet.Map.MultiVendors/layers/SwissTopo.js"></script>
 
+	<script src="CRS.js"></script>
 	<script src="Marker.coordinates.js"></script>
 
 	<script>
@@ -67,10 +68,16 @@
 
 	<p>
 		<span id="viewfinder-title-lng"></span>:
-		<input type="text" id="viewfinder-proj-lng" name="latitude" size="12" maxlength="12" />
+		<input type="text" id="viewfinder-proj-lng" size="12" maxlength="12" />
 		<span id="viewfinder-title-lat"></span>:
 		<input type="text" id="viewfinder-proj-lat" name="latitude" size="12" maxlength="12" />
 		<select id="viewfinder-select"><option value="decimal"></option></select>
+	</p>
+
+	<p>
+		<span>Upload</span>:
+		<input type="text" id="viewfinder-deg-lng" name="latitude" size="12" maxlength="12" />
+		<input type="text" id="viewfinder-deg-lat" name="latitude" size="12" maxlength="12" />
 	</p>
 
 	<p><a onclick="map.panTo(viewfinder._latlng)" style="color:blue;cursor:pointer;text-decoration:underline">Recentrer la carte sur le curseur</a></p>

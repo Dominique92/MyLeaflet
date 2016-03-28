@@ -1,3 +1,7 @@
+BUG
+===
+Position permalink trop bas
+
 BEST TO DO
 ==========
 L.drawVersion = '0.3.0-dev' : SNAP non compatible / 1 modif poly...
