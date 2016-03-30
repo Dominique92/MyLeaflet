@@ -93,10 +93,11 @@ L.GeoJSON.Ajax.OSM = L.GeoJSON.Ajax.extend({
 				for (s in this.options.services)
 					for (ti in t)
 						if (this.options.services[s].indexOf(ti) != -1 && t[ti] &&
-							this.options.services[s].indexOf(t[ti]) != -1)
+							this.options.services[s].indexOf(t[ti]) != -1) {
 							d.icon = icon = s;
-
-						// Label text calculation
+							d.tag = t[ti];
+						}
+				// Label text calculation
 				if (!t.phone)
 					t.phone = t['contact:phone'] || '';
 				delete t['contact:phone'];
