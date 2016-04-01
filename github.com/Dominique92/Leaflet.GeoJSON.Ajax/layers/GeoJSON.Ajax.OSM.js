@@ -130,9 +130,10 @@ L.GeoJSON.Ajax.OSM = L.GeoJSON.Ajax.extend({
 						t.ext1, t.ext2, t.ext3 // User defined fields
 					];
 
-				if (d.center) // When item has a geometry, we need to get the center
-					Object.assign(d, d.center);
-
+				if (d.center) { // When item has a geometry, we need to get the center
+					d.lat = d.center.lat;
+					d.lon = d.center.lon;
+				}
 				if (d.type && d.lon && d.lat)
 					geoJson.push({
 						type: 'Feature',

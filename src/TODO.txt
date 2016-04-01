@@ -1,6 +1,7 @@
 BUG
 ===
-Position permalink trop bas
+Position permalink trop bas -> Non: il faut mettre le permalien en dessous !!
+.../tests/osm.html ne marche pas (pb syntaxe ajax)
 
 BEST TO DO
 ==========
@@ -20,6 +21,7 @@ Swiss: getcapabilities / time de la carte
 Afficher altitude & heure sur survol point ou segment d'une courbe
 	https://github.com/mpetazzoni/leaflet-gpx
 	https://github.com/arthur-e/Wicket
+	Afficher distance
 Editeur
 	Purge des points identiques sur un segment
 	Importer (en + de geojson, gpx, kml)
@@ -75,6 +77,8 @@ Voir https://tortoisegit.org/
 WRI
 ===
 <div id="map" enlever container et mettre templates: class carte:  border-left: 5px solid white; border-bottom: 5px solid white;
+	Je confirme: manque un bord à gauche de la carte page points
+Documenter Overpass / langages, ...
 Enlever popupAnchor: [0, -5],
 Mettre le script après les map et enlever window.addEventListener('load', function() { // Run when the full page is loaded
 
