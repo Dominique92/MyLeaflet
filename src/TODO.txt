@@ -5,6 +5,7 @@ Position permalink trop bas -> Non: il faut mettre le permalien en dessous !!
 
 BEST TO DO
 ==========
+Move curseur: afficher change
 L.drawVersion = '0.3.0-dev' : SNAP non compatible / 1 modif poly...
 Integrer omnivore à ajax: https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
 Ajax: language: {min:''}, // trouver une meilleure solution à ce contournement de bug
