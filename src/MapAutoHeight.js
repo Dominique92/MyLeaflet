@@ -6,22 +6,23 @@
 
 L.Map.addInitHook(function() {
 	if (!this._container.innerHeight) { // Set no height to the map <DIV> to activate MapAutoHeight
-		this.autoHeight();// Execute during the init phase
+		this._overflow();// Execute during the init phase
 		L.DomEvent['on']( // Execute when the window resize
 			window, 'resize',
-			this.autoHeight,
+			this._overflow,
 			this
 		);
 	}
 });
 
 L.Map.include({
-	autoHeight: function() {
+	_overflow: function() {
 		this._container.style.height =
 			Math.min(
 				this._container.offsetWidth, // Display a square map
 				window.innerHeight -20 // But not more than the window size
 			) + 'px';
+		this._size.y = window.innerHeight -20; // Temporary set the map size y (to avoid bug on fitBounds)
 		this._onResize (); // Refresh Leaflet components
 	}
 });

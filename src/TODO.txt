@@ -77,6 +77,8 @@ Voir https://tortoisegit.org/
 
 WRI
 ===
+L.Control.Layers.autoHeight -> overflow (liste fichiers GIT + code view/*.js)
+Cliquer sur le contrôle "ligne" => Cliquer sur le contrôle "Tracer une ligne"
 <div id="map" enlever container et mettre templates: class carte:  border-left: 5px solid white; border-bottom: 5px solid white;
 	Je confirme: manque un bord à gauche de la carte page points
 Documenter Overpass / langages, ...

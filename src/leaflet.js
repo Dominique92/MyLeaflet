@@ -101,7 +101,7 @@ var js_list = [
 	'../github.com/Leaflet/Leaflet/src/control/Control.Attribution.js',
 	'../github.com/Leaflet/Leaflet/src/control/Control.Scale.js',
 	'../github.com/Leaflet/Leaflet/src/control/Control.Layers.js',
-	'../src/Leaflet.Control.Layers.autoHeight.js',
+	'../src/Leaflet.Control.Layers.overflow.js',
 
 	'../github.com/Leaflet/Leaflet/src/dom/PosAnimation.js', // Pour Map.PanAnimation.js
 	'../github.com/Leaflet/Leaflet/src/map/anim/Map.PanAnimation.js', // Nécéssaire pour zoom animé

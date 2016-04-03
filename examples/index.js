@@ -26,7 +26,7 @@ new L.Control.OSMGeocoder({
 }).addTo(map);
 
 new L.Control.Permalink.Cookies({
-	layers: new L.Control.Layers.autoHeight(L.TileLayer.collection()).addTo(map)
+	layers: new L.Control.Layers.overflow(L.TileLayer.collection()).addTo(map)
 }).addTo(map);
 
 new L.Control.Gps()
