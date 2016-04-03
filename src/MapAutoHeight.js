@@ -17,12 +17,13 @@ L.Map.addInitHook(function() {
 
 L.Map.include({
 	_overflow: function() {
-		this._container.style.height =
-			Math.min(
-				this._container.offsetWidth, // Display a square map
-				window.innerHeight -20 // But not more than the window size
-			) + 'px';
-		this._size.y = window.innerHeight -20; // Temporary set the map size y (to avoid bug on fitBounds)
+		var h = Math.min(
+			this._container.offsetWidth, // Display a square map
+			window.innerHeight -20 // But not more than the window size
+		);
+		this._container.style.height = h + 'px';
+		if (this._size)
+			this._size.y = h; // Temporary set the map size y (to avoid bug on fitBounds)
 		this._onResize (); // Refresh Leaflet components
 	}
 });
