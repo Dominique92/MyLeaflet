@@ -12,8 +12,7 @@ Ajax: language: {min:''}, // trouver une meilleure solution à ce contournement 
 Test overpass website sans schema://...
 Carte Andorre
 Overpass t.ext1, t.ext2, t.ext3 // User defined fields -> Parcourir ceux manquant
-Permalink ne marche pas quand il y a un paramètre !!
-	Permalink 		if (this.options.useLocation)
+GPS: bbox suiveur englobant la position et un point d'intérêt
 Extraction GPX bbox=écran (ou ce qu'il y a dans l'éditeur ?)
 	Download GPX en EDGE : => null (1).txt
 	Renommer GetGpxFile -> FileDownload ??? / Refaire la couche
@@ -77,7 +76,11 @@ Voir https://tortoisegit.org/
 
 WRI
 ===
-Split Style - Ajax
+#position-select {
+	font-size: 10px;
+	border: 1px solid #ccc;
+}
+Split Style - Ajax -> + 1 fichier
 L.Control.Layers.autoHeight -> overflow (liste fichiers GIT + code view/*.js)
 Cliquer sur le contrôle "ligne" => Cliquer sur le contrôle "Tracer une ligne"
 <div id="map" enlever container et mettre templates: class carte:  border-left: 5px solid white; border-bottom: 5px solid white;
