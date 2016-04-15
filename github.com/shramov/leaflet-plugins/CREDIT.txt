@@ -1,1 +1,1 @@
-https://github.com/shramov/leaflet-plugins/commit/86ff50d19b0925dfc72781372b79ef165721892e
+https://github.com/shramov/leaflet-plugins/commit/09abf3d51441d4e91235d0c5647061e0741aaf50
