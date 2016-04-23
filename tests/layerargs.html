@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>MyLeaflet</title>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="../src/leaflet.css" />
+	<script src="../src/leaflet.js"></script>
+	<script src="../github.com/Dominique92/Leaflet.GeoJSON.Ajax/layers/GeoJSON.Ajax.WRI.js"></script>
+	<script src="../src/Leaflet.Control.Layers.args.js"></script>
+</head>
+
+<body>
+	<p>Leaflet extension for POI & tracks management on multi vendors maps</p>
+
+	<p>Plugins:
+		<a href="../github.com/Dominique92/Leaflet.GeoJSON.Ajax">GeoJSON.Ajax</a> &nbsp;
+		<a href="../github.com/Dominique92/Leaflet.Map.MultiVendors">MultiVendors</a> &nbsp;
+		<a href="../github.com/Dominique92/Leaflet.Permalink.Cookies">Permalink.Cookies</a> &nbsp;
+		<a href="../github.com/Dominique92/Leaflet.Marker.coordinates">Marker.coordinates</a> &nbsp;
+		<a href="../github.com/Dominique92/Leaflet.draw.plus">Draw.plus</a>
+	</p>
+
+	<p>Tests:
+		<a href="../github.com/Dominique92/Leaflet.GeoJSON.Ajax/tests/osm.html">OSM overpass</a> &nbsp;
+		<a href="wc.html">WC</a> &nbsp;
+	</p>
+
+	<p>Doc
+		<a href="http://leafletjs.com/reference.html">leaflet</a>
+		<a href="https://github.com/Dominique92/Leaflet.GeoJSON.Ajax#usage">GeoJSON.Ajax</a>
+	</p>
+	<p>Sources & docs on <a href= "https://github.com/Dominique92/MyLeaflet">Github: Dominique92/MyLeaflet</a></p>
+	<p><a href="../build/download-plugins.php">Mettre à jour les plugins importés</a></p>
+	<p><a href="../build">Générer les librairies compressées leaflet.css &amp; leaflet.js</a></p>
+
+	<p>This demo runs on Leaflet V<script>document.write(L.version)</script></p>
+	<div id="map" style="width:50%; max-width: 800px;"></div>
+	<!-- Insert the javascript after the map <div> is defined -->
+	<script src="../examples/index.js"></script>
+	<script>
+		var lc2 = new L.Control.Layers.args({
+			1: {p:1,v: 11},
+			2: {p:2,v: 22},
+			3: {v: 33},
+			4: {vs: 44},	
+		}).addTo(map);
+		map.on('clicklayerarg', function(e) {
+/*DCMM*/{var _v=lc2.args().join('&'),_r="*****RETOUR\n";if(typeof _v=='array'||typeof _v=='object'){for(_i in _v)if(typeof _v[_i]!='function')_r+=_i+'='+typeof _v[_i]+' '+_v[_i]+' '+(_v[_i]&&_v[_i].CLASS_NAME?'('+_v[_i].CLASS_NAME+')':'')+"\n"}else _r+=_v;console.log(_r)}
+/*DCMM*/{var _v=lc2.args(3),_r="*****RETOUR\n";if(typeof _v=='array'||typeof _v=='object'){for(_i in _v)if(typeof _v[_i]!='function')_r+=_i+'='+typeof _v[_i]+' '+_v[_i]+' '+(_v[_i]&&_v[_i].CLASS_NAME?'('+_v[_i].CLASS_NAME+')':'')+"\n"}else _r+=_v;console.log(_r)}
+		});
+	</script>
+
+	<!-- Doc & debug -->
+	<a href="../github.com/Dominique92/Leaflet.GeoJSON.Ajax/tests"
+	   style="position:absolute;top:0px;right:0;text-decoration:none;font-size:large"
+	   title="Next test">
+		&#10154;
+	</a>
+</body>
+</html>
