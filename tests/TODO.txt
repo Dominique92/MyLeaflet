@@ -3,9 +3,11 @@ BUG
 Position permalink trop bas -> Non: il faut mettre le permalien en dessous !!
 OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
 Demo SwissTopo KO
+Click sur cadre entoure en bleu
 
 BEST TO DO
 ==========
+Outil de sélection de paramétres de couches
 Faire le ménage dans les dist des github. Ne laisser que ceux qui sont utilisés
 Move curseur: afficher "change" dans le div d'état
 L.drawVersion = '0.3.0-dev' : SNAP non compatible / 1 modif poly...
@@ -18,7 +20,6 @@ GPS: bbox suiveur englobant la position et un point d'intérêt
 Extraction GPX bbox=écran (ou ce qu'il y a dans l'éditeur ?)
 	Download GPX en EDGE : => null (1).txt
 	Renommer GetGpxFile -> FileDownload ??? / Refaire la couche
-Click sur cadre entoure en bleu
 Swiss: getcapabilities / time de la carte
 Afficher altitude & heure sur survol point ou segment d'une courbe
 	https://github.com/mpetazzoni/leaflet-gpx
@@ -44,13 +45,13 @@ DOC TESTS & DEMOS
 =================
 Doc MultiVendors#usage (CRS dans la layer, ...)
 Doc overpass
-Revoir > uniquelent sur test / pas sur examples
+Revoir > uniquement sur test / pas sur examples
 Enlever IGN topo classique et cadastres sur localhost ?? .IO ??
-demo V1.0 permalink marker.coordinates
+Demo V1.0 permalink marker.coordinates
 Démo polyline
 Généraliser format demos index tests/index examples/.js
-	mettre les libs des examples des plugins en chemin absolu github.io
-	test en relatif
+	Mettre les libs des examples des plugins en chemin absolu github.io
+	Test en relatif
 Revoir chaine > debug
 Faire Readme, doc, test, demo, v1.0 & github permalink.cookies & Marker.coordinates
 Chainage des demos + V1
@@ -79,6 +80,7 @@ Voir https://tortoisegit.org/
 
 WRI
 ===
+RUPTURE: ajax: title -> popup / labelClass -> popupClass
 <div id="map" enlever container et mettre templates: class carte:  border-left: 5px solid white; border-bottom: 5px solid white;
 	Je confirme: manque un bord à gauche de la carte page points
 Mettre le script après les map et enlever window.addEventListener('load', function() { // Run when the full page is loaded
