@@ -80,10 +80,26 @@ Voir https://tortoisegit.org/
 
 WRI
 ===
-RUPTURE: ajax: title -> popup / labelClass -> popupClass
+Queues de popup un peu courtes sur le côté
 <div id="map" enlever container et mettre templates: class carte:  border-left: 5px solid white; border-bottom: 5px solid white;
 	Je confirme: manque un bord à gauche de la carte page points
 Mettre le script après les map et enlever window.addEventListener('load', function() { // Run when the full page is loaded
+On n'itialise pas la carte avec le permalink: -> INItialise
+Carte par defaut fiche Angleterre (manque le contour localisation administrative)
+NAV EDIT: revoir responsive
+Style: 2 .menu UL {
+Edition / creation / suppression polygones autres que massif
+Charger fichier GPX: pas sur un mobile !!
+Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
+Déraciner le wiki
+Passage en templates gestion/index.php
+
+WRI API
+=======
+erreur: sur geom vide dans un polynome
+DOC: Mettre l'entête et le pied
+Durée cache réglable
+Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
 
 UPDATE MAJEUR
 =============
@@ -123,25 +139,6 @@ APPLI
 =====
 Faire un html auto executable avec seulement outdoors et non interruptible (en faire une appli ?)
 Fonction de téléchargement des dalles dans un périmètre donné
-
-WRI
-===
-WRI: On n'itialise pas la carte avec le permalink: -> INItialise
-Carte par defaut fiche Angleterre (manque le contour localisation administrative)
-NAV EDIT: revoir responsive
-Style: 2 .menu UL {
-Edition / creation / suppression polygones autres que massif
-Charger fichier GPX: pas sur un mobile !!
-Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
-Déraciner le wiki
-Passage en templates gestion/index.php
-
-WRI API
-=======
-erreur: sur geom vide dans un polynome
-DOC: Mettre l'entête et le pied
-Durée cache réglable
-Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
 
 NOTES
 =====
