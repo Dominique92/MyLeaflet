@@ -122,6 +122,7 @@ var js_list = [
 	'../github.com/shramov/leaflet-plugins/control/Permalink.js', //V1.0 https://github.com/shramov/leaflet-plugins/tree/leaflet_one
 	'../github.com/shramov/leaflet-plugins/control/Permalink.Layer.js',
 	'../github.com/Dominique92/Leaflet.Permalink.Cookies/Permalink.Cookies.js',
+	'../src/Leaflet.Control.Layers.args.js',
 	'../src/MapAutoHeight.js',
 	'../src/AntiBot.js',
 

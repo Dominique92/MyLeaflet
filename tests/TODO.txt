@@ -7,6 +7,7 @@ Click sur cadre entoure en bleu
 
 BEST TO DO
 ==========
+La carte surprend quand elle se dimensionne !! Ne traiter que les petites dimensions dans autoheigth => Leaflet !
 Outil de sélection de paramétres de couches
 Faire le ménage dans les dist des github. Ne laisser que ceux qui sont utilisés
 Move curseur: afficher "change" dans le div d'état
