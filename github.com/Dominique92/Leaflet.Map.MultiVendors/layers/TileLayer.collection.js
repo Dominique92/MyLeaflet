@@ -11,7 +11,7 @@ L.TileLayer.collection = function(name) {
 		this._col = {
 			'OSM': new L.TileLayer.OSM(),
 			'OSM-FR': new L.TileLayer.OSM.FR(),
-			'Maps.Refuges.Info': new L.TileLayer.OSM.MRI(),
+			'Maps-refuges-info': new L.TileLayer.OSM.MRI(),
 			'Hike & Bike': new L.TileLayer.OSM.hikebike()
 		};
 

@@ -16,8 +16,8 @@ L.Control.Layers.overflow = L.Control.Layers.extend({
 	},
 
 	_autoHeight: function() {
-		this._form.style.maxHeight = (this._map._container.offsetHeight - 86) + 'px';
-		this._form.style.overflowX = 'hidden';
-		this._form.style.overflowY = 'auto';
+		this._container.style.maxHeight = (this._map._container.offsetHeight - 86) + 'px';
+		this._container.style.overflowX = 'hidden';
+		this._container.style.overflowY = 'auto';
 	}
 });
