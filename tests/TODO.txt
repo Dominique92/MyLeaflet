@@ -1,5 +1,5 @@
-BUG
-===
+BUGS
+====
 Position permalink trop bas -> Non: il faut mettre le permalien en dessous !!
 OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
 Demo SwissTopo KO
@@ -7,7 +7,8 @@ Click sur cadre entoure en bleu
 
 BEST TO DO
 ==========
-La carte surprend quand elle se dimensionne !! Ne traiter que les petites dimensions dans autoheigth => Leaflet !
+Rendre paramètrable les messages console debug
+Afficher un messages d'erreur sur les chargements IGN sans clé valide
 Outil de sélection de paramétres de couches
 Faire le ménage dans les dist des github. Ne laisser que ceux qui sont utilisés
 Move curseur: afficher "change" dans le div d'état
@@ -41,7 +42,7 @@ V1.0
 	Draw+ V1 KO
 Table de Peutinger (carte de redressement)
 	http://peutinger.atlantides.org/map-a/
-	
+
 DOC TESTS & DEMOS
 =================
 Doc MultiVendors#usage (CRS dans la layer, ...)
@@ -81,6 +82,7 @@ Voir https://tortoisegit.org/
 
 WRI
 ===
+RUPTURE: remplacer autoheight par CSS vw & vh + Enlever le fichier mapautoheight du GIT
 Queues de popup un peu courtes sur le côté
 <div id="map" enlever container et mettre templates: class carte:  border-left: 5px solid white; border-bottom: 5px solid white;
 	Je confirme: manque un bord à gauche de la carte page points
@@ -97,7 +99,7 @@ Passage en templates gestion/index.php
 
 WRI API
 =======
-erreur: sur geom vide dans un polynome
+Erreur: sur geom vide dans un polynome
 DOC: Mettre l'entête et le pied
 Durée cache réglable
 Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
