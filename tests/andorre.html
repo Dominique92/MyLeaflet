@@ -6,6 +6,22 @@
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
 	<link  href="../src/leaflet.css" rel="stylesheet" />
+
+	<style>
+		#map {
+			width: 50vw;
+			height: 50vw;
+			max-width: 80vh;
+			max-height: 80vh;
+		}
+		.leaflet-fullscreen-on {
+			width: 100% !important;
+			height: 100% !important;
+			max-width: 100% !important;
+			max-height: 100% !important;
+		}
+	</style>
+
 	<script src="../src/leaflet.js"></script>
 
 	<script>
@@ -99,7 +115,7 @@ if(0)
 
 <body>
 	<p>Leaflet <script>document.write(L.version)</script></p>
-	<div id="map" style="width:640px"></div>
+	<div id="map"></div>
 </body>
 </html>
 

@@ -52,7 +52,6 @@
 	<script src="github.com/Dominique92/Leaflet.Map.MultiVendors/layers/TileLayer.collection.js"></script>
 	<script src="github.com/Dominique92/Leaflet.GeoJSON.Ajax/layers/GeoJSON.Ajax.WRI.js"></script>
 
-
 	<script>
 		var key = {
 			ign: window.location.host == 'localhost'
@@ -105,12 +104,27 @@
 			new L.GeoJSON.Ajax.WRImassifs().addTo(map);
 		});
 	</script>
+
+	<style>
+		#map {
+			width: 50vw;
+			height: 50vw;
+			max-width: 80vh;
+			max-height: 80vh;
+		}
+		.leaflet-fullscreen-on {
+			width: 100% !important;
+			height: 100% !important;
+			max-width: 100% !important;
+			max-height: 100% !important;
+		}
+	</style>
 </head>
 
 <body>
 	UNDER DEVELOPMENT - UNDER DEVELOPMENT - UNDER DEVELOPMENT
 	<p>Leaflet V<script>document.write(L.version)</script> &#10144; <a href="..">See demo on Leaflet V0.7</a></p>
 	<div style="position:absolute;right:0;top:0"><a href="../github.com/Dominique92/Leaflet.GeoJSON.Ajax">&gt;</a>&nbsp;</div>
-	<div id="map" style="width:640px"></div>
+	<div id="map"></div>
 </body>
 </html>

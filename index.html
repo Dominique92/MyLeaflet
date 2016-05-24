@@ -15,6 +15,21 @@
 
 	<!-- Test layers -->
 	<script src="http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.GeoJSON.Ajax/layers/GeoJSON.Ajax.WRI.js"></script>
+
+	<style>
+		#map {
+			width: 50vw;
+			height: 50vw;
+			max-width: 80vh;
+			max-height: 80vh;
+		}
+		.leaflet-fullscreen-on {
+			width: 100% !important;
+			height: 100% !important;
+			max-width: 100% !important;
+			max-height: 100% !important;
+		}
+	</style>
 </head>
 
 <body>
@@ -22,7 +37,7 @@
 	<p>This demo runs on Leaflet V<script>document.write(L.version)</script></p>
 	<p>If this demo doesn't run on this server for a licence problems, copy this file on your localhost & run it on the dev license</p>
 
-	<div id="map" style="width:50%"></div>
+	<div id="map"></div>
 	<!-- Insert the javascript after the map <div> is defined -->
 	<script src="http://dominique92.github.io/MyLeaflet/examples/index.js"></script>
 
