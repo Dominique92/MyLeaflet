@@ -5,21 +5,21 @@
 	https://github.com/Leaflet/Leaflet/tree/197f9d43b7bbc73c0492bf62cd666a5a98038098
 	https://github.com/Leaflet/Leaflet.fullscreen/tree/f5e76270ad40bb573bd11595f9069c3f15f8f286
 	https://github.com/MrMufflon/Leaflet.Coordinates/tree/09ffcfdfa2bee2a7cee24a9653baef0ec0abc660
-	https://github.com/stefanocudini/leaflet-gps/tree/683f2836c7f6e8a5a6046a400b93b5f740646ba9
+	https://github.com/stefanocudini/leaflet-gps/tree/33d0016419fe1a073e8b8b539508d99b8726eaae
 	https://github.com/k4r573n/leaflet-control-osm-geocoder/tree/f833500063e165506503ee8aae997928052c3c4a
 	https://github.com/shramov/leaflet-plugins/tree/38667edfe25dd2349a6cf269b94fcd4a89f92a23
 	https://github.com/kartena/Proj4Leaflet/tree/0a2a65bccbd8bce85917a4add1481da7aa9a4f59
 	https://github.com/tyrasd/togpx/tree/ea5f716c0f7869c9337be444c9e8341bc1dda055
 	https://github.com/rob-murray/os-leaflet/tree/7b53a09827a8bf90dba554232c4d94f23bf2c297
 	https://github.com/makinacorpus/Leaflet.FileLayer/tree/a20a26cd5df8d13b6a526855b59085c45fa739d2
-	https://github.com/mapbox/togeojson/tree/9528221a163e16f1aae63ded2980714335b26aac
-	https://github.com/erictheise/rrose/tree/04fac08b0b367e137b64fb4e5e08e2dd020955c6
+	https://github.com/mapbox/togeojson/tree/b3cf8821e688981cabaf74698c40cdffcc18a3c2
+	https://github.com/erictheise/rrose/tree-commit/04fac08b0b367e137b64fb4e5e08e2dd020955c6
 	https://github.com/Leaflet/Leaflet.draw/tree/c3c9f7e5e9e04c4d734cb30dd47ec54cfc3d4b8b
 	https://github.com/makinacorpus/Leaflet.GeometryUtil/tree/a610c7ff22df9cd3cc11f1d8b3c8c4536b21334a
 	https://github.com/makinacorpus/Leaflet.Snap/tree/e6b24835d8e8f08602bd5f5718507dd326ea2455
 	https://github.com/phayes/geoPHP/tree/685562416ec6d22b9b3927e02ca0ddacf84ca646
 	https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port/tree/20f738889d6e55df59761b734d1638abe17c11eb
-	https://github.com/nicolas-grekas/JSqueeze/tree/693d64850eab2ce6a7c8f7cf547e1ab46e69d542
+	https://github.com/nicolas-grekas/JSqueeze/tree-commit/693d64850eab2ce6a7c8f7cf547e1ab46e69d542
 */
 
 ;var oldL=window.L,L={};L.version='0.7.7';if(typeof module==='object'&&typeof module.exports==='object'){module.exports=L}

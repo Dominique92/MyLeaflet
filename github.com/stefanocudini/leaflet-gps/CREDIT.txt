@@ -1,1 +1,1 @@
-https://github.com/stefanocudini/leaflet-gps/commit/683f2836c7f6e8a5a6046a400b93b5f740646ba9
+https://github.com/stefanocudini/leaflet-gps/commit/33d0016419fe1a073e8b8b539508d99b8726eaae

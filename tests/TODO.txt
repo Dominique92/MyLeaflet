@@ -5,6 +5,11 @@ OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requet
 Demo SwissTopo KO
 Click sur cadre entoure en bleu
 
+TO DO
+=====
+Popup disparait si le curseur sort de la carte
+N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
+
 BEST TO DO
 ==========
 Rendre paramètrable les messages console debug
