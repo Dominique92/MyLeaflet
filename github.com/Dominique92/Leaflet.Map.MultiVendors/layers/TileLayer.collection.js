@@ -46,7 +46,7 @@ L.TileLayer.collection = function(name) {
 		// Swiss
 		if (typeof L.TileLayer.SwissTopo != 'undefined')
 			L.Util.extend(this._col, {
-				'SwissTopo': new L.TileLayer.SwissTopo({l:'ch.swisstopo.pixelkarte-farbe'}),
+				'SwissTopo': new L.TileLayer.SwissTopo.Extended(),
 //				'Swiss Siegfried': new L.TileLayer.SwissTopo({l:'ch.swisstopo.hiks-siegfried'}),
 //				'Swiss Dufour': new L.TileLayer.SwissTopo({l:'ch.swisstopo.hiks-dufour'}),
 				'Swiss Image': new L.TileLayer.SwissTopo({l:'ch.swisstopo.swissimage'})

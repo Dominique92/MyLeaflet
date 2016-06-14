@@ -64,12 +64,12 @@ L.GeoJSON.Style = L.GeoJSON.extend({
 			}
 		}, this);
 
-		// Close popups when moving > 150px far
-		this._map.on('mousemove', function(e) {
+		// Close popups when moving > 150px far or leaving the map
+		this._map.on('mousemove mouseout', function(e) {
 			if (typeof this.popupLatlng == 'object') {
 				var popupXY = this._map.latLngToLayerPoint(this.popupLatlng),
 					dist = Math.hypot(popupXY.x - e.layerPoint.x, popupXY.y - e.layerPoint.y);
-				if (dist > 150)
+				if (dist > 150 || e.type == 'mouseout')
 					this._map.closePopup();
 			}
 		}, this);

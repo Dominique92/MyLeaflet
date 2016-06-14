@@ -7,11 +7,12 @@ Click sur cadre entoure en bleu
 
 TO DO
 =====
-Popup disparait si le curseur sort de la carte
+Voir Swiss Siegfried & Dufour (marche sur chem2)
 N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
 
 BEST TO DO
 ==========
+?? carte UK: 2 fois :	height=200 width=200 
 Rendre paramètrable les messages console debug
 Afficher un messages d'erreur sur les chargements IGN sans clé valide
 Outil de sélection de paramétres de couches
@@ -27,7 +28,6 @@ GPS: bbox suiveur englobant la position et un point d'intérêt
 Extraction GPX bbox=écran (ou ce qu'il y a dans l'éditeur ?)
 	Download GPX en EDGE : => null (1).txt
 	Renommer GetGpxFile -> FileDownload ??? / Refaire la couche
-Swiss: getcapabilities / time de la carte
 Afficher altitude & heure sur survol point ou segment d'une courbe
 	https://github.com/mpetazzoni/leaflet-gpx
 	https://github.com/arthur-e/Wicket
