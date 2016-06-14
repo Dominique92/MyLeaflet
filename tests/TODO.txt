@@ -7,7 +7,6 @@ Click sur cadre entoure en bleu
 
 TO DO
 =====
-Voir Swiss Siegfried & Dufour (marche sur chem2)
 N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
 
 BEST TO DO
@@ -22,7 +21,10 @@ L.drawVersion = '0.3.0-dev' : SNAP non compatible / 1 modif poly...
 Integrer omnivore à ajax: https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
 Ajax: language: {min:''}, // trouver une meilleure solution à ce contournement de bug
 Test overpass website sans schema://...
-Carte Andorre
+Voir Swiss Siegfried & Dufour, cadastre (marche sur chem2)
+	Pb IGM
+	Carte Andorre
+	Extension liste de cartes pour debug
 Overpass t.ext1, t.ext2, t.ext3 // User defined fields -> Parcourir ceux manquant
 GPS: bbox suiveur englobant la position et un point d'intérêt
 Extraction GPX bbox=écran (ou ce qu'il y a dans l'éditeur ?)

@@ -139,7 +139,7 @@ var js_list = [
 	// Couches autres fournisseurs
 	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/OSM.js',
 	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/IGN.js',
-	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/IGM.js',
+//	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/IGM.js',
 	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/IDEE.js',
 	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/SwissTopo.js',
 	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/Google.js',
