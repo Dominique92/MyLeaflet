@@ -1,16 +1,10 @@
-BUGS
-====
-Position permalink trop bas -> Non: il faut mettre le permalien en dessous !!
-OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
-Demo SwissTopo KO
-Click sur cadre entoure en bleu
-
 TO DO
 =====
+Position permalink trop bas -> Non: il faut mettre le permalien en dessous !!
+OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
+Click sur cadre entoure en bleu
 N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
-
-BEST TO DO
-==========
+Voir si les selecteurs de couches peuvent être rémanents
 ?? carte UK: 2 fois :	height=200 width=200 
 Rendre paramètrable les messages console debug
 Afficher un messages d'erreur sur les chargements IGN sans clé valide
@@ -52,6 +46,7 @@ Table de Peutinger (carte de redressement)
 
 DOC TESTS & DEMOS
 =================
+Demo SwissTopo KO
 Doc MultiVendors#usage (CRS dans la layer, ...)
 Doc overpass
 Revoir > uniquement sur test / pas sur examples
