@@ -26,10 +26,11 @@ L.TileLayer.collection = function(name) {
 			typeof key != 'undefined' && typeof key.ign != 'undefined')
 			L.Util.extend(this._col, {
 				'IGN':           new L.TileLayer.IGN({k: key.ign, l:'GEOGRAPHICALGRIDSYSTEMS.MAPS'}),
-				'IGN Topo':      new L.TileLayer.IGN({k: key.ign, l:'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD'}),
-				'IGN Classique': new L.TileLayer.IGN({k: key.ign, l:'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.CLASSIQUE'}),
-//				'IGN Cadastre':  new L.TileLayer.IGN({k: key.ign, l:'CADASTRALPARCELS.PARCELS'}),
-				'IGN Photo':     new L.TileLayer.IGN({k: key.ign, l:'ORTHOIMAGERY.ORTHOPHOTOS'})
+				'IGN topo':      new L.TileLayer.IGN({k: key.ign, l:'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD'}),
+				'IGN classique': new L.TileLayer.IGN({k: key.ign, l:'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.CLASSIQUE'}),
+//				'IGN plan':      new L.TileLayer.IGN({k: key.ign, l:'GEOGRAPHICALGRIDSYSTEMS.PLANIGN'}),
+				'IGN cadastre':  new L.TileLayer.IGN({k: key.ign, l:'CADASTRALPARCELS.PARCELS', f: 'png'}),
+				'IGN photo':     new L.TileLayer.IGN({k: key.ign, l:'ORTHOIMAGERY.ORTHOPHOTOS'})
 			});
 
 		// Espana
@@ -55,12 +56,13 @@ L.TileLayer.collection = function(name) {
 		// Austria
 		if (typeof L.TileLayer.Kompass != 'undefined')
 			L.Util.extend(this._col, {
-				'Autriche': new L.TileLayer.Kompass({l:'Touristik'}),
-				'Kompass':  new L.TileLayer.Kompass({l:'OSM'})
+//				'Kompass':  new L.TileLayer.Kompass({l:'OSM'}),
+				'Autriche': new L.TileLayer.Kompass({l:'Touristik'})
 			});
 
 		// OS-map (Great Britain)
 		if (typeof key != 'undefined' && typeof key.os != 'undefined') {
+			L.TileLayer.OSOpenSpace.prototype._url = L.TileLayer.OSOpenSpace.prototype._url.replace('https', 'http') // Bugge à partir d'une page https
 			if (typeof L.TileLayer.OSOpenSpace != 'undefined')// For Leaflet V0.7
 				this._col['OS-Great Britain'] = new L.TileLayer.OSOpenSpace(key.os, {}); // Il faut mettre le {} sinon BUG
 			else
