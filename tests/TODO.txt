@@ -1,5 +1,8 @@
 TO DO
 =====
+cartes google: appelle aussi les dalles OSM
+Cookies permalink zoom trop fort sur SwissTopo
+Queues de popup un peu courtes sur le côté
 Position permalink trop bas -> Non: il faut mettre le permalien en dessous !!
 OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
 Click sur cadre entoure en bleu
@@ -84,15 +87,10 @@ Voir https://tortoisegit.org/
 
 WRI
 ===
-RUPTURE: remplacer autoheight par CSS vw & vh + Enlever le fichier mapautoheight du GIT
-Queues de popup un peu courtes sur le côté
-<div id="map" enlever container et mettre templates: class carte:  border-left: 5px solid white; border-bottom: 5px solid white;
-	Je confirme: manque un bord à gauche de la carte page points
-Mettre le script après les map et enlever window.addEventListener('load', function() { // Run when the full page is loaded
-On n'itialise pas la carte avec le permalink: -> INItialise
+\vues\point.js : "On n'itialise pas la carte avec le permalink:" -> INItialise
+window.location.href.split("/") => window.location.href.split('/')
+Pas de massifs dans l'Atlas ?
 Carte par defaut fiche Angleterre (manque le contour localisation administrative)
-NAV EDIT: revoir responsive
-Style: 2 .menu UL {
 Edition / creation / suppression polygones autres que massif
 Charger fichier GPX: pas sur un mobile !!
 Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
