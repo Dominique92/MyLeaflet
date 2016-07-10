@@ -1,14 +1,20 @@
-TO DO
-=====
-cartes google: appelle aussi les dalles OSM
+BUGS
+====
+Cartes google: appelle aussi les dalles OSM
 Cookies permalink zoom trop fort sur SwissTopo
 Queues de popup un peu courtes sur le côté
 Position permalink trop bas -> Non: il faut mettre le permalien en dessous !!
-OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
 Click sur cadre entoure en bleu
+?? carte UK: 2 fois : height=200 width=200 
+Editeur
+	Purge des points identiques sur un segment
+	Ne pas exporter une ligne ne contenant qu'un point
+
+TO DO
+=====
+OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
 N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
 Voir si les selecteurs de couches peuvent être rémanents
-?? carte UK: 2 fois :	height=200 width=200 
 Rendre paramètrable les messages console debug
 Afficher un messages d'erreur sur les chargements IGN sans clé valide
 Outil de sélection de paramétres de couches
@@ -18,10 +24,8 @@ L.drawVersion = '0.3.0-dev' : SNAP non compatible / 1 modif poly...
 Integrer omnivore à ajax: https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
 Ajax: language: {min:''}, // trouver une meilleure solution à ce contournement de bug
 Test overpass website sans schema://...
-Voir Swiss Siegfried & Dufour, cadastre (marche sur chem2)
-	Pb IGM
-	Carte Andorre
-	Extension liste de cartes pour debug
+Carte Andorre
+Extension liste de cartes pour debug (+ Seigfreid + Dufour + Etat major + Cassigny ...)
 Overpass t.ext1, t.ext2, t.ext3 // User defined fields -> Parcourir ceux manquant
 GPS: bbox suiveur englobant la position et un point d'intérêt
 Extraction GPX bbox=écran (ou ce qu'il y a dans l'éditeur ?)
@@ -32,7 +36,6 @@ Afficher altitude & heure sur survol point ou segment d'une courbe
 	https://github.com/arthur-e/Wicket
 	Afficher distance
 Editeur
-	Purge des points identiques sur un segment
 	Importer (en + de geojson, gpx, kml)
 		https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
 	Exporter
@@ -70,7 +73,7 @@ Fork me: https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png
 Vérification finale avant mise en prod
 	Passer http://www.javascriptlint.com/online_lint.php
 	Passer http://jsbeautifier.org/
-	Résorber DCMM GEO DELETE
+	Résorber TBD
 	Traduire en anglais
 	https://github.com/Leaflet/Leaflet/blob/master/CONTRIBUTING.md
 	CR/LF: https://help.github.com/articles/dealing-with-line-endings/
@@ -87,8 +90,6 @@ Voir https://tortoisegit.org/
 
 WRI
 ===
-\vues\point.js : "On n'itialise pas la carte avec le permalink:" -> INItialise
-window.location.href.split("/") => window.location.href.split('/')
 Pas de massifs dans l'Atlas ?
 Carte par defaut fiche Angleterre (manque le contour localisation administrative)
 Edition / creation / suppression polygones autres que massif
