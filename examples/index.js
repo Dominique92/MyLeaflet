@@ -46,4 +46,5 @@ fl.loader.on('data:loaded', function(e) {
 // GeoJSON Ajax
 new L.GeoJSON.Ajax.WRIpoi().addTo(map);
 new L.GeoJSON.Ajax.WRImassifs().addTo(map);
+new L.GeoJSON.Ajax.chemineur().addTo(map);
 new L.GeoJSON.Ajax.OSM().addTo(map);
