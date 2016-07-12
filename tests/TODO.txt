@@ -12,6 +12,7 @@ Editeur
 
 TO DO
 =====
+Voir pourquoi les CREDIT/*** changent comme ça ?
 OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
 N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
 Voir si les selecteurs de couches peuvent être rémanents

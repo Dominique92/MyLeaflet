@@ -89,6 +89,11 @@ L.TileLayer.collection = function(name) {
 //				'Google Hybride': new L.TileLayer.Google({l:'s,h'}),
 				'Google Photo':   new L.TileLayer.Google({l:'s'})
 			});
+
+		// Rien
+		L.Util.extend(this._col, {
+			'Neutre': L.tileLayer('')
+		});
 	}
 
 	return typeof this._col[name] != 'undefined' ? this._col[name] : this._col;
