@@ -111,7 +111,9 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 
 	// Action when receiving data
 	_onreadystatechange: function(e) {
+//DEBUG/*
 		console.log('Ajax status : ' + e.target.readyState + '\n');
+//DEBUG*/
 
 		if (e.target.readyState < 3) // Connection in progress
 			;
