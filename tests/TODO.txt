@@ -10,8 +10,9 @@ Editeur
 	Purge des points identiques sur un segment
 	Ne pas exporter une ligne ne contenant qu'un point
 
-TO DO
-=====
+TODO
+====
+Editeur ligne : undo
 Voir pourquoi les CREDIT/*** changent comme ça ?
 OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
 N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
@@ -91,6 +92,8 @@ Voir https://tortoisegit.org/
 
 WRI
 ===
+Ancre icônes cabanes au sommet du toit
+Possibilité d'agrandir la météo sur mobiles
 Pas de massifs dans l'Atlas ?
 Carte par defaut fiche Angleterre (manque le contour localisation administrative)
 Edition / creation / suppression polygones autres que massif
