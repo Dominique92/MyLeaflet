@@ -6,18 +6,19 @@
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
 	<link  href="../../../../src/leaflet.css" rel="stylesheet" />
-	<script src="../../../../src/leaflet.js"></script>
 </head>
 
 <body>
-	<p>This test runs on Leaflet <script>document.write(L.version)</script></p>
-
 	<div id="map" style="width: 800px; height: 600px"></div>
-	<script src="../examples/index.js"></script>
 
 	<p><b>geoJson input/output</b></p>
 	<div id="edit-changed" style="display:none"><i>Changé</i></div>
 	<textarea id="edit-json" rows="10" cols="120">
+{"type":"FeatureCollection","features":[
+	{"type":"Feature","properties":{},"geometry":{"type":"MultiLineString","coordinates":[[[-3.587894,47.787852]],[[-3.587894,47.787852]],[[-3.587894,47.787852]]]}}
+]}
+	</textarea>
+	<textarea id="edit-json-INITIAL" rows="10" cols="120">
 {"type":"FeatureCollection","features":[
 	{"type":"Feature","properties":{},"geometry":{"type":"LineString","coordinates":[[2.5,46],[3,45],[4,45],[5,45.8]]}},
 	{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[3.5,45.5]}}
@@ -25,5 +26,10 @@
 	</textarea>
 
 	<div style="position:absolute;right:0;top:0" title="debug"><a href=".">&gt;</a>&nbsp;</div>
+
+	<script src="../../../../src/leaflet.js"></script>
+	<script src="../examples/index.js"></script>
+
+	<p>This test runs on Leaflet <script>document.write(L.version)</script></p>
 </body>
 </html>

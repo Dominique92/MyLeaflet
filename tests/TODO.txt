@@ -54,6 +54,7 @@ Table de Peutinger (carte de redressement)
 
 DOC TESTS & DEMOS
 =================
+github.com/Dominique92/Leaflet.draw.plus/tests/index.html => Le cadre edit du formulaire ne correspond plus à la saisie
 Demo SwissTopo KO
 Doc MultiVendors#usage (CRS dans la layer, ...)
 Doc overpass
