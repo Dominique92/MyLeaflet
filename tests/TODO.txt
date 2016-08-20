@@ -93,7 +93,9 @@ Voir https://tortoisegit.org/
 
 WRI
 ===
-Ancre icônes cabanes au sommet du toit
+Commentaire ajouté, la photo est grande -> mettre une majuscule
+Remise à la verticale des images verticales ?
+Ancre icônes cabanes au sommet du toit => devraient être au milieu
 Possibilité d'agrandir la météo sur mobiles
 Pas de massifs dans l'Atlas ?
 Carte par defaut fiche Angleterre (manque le contour localisation administrative)
