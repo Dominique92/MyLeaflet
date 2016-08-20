@@ -1,7 +1,4 @@
-<!--
-<?php
-	echo '--&#62;';
-
+<?php //><div style="display:none">
 	// http://xxx.github.io doesn't offer PHP nor SQL services
 	// For interface with a MySQL 5.x database, rename this file as .php & run on a server offering PHP & MySQL
 	// You can also interface PgSQL while renaming some of the below functions & commands
@@ -54,7 +51,7 @@
 	$result = $mysqli->query("SELECT ST_AsText($mysqli_field) AS geom FROM $mysqli_table where id = 1");
 	echo ('$ST_AsText = '); var_dump ($ST_AsText = $result->fetch_object());
 	echo ('$json_sql = '); var_dump ($json_sql = geoPHP::load($ST_AsText->geom,'wkt')->out('json'));
-?>
+?></div>
 
 <!DOCTYPE html>
 <html lang="fr">
