@@ -1,49 +1,60 @@
-<!-- <?php
-// http://xxx.github.io doesn't offer PHP nor SQL services
-// For interface with a MySQL 5.x database, rename this file as .php & run on a server offering PHP & MySQL
-// You can also interface PgSQL while renaming some of the below functions & commands
+<!--
+<?php
+	echo '--&#62;';
 
-/* Create a database on your server with a geom
-CREATE DATABASE drawdb;
-USE drawdb;
-CREATE TABLE IF NOT EXISTS drawtable (
-  geom geometrycollection NOT NULL,
-  id int NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (id)
-);
-INSERT INTO drawtable (geom, id) VALUES (GeomFromText('POINT(5 45)',0), 1);
-*/
+	// http://xxx.github.io doesn't offer PHP nor SQL services
+	// For interface with a MySQL 5.x database, rename this file as .php & run on a server offering PHP & MySQL
+	// You can also interface PgSQL while renaming some of the below functions & commands
 
-// Replace SQL parameters by yours
-$mysqli_server_name = 'localhost';
-$mysqli_user = 'root';
-$mysqli_psswd = '';
-$mysqli_db = 'drawdb';
-$mysqli_table = 'drawtable';
-$mysqli_field = 'geom';
+	/* Create a database on your server with a geom
+	CREATE DATABASE drawdb;
+	USE drawdb;
+	CREATE TABLE IF NOT EXISTS drawtable (
+	  geom geometrycollection NOT NULL,
+	  id int NOT NULL AUTO_INCREMENT,
+	  PRIMARY KEY (id)
+	);
+	INSERT INTO drawtable (geom, id) VALUES (GeomFromText('POINT(5 45)',0), 1);
+	*/
 
-// Connect to the database
-$mysqli = @new mysqli ($mysqli_server_name, $mysqli_user, $mysqli_psswd, $mysqli_db);
-if ($mysqli->connect_errno) {
-    echo $mysqli->connect_error;
-	exit;
-}
+	// Replace SQL parameters by yours
+	$mysqli_server_name = 'localhost';
+	$mysqli_user = 'root';
+	$mysqli_psswd = '';
+	$mysqli_db = 'drawdb';
+	$mysqli_table = 'drawtable';
+	$mysqli_field = 'geom';
 
-include_once ('../../phayes/geoPHP/geoPHP.inc'); // Get full package from https://github.com/phayes/geoPHP
+	// Connect to the database
+	$mysqli = @new mysqli ($mysqli_server_name, $mysqli_user, $mysqli_psswd, $mysqli_db);
+	if ($mysqli->connect_errno) {
+		echo $mysqli->connect_error;
+		exit;
+	}
 
-// Upload edition changes to the database
-echo ('$_POST = '); var_dump ($_POST);
-if (isset ($_POST['geom'])) {
-	echo ('$wkt_post = '); var_dump ($wkt_post = geoPHP::load($_POST['geom'], 'json')->out('wkt'));
-	echo ('$sql = '); var_dump ($sql = "UPDATE $mysqli_table SET $mysqli_field = GeomFromText('$wkt_post') where id = 1");
-	$mysqli->query($sql);
-}
+	// Get geoPHP library
+	if (is_dir ('../../phayes/geoPHP'))
+		include_once ('../../phayes/geoPHP/geoPHP.inc');
+	elseif (is_dir ('geoPHP-master'))
+		include_once ('geoPHP-master/geoPHP.inc');
+	else {
+		var_dump ('Get full package from https://github.com/phayes/geoPHP & unzip geoPHP-master/... at this file level'); 
+		exit;
+	}
 
-// Get existing data from the database
-$result = $mysqli->query("SELECT ST_AsText($mysqli_field) AS geom FROM $mysqli_table where id = 1");
-echo ('$ST_AsText = '); var_dump ($ST_AsText = $result->fetch_object());
-echo ('$json_sql = '); var_dump ($json_sql = geoPHP::load($ST_AsText->geom,'wkt')->out('json'));
-?> -->
+	// Upload edition changes to the database
+	echo ('$_POST = '); var_dump ($_POST);
+	if (isset ($_POST['geom'])) {
+		echo ('$wkt_post = '); var_dump ($wkt_post = geoPHP::load($_POST['geom'], 'json')->out('wkt'));
+		echo ('$sql = '); var_dump ($sql = "UPDATE $mysqli_table SET $mysqli_field = GeomFromText('$wkt_post') where id = 1");
+		$mysqli->query($sql);
+	}
+
+	// Get existing data from the database
+	$result = $mysqli->query("SELECT ST_AsText($mysqli_field) AS geom FROM $mysqli_table where id = 1");
+	echo ('$ST_AsText = '); var_dump ($ST_AsText = $result->fetch_object());
+	echo ('$json_sql = '); var_dump ($json_sql = geoPHP::load($ST_AsText->geom,'wkt')->out('json'));
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
