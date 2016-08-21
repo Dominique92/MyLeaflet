@@ -12,6 +12,7 @@ Editeur
 
 TODO
 ====
+Editeur : mettre le mode d'emploi dans la lib (le générer js)
 Editeur ligne : undo
 Voir pourquoi les CREDIT/*** changent comme ça ?
 OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
@@ -93,6 +94,8 @@ Voir https://tortoisegit.org/
 
 WRI
 ===
+Editeur : quitter sans sortir : aller en NAV devrait visualiser le massif
+Editeur : faire touche "enregistrer et quiter"
 Commentaire ajouté, la photo est grande -> mettre une majuscule
 Remise à la verticale des images verticales ?
 Ancre icônes cabanes au sommet du toit => devraient être au milieu

@@ -17,7 +17,6 @@
 	https://github.com/Leaflet/Leaflet.draw/tree/c3c9f7e5e9e04c4d734cb30dd47ec54cfc3d4b8b
 	https://github.com/makinacorpus/Leaflet.GeometryUtil/tree/a610c7ff22df9cd3cc11f1d8b3c8c4536b21334a
 	https://github.com/makinacorpus/Leaflet.Snap/tree/df2f2794ddc8580d5d643c4ec11b082412a47593
-	https://github.com/phayes/geoPHP/tree/685562416ec6d22b9b3927e02ca0ddacf84ca646
 	https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port/tree/20f738889d6e55df59761b734d1638abe17c11eb
 	https://github.com/nicolas-grekas/JSqueeze/tree-commit/693d64850eab2ce6a7c8f7cf547e1ab46e69d542
 */
