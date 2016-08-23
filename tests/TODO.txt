@@ -10,6 +10,8 @@ Editeur
 	Purge des points identiques sur un segment
 	Ne pas exporter une ligne ne contenant qu'un point
 
+chem3 5.5.49-0+deb7u1-log
+
 TODO
 ====
 Editeur : mettre le mode d'emploi dans la lib (le générer js)
@@ -94,6 +96,7 @@ Voir https://tortoisegit.org/
 
 WRI
 ===
+Point double carte : on perd le bbox des cabanes !
 Editeur : quitter sans sortir : aller en NAV devrait visualiser le massif
 Editeur : faire touche "enregistrer et quiter"
 Commentaire ajouté, la photo est grande -> mettre une majuscule

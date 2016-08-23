@@ -7,6 +7,10 @@ $mysqli_db = 'drawdb';
 $mysqli_table = 'drawtable';
 $mysqli_field = 'geom';
 
+/*
+	For MySql > v5.6, change GeomFromText to ST_GeomFromText
+*/
+
 /* Create this database on your server:
 CREATE DATABASE drawdb;
 USE drawdb;
@@ -38,6 +42,8 @@ if (isset ($_POST['geom'])) {
 
 // Get existing data from the database
 $result = $mysqli->query("SELECT ST_AsText($mysqli_field) AS geom FROM $mysqli_table where id = 1");
+if ($mysqli->error)
+	echo $mysqli->error;
 echo ('$ST_AsText = '); var_dump ($ST_AsText = $result->fetch_object());
 echo ('$json_sql = '); var_dump ($json_sql = geoPHP::load($ST_AsText->geom,'wkt')->out('json'));
 
