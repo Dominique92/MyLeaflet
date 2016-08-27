@@ -197,7 +197,7 @@ var js_list = [
 	'../src/lib/Leaflet-optim-stub.js', // Remplace certaines définitions de fonctions mamquantes suite aux optimisations
 /* FIN OPTIM DRAW */
 
-	'../github.com/makinacorpus/Leaflet.GeometryUtil/dist/leaflet.geometryutil.js', // A mettre sinon snap plante.
+	'../github.com/makinacorpus/Leaflet.GeometryUtil/src/leaflet.geometryutil.js', // A mettre sinon snap plante.
 	'../github.com/makinacorpus/Leaflet.Snap/leaflet.snap.js', //V1.0 ??
 
 	'../github.com/Dominique92/Leaflet.draw.plus/Control.Draw.Plus.js',

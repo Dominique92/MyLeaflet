@@ -1,1 +1,1 @@
-https://github.com/makinacorpus/Leaflet.GeometryUtil/commit/a610c7ff22df9cd3cc11f1d8b3c8c4536b21334a
+https://github.com/makinacorpus/Leaflet.GeometryUtil/commit/c26889b6672844062c7b1ca957a1912b75129253

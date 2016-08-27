@@ -161,3 +161,12 @@ NOTES
 =====
 MultiPolygon multiple => WRI massif 3116
 MultiPolygon avec trou => WRI massif 3127
+
+V1
+==
+nodejs (win) + npm
+doc LL
+http://mourner.github.io/Leaflet/reference.html
+http://leafletjs.com/plugins.html
+https://openclassrooms.com/courses/des-applications-ultra-rapides-avec-node-js/les-modules-node-js-et-npm
+npm install leaflet@beta

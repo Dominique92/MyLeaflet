@@ -30,26 +30,26 @@ USAGE
 	<script src="dist/leaflet.js"></script>
 ```
 * Dist compressed files generation: run build/index.php
+* For tinny distribution: only copy dist/... files
 
 * Include MyLeaflet for developpement (full sources):
 ```html
 	<link rel="stylesheet" href="src/leaflet.css" />
 	<script src="src/leaflet.js"></script>
 ```
-* For tinny distribution: only copy dist/... files
 
 FILES
 =====
 * /build/... : Files compression tool + github plugins update.
 * /dist/... : Tinny distribution files.
-* /github.com/... : Local copy of some of github Leaflet kernel or pluggins files used in this library.
+* /github.com/... : Local copy of some of github Leaflet kernel & pluggins files used in this library.
 A CREDIT.txt file gives the github commit ref of each plugin.
 Some very few sources modifications are taged "GEO", "GEO optimisation" or "GEOmin".
 * /libs/... : Other extern libraries
 * /src/... : Sources specific to MyLeaflet.
-* /src/leaflet.css /src/leaflet.js : List of source files, to be included for debug.
-* /index.php : generic demo.
-* /examples/... : External demos.
+* /src/leaflet.css /src/leaflet.js : List of source files included in this package.
+* /index.html : generic demo on a non PHP server.
+* /index.php : generic demo on a PHP & MySql server.
 * /test/... : Debug test files or ongoing developments.
 
 Other Leaflet Plugins from this collection 
