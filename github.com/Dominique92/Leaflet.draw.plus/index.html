@@ -16,7 +16,7 @@
 
 	<!-- Draw plugin -->
 	<link href="../../Leaflet/Leaflet.draw/dist/leaflet.draw.css" rel="stylesheet" />
-	<script src="../../Leaflet/Leaflet.draw/dist/leaflet.draw-src.js"></script><!-- includes Edit.Poly this._cut changes by Dominique92 -->
+	<script src="../../Leaflet/Leaflet.draw/dist/leaflet.draw-src.js"></script>
 
 	<!-- Related plugins -->
 	<script src="../../mapbox/togeojson/togeojson.js"></script>
@@ -24,7 +24,7 @@
 
 	<!-- Snap plugin -->
 	<script src="../../makinacorpus/Leaflet.GeometryUtil/src/leaflet.geometryutil.js"></script>
-	<script src="../../makinacorpus/Leaflet.Snap/leaflet.snap.js"></script><!-- Includes auto-snap changes by Dominique92 -->
+	<script src="../../makinacorpus/Leaflet.Snap/leaflet.snap.js"></script>
 
 	<!-- Plugin to import GPX files -->
 	<script src="../../makinacorpus/Leaflet.FileLayer/leaflet.filelayer.js"></script>
@@ -38,7 +38,7 @@
 
 <body>
 	<p>Leaflet extension for markers, polylines, polygons, ... creation & edition.</p>
-	<p>Run on Leaflet <script>document.write(L.version)</script> (This plugin is not supported on Leaflet V1.0)</p>
+	<p>Run on Leaflet <script>document.write(L.version)</script> <span style="color:red">(This plugin is not supported on Leaflet V1.0)</span></p>
 	<p>See the code <a href="index.js">here</a></p>
 	<?php if (0) { // Init input when the file is .html ?>
 		<p>This example run on a server without PHP & SQL services. If you want it to save your data on a database, you need to get the full package from <a href= "https://github.com/Dominique92/Leaflet.draw.plus">Github.com/Dominique92/Leaflet.draw.plus</a>, unzip & copy it in your own server and run Leaflet.draw.plus/test.</p>
@@ -79,6 +79,11 @@
 	   style="position:absolute;top:0;right:0"
 	   title="Sources & docs">
 		<img src="../../../src/images/fork_me.png" />
+	</a>
+	<a href="v1"
+	   style="position:absolute;top:190px;right:0;text-decoration:none"
+	   title="Test on Leaflet V1.0">
+		v1.0
 	</a>
 
 	<?php if (0) { // Init input when the file is .html ?>

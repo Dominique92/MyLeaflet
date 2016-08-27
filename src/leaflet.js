@@ -120,7 +120,7 @@ var js_list = [
 	'../github.com/stefanocudini/leaflet-gps/src/leaflet-gps.js', //work with Leaflet 1.0 beta
 	'../github.com/k4r573n/leaflet-control-osm-geocoder/Control.OSMGeocoder.js', //V1.0 testé OK
 	'../github.com/shramov/leaflet-plugins/control/Permalink.js', //V1.0 https://github.com/shramov/leaflet-plugins/tree/leaflet_one
-	'../github.com/shramov/leaflet-plugins/control/Permalink.Layer.js',
+	'../github.com/shramov/leaflet-plugins/control/Permalink.Layer.js', //V1.0 idem
 	'../github.com/Dominique92/Leaflet.Permalink.Cookies/Permalink.Cookies.js',
 	'../src/Leaflet.Control.Layers.args.js',
 	'../src/AntiBot.js',

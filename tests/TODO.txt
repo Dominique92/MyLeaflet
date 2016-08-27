@@ -14,6 +14,9 @@ chem3 5.5.49-0+deb7u1-log
 
 TODO
 ====
+Traduite page exemples draw / locales/us ... detecter automatiquement la langue
+Build : noms rep github : 1 seul niveay subdir
+Import files : pb tree-commit / commit
 Editeur : mettre le mode d'emploi dans la lib (le générer js)
 Editeur ligne : undo
 Voir pourquoi les CREDIT/*** changent comme ça ?
