@@ -18,7 +18,7 @@ DEMOS
 -----
 [See a DEMO using Leaflet V0.7](http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/)
 
-[See a DEMO using Leaflet V1.0](http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/examples/index-v1.0.html)
+[See a DEMO using Leaflet V1.0](http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/examples/v1.0.html)
 
 [See a DEMO of France IGN layers](http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/examples/France-IGN.html)
 

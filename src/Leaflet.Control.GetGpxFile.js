@@ -35,7 +35,7 @@ L.Control.GetGpxFile = L.Control.extend({
 		pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
 		pom.setAttribute('download', filename);
 		
-	//	pom.addEventListener('click', true, true); 
+	//	pom.addEventListener('click', true, true); // DCMM TBD what's ????
 	//alert(pom.addEventListener);
 
 	/*

@@ -1,5 +1,9 @@
+http://test.chemineur.fr/ext/Dominique92/GeoBB/leaflet/images/github.com-Leaflet-Leaflet.draw-dist-images-spritesheet.svg Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+WRI : ancre icone au milieu gauche !
+
 BUGS
 ====
+==> Terminer refonte démos MultiVendors   Permalink.Cookies   Marker.coordinates 
 Cartes google: appelle aussi les dalles OSM
 Cookies permalink zoom trop fort sur SwissTopo
 Queues de popup un peu courtes sur le côté
@@ -14,12 +18,11 @@ chem3 5.5.49-0+deb7u1-log
 
 TODO
 ====
-Traduite page exemples draw / locales/us ... detecter automatiquement la langue
-Build : noms rep github : 1 seul niveay subdir
-Import files : pb tree-commit / commit
+Build : noms rep github : 1 seul niveau subdir
+Voir pourquoi les CREDIT/*** changent comme ça ?
+	Import files : pb tree-commit / commit => commit
 Editeur : mettre le mode d'emploi dans la lib (le générer js)
 Editeur ligne : undo
-Voir pourquoi les CREDIT/*** changent comme ça ?
 OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
 N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
 Voir si les selecteurs de couches peuvent être rémanents
@@ -60,6 +63,7 @@ Table de Peutinger (carte de redressement)
 
 DOC TESTS & DEMOS
 =================
+Traduire page exemples draw / locales/us ... detecter automatiquement la langue
 github.com/Dominique92/Leaflet.draw.plus/tests/index.html => Le cadre edit du formulaire ne correspond plus à la saisie
 Demo SwissTopo KO
 Doc MultiVendors#usage (CRS dans la layer, ...)

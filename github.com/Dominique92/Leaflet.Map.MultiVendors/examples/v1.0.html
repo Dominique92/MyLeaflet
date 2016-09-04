@@ -5,19 +5,36 @@
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
-	<link  href="../../../../src/leaflet.css" rel="stylesheet" />
-	<script src="../../../../src/leaflet.js"></script>
+	<!-- Leaflet kernel -->
+	<link  href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" rel="stylesheet" />
+	<script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+
+	<!-- Variable projections -->
+	<!-- For Leaflet V1.0 : https://github.com/kartena/Proj4Leaflet/tree/leaflet-proj-refactor -->
+	<script src="../../../../src/lib/v1/Proj4Leaflet-leaflet-proj-refactor/lib/proj4.js"></script>
+	<script src="../../../../src/lib/v1/Proj4Leaflet-leaflet-proj-refactor/src/proj4leaflet.js"></script>
+	<script src="../MapMultiCRS.js"></script>
+
+	<!-- Misc layers -->
+	<script src="../layers/OSM.js"></script>
+	<script src="../layers/IGN.js"></script>
+	<script src="../layers/IGM.js"></script>
+	<script src="../layers/IDEE.js"></script>
+	<script src="../layers/SwissTopo.js"></script>
+	<script src="../layers/Google.js"></script>
+	<script src="../layers-v1.0/OS.js"></script> <!-- For Leaflet V1.0 only -->
+	<script src="../../../shramov/leaflet-plugins/layer/tile/Bing.js"></script>
+	<script src="../layers/TileLayer.collection.js"></script>
 
 	<script>
 		// Specific layers keys
 		var key = {
 			ign: window.location.host == 'localhost'
-				? 'u71tqebfror0c2nn3nppcbk2' // localhost 31/03/2016 http://api.ign.fr
+				? 'g8jzsy4ttwzho3aepk2s4tb7' // localhost 03/12/2016 http://api.ign.fr / Votre clef de développement >>
 				: 'o6owv8ubhn3vbz2uj8jq5j0z', // dominique92.github.io http://pro.ign.fr/api-web
 			bing: 'ArLngay7TxiroomF7HLEXCS7kTWexf1_1s1qiF7nbTYs2IkD3XLcUnvSlKbGRZxt', // https://www.bingmapsportal.com
 			os: 'CBE047F823B5E83CE0405F0ACA6042AB' // http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
 		};
-		L.TileLayer.OSOpenSpace.prototype.options.crs = L.OSOpenSpace.getCRS(); // Assign CRS to OS-UK layer options
 
 		window.addEventListener('load', function() { // Run when the full page is loaded
 			var map = new L.Map('map', {
@@ -34,44 +51,27 @@
 <body>
 	<p>Leaflet extension for multi vendors maps & projections (
 		OSM, Maps.Refuges.Info, Thunder Forest, Refuges.info, Hike & Bike, ClycleMap, Outdoors & Bike,
-		<a href="examples/France-IGN.html">IGN France</a>,
-		<a href="examples/Spain-IDEE.html">SwissTopo</a>,
+		IGN France,
+		SwissTopo,
 		IDEE Espa&ntilde;a,
-		<a href="examples/Italy-IGM.html">IGM Italie</a>,
+		IGM Italie,
 		OS Great Britain,
 		Kompass Austria,
 		Bing Microsoft,
 		Google maps,
 		...)
 	</p>
-	<p>Hover the switcher icon on top right of the map &amp; click on the required layer.</p>
 
+	<p>Hover the switcher icon on top right of the map &amp; click on the required layer.</p>
 	<div id="map" style="width: 800px; height: 600px"></div>
 
 	<p>Sources & docs on <a href= "https://github.com/Dominique92/Leaflet.Map.MultiVendors">Github Dominique92/Leaflet.Map.MultiVendors</a></p>
-	<p>This demo runs on Leaflet V<script>document.write(L.version)</script> &#10144;
-		<a href="examples/index-v1.0.html" style="font-size:12px">See demo on Leaflet V1.0</a></p>
-	<p>Demo of
-		<a href="examples/France-IGN.html">France IGN layers</a>, &nbsp;
-		<a href="examples/Spain-IDEE.html">Spain IDEE layer</a>, &nbsp;
-		<a href="examples/Italy-IGM.html">Italy IGM layers</a>
-	</p>
+	<p>This demo runs on Leaflet V<script>document.write(L.version)</script> &#10144; <a href="..">See demo on Leaflet V0.7</a></p>
 
-	<!-- Doc & debug -->
-	<a href="../github.com/Dominique92/Leaflet.GeoJSON.Ajax/tests"
-	   style="position:absolute;top:0px;right:0;text-decoration:none;font-size:large"
-	   title="Next test">
-		&#10154;
-	</a>
-	<a href="tests"
+	<a href="France-IGN.html"
 	   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
-	   title="Debug mode">
-		&#x2713;
-	</a>
-	<a href="examples/index-v1.0.html"
-	   style="position:absolute;top:220px;right:0;text-decoration:none"
-	   title="Test on Leaflet V1.0">
-		v1.0
+	   title="Next test">
+		&#10144;
 	</a>
 </body>
 </html>

@@ -26,7 +26,7 @@ USAGE
 =====
 * Include MyLeaflet for production (compressed files):
 ```html
-	<link rel="stylesheet" href="dist/leaflet.css" />
+	<link  href="dist/leaflet.css" rel="stylesheet" />
 	<script src="dist/leaflet.js"></script>
 ```
 * Dist compressed files generation: run build/index.php
@@ -34,7 +34,7 @@ USAGE
 
 * Include MyLeaflet for developpement (full sources):
 ```html
-	<link rel="stylesheet" href="src/leaflet.css" />
+	<link  href="src/leaflet.css" rel="stylesheet" />
 	<script src="src/leaflet.js"></script>
 ```
 

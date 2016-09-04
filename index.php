@@ -1,4 +1,4 @@
-<?php // File to be executed in a PHP / MySql environment
+<?php // File to be executed in test or PHP / MySql environment
 include ('index.html');
 ?>
 <p><a href="build/download-plugins.php">Mettre à jour les plugins importés</a></p>

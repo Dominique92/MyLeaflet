@@ -5,10 +5,15 @@
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
-	<link rel="stylesheet" href="../../Leaflet/Leaflet/dist/leaflet.css" />
-	<script src="../../Leaflet/Leaflet/dist/leaflet.js"></script>
+	<!-- Leaflet kernel -->
+	<link  href="../../../Leaflet/Leaflet/dist/leaflet.css" rel="stylesheet" />
+	<script src="../../../Leaflet/Leaflet/dist/leaflet-src.js"></script>
 
-	<script src="http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/layers/SwissTopo.js"></script>
+	<!-- Specific projections -->
+	<script src="http://dominique92.github.io/MyLeaflet/github.com/kartena/Proj4Leaflet/lib/proj4-compressed.js"></script>
+	<script src="http://dominique92.github.io/MyLeaflet/github.com/kartena/Proj4Leaflet/src/proj4leaflet.js"></script>
+
+	<script src="../layers/SwissTopo.js"></script>
 
 	<script>
 		window.addEventListener('load', function() { // Run when the full page is loaded
@@ -44,8 +49,8 @@
 
 	<div id="map" style="width: 800px; height: 600px"></div>
 
-	<br/><p>This plugin is also supported on Leaflet V1.0 : <a href="index-v1.0.html">Test on Leaflet V1.0</a></p>
-	<div style="position: absolute;right:0;top:0"><a href="index-v1.0.html">&gt;</a>&nbsp;</div>
+	<br/><p>This plugin is also supported on Leaflet V1.0 : <a href="v1.0.html">Test on Leaflet V1.0</a></p>
+	<div style="position: absolute;right:0;top:0"><a href="v1.0.html">&gt;</a>&nbsp;</div>
 
 	<!-- Doc & debug -->
 	<a href="https://github.com/Dominique92/Leaflet.Map.MultiVendors/blob/master/layers/SwissTopo.js"
@@ -53,22 +58,10 @@
 	   title="Sources & docs">
 		<img src="../../../../src/images/fork_me.png" />
 	</a>
-<!--
-	<a href="https://github.com/Dominique92/MyLeaflet"
+	<a href="Spain-IDEE.html"
 	   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
-	   title="Next test">
-		&#10154;
+	   title="Next test : spain">
+		&#10144;
 	</a>
-	<a href="tests"
-	   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
-	   title="Debug mode">
-		&#x2713;
-	</a>
-	<a href="https://github.com/Dominique92/MyLeaflet"
-	   style="position:absolute;top:220px;right:0;text-decoration:none"
-	   title="Test on Leaflet V1.0">
-		v1.0
-	</a>
--->
 </body>
 </html>

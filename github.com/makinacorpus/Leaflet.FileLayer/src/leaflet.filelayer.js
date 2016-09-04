@@ -2,30 +2,43 @@
  * Load files *locally* (GeoJSON, KML, GPX) into the map
  * using the HTML5 File API.
  *
- * Requires Pavel Shramov's GPX.js
- * https://github.com/shramov/leaflet-plugins/blob/d74d67/layer/vector/GPX.js
+ * Requires Mapbox's togeojson.js to be in global scope
+ * https://github.com/mapbox/togeojson
  */
 
-(function (factory, controler, window) {
+(function (factory, window) {
     // define an AMD module that relies on 'leaflet'
-    if (typeof define === 'function' && define.amd) {
-        define(['leaflet'], factory);
-    } else if (typeof exports === 'object') {
-        module.exports = factory(require('leaflet'));
-    }
-
-    if (typeof window !== 'undefined' && window.L) {
-        window.L.Util.FileLoader = factory(window.L);
-        window.L.Util.fileLoader = function (map, options) {
-            return new window.L.Util.FileLoader(map, options);
+    if (typeof define === 'function' && define.amd && window.toGeoJSON) {
+        define(['leaflet'], function (L) {
+            factory(L, window.toGeoJSON);
+        });
+    } else if (typeof module === 'object' && module.exports) {
+        // require('LIBRARY') returns a factory that requires window to
+        // build a LIBRARY instance, we normalize how we use modules
+        // that require this pattern but the window provided is a noop
+        // if it's defined
+        module.exports = function (root, L, toGeoJSON) {
+            if (L === undefined) {
+                if (typeof window !== 'undefined') {
+                    L = require('leaflet');
+                } else {
+                    L = require('leaflet')(root);
+                }
+            }
+            if (toGeoJSON === undefined) {
+                if (typeof window !== 'undefined') {
+                    toGeoJSON = require('togeojson');
+                } else {
+                    toGeoJSON = require('togeojson')(root);
+                }
+            }
+            factory(L, toGeoJSON);
+            return L;
         };
-
-        window.L.Control.FileLayerLoad = controler(window.L);
-        window.L.Control.fileLayerLoad = function (options) {
-            return new window.L.Control.FileLayerLoad(options);
-        };
+    } else if (typeof window !== 'undefined' && window.L && window.toGeoJSON) {
+        factory(window.L, window.toGeoJSON);
     }
-}(function (L) {
+}(function fileLoaderFactory(L, toGeoJSON) {
     var FileLoader = L.Class.extend({
         includes: L.Mixin.Events,
         options: {
@@ -75,7 +88,6 @@
                 } catch (err) {
                     this.fire('data:error', { error: err });
                 }
-
             }, this);
             reader.readAsText(file);
             return reader;
@@ -102,13 +114,11 @@
             if (typeof content === 'string') {
                 content = (new window.DOMParser()).parseFromString(content, 'text/xml');
             }
-            var geojson = window.toGeoJSON[format](content);
+            var geojson = toGeoJSON[format](content);
             return this._loadGeoJSON(geojson);
         }
     });
 
-    return FileLoader;
-}, function (L) {
     var FileLayerLoad = L.Control.extend({
         statics: {
             TITLE: 'Load local file (GPX, KML, GeoJSON)',
@@ -226,5 +236,13 @@
         }
     });
 
-    return FileLayerLoad;
+    L.Util.FileLoader = FileLoader;
+    L.Util.fileLoader = function (map, options) {
+        return new L.Util.FileLoader(map, options);
+    };
+
+    L.Control.FileLayerLoad = FileLayerLoad;
+    L.Control.fileLayerLoad = function (options) {
+        return new L.Control.FileLayerLoad(options);
+    };
 }, window));
