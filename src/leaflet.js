@@ -139,7 +139,7 @@ var js_list = [
 	// Couches autres fournisseurs
 	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/OSM.js',
 	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/IGN.js',
-//	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/IGM.js',
+	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/IGM.js',
 	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/IDEE.js',
 	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/SwissTopo.js',
 	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/Google.js',
@@ -150,8 +150,8 @@ var js_list = [
 	'../github.com/Dominique92/Leaflet.Map.MultiVendors/layers/TileLayer.collection.js',
 
 	// Couches vectotielles
-	'../github.com/makinacorpus/Leaflet.FileLayer/leaflet.filelayer.js', //V1.0 ??
 	'../github.com/mapbox/togeojson/togeojson.js', //V1.0 ??
+	'../github.com/makinacorpus/Leaflet.FileLayer/src/leaflet.filelayer.js', //V1.0 ??
 //	'../github.com/mapbox/leaflet-omnivore/leaflet-omnivore.js', // TBD KML/ ...
 	'../github.com/erictheise/rrose/leaflet.rrose-src.js', //V1.0 ??
 	'../github.com/Dominique92/Leaflet.GeoJSON.Ajax/GeoJSON.Style.js',

@@ -5,20 +5,11 @@
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
+	<!-- Leaflet kernel -->
 	<link  href="../../../Leaflet/Leaflet/dist/leaflet.css" rel="stylesheet" />
 	<script src="../../../Leaflet/Leaflet/dist/leaflet-src.js"></script>
 
-	<script src="http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/layers/IGM.js"></script>
-
-	<script>
-		window.addEventListener('load', function() { // Run when the full page is loaded
-			var map = new L.Map('map', {
-				center: new L.LatLng(45.47, 9.18), // Milano
-				zoom: 11,
-				layers: [new L.TileLayer.WMS.IGM()]
-			});
-		});
-	</script>
+	<script src="../layers/IGM.js"></script>
 </head>
 
 <body>
@@ -38,22 +29,19 @@
 	   title="Sources & docs">
 		<img src="../../../../src/images/fork_me.png" />
 	</a>
-<!--
-	<a href="https://github.com/Dominique92/MyLeaflet"
+	<a href="../../Leaflet.Permalink.Cookies"
 	   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
 	   title="Next test">
-		&#10154;
+		&#10144;
 	</a>
-	<a href="tests"
-	   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
-	   title="Debug mode">
-		&#x2713;
-	</a>
-	<a href="https://github.com/Dominique92/MyLeaflet"
-	   style="position:absolute;top:220px;right:0;text-decoration:none"
-	   title="Test on Leaflet V1.0">
-		v1.0
-	</a>
--->
+
+	<!-- Insert the javascript after all <div> are defined -->
+	<script>
+		var map = new L.Map('map', {
+			center: new L.LatLng(45.47, 9.18), // Milano
+			zoom: 11,
+			layers: [new L.TileLayer.WMS.IGM()]
+		});
+	</script>
 </body>
 </html>

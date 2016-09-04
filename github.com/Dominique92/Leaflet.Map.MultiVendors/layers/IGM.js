@@ -7,8 +7,7 @@
  * Instance of the WMS class allow viewing maps of IGM (Istituto Geografico Militare) Geoportale Nazionale
  * (c) http://www.pcn.minambiente.it
  *
- * Usage:
-	new L.TileLayer.WMS.IGM()
+ * Usage: new L.TileLayer.WMS.IGM()
  */
 
 L.TileLayer.WMS.IGM = L.TileLayer.WMS.extend({

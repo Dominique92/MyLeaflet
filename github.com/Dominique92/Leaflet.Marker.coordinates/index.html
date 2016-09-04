@@ -5,55 +5,21 @@
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
+	<?php if (!is_dir ('../../Dominique92')) { // Run .html or standalone .php ?>
+		<base href="http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Marker.coordinates/" />
+	<?php } ?>
 
 	<!-- Leaflet kernel -->
 	<link  href="../../Leaflet/Leaflet/dist/leaflet.css" rel="stylesheet" />
-	<script src="../../Leaflet/Leaflet/dist/leaflet.js"></script>
+	<script src="../../Leaflet/Leaflet/dist/leaflet-src.js"></script>
 
 	<!-- projections -->
-	<script src="http://dominique92.github.io/MyLeaflet/github.com/kartena/Proj4Leaflet/lib/proj4-compressed.js"></script>
-	<script src="http://dominique92.github.io/MyLeaflet/github.com/kartena/Proj4Leaflet/src/proj4leaflet.js"></script>
+	<script src="../../kartena/Proj4Leaflet/lib/proj4-compressed.js"></script>
+	<script src="../../kartena/Proj4Leaflet/src/proj4leaflet.js"></script>
 	<script src="../Leaflet.Map.MultiVendors/layers/SwissTopo.js"></script>
 
 	<script src="CRS.js"></script>
 	<script src="Marker.coordinates.js"></script>
-
-	<script>
-		var map, frame, viewfinder;
-		window.addEventListener('load', function() {
-			map = L.map('map');
-
-			new L.TileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-				attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
-			}).addTo(map);
-
-			// frame fixe marquant une position. La carte est centrée autour
-			frame = new L.Marker([45.78, 3.08], { // Position par défaut
-					clickable: false, // Evite d'activer le viewfinder: curseur
-					icon: L.icon({
-						iconUrl: 'images/frame.png',
-						iconAnchor: [15, 21]
-					})
-				})
-				.coordinates('position') // Affiche les coordonnées
-				.addTo(map);
-			// Recentre la carte sur ce frame
-			map.setView(frame._latlng, 6, {
-				reset: true
-			});
-
-			// viewfinder déplaçable affichant sa position éditable.
-			viewfinder = new L.Marker([45.78, 3.08], {
-					draggable: true,
-					icon: L.icon({
-						iconUrl: 'images/viewfinder.png',
-						iconAnchor: [15, 15]
-					})
-				})
-				.coordinates('viewfinder') // Affiche / saisi les coordonnées
-				.addTo(map);
-		});
-	</script>
 </head>
 
 <body>
@@ -91,15 +57,18 @@
 	<p>This demo works also on <a href="frame-v1.0.php">Leaflet V1.0</a></p>
 
 	<!-- Doc & debug -->
-	<a href="https://github.com/Dominique92/MyLeaflet"
+	<!--a href="https://github.com/Dominique92/MyLeaflet"
 	   style="position:absolute;top:0;right:0"
 	   title="Sources & docs">
 		<img src="../../../src/images/fork_me.png" />
-	</a>
+	</a-->
 	<a href="examples/v1.0.html"
 	   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
-	   title="Test on Leaflet V1.0">
+	   title="Test coordinates on Leaflet V1.0">
 		&#10144;
 	</a>
+
+	<!-- Insert the javascript after all <div> are defined -->
+	<script src="index.js"></script>
 </body>
 </html>

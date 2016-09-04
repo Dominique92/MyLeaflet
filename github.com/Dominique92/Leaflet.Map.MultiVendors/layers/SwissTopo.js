@@ -7,6 +7,8 @@
  * Documentation & key: http://www.swisstopo.admin.ch/internet/swisstopo/fr/home/products/services/web_services/webaccess.html
  * Always allowed on //localhost
  *
+ * Usage: new L.TileLayer.SwissTopo().addTo(map);
+ *
  * Different layers:
 	new L.TileLayer.SwissTopo({l:'ch.swisstopo.pixelkarte-farbe'}) : Basic 2015
 	new L.TileLayer.SwissTopo({l:'ch.swisstopo.hiks-siegfried'}) : Siegfried historical 1870-1949

@@ -41,8 +41,8 @@ L.TileLayer.collection = function(name) {
 			});
 
 		// Italy
-//		if (typeof L.TileLayer.WMS.IGM != 'undefined')
-//			this._col.Italie = new L.TileLayer.WMS.IGM();
+		if (typeof L.TileLayer.WMS.IGM != 'undefined')
+			this._col.Italie = new L.TileLayer.WMS.IGM();
 
 		// Swiss
 		if (typeof L.TileLayer.SwissTopo != 'undefined')

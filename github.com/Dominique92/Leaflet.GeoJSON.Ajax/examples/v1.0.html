@@ -6,8 +6,8 @@
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
 	<!-- Leaflet kernel -->
-	<link  href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" rel="stylesheet" />
-	<script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+	<link  href="../../../../src/lib/v1/Leaflet-1.0.0-rc.3/dist/leaflet.css" rel="stylesheet" />
+	<script src="../../../../src/lib/v1/Leaflet-1.0.0-rc.3/dist/leaflet.js"></script>
 
 	<!-- This plugin -->
 	<script src="../GeoJSON.Style.js"></script>
@@ -19,9 +19,6 @@
 	<p>Leaflet extension for remote GeoJSON layers (Markers, Polylines, Polygons, ...)</p>
 
 	<div id="map" style="width: 800px; height: 600px"></div>
-
-	<!-- Insert the javascript after the map <div> is defined -->
-	<script src="../index.js"></script>
 
 	<p>This demo runs on Leaflet V<script>document.write(L.version)</script> &#10144; <a href="..">See demo on Leaflet V0.7</a></p>
 	<p>See the javascript code of this demo <a href="../index.js">here</a> and <a href="../layers/GeoJSON.Ajax.WRI.js">here</a></p>
@@ -35,8 +32,11 @@
 	</a>
 	<a href="osm.html"
 	   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
-	   title="Next test">
+	   title="Test OSM overpass">
 		&#10144;
 	</a>
+
+	<!-- Insert the javascript after all <div> are defined -->
+	<script src="../index.js"></script>
 </body>
 </html>

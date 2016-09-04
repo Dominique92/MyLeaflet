@@ -1,4 +1,15 @@
-http://test.chemineur.fr/ext/Dominique92/GeoBB/leaflet/images/github.com-Leaflet-Leaflet.draw-dist-images-spritesheet.svg Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+Lien retour à la démo principale
+Cohérence run on.. docs ...
+vérifier lien visu fichiers .js / plus de windows.demarrage
+Démos permalink +V1 = KO
+coordinate + V1 KO
+Bug WC
+IDEE KO http://localhost/Leaflet/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/examples/Spain-IDEE.html
+
+relivrer les gihub (attention aux fichiers renommés) => Effacer + mouliner (ne pas inclure les index.php)
+tester les liens sur les github
+relivrer chem & wri (attention aux fichiers renommés)
+
 WRI : ancre icone au milieu gauche !
 
 BUGS

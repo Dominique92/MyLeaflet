@@ -10,29 +10,6 @@
 	<script src="../../../Leaflet/Leaflet/dist/leaflet-src.js"></script>
 
 	<script src="../layers/IGN.js"></script>
-
-	<script>
-		window.addEventListener('load', function() { // Run when the full page is loaded
-			var key = window.location.host == 'localhost'
-				? 'g8jzsy4ttwzho3aepk2s4tb7' // localhost 03/12/2016 http://api.ign.fr / Votre clef de développement >>
-				: 'o6owv8ubhn3vbz2uj8jq5j0z'; // dominique92.github.io http://pro.ign.fr/api-web
-
-			var layers = {
-				'IGN':         new L.TileLayer.IGN({k: key, l:'GEOGRAPHICALGRIDSYSTEMS.MAPS'}),
-				'IGN Photo':   new L.TileLayer.IGN({k: key, l:'ORTHOIMAGERY.ORTHOPHOTOS'}),
-				'IGN Topo':    new L.TileLayer.IGN({k: key, l:'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD'}),
-				'IGN Classic': new L.TileLayer.IGN({k: key, l:'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.CLASSIQUE'})
-			};
-
-			var map = new L.Map('map', {
-				center: new L.LatLng(47, 2),
-				zoom: 6,
-				layers: [layers.IGN]
-			});
-
-			new L.Control.Layers(layers).addTo(map);
-		});
-	</script>
 </head>
 
 <body>
@@ -55,8 +32,30 @@
 	</a>
 	<a href="SwissTopo.html"
 	   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
-	   title="Next test">
+	   title="Test SwissTopo">
 		&#10144;
 	</a>
+
+	<!-- Insert the javascript after all <div> are defined -->
+	<script>
+		var key = window.location.host == 'localhost'
+			? 'g8jzsy4ttwzho3aepk2s4tb7' // localhost 03/12/2016 http://api.ign.fr / Votre clef de développement >>
+			: 'o6owv8ubhn3vbz2uj8jq5j0z'; // dominique92.github.io http://pro.ign.fr/api-web
+
+		var layers = {
+			'IGN':         new L.TileLayer.IGN({k: key, l:'GEOGRAPHICALGRIDSYSTEMS.MAPS'}),
+			'IGN Photo':   new L.TileLayer.IGN({k: key, l:'ORTHOIMAGERY.ORTHOPHOTOS'}),
+			'IGN Topo':    new L.TileLayer.IGN({k: key, l:'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD'}),
+			'IGN Classic': new L.TileLayer.IGN({k: key, l:'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.CLASSIQUE'})
+		};
+
+		var map = new L.Map('map', {
+			center: new L.LatLng(47, 2),
+			zoom: 6,
+			layers: [layers.IGN]
+		});
+
+		new L.Control.Layers(layers).addTo(map);
+	</script>
 </body>
 </html>

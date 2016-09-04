@@ -5,6 +5,10 @@
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
+	<?php if (!is_dir ('../../Dominique92')) { // Run .html or standalone .php ?>
+		<base href="http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.GeoJSON.Ajax/" />
+	<?php } ?>
+
 	<!-- Leaflet kernel -->
 	<link  href="../../Leaflet/Leaflet/dist/leaflet.css" rel="stylesheet" />
 	<script src="../../Leaflet/Leaflet/dist/leaflet-src.js"></script>
@@ -63,9 +67,6 @@
 		<span id="ajax-zero">Nothing to see.</span>
 	</div>
 
-	<!-- Insert the javascript after the map <div> is defined -->
-	<script src="index.js"></script>
-
 	<p>This demo runs on Leaflet V<script>document.write(L.version)</script> &#10144; <a href="examples/v1.0.html">See demo on Leaflet V1.0</a></p>
 	<p>See the javascript code of this demo <a href="index.js">here</a> and <a href="layers/GeoJSON.Ajax.WRI.js">here</a></p>
 	<p>Sources & docs on <a href= "https://github.com/Dominique92/Leaflet.GeoJSON.Ajax">Github: Dominique92/Leaflet.GeoJSON.Ajax</a></p>
@@ -79,8 +80,11 @@
 	</a>
 	<a href="examples/v1.0.html"
 	   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
-	   title="Test on Leaflet V1.0">
+	   title="Test ajax on Leaflet V1.0">
 		&#10144;
 	</a>
+
+	<!-- Insert the javascript after all <div> are defined -->
+	<script src="index.js"></script>
 </body>
 </html>

@@ -5,6 +5,10 @@
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
+	<?php if (!is_dir ('../../Dominique92')) { // Run .html or standalone .php ?>
+		<base href="http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/" />
+	<?php } ?>
+
 	<!-- Leaflet kernel -->
 	<link  href="../../Leaflet/Leaflet/dist/leaflet.css" rel="stylesheet" />
 	<script src="../../Leaflet/Leaflet/dist/leaflet-src.js"></script>
@@ -17,12 +21,12 @@
 	<!-- Misc layers -->
 	<script src="layers/OSM.js"></script>
 	<script src="layers/IGN.js"></script>
-	<script src="layers/IGM.js"></script>
-	<script src="layers/IDEE.js"></script>
 	<script src="layers/SwissTopo.js"></script>
+	<script src="layers/IDEE.js"></script>
+	<script src="layers/IGM.js"></script>
 	<script src="layers/Google.js"></script>
-	<script src="http://dominique92.github.io/MyLeaflet/github.com/shramov/leaflet-plugins/layer/tile/Bing.js"></script>
-	<script src="https://rawgit.com/rob-murray/os-leaflet/master/OSOpenSpace.js"></script><!-- For Leaflet V0.7 -->
+	<script src="../../shramov/leaflet-plugins/layer/tile/Bing.js"></script>
+	<script src="../../rob-murray/os-leaflet/OSOpenSpace.js"></script><!-- For Leaflet V0.7 -->
 	<script src="layers/TileLayer.collection.js"></script>
 </head>
 
@@ -33,6 +37,7 @@
 		IGN France,
 		SwissTopo,
 		IDEE Espa&ntilde;a,
+		IGM Italia,
 		OS Great Britain,
 		Kompass Austria,
 		Bing Microsoft,
@@ -43,9 +48,6 @@
 
 	<div id="map" style="width: 800px; height: 600px"></div>
 
-	<!-- Insert the javascript after the map <div> is defined -->
-	<script src="index.js"></script>
-
 	<p>This demo runs on Leaflet V<script>document.write(L.version)</script> &#10144;
 		<a href="examples/v1.0.html">See demo on Leaflet V1.0</a></p>
 	<p>See the javascript code of this demo <a href="index.js">here</a> and <a href="layers/TileLayer.collection.js">here</a></p>
@@ -54,6 +56,7 @@
 		<a href="examples/France-IGN.html">France IGN layers</a>, &nbsp;
 		<a href="examples/SwissTopo.html">SwissTopo</a>, &nbsp;
 		<a href="examples/Spain-IDEE.html">Spain IDEE layer</a>, &nbsp;
+		<a href="examples/Italy-IGM.html">IGM Italia layer</a>
 	</p>
 
 	<!-- Doc & debug -->
@@ -64,8 +67,11 @@
 	</a>
 	<a href="examples/v1.0.html"
 	   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
-	   title="Test on Leaflet V1.0">
+	   title="Test MultiVendors on Leaflet V1.0">
 		&#10144;
 	</a>
+
+	<!-- Insert the javascript after all <div> are defined -->
+	<script src="index.js"></script>
 </body>
 </html>
