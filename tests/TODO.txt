@@ -1,7 +1,6 @@
-relivrer les gihub (attention aux fichiers renommés) => Effacer + mouliner (ne pas inclure les index.php)
-tester les liens sur les github
-relivrer chem & wri (attention aux fichiers renommés)
+Relivrer chem & wri (attention aux fichiers renommés)
 	WRI : ancre icone au milieu gauche !
+	WRI: Commentaire ajouté, la photo est grande -> mettre une majuscule
 
 BUGS
 ====
@@ -12,29 +11,26 @@ Position permalink trop bas -> Non: il faut mettre le permalien en dessous !!
 Click sur cadre entoure en bleu
 ?? carte UK: 2 fois : height=200 width=200 
 Editeur
+	Rame sur SNAP
 	Purge des points identiques sur un segment
 	Ne pas exporter une ligne ne contenant qu'un point
 
-chem3 5.5.49-0+deb7u1-log
-
 TODO
 ====
+Bug WC
+N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
 Integrer background-image carte dans LL+/demos
 Build : noms rep github : 1 seul niveau subdir
 	Intégrer les noms de branches
-Voir pourquoi les CREDIT/*** changent comme ça ?
-	Import files : pb tree-commit / commit => commit
 Editeur : mettre le mode d'emploi dans la lib (le générer js)
 Editeur ligne : undo
 OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
-N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
 Voir si les selecteurs de couches peuvent être rémanents
 Rendre paramètrable les messages console debug
 Afficher un messages d'erreur sur les chargements IGN sans clé valide
 Outil de sélection de paramétres de couches
 Faire le ménage dans les dist des github. Ne laisser que ceux qui sont utilisés
 Move curseur: afficher "change" dans le div d'état
-L.drawVersion = '0.3.0-dev' : SNAP non compatible / 1 modif poly...
 Integrer omnivore à ajax: https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
 Ajax: language: {min:''}, // trouver une meilleure solution à ce contournement de bug
 Test overpass website sans schema://...
@@ -58,33 +54,23 @@ Editeur
 		Formats import/export: GPX,KML,KMZ,GPI,WPT,TRK,RTE,CSV,GDB,MPS,TXT : https://www.gps-data-team.com/convert.php
 	Control.Draw.Plus.js: layer.options.editing = {}; // Voir pourquoi (nouvelle version de draw)
 	TEST: Edition massif avec trou
-V1.0
-	Démo viseur/V1.0 KO
-	Draw+ V1 KO
 Table de Peutinger (carte de redressement)
 	http://peutinger.atlantides.org/map-a/
 
 DOC TESTS & DEMOS
 =================
 Marker coordinate demo : pas de type de coordonnées swiss dans le sélecteur
-Bug WC
 Inclure draw dans demo MyLeaflet
 Traduire page exemples draw / locales/us ... detecter automatiquement la langue
 github.com/Dominique92/Leaflet.draw.plus/tests/index.html => Le cadre edit du formulaire ne correspond plus à la saisie
-Demo SwissTopo KO
 Doc MultiVendors#usage (CRS dans la layer, ...)
 Doc overpass
-Revoir > uniquement sur test / pas sur examples
 Enlever IGN topo classique et cadastres sur localhost ?? .IO ??
-Demo V1.0 permalink marker.coordinates
 Démo polyline
 Généraliser format demos index tests/index examples/.js
 	Mettre les libs des examples des plugins en chemin absolu github.io
 	Test en relatif
-Revoir chaine > debug
 Faire Readme, doc, test, demo, v1.0 & github permalink.cookies & Marker.coordinates
-Chainage des demos + V1
-Faire des fichiers de TEST (edit, ...) basés sur src/ll... # fichiers index.html DÉMO
 Dom plugins & demos: Dom92.L.IGN, Swiss, IDEE, IGM
 Doc read.me === doc en tête de fichier === index.html
 Fork me: https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png
@@ -112,9 +98,6 @@ WRI
 Point double carte : on perd le bbox des cabanes !
 Editeur : quitter sans sortir : aller en NAV devrait visualiser le massif
 Editeur : faire touche "enregistrer et quiter"
-Commentaire ajouté, la photo est grande -> mettre une majuscule
-Remise à la verticale des images verticales ?
-Ancre icônes cabanes au sommet du toit => devraient être au milieu
 Possibilité d'agrandir la météo sur mobiles
 Pas de massifs dans l'Atlas ?
 Carte par defaut fiche Angleterre (manque le contour localisation administrative)

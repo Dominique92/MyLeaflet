@@ -198,7 +198,7 @@ var js_list = [
 /* FIN OPTIM DRAW */
 
 	'../github.com/makinacorpus/Leaflet.GeometryUtil/src/leaflet.geometryutil.js', // A mettre sinon snap plante.
-	'../github.com/makinacorpus/Leaflet.Snap/leaflet.snap.js', //V1.0 ??
+	'../github.com/makinacorpus/Leaflet.Snap/leaflet.snap.js', // Incompatible V1.0
 
 	'../github.com/Dominique92/Leaflet.draw.plus/Control.Draw.Plus.js',
 //	'../src/Leaflet.Control.GetGpxFile.js', // Inclure manuellement (en test)

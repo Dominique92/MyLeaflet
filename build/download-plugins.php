@@ -40,7 +40,7 @@ if (isset ($modules[$n])) {
 	$url_page = 'https://github.com/'.$modules[$n];
 	$url_page_content = file_get_contents ($url_page);
 	preg_match ('/[:\/A-Za-z0-9_\-\.]+.zip/', $url_page_content, $url_zips);
-	preg_match ('/[A-Za-z0-9_\-\.\/]+commit\/[0-9abcdef]+/', $url_page_content, $url_commit);
+	preg_match ('/[A-Za-z0-9_\-\.\/]+\/commit\/[0-9abcdef]+/', $url_page_content, $url_commit);
 
 	$ups = explode ('/', $url_page);
 	$plugin_dir = '../github.com/'.$ups[3].'/'.$ups[4];
