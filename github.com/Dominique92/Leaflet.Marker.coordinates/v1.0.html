@@ -5,18 +5,13 @@
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
-	<?php if (!is_dir ('../../Dominique92')) { // Run .html or standalone .php ?>
-		<base href="http://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Marker.coordinates/" />
-	<?php } ?>
-
 	<!-- Leaflet kernel -->
-	<link  href="../../Leaflet/Leaflet/dist/leaflet.css" rel="stylesheet" />
-	<script src="../../Leaflet/Leaflet/dist/leaflet-src.js"></script>
+	<link  href="../../../src/lib/v1/Leaflet-1.0.0-rc.3/dist/leaflet.css" rel="stylesheet" />
+	<script src="../../../src/lib/v1/Leaflet-1.0.0-rc.3/dist/leaflet.js"></script>
 
-	<!-- Variable projections -->
+	<!-- projections -->
 	<script src="../../kartena/Proj4Leaflet/lib/proj4-compressed.js"></script>
 	<script src="../../kartena/Proj4Leaflet/src/proj4leaflet.js"></script>
-
 	<script src="../Leaflet.Map.MultiVendors/layers/SwissTopo.js"></script>
 
 	<!-- This plugin -->
@@ -26,7 +21,7 @@
 
 <body>
 	<a>Leaflet marker with coordinates display & edition</a>
-	<p>This demo runs on Leaflet V<script>document.write(L.version)</script> &#10144; <a href="v1.0.html">See demo on Leaflet V1.0</a></p>
+	<p>This demo runs on Leaflet V<script>document.write(L.version)</script> &#10144; <a href=".">See demo on Leaflet V0.7</a></p>
 	<p>Move the yellow marker.</p>
 
 	<div id="map" style="width: 800px; height: 600px;"></div>
@@ -61,8 +56,7 @@
 
 	<!-- Doc & debug -->
 	<p>See the javascript code of this demo <a href="index.js">here</a></p>
-	<p>Download & run <a href="index.html">this file</a> on your computer</p>
-	<p>Depends on <a href= "https://github.com/kartena/Proj4Leaflet">kartena/Proj4Leaflet</a>/lib/proj4.js &amp; src/proj4leaflet.js</p>
+	<p>Depends on <a href= "https://github.com/kartena/Proj4Leaflet/tree/leaflet-proj-refactor">kartena/Proj4Leaflet/refactor</a>/lib/proj4.js &amp; src/proj4leaflet.js</p>
 
 	<!-- Code & dependencies TO BE DEVELOPPED -->
 	<!--<p>Sources & docs on <a href= "https://github.com/Dominique92/Leaflet.Marker.coordinates">Github Dominique92/Leaflet.Marker.coordinates</a></p>-->
@@ -76,5 +70,11 @@
 
 	<!-- Insert the javascript after all <div> are defined -->
 	<script src="index.js"></script>
+
+	<a href="../Leaflet.draw.plus"
+	   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
+	   title="Next test">
+		&#10144;
+	</a>
 </body>
 </html>

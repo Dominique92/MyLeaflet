@@ -66,7 +66,7 @@ Table de Peutinger (carte de redressement)
 
 DOC TESTS & DEMOS
 =================
-Demo coordinate V1 KO
+Marker coordinate demo : pas de type de coordonnées swiss dans le sélecteur
 Bug WC
 Inclure draw dans demo MyLeaflet
 Traduire page exemples draw / locales/us ... detecter automatiquement la langue

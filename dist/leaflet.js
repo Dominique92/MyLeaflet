@@ -12,13 +12,13 @@
 	https://github.com/tyrasd/togpx/tree/b1b5c40573bf800d53fcbe8f46cdd2ce82298fae
 	https://github.com/rob-murray/os-leaflet/tree-commit/5e159d9c2b3ee4f1706c82b9afee2bc1a51a5192
 	https://github.com/mapbox/togeojson/tree/46e3cafd346a203814900882b98c087d6df31bd7
-	https://github.com/makinacorpus/Leaflet.FileLayer/tree/ea86a732bf5f94a96ff099614169b5adf2454229
+	https://github.com/makinacorpus/Leaflet.FileLayer/tree/abd57da5af9859ab56e935eb6c2e395b4326c0f7
 	https://github.com/erictheise/rrose/tree/04fac08b0b367e137b64fb4e5e08e2dd020955c6
 	https://github.com/Leaflet/Leaflet.draw/tree/39a256e8dcc28a98908cd3f81ea2827b3f9a9c3d
-	https://github.com/makinacorpus/Leaflet.GeometryUtil/tree/c26889b6672844062c7b1ca957a1912b75129253
+	https://github.com/makinacorpus/Leaflet.GeometryUtil/tree/c024f3f304b7c40a8bdbc7b68e1882595f7042cc
 	https://github.com/makinacorpus/Leaflet.Snap/tree/f81bd1d94885658b1bc2b067033e96c1a6446ea2
 	https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port/tree/20f738889d6e55df59761b734d1638abe17c11eb
-	https://github.com/nicolas-grekas/JSqueeze/tree-commit/693d64850eab2ce6a7c8f7cf547e1ab46e69d542
+	https://github.com/nicolas-grekas/JSqueeze/tree/693d64850eab2ce6a7c8f7cf547e1ab46e69d542
 */
 
 ;var oldL=window.L,L={};L.version='0.7.7';if(typeof module==='object'&&typeof module.exports==='object'){module.exports=L}
