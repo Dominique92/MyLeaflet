@@ -12,27 +12,33 @@
 	<!-- Leaflet kernel -->
 	<link  href="../../Leaflet/Leaflet/dist/leaflet.css" rel="stylesheet" />
 	<script src="../../Leaflet/Leaflet/dist/leaflet-src.js"></script>
+
+	<!-- This plugin & dependancies -->
+	<script src="../../shramov/leaflet-plugins/control/Permalink.js"></script>
+	<script src="../../shramov/leaflet-plugins/control/Permalink.Layer.js"></script>
+	<script src="../Leaflet.Permalink.Cookies/Permalink.Cookies.js"></script>
+	<script src="Permalink.Cookies.js"></script>
 </head>
 
 <body>
 	<p>Leaflet extension for keeping permalink in cookies while navigate on pages of the same domain.</p>
+	<p>This demo runs on Leaflet V<script>document.write(L.version)</script> &#10144; <a href="examples/v1.0.html">See demo on Leaflet V1.0</a></p>
 	<p>Move &amp; zoom the map and reload it.</p>
 
 	<div id="map" style="width: 800px; height: 600px"></div>
 
+	<!-- Doc & debug -->
+	<p>See the javascript code of this demo <a href="index.js">here</a> and <a href="Permalink.Cookies.js">here</a></p>
+	<p>Download & run <a href="index.html">this file</a> on your computer</p>
+	<p>Depends on <a href= "https://github.com/shramov/leaflet-plugins/tree/master/control">shramov/leaflet-plugins/control/</a>Permalink.js &amp; Permalink.Layer.js</p>
 	<p>Sources & docs on <a href= "https://github.com/Dominique92/Leaflet.Permalink.Cookies">Github Dominique92/Leaflet.Permalink.Cookies</a></p>
 
-	<!-- Doc & debug -->
 	<a href="https://github.com/Dominique92/Leaflet.Permalink.Cookies"
 	   style="position:absolute;top:0;right:0"
 	   title="Sources & docs">
 		<img src="../../../src/images/fork_me.png" />
 	</a>
-	<a href="examples/v1.0.html"
-	   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
-	   title="Test Permalink.Cookies on Leaflet V1.0">
-		&#10144;
-	</a>
+	<p>Visit my fully integrated <a href= "https://github.com/Dominique92/MyLeaflet">Dominique92/MyLeaflet</a> library</p>
 
 	<!-- Insert the javascript after all <div> are defined -->
 	<script src="index.js"></script>

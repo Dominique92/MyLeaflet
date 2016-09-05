@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<title>Leaflet extension for permalink in cookies</title>
+	<title>Leaflet marker with coordinates display & edition</title>
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
@@ -9,13 +9,18 @@
 	<link  href="../../../../src/lib/v1/Leaflet-1.0.0-rc.3/dist/leaflet.css" rel="stylesheet" />
 	<script src="../../../../src/lib/v1/Leaflet-1.0.0-rc.3/dist/leaflet.js"></script>
 
+	<!-- projections -->
+	<script src="../../../kartena/Proj4Leaflet/lib/proj4-compressed.js"></script>
+	<script src="../../../kartena/Proj4Leaflet/src/proj4leaflet.js"></script>
+	<script src="../Leaflet.Map.MultiVendors/layers/SwissTopo.js"></script>
+
 	<!-- This plugin -->
 	<script src="../CRS.js"></script>
 	<script src="../Marker.coordinates.js"></script>
 </head>
 
 <body>
-	<p>Leaflet extension for keeping permalink in cookies while navigate on pages of the same domain.</p>
+	<p>DEMO UNDER CONSTRUCTION</p>
 	<p>Move &amp; zoom the map and reload it.</p>
 
 	<div id="map" style="width: 800px; height: 600px"></div>
@@ -23,6 +28,7 @@
 	<p>Sources & docs on <a href= "https://github.com/Dominique92/Leaflet.Permalink.Cookies">Github Dominique92/Leaflet.Permalink.Cookies</a></p>
 
 	<!-- Doc & debug -->
+	<!-- Code & dependencies to be developped -->
 	<!--a href="https://github.com/Dominique92/Leaflet.Permalink.Cookies"
 	   style="position:absolute;top:0;right:0"
 	   title="Sources & docs">

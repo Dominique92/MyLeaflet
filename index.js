@@ -8,14 +8,7 @@ var key = {
 
 var map = new L.Map('map');
 map.setView([47, 2], 6); // France
-//	map.setView([45, 5], 7); // Sud ouest
-//	map.setView([51.5, 0], 9); // UK
-//	map.setView([49.959, -5.206], 8); // Cap Lizard
-//	map.setView([46.5, 7], 7); // Suisse
 L.TileLayer.collection('OSM-FR').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
-//	L.TileLayer.collection('OS Great Britain').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
-//	map.setCRS(L.CRS.EPSG27700);
-//	L.TileLayer.collection('SwissTopo').addTo(map); // Important de le prendre dans L.TileLayer.collection pour que la première couche s'efface completement (fond et attribution)
 
 // Controls
 new L.Control.Scale().addTo(map);

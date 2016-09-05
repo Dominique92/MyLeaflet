@@ -26,6 +26,25 @@ if ($pgeom = @$_POST['geom'])
 // Get existing data from the database
 $result = $mysqli->query("SELECT ST_AsGeoJSON (geom) AS geom FROM drawtable where id = 1");
 echo ('$json_sql = '); var_dump ($json_sql = $result->fetch_object()->geom);
+?>
 
+<!-- Enable save to PHP -->
+<style>
+	#save {
+		display: block !important;
+	}
+	.save-comment {
+		display: none !important;
+	}
+</style>
+
+<?php
 include ('index.html');
 ?>
+
+<!-- debug -->
+<a href="v1"
+   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
+   title="Test draw.plus on Leaflet V1.0">
+	&#10144;
+</a>

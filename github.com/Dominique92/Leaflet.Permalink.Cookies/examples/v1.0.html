@@ -8,17 +8,26 @@
 	<!-- Leaflet kernel -->
 	<link  href="../../../../src/lib/v1/Leaflet-1.0.0-rc.3/dist/leaflet.css" rel="stylesheet" />
 	<script src="../../../../src/lib/v1/Leaflet-1.0.0-rc.3/dist/leaflet.js"></script>
+
+	<!-- This plugin & dependancies -->
+	<script src="../../../../src/lib/leaflet-plugins-leaflet_one/control/Permalink.js"></script><!-- Specific LL V1.0 -->
+	<script src="../../../../src/lib/leaflet-plugins-leaflet_one/control/Permalink.Layer.js"></script><!-- Specific LL V1.0 -->
+	<script src="../../Leaflet.Permalink.Cookies/Permalink.Cookies.js"></script>
+	<script src="../Permalink.Cookies.js"></script>
 </head>
 
 <body>
 	<p>Leaflet extension for keeping permalink in cookies while navigate on pages of the same domain.</p>
+	<p>This demo runs on Leaflet V<script>document.write(L.version)</script> &#10144; <a href="..">See demo on Leaflet V0.7</a></p>
 	<p>Move &amp; zoom the map and reload it.</p>
 
 	<div id="map" style="width: 800px; height: 600px"></div>
 
+	<!-- Doc & debug -->
+	<p>See the javascript code of this demo <a href="../index.js">here</a> and <a href="../Permalink.Cookies.js">here</a></p>
+	<p>Depends on <a href= "https://github.com/shramov/leaflet-plugins/tree/leaflet_one/control">shramov/leaflet-plugins/control/</a>Permalink.js &amp; Permalink.Layer.js (branch "leaflet_one")</p>
 	<p>Sources & docs on <a href= "https://github.com/Dominique92/Leaflet.Permalink.Cookies">Github Dominique92/Leaflet.Permalink.Cookies</a></p>
 
-	<!-- Doc & debug -->
 	<a href="https://github.com/Dominique92/Leaflet.Permalink.Cookies"
 	   style="position:absolute;top:0;right:0"
 	   title="Sources & docs">

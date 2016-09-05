@@ -1,20 +1,10 @@
-Lien retour à la démo principale
-Cohérence run on.. docs ...
-vérifier lien visu fichiers .js / plus de windows.demarrage
-Démos permalink +V1 = KO
-coordinate + V1 KO
-Bug WC
-IDEE KO http://localhost/Leaflet/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/examples/Spain-IDEE.html
-
 relivrer les gihub (attention aux fichiers renommés) => Effacer + mouliner (ne pas inclure les index.php)
 tester les liens sur les github
 relivrer chem & wri (attention aux fichiers renommés)
-
-WRI : ancre icone au milieu gauche !
+	WRI : ancre icone au milieu gauche !
 
 BUGS
 ====
-==> Terminer refonte démos MultiVendors   Permalink.Cookies   Marker.coordinates 
 Cartes google: appelle aussi les dalles OSM
 Cookies permalink zoom trop fort sur SwissTopo
 Queues de popup un peu courtes sur le côté
@@ -29,7 +19,9 @@ chem3 5.5.49-0+deb7u1-log
 
 TODO
 ====
+Integrer background-image carte dans LL+/demos
 Build : noms rep github : 1 seul niveau subdir
+	Intégrer les noms de branches
 Voir pourquoi les CREDIT/*** changent comme ça ?
 	Import files : pb tree-commit / commit => commit
 Editeur : mettre le mode d'emploi dans la lib (le générer js)
@@ -74,6 +66,9 @@ Table de Peutinger (carte de redressement)
 
 DOC TESTS & DEMOS
 =================
+Demo coordinate V1 KO
+Bug WC
+Inclure draw dans demo MyLeaflet
 Traduire page exemples draw / locales/us ... detecter automatiquement la langue
 github.com/Dominique92/Leaflet.draw.plus/tests/index.html => Le cadre edit du formulaire ne correspond plus à la saisie
 Demo SwissTopo KO

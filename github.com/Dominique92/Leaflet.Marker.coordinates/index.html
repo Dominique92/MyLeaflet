@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<title>Leaflet</title>
+	<title>Leaflet marker with coordinates display & edition</title>
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
@@ -18,12 +18,15 @@
 	<script src="../../kartena/Proj4Leaflet/src/proj4leaflet.js"></script>
 	<script src="../Leaflet.Map.MultiVendors/layers/SwissTopo.js"></script>
 
+	<!-- This plugin -->
 	<script src="CRS.js"></script>
 	<script src="Marker.coordinates.js"></script>
 </head>
 
 <body>
-	<p>Leaflet V<script>document.write(L.version)</script></p>
+	<a>Leaflet marker with coordinates display & edition</a>
+	<p>This demo runs on Leaflet V<script>document.write(L.version)</script> &#10144; <a href="examples/v1.0.html">See demo on Leaflet V1.0</a></p>
+
 	<div id="map" style="width: 800px; height: 600px;"></div>
 
 	<p>
@@ -54,19 +57,14 @@
 		<button type="submit" name="action" value="Modifier">Modifier</button>
 	</form>
 
-	<p>This demo works also on <a href="frame-v1.0.php">Leaflet V1.0</a></p>
-
 	<!-- Doc & debug -->
+	<!-- Code & dependencies to be developped -->
 	<!--a href="https://github.com/Dominique92/MyLeaflet"
 	   style="position:absolute;top:0;right:0"
 	   title="Sources & docs">
 		<img src="../../../src/images/fork_me.png" />
 	</a-->
-	<a href="examples/v1.0.html"
-	   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
-	   title="Test coordinates on Leaflet V1.0">
-		&#10144;
-	</a>
+	<p>Visit my fully integrated <a href= "https://github.com/Dominique92/MyLeaflet">Dominique92/MyLeaflet</a> library</p>
 
 	<!-- Insert the javascript after all <div> are defined -->
 	<script src="index.js"></script>
