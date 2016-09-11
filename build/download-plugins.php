@@ -1,7 +1,7 @@
 <?php
 // Arguments
-$n = @$_GET['n']; // Item à traiter
-$all = @$_GET['all'];// Bouclage
+$n = isset ($_GET['n']) ? $_GET['n'] : 0; // Item à traiter
+$all = isset ($_GET['all']) ? $_GET['all'] : 0;// Bouclage
 
 // Liste des modules
 preg_match_all ('/\n\s*\'\.\.\/github.com\/([^\/]+\/[^\/]+)/', file_get_contents ('../src/leaflet.js'), $reps);
@@ -22,7 +22,8 @@ $branches = [
 //-----------------------------------
 // Affichage status
 foreach ($modules AS $k => $v) {
-	$v = $modules[$k] .= @$branches[$v];
+	if (isset ($branches[$v]))
+		$v = $modules[$k] .= $branches[$v];
 
 	echo "<p style='background-color:".
 		($k<$n ? ($all ? 'chartreuse' : 'white') :
@@ -38,9 +39,9 @@ if (isset ($modules[$n])) {
 	//-----------------------------------
 	// URLs to be used
 	$url_page = 'https://github.com/'.$modules[$n];
-	$url_page_content = file_get_contents ($url_page);
-	preg_match ('/[:\/A-Za-z0-9_\-\.]+.zip/', $url_page_content, $url_zips);
-	preg_match ('/[A-Za-z0-9_\-\.\/]+\/commit\/[0-9abcdef]+/', $url_page_content, $url_commit);
+	$page_content = file_get_contents ($url_page);
+	preg_match ('/[:\/A-Za-z0-9_\-\.]+.zip/', $page_content, $url_zips);
+	preg_match ('/([A-Za-z0-9_\-\.\/]+)" data-pjax\>/', $page_content, $url_commit);
 
 	$ups = explode ('/', $url_page);
 	$plugin_dir = '../github.com/'.$ups[3].'/'.$ups[4];
@@ -60,7 +61,8 @@ if (isset ($modules[$n])) {
 	// Vérification du niveau du plugin (si exécution all=1)
 	echo "<p>Check version $plugin_dir</p>";
 	if (!$all || // Si on en demande qu'un, on force
-		@file_get_contents ("$plugin_dir/CREDIT.txt") != 'https://github.com'.$url_commit[0]) {
+		!is_file ("$plugin_dir/CREDIT.txt") ||
+		file_get_contents ("$plugin_dir/CREDIT.txt") != 'https://github.com'.$url_commit[1]) {
 		echo "<p>Download $url_zip</p>";
 
 		$zipResource = fopen($zip_file, 'w');
@@ -88,7 +90,7 @@ if (isset ($modules[$n])) {
 			echo 'Error :- Unable to open the Zip File';
 		$zip->extractTo ('../github.com/'.$ups[3]);
 		$zip->close();
-		sleep (1); // Wait until the new folsder is free
+		sleep (1); // Wait until the new folder is free
 
 		// Renomme le répertoire existant pour le remplacer par le nouveau
 		if (is_dir ($plugin_dir)) {
@@ -97,7 +99,7 @@ if (isset ($modules[$n])) {
 		}
 		foreach (glob("$plugin_dir-*") as $dirname)
 			if (is_dir ($dirname)) {
-				file_put_contents ("$dirname/CREDIT.txt", "https://github.com".$url_commit[0]);
+				file_put_contents ("$dirname/CREDIT.txt", 'https://github.com'.$url_commit[1]);
 				echo "<p>Rename $dirname ==> $plugin_dir</p>";
 				rename ($dirname, $plugin_dir);
 			}
@@ -105,7 +107,8 @@ if (isset ($modules[$n])) {
 	//-----------------------------------
 	// Boucle
 	$n++;
-	if ($all)
+	if ($all && !error_get_last())
 		echo "<meta http-equiv='refresh' content='0;url=download-plugins.php?n=$n&all=$all'>";
 }
+echo"<pre style='background-color:white;color:black;font-size:14px;'>ERROR = ".var_export(error_get_last (),true).'</pre>';
 ?>

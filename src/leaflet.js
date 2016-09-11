@@ -32,7 +32,7 @@ var js_list = [
 //	'../github.com/Leaflet/Leaflet/src/geo/crs/CRS.Simple.js', // Pour panoramas
 //V1.0	'../github.com/Leaflet/Leaflet/src/geo/crs/CRS.Earth.js',
 	'../github.com/Leaflet/Leaflet/src/geo/crs/CRS.EPSG3857.js',
-	'../github.com/Leaflet/Leaflet/src/geo/crs/CRS.EPSG4326.js',
+//	'../github.com/Leaflet/Leaflet/src/geo/crs/CRS.EPSG4326.js',
 
 	'../github.com/Leaflet/Leaflet/src/map/Map.js',
 
@@ -42,13 +42,13 @@ var js_list = [
 //V1.0	'../github.com/Leaflet/Leaflet/src/layer/tile/GridLayer.js',
 	'../github.com/Leaflet/Leaflet/src/layer/tile/TileLayer.js',
 	'../github.com/Leaflet/Leaflet/src/layer/tile/TileLayer.WMS.js',
-	'../github.com/Leaflet/Leaflet/src/layer/tile/TileLayer.Canvas.js',
+//	'../github.com/Leaflet/Leaflet/src/layer/tile/TileLayer.Canvas.js',
 
-	'../github.com/Leaflet/Leaflet/src/layer/ImageOverlay.js', // Pour draw
+//	'../github.com/Leaflet/Leaflet/src/layer/ImageOverlay.js', // Pour draw
 	'../github.com/Leaflet/Leaflet/src/layer/marker/Icon.js',
 	'../github.com/Leaflet/Leaflet/src/layer/marker/Icon.Default.js',
 	'../github.com/Leaflet/Leaflet/src/layer/marker/Marker.js',
-	'../github.com/Leaflet/Leaflet/src/layer/marker/DivIcon.js', // Pour draw
+//	'../github.com/Leaflet/Leaflet/src/layer/marker/DivIcon.js', // Pour proj4leaflet
 
 //	'../github.com/Leaflet/Leaflet/src/layer/marker/Marker.Popup.js',
 	'../github.com/Leaflet/Leaflet/src/layer/Popup.js',
@@ -57,10 +57,10 @@ var js_list = [
 	'../github.com/Leaflet/Leaflet/src/layer/LayerGroup.js',
 	'../github.com/Leaflet/Leaflet/src/layer/FeatureGroup.js',
 	'../github.com/Leaflet/Leaflet/src/layer/vector/Path.js',
-	'../github.com/Leaflet/Leaflet/src/layer/vector/Path.SVG.js', // Nécéssaire pour switch poly*
+	'../github.com/Leaflet/Leaflet/src/layer/vector/Path.SVG.js', // Nécéssaire pour poly* (massifs)
 //	'../github.com/Leaflet/Leaflet/src/layer/vector/Path.Popup.js',
 //	'../github.com/Leaflet/Leaflet/src/layer/vector/Path.VML.js',
-	'../github.com/Leaflet/Leaflet/src/layer/vector/canvas/Path.Canvas.js',
+//	'../github.com/Leaflet/Leaflet/src/layer/vector/canvas/Path.Canvas.js',
 	'../github.com/Leaflet/Leaflet/src/geometry/LineUtil.js', // Dessine les Poly*
 	'../github.com/Leaflet/Leaflet/src/layer/vector/Polyline.js', // Dessine les Poly*
 	'../github.com/Leaflet/Leaflet/src/geometry/PolyUtil.js', // Dessine les Poly*
@@ -69,7 +69,7 @@ var js_list = [
 //	'../github.com/Leaflet/Leaflet/src/layer/vector/Rectangle.js',
 	'../github.com/Leaflet/Leaflet/src/layer/vector/Circle.js', // Utilisé par GPS
 	'../github.com/Leaflet/Leaflet/src/layer/vector/CircleMarker.js', // Utilisé par GPS
-	'../github.com/Leaflet/Leaflet/src/layer/vector/canvas/Polyline.Canvas.js',
+//	'../github.com/Leaflet/Leaflet/src/layer/vector/canvas/Polyline.Canvas.js', // Canvas fallback for vector rendering core (makes it work on Android 2+).
 //	'../github.com/Leaflet/Leaflet/src/layer/vector/canvas/Polygon.Canvas.js',
 //	'../github.com/Leaflet/Leaflet/src/layer/vector/canvas/Circle.Canvas.js',
 //	'../github.com/Leaflet/Leaflet/src/layer/vector/canvas/CircleMarker.Canvas.js',
@@ -90,7 +90,7 @@ var js_list = [
 //	'../github.com/Leaflet/Leaflet/src/map/handler/Map.Tap.js', // Non souhaité. Mobile hacks like quick taps and long hold.
 //	'../github.com/Leaflet/Leaflet/src/map/handler/Map.BoxZoom.js', // Non souhaité. Shift-drag zoom interaction to the map (zoom to a selected bounding box)
 //	'../github.com/Leaflet/Leaflet/src/map/handler/Map.Keyboard.js', // Non souhaité. Action des touches (mais pas escape full screen)
-	'../github.com/Leaflet/Leaflet/src/layer/marker/Marker.Drag.js', // A voir pour viseur et éditeur ???
+//	'../github.com/Leaflet/Leaflet/src/layer/marker/Marker.Drag.js', // A voir pour viseur et éditeur ??? => NON
 
 //V1.0	'../github.com/Leaflet/Leaflet/src/layer/vector/SVG.js', // Dessine les Poly*
 //V1.0	'../github.com/Leaflet/Leaflet/src/layer/vector/SVG.VML.js',
@@ -112,6 +112,8 @@ var js_list = [
 
 	'../github.com/Leaflet/Leaflet/src/map/ext/Map.Geolocation.js', // Nécéssaire pour GPS
 /* FIN OPTIM LEAFLET KERNEL */
+
+	'../src/lib/Leaflet-optim-stub.js', // Remplace certaines définitions de fonctions mamquantes suite aux optimisations
 
 	// Controles
 	'../github.com/Leaflet/Leaflet.fullscreen/dist/Leaflet.fullscreen.js', //V1.0 testé OK
@@ -193,9 +195,9 @@ var js_list = [
 //	'../github.com/Leaflet/Leaflet.draw/src/edit/handler/Edit.Circle.js',
 //	'../github.com/Leaflet/Leaflet.draw/src/edit/handler/Edit.Rectangle.js',
 	'../github.com/Leaflet/Leaflet.draw/src/edit/handler/Edit.Marker.js',
-
-	'../src/lib/Leaflet-optim-stub.js', // Remplace certaines définitions de fonctions mamquantes suite aux optimisations
 /* FIN OPTIM DRAW */
+
+	'../src/lib/Leaflet-optim-stub-draw.js', // Remplace certaines définitions de fonctions mamquantes suite aux optimisations
 
 	'../github.com/makinacorpus/Leaflet.GeometryUtil/src/leaflet.geometryutil.js', // A mettre sinon snap plante.
 	'../github.com/makinacorpus/Leaflet.Snap/leaflet.snap.js', // Incompatible V1.0
@@ -214,6 +216,6 @@ var js_list = [
 var scripts = document.getElementsByTagName('script'),
 	script = scripts[scripts.length - 1].src,
 	racineSources = script.substring(0, script.lastIndexOf('/')) + '/';
-   
+
 for (j in js_list)
 		document.write('<script src="' + racineSources + js_list[j] + '"></script>');

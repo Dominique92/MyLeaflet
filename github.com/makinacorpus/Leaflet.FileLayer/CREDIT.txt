@@ -1,1 +1,1 @@
-https://github.com/makinacorpus/Leaflet.FileLayer/commit/abd57da5af9859ab56e935eb6c2e395b4326c0f7
+https://github.com/makinacorpus/Leaflet.FileLayer/commit/8e499b2014c1feef2d55506c8f3d8a7b71edce44

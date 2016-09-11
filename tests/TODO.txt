@@ -4,6 +4,8 @@ Relivrer chem & wri (attention aux fichiers renommés)
 
 BUGS
 ====
+Voir largeur marqueurs editeur sur IE
+Voir compatibilité IE9 ?
 Cartes google: appelle aussi les dalles OSM
 Cookies permalink zoom trop fort sur SwissTopo
 Queues de popup un peu courtes sur le côté
@@ -17,6 +19,7 @@ Editeur
 
 TODO
 ====
+OS est la seule couche avec proj4j
 Bug WC
 N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
 Integrer background-image carte dans LL+/demos
@@ -28,7 +31,6 @@ OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requet
 Voir si les selecteurs de couches peuvent être rémanents
 Rendre paramètrable les messages console debug
 Afficher un messages d'erreur sur les chargements IGN sans clé valide
-Outil de sélection de paramétres de couches
 Faire le ménage dans les dist des github. Ne laisser que ceux qui sont utilisés
 Move curseur: afficher "change" dans le div d'état
 Integrer omnivore à ajax: https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
