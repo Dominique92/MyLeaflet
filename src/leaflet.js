@@ -48,9 +48,9 @@ var js_list = [
 	'../github.com/Leaflet/Leaflet/src/layer/marker/Icon.js',
 	'../github.com/Leaflet/Leaflet/src/layer/marker/Icon.Default.js',
 	'../github.com/Leaflet/Leaflet/src/layer/marker/Marker.js',
-//	'../github.com/Leaflet/Leaflet/src/layer/marker/DivIcon.js', // Pour proj4leaflet
+	'../github.com/Leaflet/Leaflet/src/layer/marker/DivIcon.js', // Pour draw
 
-//	'../github.com/Leaflet/Leaflet/src/layer/marker/Marker.Popup.js',
+	'../github.com/Leaflet/Leaflet/src/layer/marker/Marker.Popup.js', // Utilisé par draw
 	'../github.com/Leaflet/Leaflet/src/layer/Popup.js',
 //V1.0	'../github.com/Leaflet/Leaflet/src/layer/Layer.Popup.js',
 
@@ -90,7 +90,7 @@ var js_list = [
 //	'../github.com/Leaflet/Leaflet/src/map/handler/Map.Tap.js', // Non souhaité. Mobile hacks like quick taps and long hold.
 //	'../github.com/Leaflet/Leaflet/src/map/handler/Map.BoxZoom.js', // Non souhaité. Shift-drag zoom interaction to the map (zoom to a selected bounding box)
 //	'../github.com/Leaflet/Leaflet/src/map/handler/Map.Keyboard.js', // Non souhaité. Action des touches (mais pas escape full screen)
-//	'../github.com/Leaflet/Leaflet/src/layer/marker/Marker.Drag.js', // A voir pour viseur et éditeur ??? => NON
+	'../github.com/Leaflet/Leaflet/src/layer/marker/Marker.Drag.js', // Utilisé par draw
 
 //V1.0	'../github.com/Leaflet/Leaflet/src/layer/vector/SVG.js', // Dessine les Poly*
 //V1.0	'../github.com/Leaflet/Leaflet/src/layer/vector/SVG.VML.js',
