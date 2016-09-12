@@ -40,9 +40,6 @@ Carte Andorre
 Extension liste de cartes pour debug (+ Seigfreid + Dufour + Etat major + Cassigny ...)
 Overpass t.ext1, t.ext2, t.ext3 // User defined fields -> Parcourir ceux manquant
 GPS: bbox suiveur englobant la position et un point d'intérêt
-Extraction GPX bbox=écran (ou ce qu'il y a dans l'éditeur ?)
-	Download GPX en EDGE : => null (1).txt
-	Renommer GetGpxFile -> FileDownload ??? / Refaire la couche
 Afficher altitude & heure sur survol point ou segment d'une courbe
 	https://github.com/mpetazzoni/leaflet-gpx
 	https://github.com/arthur-e/Wicket

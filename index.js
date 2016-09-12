@@ -37,7 +37,14 @@ fl.loader.on('data:loaded', function(e) {
 }, fl);
 
 // GeoJSON Ajax
-new L.GeoJSON.Ajax.WRIpoi().addTo(map);
+var wri = new L.GeoJSON.Ajax.WRIpoi().addTo(map);
 new L.GeoJSON.Ajax.WRImassifs().addTo(map);
 new L.GeoJSON.Ajax.chemineur().addTo(map);
 new L.GeoJSON.Ajax.OSM().addTo(map);
+
+new L.Control.Click(
+	function () {return wri._getUrl() + '&format=gpx'}, {
+		title: 'Obtenir les élements de la carte dans un fichier GPX',
+		label: '&#8659;'
+	}
+).addTo(map);

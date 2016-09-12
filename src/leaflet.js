@@ -32,7 +32,7 @@ var js_list = [
 //	'../github.com/Leaflet/Leaflet/src/geo/crs/CRS.Simple.js', // Pour panoramas
 //V1.0	'../github.com/Leaflet/Leaflet/src/geo/crs/CRS.Earth.js',
 	'../github.com/Leaflet/Leaflet/src/geo/crs/CRS.EPSG3857.js',
-//	'../github.com/Leaflet/Leaflet/src/geo/crs/CRS.EPSG4326.js',
+	'../github.com/Leaflet/Leaflet/src/geo/crs/CRS.EPSG4326.js', // Utilisé par coordonnees
 
 	'../github.com/Leaflet/Leaflet/src/map/Map.js',
 
@@ -203,7 +203,7 @@ var js_list = [
 	'../github.com/makinacorpus/Leaflet.Snap/leaflet.snap.js', // Incompatible V1.0
 
 	'../github.com/Dominique92/Leaflet.draw.plus/Control.Draw.Plus.js',
-//	'../src/Leaflet.Control.GetGpxFile.js', // Inclure manuellement (en test)
+	'../src/Leaflet.Control.Click.js',
 
 	// Adaptations
 	'../src/locales.fr.js',
