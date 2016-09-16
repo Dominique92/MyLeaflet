@@ -34,7 +34,35 @@
 			max-width: 100% !important;
 			max-height: 100% !important;
 		}
-	</style>
+
+		/* Print formats */
+		@page {
+			margin: 0; 
+		}
+		@media print {
+			html, body {
+				margin: 0; padding: 0;
+				height: 100%;
+			}
+			p, h2, .leaflet-control {
+				display: none;
+			}
+			html, body {
+				height: 100% !important;
+			}
+			#map {
+				width: 100%;
+				height: 100%;
+				min-width: 100%;
+				min-height: 100%;
+				max-width: 100%;
+				max-height: 100%;
+
+				background-image: none;
+				background-color: white;
+			}
+		}
+		</style>
 </head>
 
 <body>
@@ -73,11 +101,12 @@
 		<a href="https://github.com/Dominique92/Leaflet.draw.plus#usage">Draw+</a>
 	</p>
 
-	<a href="https://github.com/Dominique92/MyLeaflet"
-	   style="position:absolute;top:0;right:0"
-	   title="Sources & docs">
-		<img src="src/images/fork_me.png" />
-	</a>
+	<p style="position:absolute;top:0;right:0"> 
+		<a href="https://github.com/Dominique92/MyLeaflet"
+		   title="Sources & docs">
+			<img src="src/images/fork_me.png" />
+		</a>
+	</p>
 
 	<!-- Insert the javascript after all <div> are defined -->
 	<script src="index.js"></script>

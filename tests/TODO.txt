@@ -4,6 +4,7 @@ Relivrer chem & wri (attention aux fichiers renommés)
 
 BUGS
 ====
+Download github : rob murray (et maintenant Jsqeeze !) CREDIT : +https://github.comjs-active-navigation-container
 Voir largeur marqueurs editeur sur IE
 Voir compatibilité IE9 ?
 Cartes google: appelle aussi les dalles OSM

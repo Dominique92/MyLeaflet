@@ -16,12 +16,16 @@ L.Control.Click = L.Control.extend({
 		var link = L.DomUtil.create('a', 'leaflet-control-zoom-in leaflet-bar-part', container);
 		link.innerHTML = this.options.label;
 		link.title = this.options.title;
-		link.href = '#';
+		link.style.cursor = 'pointer';
 
 		L.DomEvent.on(link, 'click', function() {
-			link.href = typeof this._url == 'function' ?
+			// The parameter <url> can be a function returning the url
+			var url = typeof this._url == 'function' ?
 				this._url() :
 				this._url;
+			// If the result is null, don't call the url.
+			if (url)
+				link.href = url;
 		}, this);
 
 		return container;
