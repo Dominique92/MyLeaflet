@@ -44,8 +44,19 @@
 				margin: 0; padding: 0;
 				height: 100%;
 			}
-			p, h2, .leaflet-control {
+			body>p, body>h2,
+			.leaflet-control {
 				display: none;
+			}
+			.leaflet-control-attribution {
+				display: block !important;
+			}
+			.leaflet-control-permalink,
+			.leaflet-control-attribution > a:first-child {
+				display: none !important;
+			}
+			.leaflet-control-attribution::first-letter {
+				color: transparent;
 			}
 			html, body {
 				height: 100% !important;

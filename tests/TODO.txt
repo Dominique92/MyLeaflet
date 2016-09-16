@@ -1,4 +1,4 @@
-Relivrer chem & wri (attention aux fichiers renommés)
+Relivrer wri (attention aux fichiers renommés)
 	WRI : ancre icone au milieu gauche !
 	WRI: Commentaire ajouté, la photo est grande -> mettre une majuscule
 
