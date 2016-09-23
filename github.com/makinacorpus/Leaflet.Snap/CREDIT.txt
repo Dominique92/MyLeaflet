@@ -1,1 +1,1 @@
-https://github.com/makinacorpus/Leaflet.Snap/commit/f81bd1d94885658b1bc2b067033e96c1a6446ea2
+https://github.com/makinacorpus/Leaflet.Snap/commit/43fbe4f6a7cd2b275912294d7d27e1034639e519

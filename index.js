@@ -13,6 +13,7 @@ L.TileLayer.collection('OSM-FR').addTo(map); // Important de le prendre dans L.T
 // Controls
 new L.Control.Scale().addTo(map);
 new L.Control.Fullscreen().addTo(map);
+new L.Control.EasyPrint({title: 'Imprimer la carte'}).addTo(map);
 new L.Control.Coordinates().addTo(map);
 new L.Control.OSMGeocoder({
 	position: 'topleft'

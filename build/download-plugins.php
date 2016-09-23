@@ -12,6 +12,7 @@ $modules = array_values (array_filter (array_unique ($reps[1]), function ($k) {
 $branches = [
 // Pour Leaflet 0.7
 	'Leaflet/Leaflet' => '/tree/v0.7.7',
+	'rowanwins/leaflet-easyPrint' => '/tree/gh-pages',
 /* Pour Leaflet 1.0
 	'shramov/leaflet-plugins' => '/tree/leaflet_one',
 	'rob-murray/os-leaflet' => '/tree/leaflet-1.0-beta', => Doesn't work !!

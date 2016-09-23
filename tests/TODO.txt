@@ -1,10 +1,6 @@
-Relivrer wri (attention aux fichiers renommés)
-	WRI : ancre icone au milieu gauche !
-	WRI: Commentaire ajouté, la photo est grande -> mettre une majuscule
-
 BUGS
 ====
-Download github : rob murray (et maintenant Jsqeeze !) CREDIT : +https://github.comjs-active-navigation-container
+Import github: https://github.comjs-active-navigation-container (rob murray + jsqueeze)
 Voir largeur marqueurs editeur sur IE
 Voir compatibilité IE9 ?
 Cartes google: appelle aussi les dalles OSM
@@ -12,20 +8,16 @@ Cookies permalink zoom trop fort sur SwissTopo
 Queues de popup un peu courtes sur le côté
 Position permalink trop bas -> Non: il faut mettre le permalien en dessous !!
 Click sur cadre entoure en bleu
-?? carte UK: 2 fois : height=200 width=200 
 Editeur
 	Rame sur SNAP
 	Purge des points identiques sur un segment
-	Ne pas exporter une ligne ne contenant qu'un point
 
 TODO
 ====
-OS est la seule couche avec proj4j
+?? carte UK: 2 fois : height=200 width=200 
 Bug WC
 N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
 Integrer background-image carte dans LL+/demos
-Build : noms rep github : 1 seul niveau subdir
-	Intégrer les noms de branches
 Editeur : mettre le mode d'emploi dans la lib (le générer js)
 Editeur ligne : undo
 OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
@@ -90,6 +82,10 @@ Vérification finale avant mise en prod
 
 BUILD BEST TO DO
 ================
+Build : noms rep github : 1 seul niveau subdir
+	Intégrer les noms de branches
+	Séparer la lib editeur
+	OS est la seule couche avec proj4j / en faire une lib séparée
 Gen lib.js: mettre à jour la liste des github.Dominique92
 Voir https://tortoisegit.org/
 
@@ -100,9 +96,9 @@ Editeur : quitter sans sortir : aller en NAV devrait visualiser le massif
 Editeur : faire touche "enregistrer et quiter"
 Possibilité d'agrandir la météo sur mobiles
 Pas de massifs dans l'Atlas ?
-Carte par defaut fiche Angleterre (manque le contour localisation administrative)
+Enlever OS-GB et proj4
+	Carte par defaut fiche Angleterre (manque le contour localisation administrative)
 Edition / creation / suppression polygones autres que massif
-Charger fichier GPX: pas sur un mobile !!
 Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
 Déraciner le wiki
 Passage en templates gestion/index.php

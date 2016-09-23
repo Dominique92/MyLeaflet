@@ -117,6 +117,7 @@ var js_list = [
 
 	// Controles
 	'../github.com/Leaflet/Leaflet.fullscreen/dist/Leaflet.fullscreen.js', //V1.0 testé OK
+	'../github.com/rowanwins/leaflet-easyPrint/dist/leaflet.easyPrint.js', //V1.0 ?? à tester
 	'../github.com/MrMufflon/Leaflet.Coordinates/src/util/NumberFormatter.js', // Pour Coordinates
 	'../github.com/MrMufflon/Leaflet.Coordinates/src/Control.Coordinates.js', //V1.0 testé OK
 	'../github.com/stefanocudini/leaflet-gps/src/leaflet-gps.js', //work with Leaflet 1.0 beta
