@@ -1,5 +1,6 @@
 BUGS
 ====
+Erreur JS sur forts zoom OS-GB en V1.0 : leaflet.js:5 Uncaught Error: Invalid LatLng object: (NaN, NaN)
 Import github: https://github.comjs-active-navigation-container (rob murray + jsqueeze)
 Voir largeur marqueurs editeur sur IE
 Voir compatibilité IE9 ?
@@ -14,6 +15,8 @@ Editeur
 
 TODO
 ====
+Revoir OS-GB V1
+Integrer traduction locale FR dans draw+ / Faire dépendre cette traduction du langage de l'explo
 ?? carte UK: 2 fois : height=200 width=200 
 Bug WC
 N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
@@ -62,7 +65,6 @@ Démo polyline
 Généraliser format demos index tests/index examples/.js
 	Mettre les libs des examples des plugins en chemin absolu github.io
 	Test en relatif
-Faire Readme, doc, test, demo, v1.0 & github permalink.cookies & Marker.coordinates
 Dom plugins & demos: Dom92.L.IGN, Swiss, IDEE, IGM
 Doc read.me === doc en tête de fichier === index.html
 Fork me: https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png
@@ -91,6 +93,7 @@ Voir https://tortoisegit.org/
 
 WRI
 ===
+Création point : garder les cookies et pas forcer à Salanche
 Point double carte : on perd le bbox des cabanes !
 Editeur : quitter sans sortir : aller en NAV devrait visualiser le massif
 Editeur : faire touche "enregistrer et quiter"

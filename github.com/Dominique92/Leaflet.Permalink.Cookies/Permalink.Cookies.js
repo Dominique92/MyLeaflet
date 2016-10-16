@@ -9,7 +9,8 @@ L.Control.Permalink.Cookies = L.Control.Permalink.extend({
 
 	options: {
 		useAnchor: false, // Permalink URL use ? url?arg=value&... (not #)
-		move: true // Move the map to the position when initialising the control
+		move: true, // Move the map to the position when initialising the control
+		layer: true // Keep the same layer
 	},
 
 	onAdd: function(map) {
@@ -31,7 +32,7 @@ L.Control.Permalink.Cookies = L.Control.Permalink.extend({
 	},
 
 	_set_layer: function(e) {
-		if (this.options.move)
+		if (this.options.layer)
 			L.Control.Permalink.prototype._set_layer.call(this, e);
 	},
 
