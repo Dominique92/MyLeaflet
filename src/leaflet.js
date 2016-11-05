@@ -113,7 +113,7 @@ var js_list = [
 	'../github.com/Leaflet/Leaflet/src/map/ext/Map.Geolocation.js', // Nécéssaire pour GPS
 /* FIN OPTIM LEAFLET KERNEL */
 
-	'../src/lib/Leaflet-optim-stub.js', // Remplace certaines définitions de fonctions mamquantes suite aux optimisations
+	'../src/lib/Leaflet-optim-stub.js', // Remplace certaines définitions de fonctions manquantes suite aux optimisations
 
 	// Controles
 	'../github.com/Leaflet/Leaflet.fullscreen/dist/Leaflet.fullscreen.js', //V1.0 testé OK
@@ -198,7 +198,7 @@ var js_list = [
 	'../github.com/Leaflet/Leaflet.draw/src/edit/handler/Edit.Marker.js',
 /* FIN OPTIM DRAW */
 
-	'../src/lib/Leaflet-optim-stub-draw.js', // Remplace certaines définitions de fonctions mamquantes suite aux optimisations
+	'../src/lib/Leaflet-optim-stub-draw.js', // Remplace certaines définitions de fonctions manquantes suite aux optimisations
 
 	'../github.com/makinacorpus/Leaflet.GeometryUtil/src/leaflet.geometryutil.js', // A mettre sinon snap plante.
 	'../github.com/makinacorpus/Leaflet.Snap/leaflet.snap.js', // Incompatible V1.0

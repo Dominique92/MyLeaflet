@@ -19,7 +19,7 @@
 	https://github.com/makinacorpus/Leaflet.GeometryUtil/tree/b88ff07783b599433a010d7774d259a6f19c41a5
 	https://github.com/makinacorpus/Leaflet.Snap/tree/43fbe4f6a7cd2b275912294d7d27e1034639e519
 	https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port/tree/20f738889d6e55df59761b734d1638abe17c11eb
-	https://github.comjs-active-navigation-container
+	https://github.com/nicolas-grekas/JSqueeze/tree/693d64850eab2ce6a7c8f7cf547e1ab46e69d542
 */
 
 ;var oldL=window.L,L={};L.version='0.7.7';if(typeof module==='object'&&typeof module.exports==='object'){module.exports=L}

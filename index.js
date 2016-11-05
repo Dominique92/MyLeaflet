@@ -49,12 +49,3 @@ new L.Control.Click(
 		label: '&#8659;'
 	}
 ).addTo(map);
-new L.Control.Click(
-	function () {
-		window.print();
-		return '';
-	}, {
-		title: "Imprimer la carte.",
-		label: '&#x1f5b6;'
-	}
-).addTo(map);

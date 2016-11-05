@@ -202,7 +202,7 @@ L.Control.Draw.Plus = L.Control.Draw.extend({
 // Cut a polyline by removing a segment whose the middle marker is cliqued
 // Cut a polygon by removing a segment whose the middle marker is cliqued & transform it into polyline
 
-// Horible hack : modify onClick action on MiddleMarkers Leaflet.draw/Edit.Poly.js & generated files
+// Horrible hack : modify onClick action on MiddleMarkers Leaflet.draw/Edit.Poly.js & generated files
 eval ('L.Edit.PolyVerticesEdit.prototype._createMiddleMarker = ' +
 	L.Edit.PolyVerticesEdit.prototype._createMiddleMarker.toString()
 		.replace (/'click', onClick, this|'click',[a-z],this/g, "'click',this._cut,this")
