@@ -1,6 +1,11 @@
 Dominique92.MyLeaflet
 =====================
 
+OBSOLETE VERSION
+================
+This branch, built on Lefalet V0.7 is not anymore supported.
+* Please check the [MASTER BRANCH](https://github.com/Dominique92/MyLeaflet/) for the supported branch on Leaflet V1.0.
+
 Leaflet extensions for
 * Multi vendors maps &amp; projections:
 ```
