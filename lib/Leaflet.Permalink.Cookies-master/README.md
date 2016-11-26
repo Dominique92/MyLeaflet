@@ -5,9 +5,9 @@ This plugin works both on Leaflet V0.7 & V1.0
 
 DEMO
 ====
-[See a DEMO using Leaflet V0.7 here](https://dc92.github.io/Myll2/github.com/Dominique92/Leaflet.Permalink.Cookies/)
+[See a DEMO using Leaflet V0.7 here](https://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Permalink.Cookies/)
 
-[See a DEMO using Leaflet V1.0 here](https://dc92.github.io/Myll2/github.com/Dominique92/Leaflet.Permalink.Cookies/examples/v1.0.html)
+[See a DEMO using Leaflet V1.0 here](https://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Permalink.Cookies/examples/v1.0.html)
 
 USAGE
 =====

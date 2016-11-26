@@ -1,18 +1,3 @@
-UNDER DEVELOPMENT : DO NOT USE
-==============================
-UNDER DEVELOPMENT : DO NOT USE
-==============================
-UNDER DEVELOPMENT : DO NOT USE
-==============================
-UNDER DEVELOPMENT : DO NOT USE
-==============================
-UNDER DEVELOPMENT : DO NOT USE
-==============================
-UNDER DEVELOPMENT : DO NOT USE
-==============================
-UNDER DEVELOPMENT : DO NOT USE
-==============================
-
 Dominique92.MyLeaflet
 =====================
 
@@ -36,7 +21,12 @@ Leaflet extensions for
 
 DEMO
 ====
-[See a DEMO here](https://dc92.github.io/Myll2/)
+[See a DEMO here](https://dominique92.github.io/MyLeaflet/)
+
+VERSION
+=======
+This master branch is now build [SLeaflet V1.0](http://leafletjs.com/).
+You can find the old, not anymore supported, MyLeaflet V0.7 [here](https://github.com/Dominique92/MyLeaflet/tree/v0.7)
 
 USAGE
 =====

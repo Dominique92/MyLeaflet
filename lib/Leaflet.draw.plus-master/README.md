@@ -14,7 +14,7 @@ It is supported only on leaflet v0.7.7
 
 DEMO
 ----
-[See a DEMO here](https://dc92.github.io/Myll2/github.com/Dominique92/Leaflet.draw.plus/)
+[See a DEMO here](https://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.draw.plus/)
 
 Usage
 -----

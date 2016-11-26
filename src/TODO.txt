@@ -1,6 +1,6 @@
 BUGS
 ====
-Mixed Content: The page at 'https://dc92.github.io/Myll2/lib/Leaflet.GeoJSON.Ajax-master/' : http://erictheise.com/rrose/stylesheets/leaflet.rrose.css
+Mixed Content: The page at 'https://dominique92.github.io/MyLeaflet/lib/Leaflet.GeoJSON.Ajax-master/' : http://erictheise.com/rrose/stylesheets/leaflet.rrose.css
 Erreur JS quand glisse 1 milieu d'une ligne de 2 segments repliée sur elle même (tente de terminer le glissement aprés son effacement)
 Safari : 'undefined' is not a function (evaluating 'Math.hypot(popupXY.x - e.layerPoint.x, popupXY.y - e.layerPoint.y)')
 Controle impression
@@ -9,11 +9,6 @@ Controle impression
 Erreur JS sur forts zoom OS-GB en V1.0 : leaflet.js:5 Uncaught Error: Invalid LatLng object: (NaN, NaN)
 Permalink.cookies affiche d'abord la carte générale puis zoome sur la position du cookie / carte: perte de temps
 	Semble charger + de tiles que la carte courante (remove layer sur switch ?)
-
-LIVRAISON DEMO
-==============
-All : https://dc92.github.io/Myll2/ -> http://dominique92.github.io/MyLeaflet/
-gh-pages => master (avec les nouveaux paramètres demo github.IO)
 
 TODO
 ====
