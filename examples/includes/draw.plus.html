@@ -1,0 +1,45 @@
+<!-- Part of demo file to be included after index.html & index.js -->
+
+<div class="demo-hidden">
+<p onclick="demo_dp_on(this)"><span>ADD </span>Draw.plus demo</p>
+
+<form id="postform" method="post" action="http://<?=$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']?>#" enctype="multipart/form-data">
+	<p><b>geoJson input/output</b></p>
+
+	<input type="submit" name="post" id="save" value="Save" />
+	<p class="save-comment">Note: You need to run on a server supporting PHP &amp; MySQL to be able to save.</p>
+
+	<div id="edit-changed" style="display:none"><i>Changé</i></div><!-- Editing status -->
+	<textarea id="edit-json" name ="geom" rows="10" cols="120">
+{"type":"FeatureCollection","features":[
+{"type":"Feature","properties":{},"geometry":
+{"type":"MultiPolygon","coordinates":[
+	[[[1.526,45.83844],[1.50079,45.16123],[2.22913,45.21985],[2.47911,45.38133],[2.47911,45.61235],[2.62193,45.66996],[2.72081,45.80032],[2.968,45.94947],[3.09984,45.98384],[3.18494,46.1095],[2.96521,46.33752],[2.77295,46.2844],[1.86108,46.19702],[1.526,45.83844]]],
+	[[[2.41315,43.69278],[2.58893,43.8861],[2.87457,43.82371],[3.05859,43.8356],[3.11765,43.8247],[3.19592,43.81479],[3.25772,43.84253],[3.33051,43.73149],[3.54749,43.73348],[3.1973,43.51279],[2.97345,43.41211],[2.70428,43.32226],[2.4928,43.31327],[2.35959,43.32226],[2.12476,43.3672],[2.01077,43.46097],[2.27582,43.53867],[2.41315,43.69278]]]
+]}
+}
+]}
+	</textarea>
+</form>
+</div>
+
+<script>
+var editor = new L.Control.Draw.Plus({
+	draw: {
+		marker: true,
+		polyline: true,
+		polygon: true
+	},
+	edit: {
+		remove: true
+	},
+	entry: 'edit-json'
+});
+
+function demo_dp_on (e) {
+	e.parentElement.className='demo-visible';
+	editor.addTo(map);
+	map.removeLayer(wri);
+	map.removeLayer(massif);
+}
+</script>

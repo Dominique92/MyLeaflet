@@ -1,0 +1,173 @@
+BUGS
+====
+Mixed Content: The page at 'https://dc92.github.io/Myll2/lib/Leaflet.GeoJSON.Ajax-master/' : http://erictheise.com/rrose/stylesheets/leaflet.rrose.css
+Erreur JS quand glisse 1 milieu d'une ligne de 2 segments repliée sur elle même (tente de terminer le glissement aprés son effacement)
+Safari : 'undefined' is not a function (evaluating 'Math.hypot(popupXY.x - e.layerPoint.x, popupXY.y - e.layerPoint.y)')
+Controle impression
+	curseur = fleche au survol au lieu de doigt
+	Logo imprimante commande carte non affiché sur mobile
+Erreur JS sur forts zoom OS-GB en V1.0 : leaflet.js:5 Uncaught Error: Invalid LatLng object: (NaN, NaN)
+Permalink.cookies affiche d'abord la carte générale puis zoome sur la position du cookie / carte: perte de temps
+	Semble charger + de tiles que la carte courante (remove layer sur switch ?)
+
+LIVRAISON DEMO
+==============
+All : https://dc92.github.io/Myll2/ -> http://dominique92.github.io/MyLeaflet/
+gh-pages => master (avec les nouveaux paramètres demo github.IO)
+
+TODO
+====
+Trace AJAX paramétrable
+marker.coordinates : donner des priorités aux types de CRS sélectés (suisse d'abord !) => Dépend du pays ??? / Ident WRI ??
+TEST Compatibilité IE9 ?
+Permalink sur OS_GB : gros pb de zoom ! => Traiter scale ? / Ne pas passer par init carte avec OSM-FR ?
+	Cookies permalink zoom trop fort sur SwissTopo
+src/proj4-OPTIM.js', // DCMM TODO OPTIM: construire automatiquement !
+Overpass
+	Overpass website avec le schema://... de la page
+	OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
+	Overpass t.ext1, t.ext2, t.ext3 // User defined fields -> Parcourir ceux manquant
+Voir si on peut faire marker.coordinates à partir de leaflet.coordinates ???
+Integrer omnivore à ajax: https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
+Ajax.OSM: language: {min:''}, // trouver une meilleure solution à ce contournement de bug
+Carte Andorre
+Table de Peutinger (carte de redressement)
+	http://peutinger.atlantides.org/map-a/
+GPS: bbox suiveur englobant la position et un point d'intérêt
+Afficher altitude & heure sur survol point ou segment d'une courbe
+	https://github.com/mpetazzoni/leaflet-gpx
+	https://github.com/arthur-e/Wicket
+	Afficher distance
+Editeur
+	Voir largeur marqueurs editeur sur IE
+	Mettre le mode d'emploi dans la lib (le générer js)
+	Integrer traduction locale FR dans draw+ / Faire dépendre cette traduction du langage de l'explo
+		Traduire page exemples draw / locales/us
+		Detecter automatiquement la langue
+	Purge des points identiques sur un segment
+		Purge des errements localisés ("escargots")
+	Formats import/export: geojson,KML,KMZ,GPI,WPT,TRK,RTE,CSV,GDB,MPS,TXT : https://www.gps-data-team.com/convert.php
+		https://github.com/mapbox/leaflet-omnivore CSV, WKT (via wellknown), TopoJSON
+	Edition massif avec trou
+
+DOC TESTS & DEMOS
+=================
+IGN test.chemineur.fr 1nxqfnrnhph73nqh80izju6j
+Pourquoi marge supplémentaire sur demos MyLL/index.* ?
+Extension liste de cartes pour debug (+ Seigfreid + Dufour + Etat major + Cassigny ...)
+Documenter Control.Layers.argsGeoJSON
+Doc MultiVendors#usage (CRS dans la layer, ...)
+Doc overpass
+Enlever IGN topo classique et cadastres sur localhost ?? github.IO ??
+V0.7
+	Demo OS-GB KO en ll V0.7 !
+	Survol étiquettes KO demo GeoJSON.Ajax-master/examples/v0.7.html
+
+Vérification finale avant mise en prod
+	Passer http://www.javascriptlint.com/online_lint.php
+	Passer http://jsbeautifier.org/
+	Résorber DCMM / TODO / DELETE
+	Traduire en anglais
+	https://github.com/Leaflet/Leaflet/blob/master/CONTRIBUTING.md
+	CR/LF: https://help.github.com/articles/dealing-with-line-endings/
+	https://github.com/airbnb/javascript ?????
+	/*
+	Style commentaires
+	 */
+
+A FAIRE WRI
+===========
+Copier leaflet
+	Remplacer fichiers dans /dist/images
+	--github/...
+	++lib/... (mais retirer les demos, ...) ne garder que le defs.php, mes css et les images associées
+Tester https//wri... les referrers
+	
+FAIT WRI
+========
+					Enlever refferer
+					nav.js transform polygon : for i.... [0]
+					ajoute un bord à un polygone double celui-ci
+					Voir icones cliquables sur formulaire podif point / massif https://github.com/Dominique92/GeoBB/commit/a5d749f2317666435fc0ee6c9f1a309868d63f1c
+					Curseur survolant le cadre ????
+					Modifier carte avec jquery perd le centre 
+					Superposition icones / cadre
+					Curseur sur le cadre
+					Traiter les 50vw vh
+					Tester Safari
+					Full screen (Chrome pleine page) => Dalles manquantes
+					Bug full screen bandes noires
+					Editeur massif : double le poly existant si on coupe un polygone et ajoute un côté
+					?? voir https OSM overpass ??
+					Editeur : faire touche "enregistrer et quiter"
+					Editeur : quitter sans sortir : aller en NAV devrait visualiser le massif
+					popupValidity: 150,
+					Revoir ordre des controles (permalink avant scale)
+					YEN A PAS : L.Control.Layers.args  => L.Control.Layers.overlays 
+					YEN A PAS : Purger style de /* Style for Control.Layers.argsGeoJSON */ (qui est maintenant dans la lib)
+					N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
+						supprimer remanent: true,
+						supprimer .remanent (Control.layer)
+						Corriger style /* Little popups */ (est dans la lib) (leaflet-rrose-content-wrapper)
+					Control.Layers.overflow => Supprimer .overflow
+					??? <ul class="comment2 noprint"> => <ul class="comment2">
+
+WRI
+===
+Pas de récup cookies de point-modif vers nav
+Création point : garder les cookies et pas forcer à Salanche (point par défaut dans la base !)
+Bug remontée MultiPolygon / default : null
+Possibilité d'agrandir la météo sur mobiles
+Pas de massifs dans l'Atlas ?
+Carte par defaut fiches en Angleterre (manque le contour localisation administrative)
+Edition / creation / suppression polygones autres que massif
+Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
+Déraciner le wiki
+Passage en templates gestion/index.php
+
+WRI API
+=======
+Erreur: sur geom vide dans un polynome
+DOC: Mettre l'entête et le pied
+Durée cache réglable
+Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
+
+IMPORT GARMIN
+=============
+Basecamp
+Ma Collection
+Fichier importer
+Glisser de Ma Collection-fichier vers Stockage interne
+
+Finalement, on ne va pas les faire
+==================================
+Continuité cookies cartes entre WRI et CHEM, ...
+Ajouter download fichier dans control.click ???
+Integrer background-image carte dans LL+/demos
+Optim noms internes longs ??
+Edit: Arrondir les lonlat Json à 5 décimales
+On ne peut pas cliquer sur un zap du même segment en création
+Faire des makers avec CircleMarker, ...
+Cartes transparentes -> les couches doivent passer en overlay
+cut -> laisser créer le sommet puis le détruire là et couper
+Draw : garder les controles ouverts comme par défaut. Stratégie draw
+Layer cadre avec rectangle. => Pas trouvé à faire un rectangle fixe !
+BOF / nécéssite export...: A voir: https://github.com/calvinmetcalf/leaflet-ajax
+BEST ? Implémenter automatiquement les diff: http://php.net/manual/fr/function.xdiff-file-patch.php
+
+APPLI
+=====
+Faire un html auto executable avec seulement outdoors et non interruptible (en faire une appli ?)
+Fonction de téléchargement des dalles dans un périmètre donné
+
+NOTES
+=====
+MultiPolygon multiple => WRI massif 3116
+MultiPolygon avec trou => WRI massif 3127
+
+NODEJS
+======
+nodejs (win) + npm
+http://mourner.github.io/Leaflet/reference.html
+http://leafletjs.com/plugins.html
+https://openclassrooms.com/courses/des-applications-ultra-rapides-avec-node-js/les-modules-node-js-et-npm

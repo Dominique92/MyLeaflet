@@ -1,0 +1,63 @@
+<!-- Part of demo file to be included after index.html & index.js -->
+
+<style>
+	.demo-hidden > * {
+		display: none;
+	}
+	.demo-hidden > p:first-child {
+		display: block;
+		color: blue;
+		cursor: pointer;
+		weight: bold;
+		text-decoration: underline; 
+	}
+	.demo-visible {
+		border: 1px solid black;
+	}
+	.demo-visible > p:first-child {
+		weight: bold;
+		text-decoration: underline; 
+	}
+	.demo-visible > p:first-child > span {
+		display: none;
+	}
+</style>
+
+<div class="demo-hidden">
+<p onclick="demo_cla_on(this)"><span>ADD </span>Control.Layers.argsGeoJSON demo</p>
+</div>
+
+<script>
+	var chem = new L.GeoJSON.Ajax.chemineur();
+
+	// Controle secondaire pour les couches vectorielles
+	var lc2 = new L.Control.Layers.argsGeoJSON(
+		chem,
+		{
+			'Chemineur': {l: chem, p: 'site', v: 'this'},
+			'Camptocamp': {l: chem, p: 'site', v: 'camptocamp'},
+			'Pyrenees-refuges': {l: chem, p: 'site', v: 'pyrenees-refuges'},
+			'Refuges.info': {l: chem, p: 'site', v: 'refuges.info'},
+			'Refuges': {l: chem, p: 'poi', v: '3'},
+			'Abris': {l: chem, p: 'poi', v: '8'},
+			'Inutilisable': {l: chem, p: 'poi', v: '16'},
+			'Alimentation': {l: chem, p: 'poi', v: '20'},
+			'Montagnes': {l: chem, p: 'poi', v: '23'},
+			'Voies ferrées': {l: chem, p: 'poi', v: '28'},
+			'Ferroviaire': {l: chem, p: 'poi', v: '30'},
+			'Transport': {l: chem, p: 'poi', v: '40'},
+			'Tourisme': {l: chem, p: 'poi', v: '44'},
+			'Trace GPX': {l: chem, p: 'poi', v: '64'},
+			'Naval': {l: chem, p: 'poi', v: '58'},
+			'Diaporamas': {l: chem, p: 'poi', v: '62'},
+		}
+	);
+
+	function demo_cla_on (e) {
+		e.parentElement.className='demo-visible';
+		chem.addTo(map);
+		lc2.addTo(map);
+		map.removeLayer(wri);
+		map.removeLayer(massif);
+	}
+</script>

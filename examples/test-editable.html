@@ -1,0 +1,310 @@
+<title>ONGOING EVALUATION OF L.EDITABLE</title>
+<p>ONGOING EVALUATION OF L.EDITABLE</p>
+<p>DO NOT USE AS IT</p>
+
+<link  href="../lib/Leaflet-master/dist/leaflet.css" rel="stylesheet" />
+<script src="../lib/Leaflet-master/build/deps.js" type="text/javascript"></script>
+<script src="../lib/Leaflet-master/debug/leaflet-include.js"></script>
+
+<!--script src="https://npmcdn.com/leaflet.path.drag/src/Path.Drag.js"></script-->
+<script src="../lib/Leaflet.Editable-master/src/Leaflet.Editable.js"></script>
+<script src="../lib/Leaflet.GeometryUtil-master/src/leaflet.geometryutil.js"></script>
+<script src="../lib/Leaflet.Snap-master/leaflet.snap.js"></script>
+<script>
+	// Libs updates
+
+	// Proposed upgrade LL 1.1
+	L.LayerGroup.include({
+		eachLayerRecursive: function (method, context) {
+			this.eachLayer(function(layer) {
+				method.call(context, layer);
+				if (layer._layers)
+					layer.eachLayerRecursive (method, context);
+			});
+		}
+	});
+
+	// Bug to be reported : miss of resolution when very little line steps
+	L.Editable.MiddleMarker.include({
+        computeLatLng: function () {
+			return [
+				(this.left.latlng.lat + this.right.latlng.lat) / 2,
+				(this.left.latlng.lng + this.right.latlng.lng) / 2
+			];
+        }
+	});
+
+	// Horrible hack to avoid circular stringification of editable layers
+	eval('L.GeometryUtil.closest = ' +
+		L.GeometryUtil.closest.toString()
+		.replace('JSON.parse(JSON.stringify', '(')
+	);
+	
+	// Bug Polygon : add multiple end points !
+</script>
+
+<style>
+	html, body,
+	#map {
+		width: 800px;
+		height: 600px;
+	}
+	
+	#tooltip {
+		display: none;
+		position: absolute;
+		background: #666;
+		color: white;
+		opacity: 0.5;
+		padding: 10px;
+		border: 1px dashed #999;
+		font-family: sans-serif;
+		font-size: 12px;
+		height: 20px;
+		line-height: 20px;
+		z-index: 1000;
+	}
+</style>
+
+<div id="map"></div>
+<div id='tooltip'></div>
+
+<textarea id="edit-json" name="geom" rows="10" cols="120">
+{"type":"MultiPolygon","coordinates":[[[[8.85758,47.85168],[8.85761,47.85177],[8.85766,47.85181],[8.8577,47.85184],[8.85778,47.85188],[8.85787,47.85189],[8.85799,47.85187],[8.85809,47.85183],[8.85821,47.8518],[8.85824,47.8518],[8.85834,47.85178],[8.85845,47.85175],[8.8585,47.85171],[8.85857,47.85169],[8.85864,47.85169],[8.85872,47.85165],[8.85882,47.85159],[8.85886,47.85149],[8.85885,47.85138],[8.85872,47.85129],[8.85864,47.85122],[8.85857,47.85114],[8.85847,47.8511],[8.85832,47.85104],[8.85819,47.85098],[8.85814,47.85092],[8.85813,47.85086],[8.85805,47.85083],[8.85797,47.85084],[8.85791,47.85089],[8.85786,47.85097],[8.8578,47.85109],[8.85775,47.85118],[8.85765,47.85131],[8.85764,47.85144],[8.85762,47.85151],[8.85761,47.85157],[8.85758,47.85168]]],[[[8.85682,47.85214],[8.85684,47.85223],[8.85689,47.8523],[8.85694,47.85235],[8.85703,47.85241],[8.85711,47.85246],[8.85721,47.85251],[8.8573,47.85256],[8.85742,47.8526],[8.85755,47.85258],[8.85765,47.85255],[8.85772,47.85249],[8.85775,47.85243],[8.85775,47.85238],[8.85775,47.85231],[8.85772,47.85225],[8.85767,47.8522],[8.85766,47.85217],[8.85765,47.8521],[8.85767,47.85203],[8.85769,47.85199],[8.85769,47.85195],[8.85766,47.8519],[8.85759,47.85184],[8.85752,47.85182],[8.85739,47.85183],[8.85727,47.85186],[8.85715,47.85191],[8.85702,47.85198],[8.85693,47.85202],[8.85686,47.85207],[8.85682,47.85214]]]]}
+</textarea>
+{"type":"MultiPolygon","coordinates":[[[[5.72,45.18],[5.72,45.09],[5.64,45.02],[5.63,44.91],[5.59,44.87],[5.65,44.72],[5.61,44.76],[5.48,44.69],[5.44,44.74],[5.4,44.8],[5.29,44.83],[5.24,44.82],[5.35984,45.09095],[5.6,45.32],[5.72,45.18]]]]}
+
+<script>
+	var map = L.map('map', {
+			doubleClickZoom: false,
+			editable: true
+//		}).setView([45, 5.6], 10),
+//		}).setView([45.125, 5.65], 10),
+		}).setView([47.8515, 8.858], 18),
+		tilelayer = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+			maxZoom: 20,
+			attribution: 'Data \u00a9 <a href="http://www.openstreetmap.org/copyright"> OpenStreetMap Contributors </a> Tiles \u00a9 HOT'
+		}).addTo(map);
+
+
+	L.EditControl = L.Control.extend({
+		options: {
+			position: 'topleft',
+			callback: null,
+			title: '',
+			html: ''
+		},
+
+		onAdd: function(map) {
+			var container = L.DomUtil.create('div', 'leaflet-control leaflet-bar'),
+				link = L.DomUtil.create('a', '', container);
+
+			link.href = '#';
+			link.title = this.options.title;
+			link.innerHTML = this.options.html;
+			L.DomEvent.on(link, 'click', L.DomEvent.stop)
+				.on(link, 'click', function() {
+					this.options.callback.call(map.editTools);
+				}, this);
+
+			return container;
+		}
+	});
+
+	map.addControl(new L.EditControl({
+		callback: map.editTools.startPolyline,
+		title: 'New line',
+		html: '\\/\\'
+	}));
+
+	map.addControl(new L.EditControl({
+		title: 'New polygon',
+		callback: map.editTools.startPolygon,
+		html: '▰'
+	}));
+
+	//Continue line by ctrl/command-clicking on first/last point
+	map.on('editable:vertex:ctrlclick editable:vertex:metakeyclick', function(e) {
+		e.vertex.continue();
+	});
+
+	//Display a tooltip near cursor while drawing
+	var tooltip = L.DomUtil.get('tooltip');
+
+	function addTooltip(e) {
+		L.DomEvent.on(document, 'mousemove', moveTooltip);
+		tooltip.innerHTML = 'Click on the map to start a line.';
+		tooltip.style.display = 'block';
+	}
+
+	function removeTooltip(e) {
+		tooltip.innerHTML = '';
+		tooltip.style.display = 'none';
+		L.DomEvent.off(document, 'mousemove', moveTooltip);
+	}
+
+	function moveTooltip(e) {
+		tooltip.style.left = e.clientX + 20 + 'px';
+		tooltip.style.top = e.clientY - 10 + 'px';
+	}
+
+	function updateTooltip(e) {
+		if (e.layer.editor._drawnLatLngs.length < e.layer.editor.MIN_VERTEX) {
+			tooltip.innerHTML = 'Click on the map to continue line.';
+		} else {
+			tooltip.innerHTML = 'Click on last point to finish line.';
+		}
+	}
+	map.on('editable:drawing:start', addTooltip);
+	map.on('editable:drawing:end', removeTooltip);
+	map.on('editable:drawing:click', updateTooltip);
+
+	//Deleting shapes by ctrl/command clicking on it
+	var deleteShape = function(e) {
+		if ((e.originalEvent.ctrlKey || e.originalEvent.metaKey) && this.editEnabled()) this.editor.deleteShapeAt(e.latlng);
+	};
+	map.on('layeradd', function(e) {
+		if (e.layer instanceof L.Path)
+			e.layer
+				.on('click', L.DomEvent.stop)
+				.on('click', deleteShape, e.layer);
+		if (e.layer instanceof L.Path)
+			e.layer
+				.on('dblclick', L.DomEvent.stop)
+				.on('dblclick', e.layer.toggleEdit);
+	});
+
+	// SNAP
+	var snap = new L.Handler.MarkerSnap(map);
+
+	var snapMarker = L.marker(map.getCenter(), {
+		icon: map.editTools.createVertexIcon({
+			className: 'leaflet-div-icon leaflet-drawing-icon'
+		}),
+		opacity: 1,
+		zIndexOffset: 1000
+	});
+
+	snap.watchMarker(snapMarker);
+
+	map.on('editable:vertex:dragstart', function(e) {
+		snap.watchMarker(e.vertex);
+	});
+	map.on('editable:vertex:dragend', function(e) {
+		snap.unwatchMarker(e.vertex);
+	});
+	map.on('editable:drawing:start', function() {
+		this.on('mousemove', followMouse);
+	});
+	map.on('editable:drawing:end', function() {
+		this.off('mousemove', followMouse);
+		snapMarker.remove();
+	});
+	map.on('editable:drawing:click', function(e) {
+		// Leaflet copy event data to another object when firing,
+		// so the event object we have here is not the one fired by
+		// Leaflet.Editable; it's not a deep copy though, so we can change
+		// the other objects that have a reference here.
+		var latlng = snapMarker.getLatLng();
+		e.latlng.lat = latlng.lat;
+		e.latlng.lng = latlng.lng;
+	});
+	snapMarker.on('snap', function(e) {
+		snapMarker.addTo(map);
+	});
+	snapMarker.on('unsnap', function(e) {
+		snapMarker.remove();
+	});
+	var followMouse = function(e) {
+		snapMarker.setLatLng(e.latlng);
+	}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+var editLayers = new L.FeatureGroup();//.addTo(map); // Container for editable layers
+
+	// TEST
+	var road = L.polyline([
+		[45.120407284575116, 5.6492871284484863],
+		[45.12117473538689, 5.6496089935302734],
+		[45.12191085263059, 5.6504887580871582],
+		[45.12236504821365, 5.6518835067749023],
+		[45.12263129922914, 5.6540292739868164],
+		[45.124213119605685, 5.6568402290344238],
+		[45.125685272120755, 5.6606382369995117],
+		[45.126718889950894, 5.6616252899169922],
+		[45.127815132201, 5.6649726867675781]
+	], {
+		color: 'red'
+	}).addTo(map);
+//	road.enableEdit();
+	snap.addGuideLayer(road);
+
+	// Couche GeoJson
+	var inputLayer;
+	// Read geoJson field to be edited
+	var ele = document.getElementById('edit-json'),
+		elc = document.getElementById('edit-json');
+	if (ele) {
+		var elei = typeof ele.value != 'undefined' ? 'value' : 'innerHTML';
+
+		inputLayer = new L.GeoJSON(
+			JSON.parse(ele[elei] || '{"type":"FeatureCollection","features":[]}')
+		).addTo(editLayers).addTo(map);
+		inputLayer.eachLayer(function(layer) {
+			layer.enableEdit();
+			map.editTools.currentPolygon = layer;
+		});
+		snap.addGuideLayer(inputLayer);
+	}
+
+
+// Ajoute un poly à un multi poly
+	map.addControl(new L.EditControl({
+		title: 'Create a new polygon INSIDE**',
+		html: '+',
+		callback: function (e) {
+                          if (map.editTools.currentPolygon)
+							  map.editTools.currentPolygon.editor.newShape();
+							  
+							  map.editTools.currentPolygon.editor.setDrawnLatLngs();
+							  //map.editTools.currentPolygon.editor.tools.attachForwardLineGuide();
+
+
+/*DCMM*/{var _v=map.editTools.currentPolygon.editor._drawnLatLngs,_r="***_drawnLatLngs***\n";if(typeof _v=='array'||typeof _v=='object'){for(_i in _v)if(typeof _v[_i]!='function')_r+=_i+'='+typeof _v[_i]+' '+_v[_i]+' '+(_v[_i]&&_v[_i].CLASS_NAME?'('+_v[_i].CLASS_NAME+')':'')+"\n"}else _r+=_v;console.log(_r)}
+//DCMM TODO 				L.DomEvent.stop(this);
+                     }
+	}));
+	
+	
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+	// Remontée geoJson
+	map.on('editable:editing', function() {
+		ele[elei] = JSON.stringify(map.editTools.editLayer.toGeoJSON());
+
+/*DCMM*/{var _v=123456,_r="****************************************************\n";if(typeof _v=='array'||typeof _v=='object'){for(_i in _v)if(typeof _v[_i]!='function')_r+=_i+'='+typeof _v[_i]+' '+_v[_i]+' '+(_v[_i]&&_v[_i].CLASS_NAME?'('+_v[_i].CLASS_NAME+')':'')+"\n"}else _r+=_v;console.log(_r)}
+
+//*DCMM*/{var _v=nline,_r="******\n";if(typeof _v=='array'||typeof _v=='object'){for(_i in _v)if(typeof _v[_i]!='function')_r+=_i+'='+typeof _v[_i]+' '+_v[_i]+' '+(_v[_i]&&_v[_i].CLASS_NAME?'('+_v[_i].CLASS_NAME+')':'')+"\n"}else _r+=_v;console.log(_r)}
+
+//*DCMM*/{var _v=123456,_r="***1***\n";if(typeof _v=='array'||typeof _v=='object'){for(_i in _v)if(typeof _v[_i]!='function')_r+=_i+'='+typeof _v[_i]+' '+_v[_i]+' '+(_v[_i]&&_v[_i].CLASS_NAME?'('+_v[_i].CLASS_NAME+')':'')+"\n"}else _r+=_v;console.log(_r)}
+//*DCMM*/{var _v=123456,_r="***2***\n";if(typeof _v=='array'||typeof _v=='object'){for(_i in _v)if(typeof _v[_i]!='function')_r+=_i+'='+typeof _v[_i]+' '+_v[_i]+' '+(_v[_i]&&_v[_i].CLASS_NAME?'('+_v[_i].CLASS_NAME+')':'')+"\n"}else _r+=_v;console.log(_r)}
+
+/*DCMM*/{var _v=JSON.stringify(editLayers.toGeoJSON()),_r="***editLayers***\n";if(typeof _v=='array'||typeof _v=='object'){for(_i in _v)if(typeof _v[_i]!='function')_r+=_i+'='+typeof _v[_i]+' '+_v[_i]+' '+(_v[_i]&&_v[_i].CLASS_NAME?'('+_v[_i].CLASS_NAME+')':'')+"\n"}else _r+=_v;console.log(_r)}
+
+//*DCMM*/{var _v=map.editTools.editLayer._layers[61]._layers,_r="******\n";if(typeof _v=='array'||typeof _v=='object'){for(_i in _v)if(typeof _v[_i]!='function')_r+=_i+'='+typeof _v[_i]+' '+_v[_i]+' '+(_v[_i]&&_v[_i].CLASS_NAME?'('+_v[_i].CLASS_NAME+')':'')+"\n"}else _r+=_v;console.log(_r)}
+
+//*DCMM*/{var _v= JSON.stringify(map.editTools.featuresLayer.toGeoJSON()),_r="******\n";if(typeof _v=='array'||typeof _v=='object'){for(_i in _v)if(typeof _v[_i]!='function')_r+=_i+'='+typeof _v[_i]+' '+_v[_i]+' '+(_v[_i]&&_v[_i].CLASS_NAME?'('+_v[_i].CLASS_NAME+')':'')+"\n"}else _r+=_v;console.log(_r)}
+
+		map.editTools.editLayer.eachLayer(function(layer) {
+//*DCMM*/{var _v=layer.options,_r="***eachLayer***\n";if(typeof _v=='array'||typeof _v=='object'){for(_i in _v)if(typeof _v[_i]!='function')_r+=_i+'='+typeof _v[_i]+' '+_v[_i]+' '+(_v[_i]&&_v[_i].CLASS_NAME?'('+_v[_i].CLASS_NAME+')':'')+"\n"}else _r+=_v;console.log(_r)}
+		});
+
+		map.editTools.editLayer.eachLayerRecursive(function(layer) {
+if(0)
+			if (!layer._latlng)
+/*DCMM*/{var _v=JSON.stringify(layer.toGeoJSON()),_r="***eachLayerRecursive***\n";if(typeof _v=='array'||typeof _v=='object'){for(_i in _v)if(typeof _v[_i]!='function')_r+=_i+'='+typeof _v[_i]+' '+_v[_i]+' '+(_v[_i]&&_v[_i].CLASS_NAME?'('+_v[_i].CLASS_NAME+')':'')+"\n"}else _r+=_v;console.log(_r)}
+		});
+	});
+</script>

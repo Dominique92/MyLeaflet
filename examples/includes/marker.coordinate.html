@@ -1,0 +1,66 @@
+<!-- Part of demo file to be included after index.html & index.js -->
+
+<div class="demo-hidden">
+<p onclick="demo_mc_on(this)"><span>ADD </span>Marker.coordinate demo</p>
+<p>
+	Cadre:
+	<span id="position-title-lng"></span>: <em id="position-proj-lng"></em>
+	<span id="position-title-lat"></span>: <em id="position-proj-lat"></em>
+	<select id="position-select"></select>
+</p>
+<hr/>
+<p>
+	Viseur:
+	<span id="viewfinder-title-lng"></span>:
+	<input type="text" id="viewfinder-proj-lng" size="12" maxlength="12" />
+	<span id="viewfinder-title-lat"></span>:
+	<input type="text" id="viewfinder-proj-lat" name="latitude" size="12" maxlength="12" />
+	<select id="viewfinder-select"><option value="decimal"></option></select>
+</p>
+
+<p>
+	<span>Upload</span>:
+	<input type="text" id="viewfinder-deg-lng" name="latitude" size="12" maxlength="12" />
+	<input type="text" id="viewfinder-deg-lat" name="latitude" size="12" maxlength="12" />
+</p>
+
+<p><a onclick="map.panTo(viewfinder._latlng)" style="color:blue;cursor:pointer;text-decoration:underline">Recentrer la carte sur le curseur</a></p>
+<p><a onclick="viewfinder.setLatLng(map.getCenter())" style="color:blue;cursor:pointer;text-decoration:underline">Remettre le curseur au centre actuel de la carte</a></p>
+
+<form method="post" action="#">
+	<input id="viewfinder-json" type="text" name="geom" size="120" value='{"type":"Point","coordinates":[2.34,48.86]}' />
+	<br/>
+	<button type="submit" name="action" value="save">Save</button>
+</form>
+
+</div>
+
+<script>
+	var frame = new L.Marker([46.5, 6.5], { // Swiss
+			icon: L.icon({
+				iconUrl: 'lib/Leaflet.Marker.coordinates-master/images/frame.png',
+				className: 'leaflet-grab', // Même curseur que le reste de la carte
+				iconAnchor: [15, 21]
+			})
+		})
+		.coordinates('position'); // Affiche les coordonnées
+
+	// Viewfinder déplaçable affichant sa position éditable.
+	viewfinder = new L.Marker([], { // Prendra la valeur du champ "x-json"
+			draggable: true,
+			icon: L.icon({
+				iconUrl: 'lib/Leaflet.Marker.coordinates-master/images/viewfinder.png',
+				className: 'leaflet-move',
+				iconAnchor: [15, 15]
+			})
+		})
+		.coordinates('viewfinder'); // Affiche / saisi les coordonnées
+
+	function demo_mc_on (e) {
+		e.parentElement.className='demo-visible';
+		frame.addTo(map);
+		viewfinder.addTo(map);
+		map.removeLayer(wri);
+		map.removeLayer(massif);
+	}
+</script>
