@@ -10,7 +10,7 @@ Leaflet extension for Leaflet.draw
 
 Depends on [Leaflet.draw](https://github.com/Leaflet/Leaflet.draw).
 and [Leaflet.Snap](https://github.com/makinacorpus/Leaflet.Snap).
-It is supported only on leaflet v0.7.7
+It is supported both on leaflet v0.7.7 & V1.0
 
 DEMO
 ----
