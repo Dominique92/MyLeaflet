@@ -17,12 +17,12 @@ This plugin works both on Leaflet V0.7 & V1.0
 
 DEMOS
 -----
-[See a DEMO using Leaflet V0.7](https://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/)
+[See a DEMO using Leaflet V1.0](https://dominique92.github.io/MyLeaflet/lib/Leaflet.Map.MultiVendors-master/)
 
-[See a DEMO using Leaflet V1.0](https://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/examples/v1.0.html)
+[See a DEMO using Leaflet V0.7](https://dominique92.github.io/MyLeaflet/lib/Leaflet.Map.MultiVendors-master/examples/v0.7.html)
 
-[See a DEMO of France IGN layers](https://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/examples/France-IGN.html)
+[See a DEMO of France IGN layers](https://dominique92.github.io/MyLeaflet/lib/Leaflet.Map.MultiVendors-master/examples/France-IGN.html)
 
-[See a DEMO of Spain IDEE layer](https://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/examples/Spain-IDEE.html)
+[See a DEMO of Spain IDEE layer](https://dominique92.github.io/MyLeaflet/lib/Leaflet.Map.MultiVendors-master/examples/Spain-IDEE.html)
 
-[See a DEMO of Italy IGM layers](https://dominique92.github.io/MyLeaflet/github.com/Dominique92/Leaflet.Map.MultiVendors/examples/Italy-IGM.html)
+[See a DEMO of Italy IGM layers](https://dominique92.github.io/MyLeaflet/lib/Leaflet.Map.MultiVendors-master/examples/Italy-IGM.html)

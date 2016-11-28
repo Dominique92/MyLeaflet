@@ -2,11 +2,12 @@
  * Integrated by Dominique Cavailhez (c) 2016
  * https://github.com/Dominique92/MyLeaflet
  * Includes part of :
-	https://github.com/Dominique92/Leaflet.GeoJSON.Ajax
-	https://github.com/Dominique92/Leaflet.Map.MultiVendors
-	https://github.com/Dominique92/Leaflet.Marker.coordinates
-	https://github.com/Dominique92/Leaflet.Permalink.Cookies
-	https://github.com/Dominique92/Leaflet.draw.plus
+	https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/commit/f05ff1fbac26dc48b59c02d068f55c05307400cc
+	https://github.com/Dominique92/Leaflet.Map.MultiVendors/commit/0c475734f912a5c5789b658be894669d052f5a1f
+	https://github.com/Dominique92/Leaflet.Marker.coordinates/commit/b1dd37aaf201a30d436a152d8e8469e4993433f9
+	https://github.com/Dominique92/Leaflet.Permalink.Cookies/commit/ad0966bffbda41f8f4fb657ee3952cf4b40c5b39
+	https://github.com/Dominique92/Leaflet.draw.plus/commit/1d76b7390cd1cba1b1356d6149e5964772116472
+	https://github.com/Dominique92/MyLeaflet/commit/7aeb9b5c6c27e6fe5a43732858994f1dc9b6e49b
 	https://github.com/Leaflet/Leaflet.draw/commit/123f2f8f9b412ad3bf87e38e582e0d24cb5e7289
 	https://github.com/Leaflet/Leaflet.fullscreen/commit/f5e76270ad40bb573bd11595f9069c3f15f8f286
 	https://github.com/Leaflet/Leaflet/commit/188362098b715998b60f9f90500290da81565492
@@ -17,7 +18,7 @@
 	https://github.com/makinacorpus/Leaflet.FileLayer/commit/ef4f3ef0d4b7cff7aaadf2ae2141a286f2f45916
 	https://github.com/makinacorpus/Leaflet.GeometryUtil/commit/0d23b1db73b9416165673f44a07c064fd4584749
 	https://github.com/makinacorpus/Leaflet.Snap/commit/43fbe4f6a7cd2b275912294d7d27e1034639e519
-	https://github.com/mapbox/togeojson/commit/82dd5197823211a3898675b53843a27b46c42d7a
+	https://github.com/mapbox/togeojson/commit/403676aebabf152111a21b3557404c685c8958f7
 	https://github.com/rob-murray/os-leaflet/commit/fcc5333069cfa20dc29df104449f567eeab0e4e5
 	https://github.com/rowanwins/leaflet-easyPrint/commit/e58ac06ced046695685d21686b9de8d902f25959
 	https://github.com/shramov/leaflet-plugins/commit/0d639aad6a2618d2be3527964236c0a24091c540

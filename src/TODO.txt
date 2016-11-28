@@ -1,5 +1,6 @@
 BUGS
 ====
+https://dominique92.github.io/MyLeaflet/lib/Leaflet.GeoJSON.Ajax-master/ etiquette bagotte
 http://dominique92.github.io/MyLeaflet/lib/Leaflet.draw.plus-master/ Cannot read property '0' of undefined(…)
 https://dominique92.github.io/MyLeaflet/lib/Leaflet.Map.MultiVendors-master/examples/France-IGN.html -> Photo: ne marche pas
 Mixed Content: The page at 'https://dominique92.github.io/MyLeaflet/lib/Leaflet.GeoJSON.Ajax-master/' : http://erictheise.com/rrose/stylesheets/leaflet.rrose.css
@@ -14,6 +15,7 @@ Permalink.cookies affiche d'abord la carte générale puis zoome sur la position
 
 TODO
 ====
+tester WRI avec debug LL
 Trace AJAX paramétrable
 marker.coordinates : donner des priorités aux types de CRS sélectés (suisse d'abord !) => Dépend du pays ??? / Ident WRI ??
 TEST Compatibilité IE9 ?
@@ -72,45 +74,9 @@ Vérification finale avant mise en prod
 	Style commentaires
 	 */
 
-A FAIRE WRI
-===========
-Copier leaflet
-	Remplacer fichiers dans /dist/images
-	--github/...
-	++lib/... (mais retirer les demos, ...) ne garder que le defs.php, mes css et les images associées
-Tester https//wri... les referrers
-	
-FAIT WRI
-========
-					Enlever refferer
-					nav.js transform polygon : for i.... [0]
-					ajoute un bord à un polygone double celui-ci
-					Voir icones cliquables sur formulaire podif point / massif https://github.com/Dominique92/GeoBB/commit/a5d749f2317666435fc0ee6c9f1a309868d63f1c
-					Curseur survolant le cadre ????
-					Modifier carte avec jquery perd le centre 
-					Superposition icones / cadre
-					Curseur sur le cadre
-					Traiter les 50vw vh
-					Tester Safari
-					Full screen (Chrome pleine page) => Dalles manquantes
-					Bug full screen bandes noires
-					Editeur massif : double le poly existant si on coupe un polygone et ajoute un côté
-					?? voir https OSM overpass ??
-					Editeur : faire touche "enregistrer et quiter"
-					Editeur : quitter sans sortir : aller en NAV devrait visualiser le massif
-					popupValidity: 150,
-					Revoir ordre des controles (permalink avant scale)
-					YEN A PAS : L.Control.Layers.args  => L.Control.Layers.overlays 
-					YEN A PAS : Purger style de /* Style for Control.Layers.argsGeoJSON */ (qui est maintenant dans la lib)
-					N'avoir qu'un type de postit: rémanent qui disparait si la souris s'éloigne > 150px
-						supprimer remanent: true,
-						supprimer .remanent (Control.layer)
-						Corriger style /* Little popups */ (est dans la lib) (leaflet-rrose-content-wrapper)
-					Control.Layers.overflow => Supprimer .overflow
-					??? <ul class="comment2 noprint"> => <ul class="comment2">
-
 WRI
 ===
+Tester https//wri... tous les referrers
 Pas de récup cookies de point-modif vers nav
 Création point : garder les cookies et pas forcer à Salanche (point par défaut dans la base !)
 Bug remontée MultiPolygon / default : null
