@@ -1,2 +1,2 @@
 https://github.com/Dominique92/Leaflet.draw.plus
-https://github.com/Dominique92/Leaflet.draw.plus/commit/1d76b7390cd1cba1b1356d6149e5964772116472
+https://github.com/Dominique92/Leaflet.draw.plus/commit/3c0d5a6735948a066dfeee29d20cde7e9ac83bc8

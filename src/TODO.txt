@@ -1,9 +1,14 @@
-BUGS
+TEST
 ====
 https://dominique92.github.io/MyLeaflet/lib/Leaflet.GeoJSON.Ajax-master/ etiquette bagotte
 http://dominique92.github.io/MyLeaflet/lib/Leaflet.draw.plus-master/ Cannot read property '0' of undefined(…)
-https://dominique92.github.io/MyLeaflet/lib/Leaflet.Map.MultiVendors-master/examples/France-IGN.html -> Photo: ne marche pas
 Mixed Content: The page at 'https://dominique92.github.io/MyLeaflet/lib/Leaflet.GeoJSON.Ajax-master/' : http://erictheise.com/rrose/stylesheets/leaflet.rrose.css
+'//www.idee.es/wms/MTN-Raster/MTN-Raster', // available via https ??
+
+
+BUGS
+====
+https://dominique92.github.io/MyLeaflet/lib/Leaflet.Map.MultiVendors-master/examples/France-IGN.html -> Photo: ne marche pas
 Erreur JS quand glisse 1 milieu d'une ligne de 2 segments repliée sur elle même (tente de terminer le glissement aprés son effacement)
 Safari : 'undefined' is not a function (evaluating 'Math.hypot(popupXY.x - e.layerPoint.x, popupXY.y - e.layerPoint.y)')
 Controle impression
@@ -15,7 +20,9 @@ Permalink.cookies affiche d'abord la carte générale puis zoome sur la position
 
 TODO
 ====
-tester WRI avec debug LL
+Toutes couches: zoom interne si erreur 404
+	Pb pour revenir en arrière dans un zoom etendu si on n'a pas chargé les images
+Tester WRI avec debug LL
 Trace AJAX paramétrable
 marker.coordinates : donner des priorités aux types de CRS sélectés (suisse d'abord !) => Dépend du pays ??? / Ident WRI ??
 TEST Compatibilité IE9 ?
@@ -51,7 +58,6 @@ Editeur
 
 DOC TESTS & DEMOS
 =================
-IGN test.chemineur.fr 1nxqfnrnhph73nqh80izju6j
 Pourquoi marge supplémentaire sur demos MyLL/index.* ?
 Extension liste de cartes pour debug (+ Seigfreid + Dufour + Etat major + Cassigny ...)
 Documenter Control.Layers.argsGeoJSON
@@ -76,6 +82,7 @@ Vérification finale avant mise en prod
 
 WRI
 ===
+Enlever build/update_nodes.php
 Tester https//wri... tous les referrers
 Pas de récup cookies de point-modif vers nav
 Création point : garder les cookies et pas forcer à Salanche (point par défaut dans la base !)

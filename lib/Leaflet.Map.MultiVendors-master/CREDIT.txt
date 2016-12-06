@@ -1,2 +1,2 @@
 https://github.com/Dominique92/Leaflet.Map.MultiVendors
-https://github.com/Dominique92/Leaflet.Map.MultiVendors/commit/0c475734f912a5c5789b658be894669d052f5a1f
+https://github.com/Dominique92/Leaflet.Map.MultiVendors/commit/65ca2f4235352d263d71b2398930086e8fd56dfc

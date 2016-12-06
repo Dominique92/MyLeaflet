@@ -1,2 +1,2 @@
 https://github.com/Leaflet/Leaflet
-https://github.com/Leaflet/Leaflet/commit/188362098b715998b60f9f90500290da81565492
+https://github.com/Leaflet/Leaflet/commit/240918d7427eb16c6fab8754f73d91f9c5b6b6b7

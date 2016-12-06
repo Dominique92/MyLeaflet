@@ -1,2 +1,2 @@
 https://github.com/Dominique92/Leaflet.Permalink.Cookies
-https://github.com/Dominique92/Leaflet.Permalink.Cookies/commit/ad0966bffbda41f8f4fb657ee3952cf4b40c5b39
+https://github.com/Dominique92/Leaflet.Permalink.Cookies/commit/b34704272cac9c028666675716218bd3c6700c20
