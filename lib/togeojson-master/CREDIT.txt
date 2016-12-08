@@ -1,2 +1,2 @@
 https://github.com/mapbox/togeojson
-https://github.com/mapbox/togeojson/commit/6831fb842b025d0785f050e537b106c66f0c781c
+https://github.com/mapbox/togeojson/commit/79bc6a3d2c6a0da4eb15542e4d880776d0862090

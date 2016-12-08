@@ -7,10 +7,10 @@
 	https://github.com/Dominique92/Leaflet.Marker.coordinates/commit/22e32460b86dc07142ce43b2bc1401fc468184d6
 	https://github.com/Dominique92/Leaflet.Permalink.Cookies/commit/b34704272cac9c028666675716218bd3c6700c20
 	https://github.com/Dominique92/Leaflet.draw.plus/commit/3c0d5a6735948a066dfeee29d20cde7e9ac83bc8
-	https://github.com/Dominique92/MyLeaflet/commit/06d7eb838b8e9a66abb3252107fa7ff6bf2b0c44
+	https://github.com/Dominique92/MyLeaflet/commit/990578488891af56727f0ef51f1c44cb53933bef
 	https://github.com/Leaflet/Leaflet.draw/commit/7381569e62e240fab001c134331aa97ca641dce4
 	https://github.com/Leaflet/Leaflet.fullscreen/commit/f5e76270ad40bb573bd11595f9069c3f15f8f286
-	https://github.com/Leaflet/Leaflet/commit/240918d7427eb16c6fab8754f73d91f9c5b6b6b7
+	https://github.com/Leaflet/Leaflet/commit/b1c2e99c1faf5d7a518a3260c22eb920a7512945
 	https://github.com/MrMufflon/Leaflet.Coordinates/commit/09ffcfdfa2bee2a7cee24a9653baef0ec0abc660
 	https://github.com/erictheise/rrose/commit/04fac08b0b367e137b64fb4e5e08e2dd020955c6
 	https://github.com/k4r573n/leaflet-control-osm-geocoder/commit/f833500063e165506503ee8aae997928052c3c4a
@@ -18,7 +18,7 @@
 	https://github.com/makinacorpus/Leaflet.FileLayer/commit/ef4f3ef0d4b7cff7aaadf2ae2141a286f2f45916
 	https://github.com/makinacorpus/Leaflet.GeometryUtil/commit/0d23b1db73b9416165673f44a07c064fd4584749
 	https://github.com/makinacorpus/Leaflet.Snap/commit/43fbe4f6a7cd2b275912294d7d27e1034639e519
-	https://github.com/mapbox/togeojson/commit/6831fb842b025d0785f050e537b106c66f0c781c
+	https://github.com/mapbox/togeojson/commit/79bc6a3d2c6a0da4eb15542e4d880776d0862090
 	https://github.com/rob-murray/os-leaflet/commit/fcc5333069cfa20dc29df104449f567eeab0e4e5
 	https://github.com/rowanwins/leaflet-easyPrint/commit/e58ac06ced046695685d21686b9de8d902f25959
 	https://github.com/shramov/leaflet-plugins/commit/0d639aad6a2618d2be3527964236c0a24091c540
