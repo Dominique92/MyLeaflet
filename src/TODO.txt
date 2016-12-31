@@ -1,12 +1,5 @@
-TEST
-====
-http://dominique92.github.io/MyLeaflet/lib/Leaflet.draw.plus-master/
-	 targets an insecure endpoint 'http://%3C/?=$_SERVER[%27SERVER_NAME%27].$_SERVER[%27PHP_SELF%27]?%3E#'.
-
 BUGS
 ====
-https://dominique92.github.io/MyLeaflet/lib/Leaflet.GeoJSON.Ajax-master/
-	mauvaise sélection des sources
 Erreur JS quand glisse 1 milieu d'une ligne de 2 segments repliée sur elle même (tente de terminer le glissement aprés son effacement)
 Safari : 'undefined' is not a function (evaluating 'Math.hypot(popupXY.x - e.layerPoint.x, popupXY.y - e.layerPoint.y)')
 Controle impression
@@ -18,6 +11,7 @@ Permalink.cookies affiche d'abord la carte générale puis zoome sur la position
 
 TODO
 ====
+Image IGN hors champ plus appropriée
 Toutes couches: zoom interne si erreur 404
 	Pb pour revenir en arrière dans un zoom etendu si on n'a pas chargé les images
 Tester WRI avec debug LL
