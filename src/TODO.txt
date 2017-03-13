@@ -40,7 +40,6 @@ Afficher altitude & heure sur survol point ou segment d'une courbe
 	https://github.com/arthur-e/Wicket
 	Afficher distance
 Editeur
-	Voir largeur marqueurs editeur sur IE
 	Mettre le mode d'emploi dans la lib (le générer js)
 	Integrer traduction locale FR dans draw+ / Faire dépendre cette traduction du langage de l'explo
 		Traduire page exemples draw / locales/us
@@ -77,6 +76,7 @@ Vérification finale avant mise en prod
 
 WRI
 ===
+os-leaflet-1.0 => -master
 Enlever build/update_nodes.php
 Tester https//wri... tous les referrers
 Pas de récup cookies de point-modif vers nav

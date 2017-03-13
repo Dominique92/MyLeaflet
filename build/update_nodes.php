@@ -12,7 +12,7 @@ $git = [
 
 	// Couches autres fournisseurs
 	'shramov/leaflet-plugins' => [''],
-	'rob-murray/os-leaflet' => ['', 'v0.2.1', 'leaflet-1.0'], // For ll 0.7, 1.0, dev ==> TODO A SURVEILLER
+	'rob-murray/os-leaflet' => ['', 'v0.2.1'], // For ll 1.0, 0.7
 
 	// Controles
 	'MrMufflon/Leaflet.Coordinates' => [''],

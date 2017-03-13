@@ -129,7 +129,7 @@ var deps = [
 	'../lib/Proj4Leaflet-master/src/proj4leaflet.js', // V1.0
 	'../lib/Leaflet.Map.MultiVendors-master/src/MapMultiCRS.js',
 	'../lib/Leaflet.Map.MultiVendors-master/src/layers/SwissTopo.js',
-	'../lib/os-leaflet-leaflet-1.0/OSOpenSpace.js',
+	'../lib/os-leaflet-master/OSOpenSpace.js',
 	'../lib/leaflet-plugins-master/layer/tile/Bing.js',
 	'../lib/Leaflet.Map.MultiVendors-master/src/layers/TileLayer.collection.js',
 
