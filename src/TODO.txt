@@ -1,20 +1,14 @@
 BUGS
 ====
-Icône imprimante sur smartphone note 3 lite
-Draw : taille carrés de sommet sur tous les explorateurs
 Voir intégration defs.js lealfet > 1.0.3
 Erreur JS quand glisse 1 milieu d'une ligne de 2 segments repliée sur elle même (tente de terminer le glissement aprés son effacement)
 Safari : 'undefined' is not a function (evaluating 'Math.hypot(popupXY.x - e.layerPoint.x, popupXY.y - e.layerPoint.y)')
-Controle impression
-	curseur = fleche au survol au lieu de doigt
-	Logo imprimante commande carte non affiché sur mobile
 Erreur JS sur forts zoom OS-GB en V1.0 : leaflet.js:5 Uncaught Error: Invalid LatLng object: (NaN, NaN)
 Permalink.cookies affiche d'abord la carte générale puis zoome sur la position du cookie / carte: perte de temps
 	Semble charger + de tiles que la carte courante (remove layer sur switch ?)
 
 TODO
 ====
-Image IGN hors champ plus appropriée
 Toutes couches: zoom interne si erreur 404
 	Pb pour revenir en arrière dans un zoom etendu si on n'a pas chargé les images
 Tester WRI avec debug LL
