@@ -30,19 +30,15 @@
 	</a>
 
 	<!-- Insert the javascript after all <div> are defined -->
+	<script src="keys.js"></script>
 	<script>
-		var key = window.location.host == 'localhost'
-//			? 'g8jzsy4ttwzho3aepk2s4tb7' // localhost 03/12/2016 http://api.ign.fr / Votre clef de développement >>
-			? 'o6owv8ubhn3vbz2uj8jq5j0z' // localhost Expire le 17/12/2018
-			: 'o6owv8ubhn3vbz2uj8jq5j0z'; // dominique92.github.io http://pro.ign.fr/api-web
-
 		var layers = {
-			'IGN':         new L.TileLayer.IGN({k: key, l:'GEOGRAPHICALGRIDSYSTEMS.MAPS'}),
-			'IGN Photo':   new L.TileLayer.IGN({k: key, l:'ORTHOIMAGERY.ORTHOPHOTOS'}),
-//			'IGN Avalanches':   new L.TileLayer.IGN({k: key, l:'GEOGRAPHICALGRIDSYSTEMS.SLOPES.MOUNTAIN'}), // DCMM TODO : waiting availability over API
-			'IGN Paris':   new L.TileLayer.IGN({k: key, l:'GEOGRAPHICALGRIDSYSTEMS.1900TYPEMAPS'}),
-			'IGN EM10':   new L.TileLayer.IGN({k: key, l:'GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR10'}),
-			'IGN EM40':   new L.TileLayer.IGN({k: key, l:'GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40'})
+			'IGN':         new L.TileLayer.IGN({k: key.ign, l:'GEOGRAPHICALGRIDSYSTEMS.MAPS'}),
+			'IGN Photo':   new L.TileLayer.IGN({k: key.ign, l:'ORTHOIMAGERY.ORTHOPHOTOS'}),
+//			'IGN Avalanches':   new L.TileLayer.IGN({k: key.ign, l:'GEOGRAPHICALGRIDSYSTEMS.SLOPES.MOUNTAIN'}), // DCMM TODO : waiting availability over API
+			'IGN Paris':   new L.TileLayer.IGN({k: key.ign, l:'GEOGRAPHICALGRIDSYSTEMS.1900TYPEMAPS'}),
+			'IGN EM10':   new L.TileLayer.IGN({k: key.ign, l:'GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR10'}),
+			'IGN EM40':   new L.TileLayer.IGN({k: key.ign, l:'GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40'})
 		};
 
 		var map = new L.Map('map', {

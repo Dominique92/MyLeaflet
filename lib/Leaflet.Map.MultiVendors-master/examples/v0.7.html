@@ -24,6 +24,7 @@
 	<script src="../../leaflet-plugins-master/layer/tile/Bing.js"></script>
 	<script src="https://rawgit.com/rob-murray/os-leaflet/master/OSOpenSpace.js"></script><!-- For Leaflet V0.7 only -->
 	<script src="../src/layers/TileLayer.collection.js"></script>
+	<script src="keys.js"></script>
 </head>
 
 <body>
@@ -62,15 +63,6 @@
 
 	<!-- Insert the javascript after all <div> are defined -->
 	<script>
-		// Specific layers keys
-		var key = {
-			ign: window.location.host == 'localhost'
-				? 'g8jzsy4ttwzho3aepk2s4tb7' // localhost 03/12/2016 http://api.ign.fr / Votre clef de développement >>
-				: 'o6owv8ubhn3vbz2uj8jq5j0z', // dominique92.github.io http://pro.ign.fr/api-web
-			bing: 'ArLngay7TxiroomF7HLEXCS7kTWexf1_1s1qiF7nbTYs2IkD3XLcUnvSlKbGRZxt', // https://www.bingmapsportal.com
-			os: 'CBE047F823B5E83CE0405F0ACA6042AB' // http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/
-		};
-
 		var map = new L.Map('map', {
 			center: new L.LatLng(47, 2), // Centre France
 			zoom: 6,
