@@ -1,2 +1,2 @@
 https://github.com/Dominique92/MyLeaflet
-https://github.com/Dominique92/MyLeaflet/commit/92a3175c8fe964aeff0d5cada20f3ec1039d5dae
+https://github.com/Dominique92/MyLeaflet/commit/a6729d09d399dbf2a8058c5327419e3330e1b73f
