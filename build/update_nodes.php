@@ -25,7 +25,7 @@ $git = [
 //npm	'stefanocudini/leaflet-gps' => [''],
 	'k4r573n/leaflet-control-osm-geocoder' => [''],
 
-	'mapbox/togeojson' => [''],
+//	'mapbox/togeojson' => [''],
 	'makinacorpus/Leaflet.FileLayer' => [''],
 
 	'rowanwins/leaflet-easyPrint' => ['gh-pages'],

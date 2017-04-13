@@ -16,7 +16,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "postinstall": "sh postinstall.js"
+    "postinstall": "cd node_modules/proj4&&npm install&&node_modules/.bin/grunt build:somerc,tmerc,utm,lcc"
   },
   "author": "Dominique Cavailhez",
   "license": "BSD-2-Clause"

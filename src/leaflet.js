@@ -19,10 +19,10 @@ var deps = [
 	
 	'../lib/Leaflet.fullscreen-gh-pages/dist/Leaflet.fullscreen.js',
 	'../lib/leaflet-control-osm-geocoder-master/Control.OSMGeocoder.js',
-	'../node_modules/leaflet-gps/src/leaflet-gps.js',
+	'../node_modules/leaflet-gps/dist/leaflet-gps.src.js',
 
-	'../lib/togeojson-master/togeojson.js',
-	'../lib/Leaflet.FileLayer-master/src/leaflet.filelayer.js',
+	'../node_modules/togeojson/togeojson.js',
+	'../node_modules/leaflet-filelayer/leaflet.filelayer.js',
 	'../src/Control.Click.js',
 
 	'../lib/leaflet-easyPrint-gh-pages/dist/leaflet.easyPrint.js',
