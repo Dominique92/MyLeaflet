@@ -5,9 +5,9 @@ if (count ($_POST))
 include ('index.html');
 ?>
 
-<a href="v0.7.html"
+<a href="../Leaflet.draw.plus-master"
    style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
-   title="Test on Leaflet V0.7">
+   title="Next test">
 	&#10144;
 </a>
 

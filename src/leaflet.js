@@ -56,54 +56,12 @@ var deps = [
 	'../lib/Leaflet.Marker.coordinates-master/src/CRS.js',
 	'../lib/Leaflet.Marker.coordinates-master/src/Marker.coordinates.js',
 
-/* DRAW FOR LEAFLET */
-	// The core of the plugin. Currently only includes the version.
-	'../lib/Leaflet.draw-master/src/Leaflet.draw.js',
-	'../lib/Leaflet.draw-master/src/Leaflet.Draw.Event.js',
-
-	// Drawing handlers for: polylines, polygons, rectangles, circles and markers.
-	'../lib/Leaflet.draw-master/src/draw/handler/Draw.Feature.js',
-	'../lib/Leaflet.draw-master/src/draw/handler/Draw.Polyline.js',
-	'../lib/Leaflet.draw-master/src/draw/handler/Draw.Polygon.js',
-//	'../lib/Leaflet.draw-master/src/draw/handler/Draw.SimpleShape.js',
-//	'../lib/Leaflet.draw-master/src/draw/handler/Draw.Rectangle.js',
-//	'../lib/Leaflet.draw-master/src/draw/handler/Draw.Circle.js',
-	'../lib/Leaflet.draw-master/src/draw/handler/Draw.Marker.js',
-
-	// Editing handlers for: polylines, polygons, rectangles, and circles.
-//	'../lib/Leaflet.draw-master/src/edit/handler/Edit.Marker.js',
-	'../lib/Leaflet.draw-master/src/edit/handler/Edit.Poly.js',
-//	'../lib/Leaflet.draw-master/src/edit/handler/Edit.SimpleShape.js',
-//	'../lib/Leaflet.draw-master/src/edit/handler/Edit.Rectangle.js',
-//	'../lib/Leaflet.draw-master/src/edit/handler/Edit.Circle.js',
-
-	// Extensions of leaflet classes.
-	'../lib/Leaflet.draw-master/src/ext/TouchEvents.js', // Pour draw+ optim poly
-	'../lib/Leaflet.draw-master/src/ext/LatLngUtil.js',
-	'../lib/Leaflet.draw-master/src/ext/GeometryUtil.js',
-	'../lib/Leaflet.draw-master/src/ext/LineUtil.Intersect.js',
-	'../lib/Leaflet.draw-master/src/ext/Polyline.Intersect.js', // Nécéssaire pour merger les lignes
-//	'../lib/Leaflet.draw-master/src/ext/Polygon.Intersect.js',
-
-	// Common UI components used.
-	'../lib/Leaflet.draw-master/src/Control.Draw.js',
-	'../lib/Leaflet.draw-master/src/Toolbar.js',
-	'../lib/Leaflet.draw-master/src/Tooltip.js',
-
-	// Draw toolbar.
-	'../lib/Leaflet.draw-master/src/draw/DrawToolbar.js',
-
-	// Edit toolbar.
-	'../lib/Leaflet.draw-master/src/edit/EditToolbar.js',
-	'../lib/Leaflet.draw-master/src/edit/handler/EditToolbar.Edit.js',
-	'../lib/Leaflet.draw-master/src/edit/handler/EditToolbar.Delete.js',
-
-	'../src/stubs-draw.js', // Stubs for optimized geometries
-/* END DRAW */
+	// Draw for leaflet
+	'../node_modules/leaflet-draw/dist/Leaflet.draw-src.js',
 
 	// SNAP
-	'../lib/Leaflet.GeometryUtil-master/src/leaflet.geometryutil.js', // A mettre sinon snap plante.
-	'../lib/Leaflet.Snap-master/leaflet.snap.js',
+	'../node_modules/leaflet-geometryutil/src/leaflet.geometryutil.js', // A mettre sinon snap plante.
+	'../node_modules/leaflet-snap/leaflet.snap.js',
 
 	'../lib/Leaflet.draw.plus-master/src/Control.Draw.Plus.js',
 

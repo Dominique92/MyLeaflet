@@ -3,26 +3,26 @@
 $dwn = isset($_GET['dwn']) ? $_GET['dwn'] : 0;
 $git = [
 	// Kernel LL
-	'Leaflet/Leaflet' => ['', 'v1.0.3', 'v0.7.7'], // 1.0 dev, 1.0 stable, 0.7 stable
+//npm	'Leaflet/Leaflet' => ['', 'v1.0.3', 'v0.7.7'], // 1.0 dev, 1.0 stable, 0.7 stable
 
 	// CRS exotiques
-	'proj4js/proj4js' => [''],
+//npm	'proj4js/proj4js' => [''],
 	/* install & build optimized lib
 		cd lib/proj4js-master
 		npm install
 		node_modules/.bin/grunt build:somerc,tmerc,utm,lcc
 	*/
-	'kartena/Proj4Leaflet' => [''/*, 'leaflet-proj-refactor'*/], // For ll 1.0, (TODO : 0.7 : https://github.com/kartena/Proj4Leaflet-master/releases/tag/0.7.2)
+//npm	'kartena/Proj4Leaflet' => [''/*, 'leaflet-proj-refactor'*/], // For ll 1.0, (TODO : 0.7 : https://github.com/kartena/Proj4Leaflet-master/releases/tag/0.7.2)
 //	'tyrasd/togpx' => [''],
 
 	// Couches autres fournisseurs
-	'shramov/leaflet-plugins' => [''],
+//npm	'shramov/leaflet-plugins' => [''],
 	'rob-murray/os-leaflet' => ['', 'v0.2.1'], // For ll 1.0, 0.7
 
 	// Controles
-	'MrMufflon/Leaflet.Coordinates' => [''],
+//npm	'MrMufflon/Leaflet.Coordinates' => [''],
 	'Leaflet/Leaflet.fullscreen' => ['gh-pages'],
-	'stefanocudini/leaflet-gps' => [''],
+//npm	'stefanocudini/leaflet-gps' => [''],
 	'k4r573n/leaflet-control-osm-geocoder' => [''],
 
 	'mapbox/togeojson' => [''],
@@ -34,12 +34,12 @@ $git = [
 	'erictheise/rrose' => [''],
 
 	// Draw
-	'Leaflet/Leaflet.draw' => [''], // For ll 0.7 & 1.0
-	'makinacorpus/Leaflet.GeometryUtil' => [''], // A mettre sinon snap plante.
-	'makinacorpus/Leaflet.Snap' => [''],
+//	'Leaflet/Leaflet.draw' => [''], // For ll 0.7 & 1.0
+//npm	'makinacorpus/Leaflet.GeometryUtil' => [''], // A mettre sinon snap plante.
+//npm	'makinacorpus/Leaflet.Snap' => [''],
 
 	// Editable (Evaluation ongoing)
-	'Leaflet/Leaflet.Editable' => ['leaflet0.7', ''], // For ll 0.7, 1.0
+//	'Leaflet/Leaflet.Editable' => ['leaflet0.7', ''], // For ll 0.7, 1.0
 
 	/* MyLeaflet / La source est dans lib */
 	/* Update uniquement le CREDIT */

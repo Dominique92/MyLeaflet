@@ -10,6 +10,7 @@
     "leaflet-gps": "~1.5.0",
     "leaflet-filelayer": "~0.6.0",
     "leaflet-easyprint": "~1.0.0",
+    "leaflet-draw": "^0.4.9",
     "leaflet-snap": "~0.0.4",
     "os-leaflet": "~1.0.0"
   },
