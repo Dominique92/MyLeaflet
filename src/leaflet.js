@@ -7,7 +7,25 @@
 
 var deps = [
 	// Kernel leaflet
-	'../lib/Leaflet-1.0.3/dist/Leaflet.js',
+	'../node_modules/leaflet/dist/Leaflet-src.js',
+
+	// Controls
+	'../node_modules/leaflet.coordinates/src/util/NumberFormatter.js',
+	'../node_modules/leaflet.coordinates/src/Control.Coordinates.js',
+
+	'../node_modules/leaflet-plugins/control/Permalink.js',
+	'../node_modules/leaflet-plugins/control/Permalink.Layer.js',
+	'../lib/Leaflet.Permalink.Cookies-master/src/Permalink.Cookies.js',
+	
+	'../lib/Leaflet.fullscreen-gh-pages/dist/Leaflet.fullscreen.js',
+	'../lib/leaflet-control-osm-geocoder-master/Control.OSMGeocoder.js',
+	'../node_modules/leaflet-gps/src/leaflet-gps.js',
+
+	'../lib/togeojson-master/togeojson.js',
+	'../lib/Leaflet.FileLayer-master/src/leaflet.filelayer.js',
+	'../src/Control.Click.js',
+
+	'../lib/leaflet-easyPrint-gh-pages/dist/leaflet.easyPrint.js',
 
 	// Couches autres fournisseurs
 	'../lib/Leaflet.Map.MultiVendors-master/src/layers/OSM.js',
@@ -17,31 +35,13 @@ var deps = [
 	'../lib/Leaflet.Map.MultiVendors-master/src/layers/Google.js',
 
 	// CRS exotiques
-	'../lib/proj4js-master/dist/proj4-src.js',
-	'../lib/Proj4Leaflet-master/src/proj4leaflet.js', // V1.0
+	'../node_modules/proj4/dist/proj4-src.js',
+	'../node_modules/proj4leaflet/src/proj4leaflet.js',
 	'../lib/Leaflet.Map.MultiVendors-master/src/MapMultiCRS.js',
 	'../lib/Leaflet.Map.MultiVendors-master/src/layers/SwissTopo.js',
 	'../lib/os-leaflet-master/OSOpenSpace.js',
-	'../lib/leaflet-plugins-master/layer/tile/Bing.js',
+	'../node_modules/leaflet-plugins/layer/tile/Bing.js',
 	'../lib/Leaflet.Map.MultiVendors-master/src/layers/TileLayer.collection.js',
-
-	// Controls
-	'../lib/leaflet-plugins-master/control/Permalink.js',
-	'../lib/leaflet-plugins-master/control/Permalink.Layer.js',
-	'../lib/Leaflet.Permalink.Cookies-master/src/Permalink.Cookies.js',
-	
-	'../lib/Leaflet.Coordinates-master/src/util/NumberFormatter.js',
-	'../lib/Leaflet.Coordinates-master/src/Control.Coordinates.js',
-
-	'../lib/Leaflet.fullscreen-gh-pages/dist/Leaflet.fullscreen.js',
-	'../lib/leaflet-gps-master/src/leaflet-gps.js',
-	'../lib/leaflet-control-osm-geocoder-master/Control.OSMGeocoder.js',
-
-	'../lib/togeojson-master/togeojson.js',
-	'../lib/Leaflet.FileLayer-master/src/leaflet.filelayer.js',
-	'../src/Control.Click.js',
-
-	'../lib/leaflet-easyPrint-gh-pages/dist/leaflet.easyPrint.js',
 
 	// Couches vectotielles
 	'../lib/rrose-master/leaflet.rrose-src.js',

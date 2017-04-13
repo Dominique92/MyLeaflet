@@ -9,6 +9,7 @@ Permalink.cookies affiche d'abord la carte générale puis zoome sur la position
 
 TODO
 ====
+npm fullscreen, rrose, geocoder
 Toutes couches: zoom interne si erreur 404
 	Pb pour revenir en arrière dans un zoom etendu si on n'a pas chargé les images
 Tester WRI avec debug LL
