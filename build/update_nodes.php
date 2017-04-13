@@ -6,7 +6,12 @@ $git = [
 	'Leaflet/Leaflet' => ['', 'v1.0.3', 'v0.7.7'], // 1.0 dev, 1.0 stable, 0.7 stable
 
 	// CRS exotiques
-//	'proj4js/proj4js' => [''],
+	'proj4js/proj4js' => [''],
+	/* install & build optimized lib
+		cd lib/proj4js-master
+		npm install
+		node_modules/.bin/grunt build:somerc,tmerc,utm,lcc
+	*/
 	'kartena/Proj4Leaflet' => [''/*, 'leaflet-proj-refactor'*/], // For ll 1.0, (TODO : 0.7 : https://github.com/kartena/Proj4Leaflet-master/releases/tag/0.7.2)
 //	'tyrasd/togpx' => [''],
 
