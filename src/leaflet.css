@@ -6,7 +6,7 @@
 @import url("../node_modules/leaflet/dist/Leaflet.css");
 @import url("../node_modules/leaflet.coordinates/src/Control.Coordinates.css");
 @import url("../node_modules/leaflet.coordinates/src/Control.Coordinates.ie.css");
-@import url("../lib/Leaflet.fullscreen-gh-pages/dist/leaflet.fullscreen.css");
+@import url("../node_modules/leaflet-fullscreen/dist/leaflet.fullscreen.css");
 @import url("../lib/leaflet-easyPrint-gh-pages/dist/easyPrint.css");
 @import url("../lib/leaflet-control-osm-geocoder-master/Control.OSMGeocoder.css");
 @import url("../node_modules/leaflet-gps/dist/leaflet-gps.src.css");

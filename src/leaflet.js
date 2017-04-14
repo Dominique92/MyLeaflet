@@ -17,7 +17,7 @@ var deps = [
 	'../node_modules/leaflet-plugins/control/Permalink.Layer.js',
 	'../lib/Leaflet.Permalink.Cookies-master/src/Permalink.Cookies.js',
 	
-	'../lib/Leaflet.fullscreen-gh-pages/dist/Leaflet.fullscreen.js',
+	'../node_modules/leaflet-fullscreen/dist/Leaflet.fullscreen.js',
 	'../lib/leaflet-control-osm-geocoder-master/Control.OSMGeocoder.js',
 	'../node_modules/leaflet-gps/dist/leaflet-gps.src.js',
 
@@ -39,7 +39,7 @@ var deps = [
 	'../node_modules/proj4leaflet/src/proj4leaflet.js',
 	'../lib/Leaflet.Map.MultiVendors-master/src/MapMultiCRS.js',
 	'../lib/Leaflet.Map.MultiVendors-master/src/layers/SwissTopo.js',
-	'../lib/os-leaflet-master/OSOpenSpace.js',
+	'../node_modules/os-leaflet/OSOpenSpace.js',
 	'../node_modules/leaflet-plugins/layer/tile/Bing.js',
 	'../lib/Leaflet.Map.MultiVendors-master/src/layers/TileLayer.collection.js',
 
@@ -48,7 +48,7 @@ var deps = [
 	'../lib/Leaflet.GeoJSON.Ajax-master/src/GeoJSON.Style.js',
 	'../lib/Leaflet.GeoJSON.Ajax-master/src/GeoJSON.Ajax.js',
 	'../lib/Leaflet.GeoJSON.Ajax-master/src/Control.Layers.argsGeoJSON.js', // Define a second control layer for overlays arguments selection
-	'../lib/Leaflet.GeoJSON.Ajax-master/src/layers/GeoJSON.Ajax.OSM.js', // Specific layer for 
+	'../lib/Leaflet.GeoJSON.Ajax-master/src/layers/GeoJSON.Ajax.OSM.js', // Specific layer for OSM POI
 // INSERER SUR DEMANDE	'../lib/Leaflet.GeoJSON.Ajax-master/layers/GeoJSON.Ajax.WRI.js',
 //	'../lib/leaflet-omnivore-master/leaflet-omnivore.js', // TODO KML/ ...
 

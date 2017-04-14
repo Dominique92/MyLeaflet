@@ -7,11 +7,9 @@
 	https://github.com/Dominique92/Leaflet.Marker.coordinates/commit/22e32460b86dc07142ce43b2bc1401fc468184d6
 	https://github.com/Dominique92/Leaflet.Permalink.Cookies/commit/b34704272cac9c028666675716218bd3c6700c20
 	https://github.com/Dominique92/Leaflet.draw.plus/commit/718441c75b35cef4d53a1b5598b96139024b08cb
-	https://github.com/Dominique92/MyLeaflet/commit/f50c076cb0b5142539669d85245b2030a00b1e75
-	https://github.com/Leaflet/Leaflet.fullscreen/commit/22141a4a2224e0fab02ce37d6472c92f6d9d03de
+	https://github.com/Dominique92/MyLeaflet/commit/1451d2fcca7ea7c7cf163fc49a42a2535736cb66
 	https://github.com/erictheise/rrose/commit/04fac08b0b367e137b64fb4e5e08e2dd020955c6
 	https://github.com/k4r573n/leaflet-control-osm-geocoder/commit/4a886e2725c6af998338f4866671f39e323aa6b8
-	https://github.com/rob-murray/os-leaflet/commit/9a7d11ed12b9421c55b99f871fe15018848d850d
 	https://github.com/rowanwins/leaflet-easyPrint/commit/77d57fb56c5126dc02dc08ddf93bdc8e6bf689ab
 */
 
