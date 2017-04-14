@@ -1,5 +1,6 @@
 BUGS
 ====
+revoir les includes des démos html & io
 Voir intégration defs.js lealfet > 1.0.3
 Erreur JS quand glisse 1 milieu d'une ligne de 2 segments repliée sur elle même (tente de terminer le glissement aprés son effacement)
 Safari : 'undefined' is not a function (evaluating 'Math.hypot(popupXY.x - e.layerPoint.x, popupXY.y - e.layerPoint.y)')
