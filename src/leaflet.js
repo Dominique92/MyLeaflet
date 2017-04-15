@@ -2,7 +2,7 @@
  * Integrated by Dominique Cavailhez (c) 2016
  * https://github.com/Dominique92/MyLeaflet
  *
- * List .js files to be included in the MyLeaflet library.
+ * List of .js files to be included in the MyLeaflet library.
  */
 
 var deps = [
@@ -18,14 +18,14 @@ var deps = [
 	'../lib/Leaflet.Permalink.Cookies-master/src/Permalink.Cookies.js',
 	
 	'../node_modules/leaflet-fullscreen/dist/Leaflet.fullscreen.js',
-	'../lib/leaflet-control-osm-geocoder-master/Control.OSMGeocoder.js',
+	'../node_modules/leaflet-control-osm-geocoder/Control.OSMGeocoder.js',
 	'../node_modules/leaflet-gps/dist/leaflet-gps.src.js',
 
 	'../node_modules/togeojson/togeojson.js',
 	'../node_modules/leaflet-filelayer/leaflet.filelayer.js',
 	'../src/Control.Click.js',
 
-	'../lib/leaflet-easyPrint-gh-pages/dist/leaflet.easyPrint.js',
+	'../node_modules/leaflet-easyprint/dist/leaflet.easyPrint.js',
 
 	// Couches autres fournisseurs
 	'../lib/Leaflet.Map.MultiVendors-master/src/layers/OSM.js',
@@ -44,7 +44,7 @@ var deps = [
 	'../lib/Leaflet.Map.MultiVendors-master/src/layers/TileLayer.collection.js',
 
 	// Couches vectotielles
-	'../lib/rrose-master/leaflet.rrose-src.js',
+	'../node_modules/rrose/leaflet.rrose-src.js',
 	'../lib/Leaflet.GeoJSON.Ajax-master/src/GeoJSON.Style.js',
 	'../lib/Leaflet.GeoJSON.Ajax-master/src/GeoJSON.Ajax.js',
 	'../lib/Leaflet.GeoJSON.Ajax-master/src/Control.Layers.argsGeoJSON.js', // Define a second control layer for overlays arguments selection

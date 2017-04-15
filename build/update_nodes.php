@@ -2,9 +2,9 @@
 <?php
 $dwn = isset($_GET['dwn']) ? $_GET['dwn'] : 0;
 $git = [
-	'k4r573n/leaflet-control-osm-geocoder' => [''], // Pas de package.json ni bower
-	'rowanwins/leaflet-easyPrint' => ['gh-pages'], // Manque .css dans le npm
-	'erictheise/rrose' => [''], // Pas de package.json mais un bower
+//	'k4r573n/leaflet-control-osm-geocoder' => [''], // Pas de package.json ni bower
+//	'rowanwins/leaflet-easyPrint' => ['gh-pages'], // Manque .css dans le npm
+//	'erictheise/rrose' => [''], // Pas de package.json mais un bower
 
 	/* MyLeaflet / La source est dans lib */
 	/* Update uniquement le CREDIT */
