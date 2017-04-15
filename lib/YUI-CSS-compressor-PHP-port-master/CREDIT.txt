@@ -1,2 +1,2 @@
 https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port
-https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port/commit/21dcb02bca48239f169309a64cc69054f9019b3c
+https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port/commit/2ca88a2d9714863e94db86190aa94c1eb189c106

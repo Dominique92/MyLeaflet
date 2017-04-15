@@ -14,13 +14,14 @@
 
 	<?php } else { /* Run index.php ?><!-- */
 		// MyLeaflet individual source files loading for debug
-		echo '<link  href="../../node_modules/leaflet/dist/leaflet.css" rel="stylesheet" />'.PHP_EOL;
-		echo '<script src="../../node_modules/leaflet/dist/leaflet-src.js"></script>'.PHP_EOL;
+		echo '<link  href="../Leaflet-1.0.3/dist/leaflet.css" rel="stylesheet" />'.PHP_EOL;
+		echo '<script src="../Leaflet-1.0.3/build/deps.js" type="text/javascript"></script>'.PHP_EOL;
+		echo '<script src="../Leaflet-1.0.3/debug/leaflet-include.js"></script>'.PHP_EOL;
 	} ?>
 
 	<!-- This plugin & dependencies -->
-	<script src="../../node_modules/leaflet-plugins/control/Permalink.js"></script>
-	<script src="../../node_modules/leaflet-plugins/control/Permalink.Layer.js"></script>
+	<script src="../leaflet-plugins-master/control/Permalink.js"></script>
+	<script src="../leaflet-plugins-master/control/Permalink.Layer.js"></script>
 	<script src="src/Permalink.Cookies.js"></script>
 </head>
 

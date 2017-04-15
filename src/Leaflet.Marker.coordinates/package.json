@@ -1,0 +1,25 @@
+{
+  "name": "Leaflet.Marker.coordinates",
+  "version": "1.0.0",
+  "description": "Leaflet extension for marker display & position edition",
+  "main": "src/Marker.coordinates.js",
+  "directories": {
+    "lib": "src"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Dominique92/Leaflet.Marker.coordinates"
+  },
+  "keywords": [
+    "leaflet",
+    "maps"
+  ],
+  "dependencies": {
+    "leaflet": "^1.0.3"
+  },
+  "devDependencies": {},
+  "author": "Dominique Cavailhez",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}

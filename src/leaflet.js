@@ -15,7 +15,7 @@ var deps = [
 
 	'../node_modules/leaflet-plugins/control/Permalink.js',
 	'../node_modules/leaflet-plugins/control/Permalink.Layer.js',
-	'../lib/Leaflet.Permalink.Cookies-master/src/Permalink.Cookies.js',
+	'../src/Permalink.Cookies.js',
 	
 	'../node_modules/leaflet-fullscreen/dist/Leaflet.fullscreen.js',
 	'../node_modules/leaflet-control-osm-geocoder/Control.OSMGeocoder.js',
@@ -28,33 +28,33 @@ var deps = [
 	'../node_modules/leaflet-easyprint/dist/leaflet.easyPrint.js',
 
 	// Couches autres fournisseurs
-	'../lib/Leaflet.Map.MultiVendors-master/src/layers/OSM.js',
-	'../lib/Leaflet.Map.MultiVendors-master/src/layers/IGN.js',
-	'../lib/Leaflet.Map.MultiVendors-master/src/layers/IGM.js',
-	'../lib/Leaflet.Map.MultiVendors-master/src/layers/IDEE.js',
-	'../lib/Leaflet.Map.MultiVendors-master/src/layers/Google.js',
+	'../src/Leaflet.Map.MultiVendors/src/layers/OSM.js',
+	'../src/Leaflet.Map.MultiVendors/src/layers/IGN.js',
+	'../src/Leaflet.Map.MultiVendors/src/layers/IGM.js',
+	'../src/Leaflet.Map.MultiVendors/src/layers/IDEE.js',
+	'../src/Leaflet.Map.MultiVendors/src/layers/Google.js',
 
 	// CRS exotiques
 	'../node_modules/proj4/dist/proj4-src.js',
 	'../node_modules/proj4leaflet/src/proj4leaflet.js',
-	'../lib/Leaflet.Map.MultiVendors-master/src/MapMultiCRS.js',
-	'../lib/Leaflet.Map.MultiVendors-master/src/layers/SwissTopo.js',
+	'../src/Leaflet.Map.MultiVendors/src/MapMultiCRS.js',
+	'../src/Leaflet.Map.MultiVendors/src/layers/SwissTopo.js',
 	'../node_modules/os-leaflet/OSOpenSpace.js',
 	'../node_modules/leaflet-plugins/layer/tile/Bing.js',
-	'../lib/Leaflet.Map.MultiVendors-master/src/layers/TileLayer.collection.js',
+	'../src/Leaflet.Map.MultiVendors/src/layers/TileLayer.collection.js',
 
 	// Couches vectotielles
 	'../node_modules/rrose/leaflet.rrose-src.js',
-	'../lib/Leaflet.GeoJSON.Ajax-master/src/GeoJSON.Style.js',
-	'../lib/Leaflet.GeoJSON.Ajax-master/src/GeoJSON.Ajax.js',
-	'../lib/Leaflet.GeoJSON.Ajax-master/src/Control.Layers.argsGeoJSON.js', // Define a second control layer for overlays arguments selection
-	'../lib/Leaflet.GeoJSON.Ajax-master/src/layers/GeoJSON.Ajax.OSM.js', // Specific layer for OSM POI
-// INSERER SUR DEMANDE	'../lib/Leaflet.GeoJSON.Ajax-master/layers/GeoJSON.Ajax.WRI.js',
+	'../src/Leaflet.GeoJSON.Ajax/src/GeoJSON.Style.js',
+	'../src/Leaflet.GeoJSON.Ajax/src/GeoJSON.Ajax.js',
+	'../src/Leaflet.GeoJSON.Ajax/src/Control.Layers.argsGeoJSON.js', // Define a second control layer for overlays arguments selection
+	'../src/Leaflet.GeoJSON.Ajax/src/layers/GeoJSON.Ajax.OSM.js', // Specific layer for OSM POI
+// INSERER SUR DEMANDE	'../src/Leaflet.GeoJSON.Ajax/layers/GeoJSON.Ajax.WRI.js',
 //	'../lib/leaflet-omnivore-master/leaflet-omnivore.js', // TODO KML/ ...
 
 //	'../lib/togpx-master/togpx.js', // Converts GeoJSON to GPX.
-	'../lib/Leaflet.Marker.coordinates-master/src/CRS.js',
-	'../lib/Leaflet.Marker.coordinates-master/src/Marker.coordinates.js',
+	'../src/Leaflet.Marker.coordinates/src/CRS.js',
+	'../src/Leaflet.Marker.coordinates/src/Marker.coordinates.js',
 
 	// Draw for leaflet
 	'../node_modules/leaflet-draw/dist/Leaflet.draw-src.js',
@@ -63,7 +63,7 @@ var deps = [
 	'../node_modules/leaflet-geometryutil/src/leaflet.geometryutil.js', // A mettre sinon snap plante.
 	'../node_modules/leaflet-snap/leaflet.snap.js',
 
-	'../lib/Leaflet.draw.plus-master/src/Control.Draw.Plus.js',
+	'../src/Leaflet.draw.plus/src/Control.Draw.Plus.js',
 
 	'../src/Control.Layers.remanent.js', // Keep the layer selector open until we leave the map
 	'../src/locales.fr.js', // Adaptations

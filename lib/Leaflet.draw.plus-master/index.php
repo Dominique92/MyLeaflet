@@ -42,6 +42,11 @@ echo ('$json_sql = '); var_dump ($json_sql = $result->fetch_object()->geom);
 include ('index.html');
 ?>
 
+<a href="v0.7"
+   style="position:absolute;top:150px;right:0;text-decoration:none;font-size:large"
+	title="Test on Leaflet V0.7">
+	&#10144;
+</a>
 <a href="index.html"
    style="position:absolute;top:200px;right:0;text-decoration:none;font-size:large"
    title="Test en mode html">

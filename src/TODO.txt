@@ -1,3 +1,13 @@
+NPM
+===
+cd /mnt/c/wamp64/www/Leaflet/MyLeaflet
+rowanwins/leaflet-easyPrint#a4Page -> dependencies
+Supprimer /lib & update_nodes.php
+Mettre des packages.json dans les 
+Tester
+tester V0.7
+Tester les plugins
+
 BUGS
 ====
 revoir les includes des démos html & io
