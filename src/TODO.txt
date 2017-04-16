@@ -3,15 +3,13 @@ NPM
 cd /mnt/c/wamp64/www/Leaflet/MyLeaflet
 npm i
 Supprimer /lib
-Tester les plugins
 Upgrader les plugins
 
 BUGS
 ====
-eric rrose en http pas S
+Gj.Ajax : eric rrose en http pas S
+Inclure les démos draw, ... dans MyLeaflet/index.html
 OSM overpass : null.png:1 GET http://chemineur.fr/ext/Dominique92/GeoBB/types_points/null.png 500 (Internal Server Error)
-Revoir les includes des démos html & io
-Voir intégration defs.js lealfet > 1.0.3
 Erreur JS quand glisse 1 milieu d'une ligne de 2 segments repliée sur elle même (tente de terminer le glissement aprés son effacement)
 Safari : 'undefined' is not a function (evaluating 'Math.hypot(popupXY.x - e.layerPoint.x, popupXY.y - e.layerPoint.y)')
 Erreur JS sur forts zoom OS-GB en V1.0 : leaflet.js:5 Uncaught Error: Invalid LatLng object: (NaN, NaN)

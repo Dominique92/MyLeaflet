@@ -50,9 +50,9 @@ var deps = [
 	'../src/Leaflet.GeoJSON.Ajax/src/Control.Layers.argsGeoJSON.js', // Define a second control layer for overlays arguments selection
 	'../src/Leaflet.GeoJSON.Ajax/src/layers/GeoJSON.Ajax.OSM.js', // Specific layer for OSM POI
 // INSERER SUR DEMANDE	'../src/Leaflet.GeoJSON.Ajax/layers/GeoJSON.Ajax.WRI.js',
-//	'../lib/leaflet-omnivore-master/leaflet-omnivore.js', // TODO KML/ ...
+//	'../leaflet-omnivore-master/leaflet-omnivore.js', // TODO KML/ ...
 
-//	'../lib/togpx-master/togpx.js', // Converts GeoJSON to GPX.
+//	'../togpx-master/togpx.js', // Converts GeoJSON to GPX.
 	'../src/Leaflet.Marker.coordinates/src/CRS.js',
 	'../src/Leaflet.Marker.coordinates/src/Marker.coordinates.js',
 

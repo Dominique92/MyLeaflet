@@ -13,13 +13,11 @@ Leaflet extension for multi vendors maps & projections
 - Google maps, photos
 ```
 
-This plugin works both on Leaflet V0.7 & V1.0
+This plugin works both on Leaflet V1.0.*
 
 DEMOS
 -----
 [See a DEMO using Leaflet V1.0](https://dominique92.github.io/MyLeaflet/src/Leaflet.Map.MultiVendors/)
-
-[See a DEMO using Leaflet V0.7](https://dominique92.github.io/MyLeaflet/src/Leaflet.Map.MultiVendors/examples/v0.7.html)
 
 [See a DEMO of France IGN layers](https://dominique92.github.io/MyLeaflet/src/Leaflet.Map.MultiVendors/examples/France-IGN.html)
 

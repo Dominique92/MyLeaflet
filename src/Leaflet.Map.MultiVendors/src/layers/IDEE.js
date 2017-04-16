@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2014 Dominique Cavailhez
  * https://github.com/Dominique92
- * Supported both on Leaflet V0.7 & V1.0
+ * Supported on Leaflet V0.7 & V1.0
  *
  * Spanish maps
  * Instances of the WMS class allow viewing maps of Infraestructura de Datos Espaciales de España

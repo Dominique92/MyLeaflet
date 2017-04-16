@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2016 Dominique Cavailhez
  * https://github.com/Dominique92
- * Supported both on Leaflet V0.7 & V1.0
+ * Supported on Leaflet V0.7 & V1.0
  *
  * Ajax layers to access OpenStreetMap Overpass API http://wiki.openstreetmap.org/wiki/Overpass_API
  * Based on L.GeoJSON and L.GeoJSON.Ajax

@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2014 Dominique Cavailhez
  * https://github.com/Dominique92
- * Supported both on Leaflet V0.7 & V1.0
+ * Supported on Leaflet1.0
  *
  * Collection of many maps vendors
  */
@@ -64,13 +64,9 @@ L.TileLayer.collection = function(name) {
 		if (typeof key != 'undefined' && typeof key.os != 'undefined') {
 				if (window.location.href[4] != 's') // Use the same protocol than the referer.
 	
-			if (typeof L.OSOpenSpace.TileLayer != 'undefined') { // For Leaflet V1.0
+			if (typeof L.OSOpenSpace.TileLayer != 'undefined') {
 				L.OSOpenSpace.TileLayer.prototype.options.crs = L.OSOpenSpace.CRS; // Assign CRS to OS-UK layer options
 				this._col['OS Great Britain'] = new L.OSOpenSpace.TileLayer(key.os);
-			}
-			else if (typeof L.TileLayer.OSOpenSpace != 'undefined') { // For Leaflet V0.7
-				L.TileLayer.OSOpenSpace.prototype._url = L.TileLayer.OSOpenSpace.prototype._url.replace('https', 'http'); // https adjustments
-				this._col['OS-Great Britain'] = new L.TileLayer.OSOpenSpace(key.os, {}); // Il faut mettre le {} sinon BUG
 			}
 		}
 

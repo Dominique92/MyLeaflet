@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2014 Dominique Cavailhez
  * https://github.com/Dominique92
- * Supported both on Leaflet V0.7 & V1.0
+ * Supported on Leaflet V0.7 & V1.0
  *
  * Allows the use of layers with different projections on the same map
  * Such layer must be declared with layer.options.crs = L.CRS.EPSG****; // default EPSG3857
