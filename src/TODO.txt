@@ -8,6 +8,7 @@ Upgrader les plugins
 
 BUGS
 ====
+eric rrose en http pas S
 OSM overpass : null.png:1 GET http://chemineur.fr/ext/Dominique92/GeoBB/types_points/null.png 500 (Internal Server Error)
 Revoir les includes des démos html & io
 Voir intégration defs.js lealfet > 1.0.3

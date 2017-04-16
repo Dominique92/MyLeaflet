@@ -15,7 +15,8 @@
     "leaflet-filelayer": "^0.6.0",
     "leaflet-draw": "^0.4.9",
     "leaflet-snap": "^0.0.4",
-    "os-leaflet": "^1.0.0"
+    "os-leaflet": "^1.0.0",
+    "leaflet-geometryutil": "^0.8.0"
   },
   "devDependencies": {
     "napa": "^2.3.0"
@@ -24,10 +25,11 @@
     "rrose": "erictheise/rrose",
     "leaflet-easyprint": "rowanwins/leaflet-easyPrint#a4Page",
     "leaflet-control-osm-geocoder": "k4r573n/leaflet-control-osm-geocoder",
-    "proj4leaflet-v0.7": "kartena/Proj4Leaflet#0.7.2"
+    "proj4leaflet-v0.7": "kartena/Proj4Leaflet#0.7.2",
+    "togeojson": "mapbox/togeojson"
   },
   "scripts": {
-    "install": "napa && cd node_modules/proj4 && npm install && node_modules/.bin/grunt build:somerc,tmerc,utm,lcc",
+    "install": "napa && npm install proj4 && cd node_modules/proj4 && npm install && node_modules/.bin/grunt build:somerc,tmerc,utm,lcc",
     "postinstall": "npm ls > myleaflet.map"
   },
   "repository": {
@@ -39,6 +41,6 @@
     "maps"
   ],
   "author": "Dominique Cavailhez",
-  "license": "BSD",
+  "license": "BSD-2-Clause",
   "readmeFilename": "README.md"
 }

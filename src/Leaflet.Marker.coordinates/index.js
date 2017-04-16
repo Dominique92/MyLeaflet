@@ -14,6 +14,7 @@ var frame = new L.Marker([46.5, 6.5], { // Position par défaut
 	})
 	.coordinates('position') // Affiche les coordonnées
 	.addTo(map);
+
 // Recentre la carte sur ce frame
 map.setView(frame._latlng, 6, {
 	reset: true
