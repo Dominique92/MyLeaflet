@@ -1,6 +1,7 @@
 NPM
 ===
 cd /mnt/c/wamp64/www/Leaflet/MyLeaflet
+npm i
 rowanwins/leaflet-easyPrint#a4Page -> dependencies
 Supprimer /lib & update_nodes.php
 Mettre des packages.json dans les 
@@ -20,6 +21,7 @@ Permalink.cookies affiche d'abord la carte générale puis zoome sur la position
 
 TODO
 ====
+Harmoniser la taille des cartes dans les démos (50% ?)
 npm fullscreen, rrose, geocoder
 Toutes couches: zoom interne si erreur 404
 	Pb pour revenir en arrière dans un zoom etendu si on n'a pas chargé les images

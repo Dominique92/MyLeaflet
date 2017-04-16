@@ -1,8 +1,6 @@
 /*
  * Integrated by Dominique Cavailhez (c) 2016
  * https://github.com/Dominique92/MyLeaflet
- * Includes parts of :
-	https://github.com/Dominique92/MyLeaflet/commit/a6729d09d399dbf2a8058c5327419e3330e1b73f
 */
 
 (function(i,e,n){var t={version:'1.0.3'};function a(){var e=i.L;t.noConflict=function(){i.L=e;return this};i.L=t};if(typeof module==='object'&&typeof module.exports==='object'){module.exports=t}
