@@ -2,16 +2,14 @@ NPM
 ===
 cd /mnt/c/wamp64/www/Leaflet/MyLeaflet
 npm i
-rowanwins/leaflet-easyPrint#a4Page -> dependencies
-Supprimer /lib & update_nodes.php
-Mettre des packages.json dans les 
-Tester
-tester V0.7
+Supprimer /lib
 Tester les plugins
+Upgrader les plugins
 
 BUGS
 ====
-revoir les includes des démos html & io
+OSM overpass : null.png:1 GET http://chemineur.fr/ext/Dominique92/GeoBB/types_points/null.png 500 (Internal Server Error)
+Revoir les includes des démos html & io
 Voir intégration defs.js lealfet > 1.0.3
 Erreur JS quand glisse 1 milieu d'une ligne de 2 segments repliée sur elle même (tente de terminer le glissement aprés son effacement)
 Safari : 'undefined' is not a function (evaluating 'Math.hypot(popupXY.x - e.layerPoint.x, popupXY.y - e.layerPoint.y)')
@@ -21,17 +19,14 @@ Permalink.cookies affiche d'abord la carte générale puis zoome sur la position
 
 TODO
 ====
+Multivendors : Niveaux de transparence
 Harmoniser la taille des cartes dans les démos (50% ?)
-npm fullscreen, rrose, geocoder
-Toutes couches: zoom interne si erreur 404
-	Pb pour revenir en arrière dans un zoom etendu si on n'a pas chargé les images
-Tester WRI avec debug LL
+Pb pour revenir en arrière dans un zoom etendu si on n'a pas chargé les images
 Trace AJAX paramétrable
 marker.coordinates : donner des priorités aux types de CRS sélectés (suisse d'abord !) => Dépend du pays ??? / Ident WRI ??
 TEST Compatibilité IE9 ?
 Permalink sur OS_GB : gros pb de zoom ! => Traiter scale ? / Ne pas passer par init carte avec OSM-FR ?
 	Cookies permalink zoom trop fort sur SwissTopo
-src/proj4-OPTIM.js', // DCMM TODO OPTIM: construire automatiquement !
 Overpass
 	Overpass website avec le schema://... de la page
 	OSM overpass Affiche erreur 400 -> Time out quand erreur de syntaxe de la requette
@@ -84,15 +79,14 @@ Vérification finale avant mise en prod
 
 WRI
 ===
-os-leaflet-1.0 => -master
-Enlever build/update_nodes.php
+Tester WRI avec debug LL
+Enlever os-leaflet-1.0 => -master
 Tester https//wri... tous les referrers
 Pas de récup cookies de point-modif vers nav
 Création point : garder les cookies et pas forcer à Salanche (point par défaut dans la base !)
 Bug remontée MultiPolygon / default : null
 Possibilité d'agrandir la météo sur mobiles
 Pas de massifs dans l'Atlas ?
-Carte par defaut fiches en Angleterre (manque le contour localisation administrative)
 Edition / creation / suppression polygones autres que massif
 Voir archivage GITHUB de principe_fonctionnement_refuges.info.txt ??
 Déraciner le wiki

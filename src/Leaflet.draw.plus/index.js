@@ -21,3 +21,7 @@ var fl = new L.Control.FileLayerLoad().addTo(map);
 fl.loader.on('data:loaded', function(e) {
 	e.layer.addTo(editor);
 }, fl);
+
+// Init input when the file is not PHP
+if ("<?=0?>")
+	document.getElementById('edit-json').value =		'{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"LineString","coordinates":[[2.5,46],[3,45],[4,45],[5,45.8]]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[3.5,45.5]}}]}';

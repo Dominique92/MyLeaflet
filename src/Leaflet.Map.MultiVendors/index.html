@@ -5,22 +5,13 @@
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
-	<?php if (0) { // Run index.html ?>
-		<base href="https://dominique92.github.io/MyLeaflet/src/Leaflet.Map.MultiVendors/" />
+	<!-- Leaflet kernel -->
+	<link  href="https://npmcdn.com/leaflet/dist/leaflet.css" rel="stylesheet" />
+	<script src="https://npmcdn.com/leaflet/dist/leaflet-src.js"></script>
 
-		<!-- Leaflet kernel -->
-		<link  href="https://unpkg.com/leaflet/dist/leaflet.css" rel="stylesheet" />
-		<script src="https://unpkg.com/leaflet/dist/leaflet-src.js"></script>
-
-	<?php } else { /* Run index.php ?><!-- */
-		// MyLeaflet individual source files loading for debug
-		echo '<link  href="../../node_modules/leaflet/dist/leaflet.css" rel="stylesheet" />'.PHP_EOL;
-		echo '<script src="../../node_modules/leaflet/dist/leaflet-src.js"></script>'.PHP_EOL;
-	} ?>
-
-	<!-- Variable projections -->
-	<script src="../../node_modules/proj4/dist/proj4-src.js"></script>
-	<script src="../../node_modules/proj4leaflet/src/proj4leaflet.js"></script>
+	<!-- projections -->
+	<script src="https://rawgit.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script>
+	<script src="https://rawgit.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script>
 	<script src="src/MapMultiCRS.js"></script>
 
 	<!-- Misc layers -->
@@ -30,8 +21,8 @@
 	<script src="src/layers/IDEE.js"></script>
 	<script src="src/layers/IGM.js"></script>
 	<script src="src/layers/Google.js"></script>
-	<script src="../../node_modules/leaflet-plugins/layer/tile/Bing.js"></script>
-	<script src="../../node_modules/os-leaflet/OSOpenSpace.js"></script><!-- For Leaflet V1.0 only -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-plugins/3.0.0/layer/tile/Bing.js"></script>
+	<script src="https://rawgit.com/rob-murray/os-leaflet/master/OSOpenSpace.js"></script>
 	<script src="src/layers/TileLayer.collection.js"></script>
 	<script src="examples/keys.js"></script>
 </head>
@@ -72,6 +63,12 @@
 	   style="position:absolute;top:0;right:0"
 	   title="Sources & docs">
 		<img src="../../examples/forkme.png" />
+	</a>
+
+	<a href="examples/v0.7.html"
+	   style="position:absolute;top:200px;right:0;text-decoration:none;font-size:large"
+	   title="Test en v0.7">
+		&#10144;
 	</a>
 
 	<!-- Insert the javascript after all <div> are defined -->

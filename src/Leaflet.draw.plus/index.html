@@ -5,43 +5,22 @@
 	<meta charset="utf-8">
 	<link href="http://leafletjs.com/docs/images/favicon.ico" rel="icon" type="image/png" />
 
-	<?php if (0) { // Run index.html ?>
-		<base href="https://dominique92.github.io/MyLeaflet/src/Leaflet.draw.plus/" />
+	<!-- Leaflet kernel -->
+	<link  href="https://npmcdn.com/leaflet/dist/leaflet.css" rel="stylesheet" />
+	<script src="https://npmcdn.com/leaflet/dist/leaflet-src.js"></script>
 
-		<!-- Leaflet kernel -->
-		<link  href="https://unpkg.com/leaflet/dist/leaflet.css" rel="stylesheet" />
-		<script src="https://unpkg.com/leaflet/dist/leaflet-src.js"></script>
+	<!-- Draw & Snap plugins -->
+	<link  href="https://npmcdn.com/leaflet-draw/dist/leaflet.draw-src.css" rel="stylesheet" />
+	<script src="https://npmcdn.com/leaflet-draw/dist/leaflet.draw-src.js"></script>
+	<script src="https://npmcdn.com/leaflet-geometryutil/src/leaflet.geometryutil.js"></script>
+	<script src="https://npmcdn.com/leaflet-snap/leaflet.snap.js"></script>
 
-	<?php } else { /* Run index.php ?><!-- */
-		// MyLeaflet individual source files loading for debug
-		echo '<link  href="../../node_modules/leaflet/dist/leaflet.css" rel="stylesheet" />'.PHP_EOL;
-		echo '<script src="../../node_modules/leaflet/dist/leaflet-src.js"></script>'.PHP_EOL;
-	} ?>
-
-	<!-- Draw plugin -->
-	<link  href="../../node_modules/leaflet-draw/dist/leaflet.draw-src.css" rel="stylesheet" />
-	<script src="../../node_modules/leaflet-draw/dist/leaflet.draw-src.js"></script>
-
-	<!-- Snap plugin -->
-	<script src="../../node_modules/leaflet-geometryutil/src/leaflet.geometryutil.js"></script>
-	<script src="../../node_modules/leaflet-snap/leaflet.snap.js"></script>
-
-	<!-- Plugins to import GPX files -->
-	<script src="../../node_modules/togeojson/togeojson.js"></script>
-	<script src="../../node_modules/leaflet-filelayer/leaflet.filelayer.js"></script>
+	<!-- Plugins to import GPX files for test purpose -->
+	<script src="https://npmcdn.com/togeojson/togeojson.js"></script>
+	<script src="https://npmcdn.com/leaflet-filelayer/leaflet.filelayer.js"></script>
 
 	<!-- This plugin -->
 	<script src="src/Control.Draw.Plus.js"></script>
-
-	<!-- Disable save if no PHP -->
-	<style>
-		#save {
-			display: none;
-		}
-		.save-comment {
-			color: red;
-		}
-	</style>
 </head>
 
 <body>
@@ -51,14 +30,9 @@
 
 	<form id="postform" method="post" action="//<?=$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']?>#" enctype="multipart/form-data">
 		<p><b>geoJson input/output</b></p>
-
-		<textarea id="edit-json" name ="geom" rows="10" cols="120">
-			<?=$json_sql?>
-		</textarea>
+		<textarea id="edit-json" name ="geom" rows="10" cols="120"></textarea>
 		<div id="edit-changed" style="display:none"><i>Changé</i></div><!-- Editing status -->
-
-		<p class="save-comment">Note: You need to run on a server supporting PHP &amp; MySQL to be able to save.</p>
-		<input type="submit" name="post" id="save" value="Save" />
+		<p id="save" style="color:red">Note: You need to run on a server supporting PHP &amp; MySQL to be able to save.</p>
 	</form>
 
 	<div style="margin-left:30px; padding:0 10px; background-color:#eee">
@@ -86,7 +60,12 @@
 	<p>See the code of this demo <a href="examples/index.js">here</a> and <a href="https://github.com/Dominique92/Leaflet.draw.plus">here</a></p>
 	<p>To get a local demo, copy the html source of this page on a local .html file & call it from your brother (no PHP required).</p>
 	<?php if (0) { // Init input when the file is .html ?>
-		<p>This example run on a server without PHP & SQL services. If you want it to save your data on a database, you need to get the full package from <a href= "https://github.com/Dominique92/Leaflet.draw.plus">Github.com/Dominique92/Leaflet.draw.plus</a>, unzip & copy it in your own server and run Leaflet.draw.plus/test.</p>
+		<p>
+			This example run on a server without PHP & SQL services. If you want it to save your data on a database,
+			you need to get the full package from
+			<a href= "https://github.com/Dominique92/Leaflet.draw.plus">Github.com/Dominique92/Leaflet.draw.plus</a>,
+			unzip & copy it in your own server and run Leaflet.draw.plus/test.
+		</p>
 	<?php } ?>
 	<p>
 		Depends on <a href= "https://github.com/Leaflet/Leaflet.draw">Leaflet/Leaflet.draw</a>
@@ -100,13 +79,7 @@
 		<img src="../../examples/forkme.png" />
 	</a>
 
-	<?php if (0) { // Init input when the file is .html ?>
-		<script>
-			document.getElementById('edit-json').value =		'{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"LineString","coordinates":[[2.5,46],[3,45],[4,45],[5,45.8]]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[3.5,45.5]}}]}';
-		</script>
-	<?php } ?>
-
 	<!-- Insert the javascript after all <div> are defined -->
-	<script src="examples/index.js"></script>
+	<script src="index.js"></script>
 </body>
 </html>

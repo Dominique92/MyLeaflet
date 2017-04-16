@@ -5,22 +5,13 @@
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
-	<?php if (0) { // Run index.html ?>
-		<base href="https://dominique92.github.io/MyLeaflet/src/Leaflet.GeoJSON.Ajax/" />
-
-		<!-- Leaflet kernel -->
-		<link  href="https://unpkg.com/leaflet/dist/leaflet.css" rel="stylesheet" />
-		<script src="https://unpkg.com/leaflet/dist/leaflet-src.js"></script>
-
-	<?php } else { /* Run index.php ?><!-- */
-		// MyLeaflet individual source files loading for debug
-		echo '<link  href="../../node_modules/leaflet/dist/leaflet.css" rel="stylesheet" />'.PHP_EOL;
-		echo '<script src="../../node_modules/leaflet/dist/leaflet-src.js"></script>'.PHP_EOL;
-	} ?>
+	<!-- Leaflet kernel -->
+	<link  href="https://npmcdn.com/leaflet/dist/leaflet.css" rel="stylesheet" />
+	<script src="https://npmcdn.com/leaflet/dist/leaflet-src.js"></script>
 
 	<!-- Rrose -->
-	<link  href="../../node_modules/rrose/leaflet.rrose.css" rel="stylesheet"/>
-	<script src="../../node_modules/rrose/leaflet.rrose-src.js"></script>
+	<link  href="http://erictheise.com/rrose/stylesheets/leaflet.rrose.css" rel="stylesheet"/>
+	<script src="http://erictheise.com/rrose/javascripts/leaflet.rrose-src.js"></script>
 
 	<!-- This plugin -->
 	<link  href="src/GeoJSON.Style.css" rel="stylesheet"/>
@@ -30,8 +21,6 @@
 
 	<!-- Test layers -->
 	<script src="src/layers/GeoJSON.Ajax.WRI.js"></script>
-
-	<link href="examples/index.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -61,6 +50,12 @@
 	   style="position:absolute;top:0;right:0"
 	   title="Sources & docs">
 		<img src="../../examples/forkme.png" />
+	</a>
+
+	<a href="examples/v0.7.html"
+	   style="position:absolute;top:200px;right:0;text-decoration:none;font-size:large"
+	   title="Test en v0.7">
+		&#10144;
 	</a>
 
 	<!-- Insert the javascript after all <div> are defined -->

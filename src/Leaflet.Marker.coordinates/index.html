@@ -5,24 +5,15 @@
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
-	<?php if (0) { // Run index.html ?>
-		<base href="https://dominique92.github.io/MyLeaflet/src/Leaflet.Marker/Leaflet.Marker.coordinates/" />
-
-		<!-- Leaflet kernel -->
-		<link  href="https://unpkg.com/leaflet/dist/leaflet.css" rel="stylesheet" />
-		<script src="https://unpkg.com/leaflet/dist/leaflet-src.js"></script>
-
-	<?php } else { /* Run index.php ?><!-- */
-		// MyLeaflet individual source files loading for debug
-		echo '<link  href="../../node_modules/leaflet/dist/leaflet.css" rel="stylesheet" />'.PHP_EOL;
-		echo '<script src="../../node_modules/leaflet/dist/leaflet-src.js"></script>'.PHP_EOL;
-	} ?>
+	<!-- Leaflet kernel -->
+	<link  href="https://npmcdn.com/leaflet/dist/leaflet.css" rel="stylesheet" />
+	<script src="https://npmcdn.com/leaflet/dist/leaflet-src.js"></script>
 
 	<!-- projections -->
-	<script src="../../node_modules/proj4/dist/proj4-src.js"></script>
-	<script src="../../node_modules/proj4leaflet/src/proj4leaflet.js"></script>
+	<script src="https://rawgit.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script>
+	<script src="https://rawgit.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script>
 
-	<!-- Test layers -->
+	<!-- For swiss coordinates -->
 	<script src="../Leaflet.Map.MultiVendors/src/layers/SwissTopo.js"></script>
 
 	<!-- This plugin -->
@@ -84,6 +75,13 @@
 	   title="Sources & docs">
 		<img src="../../examples/forkme.png" />
 	</a>
+
+	<a href="../Leaflet.draw.plus"
+	   style="position:absolute;top:200px;right:0;text-decoration:none;font-size:large"
+	   title="Next package">
+		&#10144;
+	</a>
+
 	<p>Visit my fully integrated <a href= "https://github.com/Dominique92/MyLeaflet">Dominique92/MyLeaflet</a> library</p>
 
 	<!-- Insert the javascript after all <div> are defined -->

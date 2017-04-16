@@ -6,17 +6,15 @@
 	<link rel="icon" type="image/png" href="http://leafletjs.com/docs/images/favicon.ico" />
 
 	<?php if (0) { // Run index.html ?>
-		<base href="https://dominique92.github.io/MyLeaflet/" />
-
 		<!-- MyLeaflet integrated lib -->
 		<link  href="dist/leaflet.css" rel="stylesheet" />
 		<script src="dist/leaflet.js"></script>
 
 	<?php } else { /* Run index.php ?><!-- */
-		// MyLeaflet integrated list of source files for debug
-		echo '<link  href="'.(@$_GET['dist']?:'src').'/leaflet.css" rel="stylesheet" />'.PHP_EOL;
-		echo '<script src="'.(@$_GET['dist']?:'src').'/leaflet.js"></script>'.PHP_EOL;
-	} ?>
+		// Include list of individual source files for debug
+		echo '<link  href="src/leaflet.css" rel="stylesheet" />'.PHP_EOL;
+		echo '<script src="src/leaflet.js"></script>'.PHP_EOL;
+	}?>
 
 	<!-- Test layers -->
 	<script src="src/Leaflet.GeoJSON.Ajax/src/layers/GeoJSON.Ajax.WRI.js"></script>
@@ -64,6 +62,13 @@
 			<img src="examples/forkme.png" />
 		</a>
 	</p>
+
+	<a id="test"
+	   href="src/Leaflet.GeoJSON.Ajax"
+	   style="position:absolute;top:200px;right:0;text-decoration:none;font-size:large"
+	   title="Test ajax">
+		&#10144;
+	</a>
 
 	<!-- Insert the javascript after all <div> are defined -->
 	<script src="examples/index.js"></script>

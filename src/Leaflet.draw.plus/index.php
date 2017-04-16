@@ -28,19 +28,13 @@ $result = $mysqli->query("SELECT ST_AsGeoJSON (geom) AS geom FROM drawtable wher
 echo ('$json_sql = '); var_dump ($json_sql = $result->fetch_object()->geom);
 ?>
 
-<!-- Enable save to PHP -->
-<style>
-	#save {
-		display: block !important;
-	}
-	.save-comment {
-		display: none !important;
-	}
-</style>
-
 <?php
 include ('index.html');
 ?>
+
+<script> // Add a save button if we are in PHP
+	document.getElementById("save").innerHTML = '<input type="submit" name="post" id="save" value="Save" />';
+</script>
 
 <a href="index.html"
    style="position:absolute;top:200px;right:0;text-decoration:none;font-size:large"
