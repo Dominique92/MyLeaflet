@@ -48,7 +48,7 @@ Markers:
 * `degroup: <int>,` // Isolate too close markers by a number of pixels when the mouse hover over the group.
 * Or any of the following [L.Marker options](http://leafletjs.com/reference.html#marker-options)
 
-Poly:
+Polylines & polygons:
 * Any of the following [L.Path options](http://leafletjs.com/reference.html#path-options)
 
 Display a label when hovering the feature:
@@ -60,10 +60,12 @@ Display a label when hovering the feature:
 Action when clicking the feature:
 * `url: <string>,` // Url where to navigate when the feature is clicked
 
-General:
-* Or any of the following [L.GeoJSON options](http://leafletjs.com/reference.html#geojson-options)
+Misc:
+* zoom: true, // Add &zoom=000 parameter to the ajax request sent to the server, correspondins to the current zoom of the map
 
-### <geoJson> URL return must respect the [geoJson format](http://geojson.org/geojson-spec.html):
+Or any of the following [L.GeoJSON options](http://leafletjs.com/reference.html#geojson-options)
+
+### <geoJson> The URL response must respect the [geoJson format](http://geojson.org/geojson-spec.html):
 ```javascript
 {
 	"type": "Feature",
@@ -80,6 +82,7 @@ General:
 ```
 
 ### Display local geoJson data with local style:
+You can use the previously defined styles options on local geoJson data while expanding L.GeoJSON.Style 
 ```javascript
 new L.GeoJSON.Style(
 	<geoJSON>, // <String> geoJson features
@@ -99,6 +102,9 @@ new L.GeoJSON.Style(
 
 ### Code example:
 [GeoJSON.Ajax.WRI.js](https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/blob/master/layers/GeoJSON.Ajax.WRI.js)
+
+### Layer to display [OSM overpass](http://wiki.openstreetmap.org/wiki/Overpass_API) Points Of Interest:
+[GeoJSON.Ajax.OSM.js](https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/blob/master/layers/GeoJSON.Ajax.OSM.js)
 
 ### Note:
 You will get better popup labels, including centering effects for icons close to the map limit, including [Leaflet rrose](https://github.com/erictheise/rrose). (Just include the .css & .js files).

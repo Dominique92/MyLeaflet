@@ -18,6 +18,7 @@ Leaflet extensions for
 ```
 * Editable position marker with multi-projection position display,
 * Markers, polylines & polygons editor.
+* Keep position, zoom & zoom on cookies
 
 DEMO
 ====
@@ -33,16 +34,16 @@ USAGE
 =====
 * Include MyLeaflet for production (compressed files):
 ```html
-	<link  href="dist/leaflet.css" rel="stylesheet" />
-	<script src="dist/leaflet.js"></script>
+<link  href="dist/leaflet.css" rel="stylesheet" />
+<script src="dist/leaflet.js"></script>
 ```
 * Dist compressed files generation: run build/index.php
 * For tinny distribution: only copy dist/... files
 
 * Include MyLeaflet for developpement (full sources):
 ```html
-	<link  href="src/leaflet.css" rel="stylesheet" />
-	<script src="src/leaflet.js"></script>
+<link  href="src/leaflet.css" rel="stylesheet" />
+<script src="src/leaflet.js"></script>
 ```
 
 FILES
