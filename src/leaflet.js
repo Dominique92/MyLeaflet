@@ -58,11 +58,8 @@ var deps = [
 
 	// Draw for leaflet
 	'../node_modules/leaflet-draw/dist/Leaflet.draw-src.js',
-
-	// SNAP
 	'../node_modules/leaflet-geometryutil/src/leaflet.geometryutil.js', // A mettre sinon snap plante.
 	'../node_modules/leaflet-snap/leaflet.snap.js',
-
 	'../src/Leaflet.draw.plus/src/Control.Draw.Plus.js',
 
 	'../src/Control.Layers.remanent.js', // Keep the layer selector open until we leave the map

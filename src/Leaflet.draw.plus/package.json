@@ -1,7 +1,7 @@
 {
   "name": "Leaflet.draw.plus",
   "version": "1.0.0",
-  "description": "Leaflet extension for remote GeoJSON layers",
+  "description": "Leaflet plugin extension for remote GeoJSON layers",
   "directories": {
     "lib": "src"
   },

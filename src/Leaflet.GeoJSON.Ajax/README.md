@@ -1,6 +1,6 @@
 Leaflet.GeoJSON.Ajax
 ====================
-Leaflet extension for remote geoJson layers (Markers, Polylines, Polygons, ...) using AJAX.
+Leaflet plugin for remote geoJson layers (Markers, Polylines, Polygons, ...) using AJAX.
 
 Get collection of features from a remote `<URL>` & display it into the map with related & parametrables markers, lines & polygons.
 
@@ -10,7 +10,7 @@ This plugin works both on Leaflet V0.7 & V1.0
 
 DEMO
 ----
-[See a DEMO using Leaflet V1.0 here](https://dominique92.github.io/MyLeaflet/src/Leaflet.GeoJSON.Ajax/)
+[See a DEMO using Leaflet V1.0 here](https://dominique92.github.io/MyLeaflet/src/Leaflet.GeoJSON.Ajax)
 
 [See a DEMO using Leaflet V0.7 here](https://dominique92.github.io/MyLeaflet/src/Leaflet.GeoJSON.Ajax/examples/v0.7.html)
 
@@ -21,7 +21,6 @@ USAGE
 - Include L.GeoJSON.Ajax
 - Create a L.GeoJSON.Ajax instance & add it to the map.
 ```javascript
-...
 new L.GeoJSON.Ajax(
 	<URL>, // GeoJson server URL.
 	{
@@ -39,30 +38,29 @@ new L.GeoJSON.Ajax(
 		}
 	}
 ).addTo(map);
-...
 ```
 
 ### Properties pairs `"<NAME>":<VALUE>` can be:
-- Markers:
+Markers:
 * `iconUrl: <string>,` // Url of icon image
 * `iconSize: [<int>, <int>] | default=img file size,` // Size of the icon.
 * `iconAnchor: [<int>, <int>] | default=[middle,top],` // Point of the icon which will correspond to marker's location
 * `degroup: <int>,` // Isolate too close markers by a number of pixels when the mouse hover over the group.
 * Or any of the following [L.Marker options](http://leafletjs.com/reference.html#marker-options)
 
-- Poly:
+Poly:
 * Any of the following [L.Path options](http://leafletjs.com/reference.html#path-options)
 
-- Display a label when hovering the feature:
+Display a label when hovering the feature:
 * `popup: <string>,` // Popup text
 * `popupAnchor: [<int>, <int>] | default=[middle,top]`, // Point from which the popup should open relative to the iconAnchor
 * `popupValidity: default=100`, // The popup stay open if the mouse moves closest than this distance (pixels) 
 * `popupClass: <string>,` // Optional: CSS class to apply to the label
 
-- Action when clicking the feature:
+Action when clicking the feature:
 * `url: <string>,` // Url where to navigate when the feature is clicked
 
-- General:
+General:
 * Or any of the following [L.GeoJSON options](http://leafletjs.com/reference.html#geojson-options)
 
 ### <geoJson> URL return must respect the [geoJson format](http://geojson.org/geojson-spec.html):
@@ -101,3 +99,6 @@ new L.GeoJSON.Style(
 
 ### Code example:
 [GeoJSON.Ajax.WRI.js](https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/blob/master/layers/GeoJSON.Ajax.WRI.js)
+
+### Note:
+You will get better popup labels, including centering effects for icons close to the map limit, including [Leaflet rrose](https://github.com/erictheise/rrose). (Just include the .css & .js files).

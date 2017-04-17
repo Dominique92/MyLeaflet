@@ -1,7 +1,7 @@
 {
   "name": "Leaflet.Map.MultiVendors",
   "version": "1.0.0",
-  "description": "Leaflet extension for multi vendors maps & projections",
+  "description": "Leaflet plugin for multi vendors maps & projections",
   "directories": {
     "lib": "src"
   },

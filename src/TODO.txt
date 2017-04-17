@@ -7,7 +7,6 @@ Upgrader les plugins
 
 BUGS
 ====
-Gj.Ajax : eric rrose en http pas S
 Inclure les démos draw, ... dans MyLeaflet/index.html
 OSM overpass : null.png:1 GET http://chemineur.fr/ext/Dominique92/GeoBB/types_points/null.png 500 (Internal Server Error)
 Erreur JS quand glisse 1 milieu d'une ligne de 2 segments repliée sur elle même (tente de terminer le glissement aprés son effacement)
@@ -57,12 +56,8 @@ DOC TESTS & DEMOS
 Pourquoi marge supplémentaire sur demos MyLL/index.* ?
 Extension liste de cartes pour debug (+ Seigfreid + Dufour + Etat major + Cassigny ...)
 Documenter Control.Layers.argsGeoJSON
-Doc MultiVendors#usage (CRS dans la layer, ...)
 Doc overpass
 Enlever IGN topo classique et cadastres sur localhost ?? github.IO ??
-V0.7
-	Demo OS-GB KO en ll V0.7 !
-	Survol étiquettes KO demo GeoJSON.Ajax-master/examples/v0.7.html
 
 Vérification finale avant mise en prod
 	Passer http://www.javascriptlint.com/online_lint.php
