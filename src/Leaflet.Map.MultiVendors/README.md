@@ -30,6 +30,7 @@ DEMOS
 Usage
 -----
 Include MapMultiCRS.js & the Use L.Control.Layers as usual.
+
 Just take care to add a crs option to each layer using a spécific crs.
 
 ```html

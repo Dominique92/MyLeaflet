@@ -101,10 +101,10 @@ new L.GeoJSON.Style(
 ```
 
 ### Code example:
-[GeoJSON.Ajax.WRI.js](https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/blob/master/layers/GeoJSON.Ajax.WRI.js)
+[GeoJSON.Ajax.WRI.js](https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/blob/master/src/layers/GeoJSON.Ajax.WRI.js)
 
 ### Layer to display [OSM overpass](http://wiki.openstreetmap.org/wiki/Overpass_API) Points Of Interest:
-[GeoJSON.Ajax.OSM.js](https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/blob/master/layers/GeoJSON.Ajax.OSM.js)
+[GeoJSON.Ajax.OSM.js](https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/blob/master/src/layers/GeoJSON.Ajax.OSM.js)
 
 ### Note:
 You will get better popup labels, including centering effects for icons close to the map limit, including [Leaflet rrose](https://github.com/erictheise/rrose). (Just include the .css & .js files).
