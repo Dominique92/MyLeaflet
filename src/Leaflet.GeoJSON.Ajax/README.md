@@ -6,7 +6,7 @@ Get collection of features from a remote `<URL>` & display it into the map with 
 
 Add customized markers, popup labels & click to navigate to external urls.
 
-This plugin works both on Leaflet V0.7 & V1.0
+This plugin works on both Leaflet V0.7 & V1.0
 
 DEMO
 ----

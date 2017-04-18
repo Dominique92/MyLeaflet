@@ -15,7 +15,7 @@ Leaflet plugin for multi vendors maps & projections
 
 This plugin can switch between maps using different CRS (Ex: Ordnance Survey for Great Britain, Swisstopo, ...).
 
-This plugin works both on Leaflet V1.0.*
+This plugin works on both Leaflet V1.0.*
 
 DEMOS
 -----

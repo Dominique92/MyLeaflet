@@ -16,6 +16,7 @@
     "leaflet-draw": "^0.4.9",
     "leaflet-snap": "^0.0.4",
     "os-leaflet": "^1.0.0",
+    "proj4leaflet": "^1.0.1",
     "leaflet-geometryutil": "^0.8.0"
   },
   "devDependencies": {
