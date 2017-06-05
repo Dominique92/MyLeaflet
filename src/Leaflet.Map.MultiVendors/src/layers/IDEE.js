@@ -4,8 +4,8 @@
  * Supported on Leaflet V0.7 & V1.0
  *
  * Spanish maps
- * Instances of the WMS class allow viewing maps of Infraestructura de Datos Espaciales de España
- * (c) http://www.idee.es
+ * Instances of the WMS class allow viewing maps of Instituto Geográfico Nacional de España
+ * (c) http://www.ign.es
  *
  * Usage: new L.TileLayer.WMS.IDEE().addTo(map);
  *
@@ -16,12 +16,12 @@
 
 L.TileLayer.WMS.IDEE = L.TileLayer.WMS.extend({
     options: {
-        url: 'http://www.idee.es/wms/MTN-Raster/MTN-Raster', // Not available over https
+        url: '//www.ign.es/wms-inspire/mapa-raster',
         layer: 'mtn_rasterizado',
 		crs: L.CRS.EPSG3857,
 		maxNativeZoom: 18,
 		maxZoom: 21,
-        attribution: '&copy; <a href="http://www.idee.es/">IDEE</a>'
+        attribution: '&copy; <a href="http://www.ign.es/">Instituto Geográfico Nacional de España</a>'
     },
 
     initialize: function(options) {
@@ -38,7 +38,6 @@ L.TileLayer.WMS.IDEE = L.TileLayer.WMS.extend({
 L.TileLayer.WMS.IDEE.Photo = L.TileLayer.WMS.IDEE.extend({
     options: {
         url: '//www.ign.es/wms-inspire/pnoa-ma',
-        layer: 'OI.OrthoimageCoverage',
-        attribution: '&copy; <a href="http://www.ign.es/PNOA/">PNOA</a>'
+        layer: 'OI.OrthoimageCoverage'
     }
 });
