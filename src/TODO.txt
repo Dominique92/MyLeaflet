@@ -7,7 +7,6 @@ Upgrader les plugins
 
 BUGS
 ====
-os-leaflet (GB) : +1 gros logos attribution à chaque fois qu'on revient sur la couche
 Validations CSS ?
 Message d'erreur services OSM quand service indisponible.
 OSM overpass : null.png:1 GET http://chemineur.fr/ext/Dominique92/GeoBB/types_points/null.png 500 (Internal Server Error)

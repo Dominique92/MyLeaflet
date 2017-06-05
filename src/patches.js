@@ -27,3 +27,10 @@ L.Map.addInitHook(function(e) {
 L.Draw.Polyline.include({
 	_onTouch: function() {}
 });
+
+// Hide multiple big OS logo
+L.OSOpenSpace.TileLayer.include({
+	onAdd: function(map) {
+		L.TileLayer.prototype.onAdd.call(this, map);
+	}
+});
