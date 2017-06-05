@@ -5,10 +5,6 @@ npm i
 Supprimer /lib
 Upgrader les plugins
 
-BLOQUANT
-========
-DRAW : snap ne colle pas (une extrémité d'un segment)
-
 BUGS
 ====
 os-leaflet (GB) : +1 gros logos attribution à chaque fois qu'on revient sur la couche
@@ -80,6 +76,7 @@ Vérification finale avant mise en prod
 
 WRI
 ===
+carte point => Carte IGN : augmente mais ne centre pas
 Pas de déconnexion dans le menu responsive mobile
 Tester https//wri... tous les referrers
 Tester WRI avec debug LL
