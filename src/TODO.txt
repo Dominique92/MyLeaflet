@@ -5,8 +5,13 @@ npm i
 Supprimer /lib
 Upgrader les plugins
 
+BLOQUANT
+========
+DRAW : snap ne colle pas (une extrémité d'un segment)
+
 BUGS
 ====
+os-leaflet (GB) : +1 gros logos attribution à chaque fois qu'on revient sur la couche
 Validations CSS ?
 Message d'erreur services OSM quand service indisponible.
 OSM overpass : null.png:1 GET http://chemineur.fr/ext/Dominique92/GeoBB/types_points/null.png 500 (Internal Server Error)
@@ -18,7 +23,6 @@ Permalink.cookies affiche d'abord la carte générale puis zoome sur la position
 
 TODO
 ====
-IDEE => The access to this service is allowed in any case if the authorship and property of IGN are mentioned as follows: "© Instituto Geográfico Nacional de España"
 Inclure les démos draw, ... dans MyLeaflet/index.html
 Multivendors : Niveaux de transparence
 Harmoniser la taille des cartes dans les démos (50% ?)
