@@ -1,12 +1,17 @@
 NPM
 ===
+Supprimer /node_modules
 cd /mnt/c/wamp64/www/Leaflet/MyLeaflet
-npm i
+sudo npm install --unsafe-perm
+npm ls > myleaflet.map
+
+! npm i
 Supprimer /lib
 Upgrader les plugins
 
 BUGS
 ====
+Easyprint ne marche plus / retour version prècèdente / Mais npm install va l'ugrader (branche plus livrée)
 Validations CSS ?
 Message d'erreur services OSM quand service indisponible.
 OSM overpass : null.png:1 GET http://chemineur.fr/ext/Dominique92/GeoBB/types_points/null.png 500 (Internal Server Error)
@@ -75,8 +80,9 @@ Vérification finale avant mise en prod
 
 WRI
 ===
-carte point => Carte IGN : augmente mais ne centre pas
-Pas de déconnexion dans le menu responsive mobile
+curseur/visuer.png : 1 est de trop
+faire une fiche de tests
+Mettre le format date sur tous les users
 Tester https//wri... tous les referrers
 Tester WRI avec debug LL
 L'interprétation du "nouveau bbcode" plus riche semble moins bien passer coté site pour ce qui est des quotes
@@ -94,6 +100,30 @@ WRI API
 Erreur: sur geom vide dans un polynome
 Durée cache réglable
 Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
+
+OPENLAYERS
+==========
+Superzoom
+F=Transparence
+???//Multi CRS
+OSM - FR - MRI - Hike & Bike - lanscape - outdoors - cycle - transport
++IGN, topo, cloasique, cadastre, photo
+Espagne, photo
+Italie
+F=Swisstopo, image + change projection
++OS GB (? bing ordnanceSurvey ?)
+Bing, photo
+Google, terrain, photo
++GeoJSON Ajax, avec pictos lien et titres, filtre
+Marqueur, position marqueur - affichage coordonnées, modif
++full screen
+permalink cookies
+geolocation
+gps
+upload GPX
+download GPX
+print png carte
+editeur de trace/contour
 
 IMPORT GARMIN
 =============
