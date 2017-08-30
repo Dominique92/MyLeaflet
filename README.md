@@ -26,7 +26,7 @@ DEMO
 
 VERSION
 =======
-This master branch is now build on [Leaflet V1.0](http://leafletjs.com/).
+This master branch is now build on [Leaflet V1.2.0](http://leafletjs.com/).
 
 You can find the old, not anymore supported, MyLeaflet V0.7 [here](https://github.com/Dominique92/MyLeaflet/tree/v0.7)
 

@@ -6,11 +6,11 @@ Get collection of features from a remote `<URL>` & display it into the map with 
 
 Add customized markers, popup labels & click to navigate to external urls.
 
-This plugin works on both Leaflet V0.7 & V1.0
+This plugin works both on Leaflet V0.7 & V1.+
 
 DEMO
 ----
-[See a DEMO using Leaflet V1.0 here](https://dominique92.github.io/MyLeaflet/src/Leaflet.GeoJSON.Ajax)
+[See a DEMO using Leaflet V1.+ here](https://dominique92.github.io/MyLeaflet/src/Leaflet.GeoJSON.Ajax)
 
 [See a DEMO using Leaflet V0.7 here](https://dominique92.github.io/MyLeaflet/src/Leaflet.GeoJSON.Ajax/examples/v0.7.html)
 
@@ -22,7 +22,7 @@ USAGE
 - Create a L.GeoJSON.Ajax instance & add it to the map.
 ```javascript
 new L.GeoJSON.Ajax(
-	<URL>, // GeoJson server URL.
+	<URL>, // GeoJson server URL or function that returns the URL
 	{
 		argsGeoJSON: {
 			name: value, // GeoJson args pairs that will be added to the url with the syntax: ?name=value&...
@@ -36,6 +36,7 @@ new L.GeoJSON.Ajax(
 				...
 			};
 		}
+		idAjaxStatus: optional html element #id that will be updated during loading of the map
 	}
 ).addTo(map);
 ```

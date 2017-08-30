@@ -1,14 +1,3 @@
-NPM
-===
-Supprimer /node_modules
-cd /mnt/c/wamp64/www/Leaflet/MyLeaflet
-sudo npm install --unsafe-perm
-npm ls > myleaflet.map
-
-! npm i
-Supprimer /lib
-Upgrader les plugins
-
 BUGS
 ====
 Easyprint ne marche plus / retour version prècèdente / Mais npm install va l'ugrader (branche plus livrée)
@@ -17,7 +6,7 @@ Message d'erreur services OSM quand service indisponible.
 OSM overpass : null.png:1 GET http://chemineur.fr/ext/Dominique92/GeoBB/types_points/null.png 500 (Internal Server Error)
 Erreur JS quand glisse 1 milieu d'une ligne de 2 segments repliée sur elle même (tente de terminer le glissement aprés son effacement)
 Safari : 'undefined' is not a function (evaluating 'Math.hypot(popupXY.x - e.layerPoint.x, popupXY.y - e.layerPoint.y)')
-Erreur JS sur forts zoom OS-GB en V1.0 : leaflet.js:5 Uncaught Error: Invalid LatLng object: (NaN, NaN)
+Erreur JS sur forts zoom OS-GB en V1.+ : leaflet.js:5 Uncaught Error: Invalid LatLng object: (NaN, NaN)
 Permalink.cookies affiche d'abord la carte générale puis zoome sur la position du cookie / carte: perte de temps
 	Semble charger + de tiles que la carte courante (remove layer sur switch ?)
 
@@ -78,10 +67,21 @@ Vérification finale avant mise en prod
 	Style commentaires
 	 */
 
+NPM
+===
+Supprimer /node_modules
+cd /mnt/c/wamp64/www/Leaflet/MyLeaflet
+sudo npm install --unsafe-perm
+npm ls > myleaflet.map
+
+! npm i
+Supprimer /lib
+Upgrader les plugins
+
 WRI
 ===
-curseur/visuer.png : 1 est de trop
-faire une fiche de tests
+curseur/viseur.png : 1 est de trop
+Faire une fiche de tests
 Mettre le format date sur tous les users
 Tester https//wri... tous les referrers
 Tester WRI avec debug LL

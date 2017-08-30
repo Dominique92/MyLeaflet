@@ -10,7 +10,7 @@ Leaflet plugin extension for Leaflet.draw
 
 Depends on [Leaflet.draw](https://github.com/Leaflet/Leaflet.draw).
 and [Leaflet.Snap](https://github.com/makinacorpus/Leaflet.Snap).
-It is supported on leaflet V1.0.*
+Supported both on Leaflet V0.7 & V1.+
 
 NEW FEATURES
 ------------
@@ -27,7 +27,7 @@ NEW FEATURES
 
 DEMO
 ----
-[See a DEMO using Leaflet V1.0 here](https://dominique92.github.io/MyLeaflet/src/Leaflet.draw.plus/)
+[See a DEMO using Leaflet V1.+ here](https://dominique92.github.io/MyLeaflet/src/Leaflet.draw.plus/)
 
 Usage
 -----
