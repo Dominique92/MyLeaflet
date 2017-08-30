@@ -65,7 +65,7 @@ L.GeoJSON.Ajax = L.GeoJSON.Style.extend({
 
 	// Build the final url request to send to the server
 	_getUrl: function() {
-		var urlGeoJSON =
+		var urlGeoJSON = // Thanks to https://github.com/batje
 			typeof this.options.urlGeoJSON == 'function'
 			? this.options.urlGeoJSON.call(this, this)
 			: this.options.urlGeoJSON;

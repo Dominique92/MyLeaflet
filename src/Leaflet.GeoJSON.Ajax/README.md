@@ -47,10 +47,10 @@ Markers:
 * `iconSize: [<int>, <int>] | default=img file size,` // Size of the icon.
 * `iconAnchor: [<int>, <int>] | default=[middle,top],` // Point of the icon which will correspond to marker's location
 * `degroup: <int>,` // Isolate too close markers by a number of pixels when the mouse hover over the group.
-* Or any of the following [L.Marker options](http://leafletjs.com/reference.html#marker-options)
+* Or any of the following [L.Marker options](http://leafletjs.com/reference-1.2.0.html#marker)
 
 Polylines & polygons:
-* Any of the following [L.Path options](http://leafletjs.com/reference.html#path-options)
+* Any of the following [L.Path options](http://leafletjs.com/reference-1.2.0.html#path)
 
 Display a label when hovering the feature:
 * `popup: <string>,` // Popup text
@@ -64,7 +64,7 @@ Action when clicking the feature:
 Misc:
 * zoom: true, // Add &zoom=000 parameter to the ajax request sent to the server, correspondins to the current zoom of the map
 
-Or any of the following [L.GeoJSON options](http://leafletjs.com/reference.html#geojson-options)
+Or any of the following [L.GeoJSON options](http://leafletjs.com/reference-1.2.0.html#geojson)
 
 ### <geoJson> The URL response must respect the [geoJson format](http://geojson.org/geojson-spec.html):
 ```javascript
@@ -101,11 +101,9 @@ new L.GeoJSON.Style(
 ).addTo(map);
 ```
 
-### Code example:
-[GeoJSON.Ajax.WRI.js](https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/blob/master/src/layers/GeoJSON.Ajax.WRI.js)
+### Notes:
+* Code example: [GeoJSON.Ajax.WRI.js](https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/blob/master/src/layers/GeoJSON.Ajax.WRI.js)
 
-### Layer to display [OSM overpass](http://wiki.openstreetmap.org/wiki/Overpass_API) Points Of Interest:
-[GeoJSON.Ajax.OSM.js](https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/blob/master/src/layers/GeoJSON.Ajax.OSM.js)
+* Layer to display [OSM overpass](http://wiki.openstreetmap.org/wiki/Overpass_API) Points Of Interest: [GeoJSON.Ajax.OSM.js](https://github.com/Dominique92/Leaflet.GeoJSON.Ajax/blob/master/src/layers/GeoJSON.Ajax.OSM.js)
 
-### Note:
-You will get better popup labels, including centering effects for icons close to the map limit, including [Leaflet rrose](https://github.com/erictheise/rrose). (Just include the .css & .js files).
+* You will get better popup labels, including centering effects for icons close to the map limit, including [Leaflet rrose](https://github.com/erictheise/rrose). (Just include the .css & .js files).

@@ -33,7 +33,7 @@ L.TileLayer.collection = function(name) {
 				'IGN photo':     new L.TileLayer.IGN({k: key.ign, l:'ORTHOIMAGERY.ORTHOPHOTOS'})
 			});
 
-		// Espana
+		// España
 		if (typeof L.TileLayer.WMS.IDEE != 'undefined')
 			L.Util.extend(this._col, {
 				'Espagne': new L.TileLayer.WMS.IDEE(),
