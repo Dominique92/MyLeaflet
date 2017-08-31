@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link  href="https://npmcdn.com/leaflet/dist/leaflet.css" rel="stylesheet" />
+	<script src="https://npmcdn.com/leaflet/dist/leaflet-src.js"></script>
+
+	<script src="https://dominique92.github.io/MyLeaflet/src/Leaflet.GeoJSON.Ajax/src/GeoJSON.Style.js"></script>
+	<script src="https://dominique92.github.io/MyLeaflet/src/Leaflet.GeoJSON.Ajax/src/GeoJSON.Ajax.js"></script>
+</head>
+
+<body>
+	<div id="map" style="width: 800px; height: 600px"></div>
+	<script>
+		var map = new L.Map('map', {
+			layers: [
+				new L.TileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
+				new L.GeoJSON.Ajax({
+					urlGeoJSON: 'https://gist.githubusercontent.com/mcwhittemore/1f81416ff74dd64decc6/raw/f34bddb3bf276a32b073ba79d0dd625a5735eedc/usa-state-capitals.geojson',
+				})
+			],
+			center: [39.74, -93.47],
+			zoom: 3
+		});
+	</script>
+</body>
+</html>

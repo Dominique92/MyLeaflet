@@ -43,7 +43,7 @@ new L.GeoJSON.Ajax(
 
 ### Properties pairs `"<NAME>":<VALUE>` can be:
 Markers:
-* `iconUrl: <string>,` // Url of icon image
+* `iconUrl: <string>,` // Url of icon image or inline 'data:image/png;base64,...'
 * `iconSize: [<int>, <int>] | default=img file size,` // Size of the icon.
 * `iconAnchor: [<int>, <int>] | default=[middle,top],` // Point of the icon which will correspond to marker's location
 * `degroup: <int>,` // Isolate too close markers by a number of pixels when the mouse hover over the group.
