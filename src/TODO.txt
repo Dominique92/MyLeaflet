@@ -1,6 +1,6 @@
 BUGS
 ====
-Easyprint ne marche plus / retour version prècèdente / Mais npm install va l'ugrader (branche plus livrée)
+Dernière version d'Easyprint ne marche plus => retour version prècèdente / Mais npm install va l'ugrader (branche plus livrée)
 Validations CSS ?
 Message d'erreur services OSM quand service indisponible.
 OSM overpass : null.png:1 GET http://chemineur.fr/ext/Dominique92/GeoBB/types_points/null.png 500 (Internal Server Error)

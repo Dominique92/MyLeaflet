@@ -35,7 +35,7 @@ include ('index.html');
 </script>
 
 <a href="index.html"
-   style="position:absolute;top:200px;right:0;text-decoration:none;font-size:large"
-   title="Test en mode html">
+	style="position:absolute;top:200px;right:0;text-decoration:none;font-size:large"
+	title="Test en mode html">
 	&#10144;
 </a>
