@@ -80,7 +80,6 @@ Upgrader les plugins
 
 WRI
 ===
-curseur/viseur.png : 1 est de trop
 Faire une fiche de tests
 Mettre le format date sur tous les users
 Tester https//wri... tous les referrers
